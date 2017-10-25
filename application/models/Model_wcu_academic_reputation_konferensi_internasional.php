@@ -1,0 +1,152 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Model_wcu_academic_reputation_konferensi_internasional extends CI_Model {
+
+	
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function update($table, $data)
+    {
+    	if(isset($data['ID'])){
+			$this->db->where('ID', $data['ID']);
+			return $this->db->update($table, $data);
+		}		
+		return false;
+    }
+
+    public function save($table, $data)
+    {
+    	if(is_array($data)){
+			$this->db->insert($table, $data);
+			return  $this->db->insert_id();
+		}		
+		return null;
+    }
+
+    public function delete($table, $id)
+    {
+    	if($id!=null){
+			return $this->db->delete($table, array("ID"=>$id));
+		}		
+		return false;
+    }
+	public function get_once($table, $id)
+    {
+	
+        $this->db->from($table);
+		$this->db->where('ID', $id); 
+		$result	 = $this->db->get()->result_array();
+        return (isset($result[0])?$result[0]:array("ID"=>null));
+    }
+	public function get_once_with_relation($table, $id)
+    {
+	
+       $this->db
+                    ->select('t1.ID, t1.NamaKonferensi, t1.NamaPenyelenggara, t1.isTuanRumah, t2.Tingkat, t1.Tahun')
+                    ->from($table.' t1 ')
+                    ->join("refLingkup  t2","t2.ID = t1.LingkupID", "left")
+					->where('t1.ID', $id)
+					->where('UPPER(t2.Tingkat)', 'INTERNASIONAL');
+		$result	 = $this->db->get()->result_array();
+        return (isset($result[0])?$result[0]:array("ID"=>null));
+    }
+    public function _get_datatables_query($table, $c, $o)
+    {
+        $this->db
+                    ->select('t1.ID, t1.NamaKonferensi, t1.NamaPenyelenggara, t2.Tingkat, t1.Tahun')
+                    ->from($table.' t1 ')
+                    ->join("refLingkup  t2","t2.ID = t1.LingkupID", "left")
+					->where('UPPER(t2.Tingkat)', 'INTERNASIONAL');
+		$sub_query = $this->db->get_compiled_select();
+
+		#Create main query
+		$this->db->select('*');
+		$this->db->from('('.$sub_query.') a');
+		
+        $i = 0;
+        foreach ($c as $item)    
+        {
+            if($_POST['search']['value'])
+                ($i===0) ? $this->db->like($item, $_POST['search']['value']) : $this->db->or_like($item, $_POST['search']['value']);
+            $column[$i] = $item;
+            $i++;
+        }
+		
+        if(isset($_POST['order']))
+        {
+			$orderby = $column[$_POST['order']['0']['column']];
+            $this->db->order_by($orderby, $_POST['order']['0']['dir']);
+        }
+        else if(isset($o))
+        {
+            $order = $o;
+			$orderby = key($order);
+            $this->db->order_by($orderby, $order[key($order)]);
+        }
+    }
+    public function get_datatables($table, $column, $order)
+    {
+        $this->_get_datatables_query($table, $column, $order);
+        if($_POST['length'] != -1)
+        $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+	
+	public function count_all($table)
+    {
+        $this->db
+                    ->from($table.' t1 ')
+                    ->join("refLingkup  t2","t2.ID = t1.LingkupID", "left")
+					->where('UPPER(t2.Tingkat)', 'INTERNASIONAL');
+        return $this->db->count_all_results();
+    }
+    public function count_filtered($table, $column, $order)
+    {
+        $this->_get_datatables_query($table, $column, $order);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+	
+	public function get_exsport($table, $header, $header_column){
+		 $this->db
+                    ->select('t1.ID, t1.NamaKonferensi, t1.NamaPenyelenggara, t2.Tingkat, t1.Tahun, t1.isTuanRumah AS TuanRumah')
+                    ->from($table.' t1 ')
+                    ->join("refLingkup  t2","t2.ID = t1.LingkupID", "left")
+					->where('UPPER(t2.Tingkat)', 'INTERNASIONAL');
+		$result	 = $this->db->get()->result_array();
+    	$data = array(1 => $header);
+		$i=0;
+    	foreach ($result as $row1){
+			$temp = array();
+			if(is_array($row1)){
+				foreach($header_column as $row2){
+					if(strtoupper($row2)=="AUTONUMBER"){
+						$temp['No.'] = ++$i;
+					}elseif(strtoupper($row2)=="TUANRUMAH"){
+						$temp['TuanRumah'] = ($row1[$row2]=="1"?"Ya":"Tidak");
+					}else{
+						$temp[$row2] = $row1[$row2];
+					}
+				}
+			}
+			if(count($temp)>0)
+				array_push($data, $temp);
+		}
+    	return $data;
+    }
+	
+	
+	public function get_all_tingkat()
+    {
+        $this->db
+					->select('ID, Tingkat AS Nama')
+                    ->from("refLingkup");
+		$result	 = $this->db->get()->result_array();
+        return (isset($result)?$result:null);
+    }
+}
+

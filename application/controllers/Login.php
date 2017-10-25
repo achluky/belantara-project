@@ -16,6 +16,7 @@ class Login extends CI_Controller {
         $data = array(
             'error_msg' => ''
         );
+
         $this->smartyci->assign('data', $data);
         $this->smartyci->display('login.tpl');
     }

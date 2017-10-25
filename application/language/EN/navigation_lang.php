@@ -6,14 +6,17 @@ $lang['navigation.language'] = 'Language';
 $lang['navigation.language.en'] = 'English';
 $lang['navigation.language.id'] = 'Indonesia';
 
+$lang['navigation.label.main.navigation'] = 'MAIN NAVIGATION';
+
 $lang['navigation.label.last_login'] = 'Last Login';
 $lang['navigation.label.logout'] = 'Logout';
-$lang['navigation.label.ipb'] = 'Bogor Agricultural University';
+$lang['navigation.label.edit_profile'] = 'Edit Profile';
+$lang['navigation.label.ipb'] = 'Belantara Fondation';
 
 $lang['navigation.navbar.dashboard'] = 'Dashboard';
 $lang['navigation.navbar.wcu'] = 'Asia World University Rank';
 $lang['navigation.navbar.wcu.academic_reputation'] = 'Academic Reputation';
-$lang['navigation.navbar.wcu.academic_reputation.wur11'] = 'Informasi prestasi IPB (Newsletter) yang tersebar kepada mitra internasional ';
+$lang['navigation.navbar.wcu.academic_reputation.wur11'] = 'Informasi prestasi Belantara Fondation (Newsletter) yang tersebar kepada mitra internasional ';
 $lang['navigation.navbar.wcu.academic_reputation.wur12'] = 'Tuan rumah konferensi internasional';
 $lang['navigation.navbar.wcu.academic_reputation.wur13'] = 'Tamu Asing (tamu MoU, tamu acara seminar, narasumber seminar, dll) ';
 $lang['navigation.navbar.wcu.academic_reputation.wur14'] = 'Program studi terakreditasi internasional';

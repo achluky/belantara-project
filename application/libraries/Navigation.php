@@ -1,20 +1,21 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
+<?php
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 require("Navbar.php");
+
 class Navigation extends Navbar{
 	
 	private $breadcrumb;
 	
     public function __construct() {
-		parent::__construct();
-		$this->controller = & get_instance();
+			parent::__construct();
+			$this->controller = & get_instance();
 	}
 	
 	public function setBreadcrumbWur(){
 		$this->breadcrumb =  array(
-			$this->controller->lang->line('navigation.navbar.dashboard')=>base_url().'admin',
-			$this->controller->lang->line('navigation.navbar.wcu') => base_url().'wcu'
-		);
+									$this->controller->lang->line('navigation.navbar.dashboard')=>base_url().'admin',
+									$this->controller->lang->line('navigation.navbar.wcu') => base_url().'wcu'
+									);
 	}
 	public function setBreadcrumbReference($change, $action=null){
 		$this->breadcrumb =  array(

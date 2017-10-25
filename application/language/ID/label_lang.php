@@ -59,7 +59,7 @@ $lang['label.tabel.content_text_en'] = "Konten Teks";
 $lang['label.tabel.link'] = "Alamat";
 $lang['label.tabel.active'] = "Aktif";
 
-$lang['label.dashboard.title'] = "Management Website Institut Pertanian Bogor";
+$lang['label.dashboard.title'] = "Management Website Belatara Foundation";
 $lang['label.dashboard.news'] = "Berita";
 $lang['label.dashboard.event'] = "Kegiatan";
 $lang['label.dashboard.announcment'] = "Pengumuman";
@@ -75,7 +75,7 @@ $lang['label.dashboard.academic_reputation'] = "Reputasi Akademik";
 $lang['label.dashboard.employer_reputation'] = "Reputasi Alumni";
 $lang['label.dashboard.research_publication'] = "Penelitian dan Publikasi";
 $lang['label.dashboard.data_university'] = "Data Universitas";
-$lang['label.dashboard.user'] = "Pengguna";
+$lang['label.dashboard.user'] = "Pengaturan Pengguna";
 $lang['label.dashboard.setting'] = "Pengaturan";
 
 

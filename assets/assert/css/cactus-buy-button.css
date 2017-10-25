@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+.widget-fixed-buy-theme,
+.widget-fixed-buy-theme * { box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.widget-fixed-buy-theme { background-color:rgba(34,34,34,1.0); padding:0;position:fixed; left:0; bottom:0; width:100%; z-index:9999999; font-family: 'Open Sans', sans-serif; line-height:1; transform:translate(0,101%); -webkit-transform:translate(0,101%); -ms-transform:translate(0,101%); visibility:hidden; transition:all 0.2s; -webkit-transition:all 0.2s;}
+.widget-fixed-buy-theme.active {transform:translate(0,0); -webkit-transform:translate(0,0); -ms-transform:translate(0,0); visibility:visible;}
+.widget-fixed-buy-theme .widget-fixed-buy-theme-content { display:table; width:100%;}
+.widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell { display:table-cell; vertical-align:middle; padding:12px 25px; white-space:nowrap; font-size:12px;}
+.widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell + .widget-fixed-buy-theme-item-cell { border-left:1px solid rgba(255,255,255,0.05);}
+.widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:first-child { width:100%;}
+.widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:first-child img { max-height:15px; max-width:none; display:block;}
+.widget-fixed-buy-theme .btn-buy-button { background-color:rgba(79,207,167,1.0); border-radius:3px; -webkit-border-radius:3px; margin:0; color:rgba(255,255,255,1.00); font-size:12px; padding-left:25px; padding-right:25px; font-weight:bold; padding-top:9px; padding-bottom:9px; display:inline-block; vertical-align:top; text-decoration:none; line-height:1.5; letter-spacing:1px;}
+.widget-fixed-buy-theme .btn-buy-button:hover { background-color:rgba(255,255,255,1.00); color:rgba(34,34,34,1.0);}
+
+.widget-remove-buy { font-size:0; line-height:0; color:rgba(255,255,255,0.3); display:block;}
+.widget-remove-buy:hover {color:rgba(255,255,255,1.0);}
+.widget-remove-buy > div { display:inline-block; vertical-align:middle; font-size:12px; line-height:1.5;}
+.widget-remove-buy > div:first-child { display:inline-block; width:15px; height:15px; position:relative; margin-right:10px; margin-top:-1px; transform:rotate(45deg); -webkit-transform:rotate(45deg); -ms-transform:rotate(45deg); transition:all 0.2s; -webkit-transition:all 0.2s; backface-visibility:hidden; -webkit-backface-visibility:hidden;}
+
+.widget-remove-buy:hover > div:first-child {transform:rotate(135deg); -webkit-transform:rotate(135deg); -ms-transform:rotate(135deg);}
+.widget-remove-buy > div:first-child:before { content:''; width:3px; height:15px; background-color: rgba(255,255,255,1.00); position:absolute; display:block; top:0; left:6px;}
+.widget-remove-buy > div:first-child:after { content:''; width:15px; height:3px; background-color: rgba(255,255,255,1.00); position:absolute; display:block; top:6px; left:0;}
+
+@media(max-width:600px) {
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content:after { display:table; clear:both; content:'';}
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content,
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:first-child { display:block; text-align:center; border-bottom:1px solid rgba(255,255,255,0.05);}
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:first-child { display:none;}
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:last-child { padding-top:21px;}
+
+
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:not(:first-child) { display:block; float:left; text-align:center; width:50%;  min-height:60px;}
+
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell + .widget-fixed-buy-theme-item-cell { border:none;}
+    .widget-fixed-buy-theme .widget-fixed-buy-theme-content .widget-fixed-buy-theme-item-cell:not(:first-child) + .widget-fixed-buy-theme-item-cell { border-left:1px solid rgba(255,255,255,0.05);}
+}

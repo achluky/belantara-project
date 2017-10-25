@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'belantara',
+	'hostname' => 'localhost',//172.17.0.63
+	'username' => 'root', //ipb
+	'password' => '', //b3b3k-g0r3ng.
+	'database' => 'ipbacid',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -60,7 +60,7 @@ $lang['label.tabel.content_text_en'] = "Content Text";
 $lang['label.tabel.link'] = "Link";
 $lang['label.tabel.active'] = "Active";
 
-$lang['label.dashboard.title'] = "Website Management Bogor Agricultural University";
+$lang['label.dashboard.title'] = "Website Management Belantara Fondation";
 $lang['label.dashboard.news'] = "News";
 $lang['label.dashboard.event'] = "Event";
 $lang['label.dashboard.announcment'] = "Announcment";
@@ -76,7 +76,7 @@ $lang['label.dashboard.academic_reputation'] = "Academic Reputation";
 $lang['label.dashboard.employer_reputation'] = "Employer Reputation";
 $lang['label.dashboard.research_publication'] = "Research and Publication";
 $lang['label.dashboard.data_university'] = "Data University";
-$lang['label.dashboard.user'] = "User";
+$lang['label.dashboard.user'] = "User Management";
 $lang['label.dashboard.setting'] = "Setting";
 
 
@@ -187,7 +187,5 @@ $lang['label.title_dosen_kepakaran_exsport_lanjut'] = 'Export More';
 
 // staff Phd
 $lang['label.title_phd_kepakaran'] = 'List Lecturer Whith PhD and Expertise';
-
 $lang['label.hkitahun'] = 'Paten and HKI Per Year';
-
 $lang['label.tabel.sematkan'] ="Embed";

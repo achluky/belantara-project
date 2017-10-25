@@ -6,15 +6,18 @@ $lang['navigation.language'] = 'Bahasa';
 $lang['navigation.language.en'] = 'Inggris';
 $lang['navigation.language.id'] = 'Indonesia';
 
+$lang['navigation.label.main.navigation'] = 'NAVIGASI UTAMA';
+
 $lang['navigation.label.last_login'] = 'Terakhir Masuk';
 $lang['navigation.label.logout'] = 'Keluar';
-$lang['navigation.label.ipb'] = 'Institut Pertanian Bogor';
+$lang['navigation.label.edit_profile'] = 'Edit Profil';
+$lang['navigation.label.ipb'] = 'Belantara Fondation';
 
 
 $lang['navigation.navbar.dashboard'] = 'Dashboard';
 $lang['navigation.navbar.wcu'] = 'Asia World University Rank';
 $lang['navigation.navbar.wcu.academic_reputation'] = 'Reputasi Akademik';
-$lang['navigation.navbar.wcu.academic_reputation.wur11'] = 'Informasi prestasi IPB (Newsletter) yang tersebar kepada mitra internasional ';
+$lang['navigation.navbar.wcu.academic_reputation.wur11'] = 'Informasi prestasi Belantara Fondation (Newsletter) yang tersebar kepada mitra internasional ';
 $lang['navigation.navbar.wcu.academic_reputation.wur12'] = 'Tuan rumah konferensi internasional';
 $lang['navigation.navbar.wcu.academic_reputation.wur13'] = 'Tamu Asing (tamu MoU, tamu acara seminar, narasumber seminar, dll) ';
 $lang['navigation.navbar.wcu.academic_reputation.wur14'] = 'Program studi terakreditasi internasional';

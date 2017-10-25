@@ -1,0 +1,36 @@
+#ct-style-switcher{position:fixed;top:40px;left:-8px;background:#C3C3C3;width:264px;z-index:1000;transition: left 0.3s  ease-in-out;-moz-transition: left 0.3s  ease-in-out;-o-transition: left 0.3s  ease-in-out;-webkit-transition: left 0.3s  ease-in-out;}
+#ct-style-switcher.closed{left:-264px;}
+#ct-style-close{position:absolute;width:50px;height:50px;background:#FFF url(images/settings.png) center no-repeat;top:0;right:-50px;top:0px;cursor:pointer;border-left:none}
+#ct-style-switcher.closed #ct-style-close{background:#FFF url(images/settings.png) center no-repeat}
+#ct-style-switcher .main-title{height:50px;padding:8px 25px;text-transform:uppercase;color:#4f4f4f;font-size:18px;background:#FFF}
+#ct-style-switcher .option{padding:10px 20px;border-bottom:1px solid #b9b9b9;color:#000}
+#ct-style-switcher .option.last{border-bottom:none}
+#ct-style-switcher .option .title{color:#4f4f4f;padding-bottom:10px}
+#ct-style-switcher select{width:200px;padding:3px;height:auto}
+#style-selector-colors .content{margin-bottom:0px}
+
+#ct-style-switcher #style-selector-colors{ margin-left:10px; }
+#ct-style-switcher #style-selector-colors .color{display:inline-block;width:80px;height:80px; margin: 10px; border:5px solid #FFF;background:#fff}
+#ct-style-switcher #style-selector-colors .color.active, #ct-style-switcher #style-selector-colors .color:hover{ border-color:#999; }
+#ct-style-switcher #style-selector-colors .up,#ct-style-switcher #style-selector-colors .down{
+	height:35px;
+	width:100%;
+}
+#ct-style-switcher #style-selector-colors .color1 .up{background:#179bd7}
+#ct-style-switcher #style-selector-colors .color1 .down{background:#253b80}
+#ct-style-switcher #style-selector-colors .color2 .up{background:#94b52e}
+#ct-style-switcher #style-selector-colors .color2 .down{background:#4b3f57}
+#ct-style-switcher #style-selector-colors .color3 .up{background:#97b09b}
+#ct-style-switcher #style-selector-colors .color3 .down{background:#807759}
+#ct-style-switcher #style-selector-colors .color4 .up{background:#ea5b23}
+#ct-style-switcher #style-selector-colors .color4 .down{background:#15305b}
+#ct-style-switcher #style-selector-colors .color5 .up{background:#287e7a}
+#ct-style-switcher #style-selector-colors .color5 .down{background:#e48d3d}
+
+
+#style-selector-top-background a,#style-selector-top-background a:hover{border:0;margin:0 10px 0 0;padding:0;line-height:1em;float:left;}
+.clearer{clear:both}
+
+@media (max-width: 768px) {
+	#ct-style-switcher{display:none}
+}

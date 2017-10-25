@@ -12,7 +12,7 @@ class Navbar {
     public function __construct() {
 		$this->controller = & get_instance();
         $this->controller->lang->load('navigation',$this->controller->session->userdata('site_lang'));
-		// $this->setMenuDashboard();
+		$this->setMenuDashboard();
 		$sess = $this->controller->session->userdata('logged_in');
 		switch(strtolower($sess['group_name'])){
 			case "admin": $this->allowAdmin();
@@ -24,6 +24,7 @@ class Navbar {
 		}
     }
 	
+	// admin akses
 	private function allowAdmin(){
 		// $this->setMenuWur();
 		//$this->setMenuReferensiDBINTEGRASI();
@@ -44,6 +45,7 @@ class Navbar {
 		$this->setMenuSetting();
 	}
 	
+	// Edit akses
 	private function allowEditor(){
 		$this->setMenuNews();
 		$this->setMenuEvent();
@@ -55,10 +57,7 @@ class Navbar {
 		$this->setMenuIncidental();
 	}
 	
-	private function allowWUR(){
-		$this->setMenuWur();
-	}
-	
+
 	private function setMenuDashboard(){
 		$this->menu['dashboard']=array("name"=>$this->controller->lang->line('navigation.navbar.dashboard'),
 							"url"=>base_url(),
@@ -208,21 +207,21 @@ class Navbar {
 	
 	private function setMenuNews(){
 		$this->menu['news']=array("name"=>$this->controller->lang->line('navigation.navbar.news'),
-							"url"=>"",
+							"url"=>base_url()."news",
 							"status"=>"", 
-							"class"=>"flaticon-file-1",
+							"class"=>"glyphicon glyphicon-file",
 							"submenu"=>array(
 												"add"=>array(
-													"name"=>$this->controller->lang->line('navigation.navbar.news.add'),
-													"url"=>base_url()."news/add",
-													"status"=>"", 
-													"class"=>"fa fa-plus-circle",
+												"name"=>$this->controller->lang->line('navigation.navbar.news.add'),
+												"url"=>base_url()."news/add",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
 												),
 												"list"=>array(
-													"name"=>$this->controller->lang->line('navigation.navbar.news.list'),
-													"url"=>base_url()."news",
-													"status"=>"", 
-													"class"=>"fa fa-list",
+												"name"=>$this->controller->lang->line('navigation.navbar.news.list'),
+												"url"=>base_url()."news",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
 												)
 											)
 							);
@@ -231,7 +230,7 @@ class Navbar {
 		$this->menu['event']=array("name"=>$this->controller->lang->line('navigation.navbar.event'),
 							"url"=>base_url()."event",
 							"status"=>"", 
-							"class"=>"flaticon-calendar-2",
+							"class"=>"ion ion-calendar",
 							"submenu"=>array(
 												"add"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.event.add'),
@@ -252,7 +251,7 @@ class Navbar {
 		$this->menu['announcement']=array("name"=>$this->controller->lang->line('navigation.navbar.announcement'),
 							"url"=>base_url()."announcement",
 							"status"=>"", 
-							"class"=>"flaticon-menu-button",
+							"class"=>"glyphicon glyphicon-bullhorn",
 							"submenu"=>array(
 												"add"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.announcement.add'),
@@ -273,42 +272,48 @@ class Navbar {
 		$this->menu['banner']=array("name"=>$this->controller->lang->line('navigation.navbar.banner'),
 							"url"=>base_url()."banner",
 							"status"=>"", 
-							"class"=>"flaticon-graphic",
+							"class"=>"ion ion-images",
 							"submenu"=>null);
 	}
+	
 	private function setMenuPage(){
 		$this->menu['page']=array("name"=>$this->controller->lang->line('navigation.navbar.page'),
 							"url"=>base_url()."page",
 							"status"=>"", 
-							"class"=>"flaticon-file",
+							"class"=>"ion ion-android-folder",
 							"submenu"=>null);
 	}
+
 	private function setMainMenu(){
 		$this->menu['main']=array("name"=>$this->controller->lang->line('navigation.navbar.main_menu'),
 							"url"=>base_url()."main_menu",
 							"status"=>"", 
-							"class"=>"flaticon-grid-menu",
+							"class"=>"glyphicon glyphicon-link",
 							"submenu"=>null);
 	}
+
 	private function setMenuLink(){
 		$this->menu['link']=array("name"=>$this->controller->lang->line('navigation.navbar.links'),
 							"url"=>base_url()."link",
 							"status"=>"", 
-							"class"=>"flaticon-network",
+							"class"=>"glyphicon glyphicon-link",
 							"submenu"=>null);
 	}
+	
 	private function setMenuIncidental(){
 		$this->menu['incidental']=array("name"=>$this->controller->lang->line('navigation.navbar.incidental'),
 							"url"=>base_url()."incidental",
 							"status"=>"", 
-							"class"=>"flaticon-interface-2",
+							"class"=>"ion ion-ios-infinite",
 							"submenu"=>null);
 	}
+	
+	
 	private function setMenuUser(){
 		$this->menu['user']=array("name"=>$this->controller->lang->line('navigation.navbar.user'),
 							"url"=>base_url()."user",
 							"status"=>"", 
-							"class"=>"flaticon-users",
+							"class"=>"ion ion-person",
 							"submenu"=>array(
 												"list"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.user.list'),
@@ -330,7 +335,7 @@ class Navbar {
 		$this->menu['setting']=array("name"=>$this->controller->lang->line('navigation.navbar.setting'),
 							"url"=>base_url()."setting",
 							"status"=>"", 
-							"class"=>"flaticon-settings",
+							"class"=>"glyphicon glyphicon-cog",
 							"submenu"=>array(
 												"pengaturan_sistem"=>array(
 													"name"=>$this->controller->lang->line('navigation.navbar.setting.pengaturan_sistem'),
@@ -423,7 +428,7 @@ class Navbar {
 		$this->menu['media']=array("name"=>$this->controller->lang->line('navigation.navbar.media'),
 		"url"=>"",
 		"status"=>"", 
-		"class"=>"flaticon-graphic",
+		"class"=>"ion ion-ios-infinite",
 		"submenu"=>array(
 				"add"=>array(
 				"name"=>$this->controller->lang->line('navigation.navbar.media.photo'),
@@ -445,7 +450,7 @@ class Navbar {
 		$this->menu['infografis']=array("name"=>$this->controller->lang->line('navigation.navbar.infografis'),
 							"url"=>base_url()."infografis",
 							"status"=>"", 
-							"class"=>"flaticon-line-graph",
+							"class"=>"ion ion-images",
 							"submenu"=>null);
 	}
 
@@ -458,11 +463,11 @@ class Navbar {
 	public function getMenu(){
 		if($this->menuActive!==null){
 			if(isset($this->menu[$this->menuActive])){
-				$this->menu[$this->menuActive]["status"] = "m-menu__item--active";
+				$this->menu[$this->menuActive]["status"] = "active";
 				if($this->subMenuActive!==null){
 					if(is_array($this->menu[$this->menuActive]["submenu"])){
 						if(isset($this->menu[$this->menuActive]["submenu"][$this->subMenuActive])){
-							$this->menu[$this->menuActive]["submenu"][$this->subMenuActive]["status"] = "m-menu__item--active";
+							$this->menu[$this->menuActive]["submenu"][$this->subMenuActive]["status"] = "active";
 						}
 					}
 				}
