@@ -11,14 +11,14 @@
 
         <section id="page-content">
             <div class="container">
+
                 <!-- Portfolio Filter -->
                 <nav class="grid-filter gf-classic" data-layout="#portfolio">
                     <ul>
                         <li class="active"><a href="#" data-category="*">Show All</a></li>
-                        <li><a href="#" data-category=".Trustees">Board Of Trustees</a></li>
-                        <li><a href="#" data-category=".Supervisory">Supervisory Boards</a></li>
-                        <li><a href="#" data-category=".Executive">Executive Boards</a></li>
-                        <li><a href="#" data-category=".Advisory" data-intro = "eeeeee">Advisory Boards</a></li>
+                        {foreach $data.boards_category -> result() as $row}
+                        <li><a href="#" data-category=".{$row->sub_category}">{$row->sub_category}</a></li>
+                        {/foreach}
                     </ul>
                     <div class="grid-active-title">Show All</div>
                 </nav>
@@ -29,138 +29,23 @@
                 <!-- Portfolio -->
                 <div id="portfolio" class="grid-layout portfolio-4-columns p-t-40" data-margin="20">
 
-
                     <!-- portfolio item -->
-                    <div class="portfolio-item no-overlay img-zoom Trustees p-b-50">
+
+                    {foreach $data.employee_boards -> result() as $row}
+                    <div class="portfolio-item no-overlay img-zoom {$row->sub_category} p-b-50">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/1.jpg" alt="" class="img-circle"></a>
+                                <a href="#"><img src="{base_url()}document/images/employee/{$row->image}" alt="" class="img-circle"></a>
                             </div>
                             <div class="portfolio-description">
                                 <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
+                                    <h3>{$row->name}</h3>
+                                    <span>{$row->jabatan}</span>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-item no-overlay img-zoom Supervisory p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/2.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Executive  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/3.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                   <h3>Indrajaya Gunawan</h3>
-                                   <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Advisory  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/4.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Trustees  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/1.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Supervisory  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/2.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Advisory  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/3.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Executive  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/4.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Executive  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/1.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-item no-overlay img-zoom Trustees  p-b-50">
-                        <div class="portfolio-item-wrap">
-                            <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}assets/front-end/images/team/2.jpg" alt="" class="img-circle"></a>
-                            </div>
-                            <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3>Indrajaya Gunawan</h3>
-                                    <span>Vice Manager</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {/foreach}
                     <!-- end: portfolio item -->
                 </div>
                 <!-- end: Portfolio -->

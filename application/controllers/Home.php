@@ -29,7 +29,8 @@ class Home extends CI_Controller {
     	$data = array(
             'url'=> $this->url,
 
-            'employee_management' => $this->model_home->get_employee_boards(),
+            'employee_boards' => $this->model_home->get_employee_boards(),
+            'boards_category' => $this->model_home->get_boards_category(),
             'site_lang'=>$this->session->userdata('site_lang'),
         );
 
