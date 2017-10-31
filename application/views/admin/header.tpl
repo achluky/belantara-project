@@ -7,5 +7,5 @@
     <link href="{base_url()}assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="{base_url()}assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <link href="{base_url()}assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="{base_url()}assets/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="{base_url()}assets/dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
     <link href="{base_url()}assets/css/web.css" rel="stylesheet" type="text/css" />

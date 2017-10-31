@@ -45,7 +45,11 @@
                         {foreach $data.page_list -> result() as $row}
                         <tr>
                           <td>{$row->id}</td>
-                          <td>{if $data.site_lang eq 'EN'}{$row->title_EN}{else}{$row->title_ID}{/if}</td>
+                          <td>{if $data.site_lang eq 'EN'}
+                                {$row->title_EN}
+                              {else}
+                                {$row->title_ID}
+                              {/if}</td>
                           <td>{$row->url}</td>
                           <td>
                               {if $data.site_lang eq 'EN'}

@@ -29,15 +29,17 @@ class Navbar {
 		// $this->setMenuWur();
 		//$this->setMenuReferensiDBINTEGRASI();
 		$this->setMenuNews();
+		$this->setMenuPage();
 		$this->setMenuEvent();
 		$this->setMenuAnnouncement();
+		$this->setPerson();
+		$this->setRef();
 		// $this->setMenuCampus();
 		// $this->setMenuFaculties();
 		// $this->setMenuReputation();
-		$this->setMenuMedia();
-		$this->setMenuBanner();
-		$this->setMenuInfografis();
-		$this->setMenuPage();
+		// $this->setMenuMedia();
+		// $this->setMenuBanner();
+		// $this->setMenuInfografis();
 		$this->setMainMenu();
 		$this->setMenuLink();
 		$this->setMenuIncidental();
@@ -204,7 +206,6 @@ class Navbar {
 											)
 							);
 	}
-	
 	private function setMenuNews(){
 		$this->menu['news']=array("name"=>$this->controller->lang->line('navigation.navbar.news'),
 							"url"=>base_url()."news",
@@ -262,6 +263,42 @@ class Navbar {
 												"list"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.announcement.list'),
 												"url"=>base_url()."announcement",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												)
+											)
+							);
+	}
+	private function setPerson(){
+		$this->menu['person']=array("name"=>$this->controller->lang->line('navigation.navbar.person'),
+							"url"=>base_url()."person",
+							"status"=>"", 
+							"class"=>"glyphicon glyphicon-file",
+							"submenu"=>array(
+												"add"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.person.add'),
+												"url"=>base_url()."person/add",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												),
+												"list"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.person.list'),
+												"url"=>base_url()."person",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												)
+											)
+							);
+	}
+	private function setRef(){
+		$this->menu['ref']=array("name"=>$this->controller->lang->line('navigation.navbar.ref'),
+							"url"=>base_url()."person",
+							"status"=>"", 
+							"class"=>"glyphicon glyphicon-book",
+							"submenu"=>array(
+												"add"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.ref.person'),
+												"url"=>base_url()."referensi/category",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												)

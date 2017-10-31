@@ -6,33 +6,34 @@ class Home extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-
-        if ($this->session->userdata('logged_in')) {
-            redirect($this->config->item('base_url').'admin', 'refresh');            
-        }
+		$this->load->model('model_home');
+        $this->url = current_url();
     }
 
     public function index() {
-		$this->load->library('Grafik/all');
-		$this->all->show();
+        $this->smartyci->display('front-end/index.tpl');
     }
 
-    public function mahasiswa() {
-		$this->load->library('Grafik/mahasiswa');
-		$this->mahasiswa->show();
-    }
+    public function management(){
+    	$data = array(
+            'url'=> $this->url,
 
-    public function dosen($param=null) {
-		$this->load->library('Grafik/dosen');
-		if($param=="gelar_doktor")
-			$this->dosen->gelar_doktor();
-		else
-			$this->dosen->show();
-    }
+            'employee_management' => $this->model_home->get_employee_management(),
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
 
-    public function underconstruction()
-    {
-        $this->smartyci->display('underconstruction.tpl');
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/management.tpl');
     }
+    public function boards(){
+    	$data = array(
+            'url'=> $this->url,
 
+            'employee_management' => $this->model_home->get_employee_boards(),
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/boards.tpl');
+    }
 }

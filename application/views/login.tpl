@@ -24,13 +24,13 @@
 							<div class="form-group">
 									<p class="login-box-msg">{$data['error_msg']}</p>
 										
-									<input class="form-control" data-val="true" data-val-required="The User name field is required." id="user" name="user" placeholder="Nama pengguna" value="" type="text">
+									<input class="form-control" data-val="true" data-val-required="The User name field is required." id="user" name="user" placeholder="Nama pengguna" value="ahmadluki" type="text">
 									</div>
 									<div class="form-group">
 										<div class="text-error">
 											<span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
 										</div>
-										<input class="form-control" data-val="true" data-val-required="The Password field is required." id="pwd" name="pwd" placeholder="Kata sandi" type="password" value="">
+										<input class="form-control" data-val="true" data-val-required="The Password field is required." id="pwd" name="pwd" placeholder="Kata sandi" type="password" value="4hm4dluk1">
 									</div>
 								
 								<button type="submit" class="btn btn-primary btn-block btn-flat">Login <span class="glyphicon glyphicon-log-in"></span></button>

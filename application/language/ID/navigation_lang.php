@@ -70,6 +70,14 @@ $lang['navigation.navbar.referensi.strata'] = 'Strata';
 $lang['navigation.navbar.news'] = 'Berita';
 $lang['navigation.navbar.news.add'] = 'Tambah Berita';
 $lang['navigation.navbar.news.list'] = 'List Berita';
+
+$lang['navigation.navbar.person'] = 'Manajement Karyawan';
+$lang['navigation.navbar.person.add'] = 'Tambah Karyawan';
+$lang['navigation.navbar.person.list'] = 'List Karywan';
+
+$lang['navigation.navbar.ref'] = 'Referensi';
+$lang['navigation.navbar.ref.person'] = 'Kategori Karyawan';
+
 $lang['navigation.navbar.event'] = 'Kegiatan';
 $lang['navigation.navbar.event.add'] = 'Tambah Kegiatan';
 $lang['navigation.navbar.event.list'] = 'List Kegiatan';

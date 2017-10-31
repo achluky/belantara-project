@@ -302,5 +302,11 @@ class Model_referensi extends CI_Model {
 		$result	 = $this->db->get()->result_array();
         return (isset($result[0])?$result[0]:array("ID"=>null));
     }
+
+    public function get_category(){
+        $sql = "select * from ref_category_employee ORDER BY id DESC";
+        $result = $this->db->query($sql);
+        return $result;
+    }
 }
 

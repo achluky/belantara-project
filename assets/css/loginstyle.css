@@ -117,8 +117,9 @@ Forms
 .form-title {background-color: rgba(0,0,0,0.5); color: #FFF; text-align: center; padding: 25px 0;}
 .form-title h2 {margin-bottom: 0; font-size: 22px;}
 .form-body {
-padding: 30px;
-background-color:#226ee8;
+    padding: 30px;
+    /*background-color:#226ee8;*/
+    background-color:rgba(17, 134, 49, 0.56);
 }
 .form-body p {
 /* color: rgba(255,255,255,0.6); */

@@ -15,7 +15,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}news" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>50</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.news')}</strong></p>
@@ -29,7 +29,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}event" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.event')}</strong></p>
@@ -43,7 +43,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}announcement" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"/></h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.announcment')}</strong></p>
@@ -58,7 +58,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}banner" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.banner')}</strong></p>
@@ -72,7 +72,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}page" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.page')}</strong></p>
@@ -86,7 +86,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}link" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.link')}</strong></p>
@@ -100,7 +100,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}link" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.menu')}</strong></p>
@@ -114,7 +114,7 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}incidental" class="small-box-footer">
-                  <div class="small-box bg-blue">
+                  <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.incidental')}</strong></p>

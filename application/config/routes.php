@@ -49,23 +49,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'login';
+$route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
 $route['underconstruction'] = 'home/underconstruction';
-
 $route['news/en/(:num)/(:num)/(:any)/(:any)'] = 'news/post/EN/$1/$2/$3/$4';
 $route['news/id/(:num)/(:num)/(:any)/(:any)'] = 'news/post/ID/$1/$2/$3/$4';
 $route['event/en/(:num)/(:num)/(:any)/(:any)'] = 'event/post/EN/$1/$2/$3/$4';
 $route['event/id/(:num)/(:num)/(:any)/(:any)'] = 'event/post/ID/$1/$2/$3/$4';
 $route['announcement/en/(:num)/(:num)/(:any)/(:any)'] = 'announcement/post/EN/$1/$2/$3/$4';
 $route['announcement/id/(:num)/(:num)/(:any)/(:any)'] = 'announcement/post/ID/$1/$2/$3/$4';
-
 $route['event/sitemap\.xml'] = "event/sitemap";
 $route['news/sitemap\.xml'] = "news/sitemap";
 $route['announcement/sitemap\.xml'] = "announcement/sitemap";
-
 $route['staff/d/(:any)'] = 'staff/detail/$1';
-
 $route['view/(:any)'] = 'view/index/$1';
+
+
+// front end
+$route['management'] = "home/management";
+$route['boards'] = "home/boards";

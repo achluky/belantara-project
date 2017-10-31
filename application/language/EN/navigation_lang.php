@@ -68,10 +68,21 @@ $lang['navigation.navbar.referensi.strata'] = 'Strata';
 $lang['navigation.navbar.news'] = 'News Management';
 $lang['navigation.navbar.news.add'] = 'Add News';
 $lang['navigation.navbar.news.list'] = 'List News';
+
+$lang['navigation.navbar.person'] = 'Employe Manajement';
+$lang['navigation.navbar.person.add'] = 'Tambah Employe';
+$lang['navigation.navbar.person.list'] = 'List Employe';
+
+
+$lang['navigation.navbar.ref'] = 'References';
+$lang['navigation.navbar.ref.person'] = 'Employee Category';
+
+
+
 $lang['navigation.navbar.event'] = 'Event Management';
 $lang['navigation.navbar.event.add'] = 'Add Event';
 $lang['navigation.navbar.event.list'] = 'List Event';
-$lang['navigation.navbar.announcement'] = 'Announcement Management';
+$lang['navigation.navbar.announcement'] = 'Announcement Man.';
 $lang['navigation.navbar.announcement.add'] = 'Add Announcement';
 $lang['navigation.navbar.announcement.list'] = 'List Announcement';
 $lang['navigation.navbar.banner'] = 'Banner Images Management';

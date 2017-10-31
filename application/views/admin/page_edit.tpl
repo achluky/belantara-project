@@ -139,6 +139,7 @@
                             update
                         </button>
                     </div>
+                    <br/>
                     <!-- /.box-footer -->
                 </form>
             </div>
