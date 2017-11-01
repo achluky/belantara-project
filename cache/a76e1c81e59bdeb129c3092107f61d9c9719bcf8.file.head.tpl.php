@@ -1,18 +1,47 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 11:11:40
+         compiled from "application/views/front-end/head.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:50686149359f94151ed6533-15884671%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'a76e1c81e59bdeb129c3092107f61d9c9719bcf8' => 
+    array (
+      0 => 'application/views/front-end/head.tpl',
+      1 => 1509531088,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '50686149359f94151ed6533-15884671',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f94151ee4338_61718786',
+  'variables' => 
+  array (
+    'data' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_59f94151ee4338_61718786')) {function content_59f94151ee4338_61718786($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INSPIRO" />
     <meta name="description" content="Themeforest Template Polo">
-    <link rel="stylesheet" type="text/css" href="{base_url()}assets/front-end/fonts/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>
+assets/front-end/fonts/flaticon.css">
     <!-- Document title -->
     <title>BELANTARA FOUNDATION</title>
     <!-- Stylesheets & Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="{base_url()}assets/front-end/css/plugins.css" rel="stylesheet">
-    <link href="{base_url()}assets/front-end/css/style.css" rel="stylesheet">
-    <link href="{base_url()}assets/front-end/css/responsive.css" rel="stylesheet"> 
+    <link href="<?php echo base_url();?>
+assets/front-end/css/plugins.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>
+assets/front-end/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>
+assets/front-end/css/responsive.css" rel="stylesheet"> 
 </head>
 <body class="">
     <div class="no-page-loader"></div>
@@ -24,8 +53,10 @@
                 <div class="container">
                     <!--Logo-->
                     <div id="logo">
-                        <a href="index.html" class="logo" data-dark-logo="{base_url()}assets/front-end/images/logo-dark.png">
-                            <img src="{base_url()}assets/front-end/images/logo.png" alt="Polo Logo">
+                        <a href="index.html" class="logo" data-dark-logo="<?php echo base_url();?>
+assets/front-end/images/logo-dark.png">
+                            <img src="<?php echo base_url();?>
+assets/front-end/images/logo.png" alt="Polo Logo">
                         </a>
                     </div>
                     <!--End: Logo-->
@@ -38,8 +69,14 @@
                     <!--end: Top Search Form-->
                     <!--Header Extras-->
                     <div class="header-extras" style=" line-height: 75px;">
-                        <a href="{base_url()}lang/s/ID?url={$data.url}"><img src="{base_url()}assets/front-end/images/id.png"></a>
-                        <a href="{base_url()}lang/s/EN?url={$data.url}"><img src="{base_url()}assets/front-end/images/gb.png"></a>
+                        <a href="<?php echo base_url();?>
+lang/s/ID?url=<?php echo $_smarty_tpl->tpl_vars['data']->value['url'];?>
+"><img src="<?php echo base_url();?>
+assets/front-end/images/id.png"></a>
+                        <a href="<?php echo base_url();?>
+lang/s/EN?url=<?php echo $_smarty_tpl->tpl_vars['data']->value['url'];?>
+"><img src="<?php echo base_url();?>
+assets/front-end/images/gb.png"></a>
                     </div>
                     <!--end: Header Extras-->
 
@@ -91,20 +128,28 @@
                         <div class="container">
                             <nav>
                                 <ul>
-                                    <li><a href="{base_url()}">Home</a></li>
+                                    <li><a href="<?php echo base_url();?>
+">Home</a></li>
                                     <li class="dropdown"> <a href="#">About</a>
                                         <ul class="dropdown-menu">
-                                            <li> <a href="{base_url()}about-us">About Us</a> </li>
-                                            <li> <a href="{base_url()}management">Our Management</a> </li>
-                                            <li> <a href="{base_url()}boards">Our Boards</a> </li>
-                                            <li><a href="{base_url()}our-program">Our Program</a></li>
-                                            <li><a href="{base_url()}grant-distribution-area">Grant Distribution Area</a></li>
+                                            <li> <a href="<?php echo base_url();?>
+about-us">About Us</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+management">Our Management</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+boards">Our Boards</a> </li>
+                                            <li><a href="<?php echo base_url();?>
+our-program">Our Program</a></li>
+                                            <li><a href="<?php echo base_url();?>
+grant-distribution-area">Grant Distribution Area</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"> <a href="#">Programs</a>
                                         <ul class="dropdown-menu">
-                                            <li> <a href="{base_url()}our-approach">Our Approach</a> </li>
-                                            <li> <a href="{base_url()}advisory-committee">Advisory Committee</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+our-approach">Our Approach</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+advisory-committee">Advisory Committee</a> </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"> <a href="#">Projects</a></li>
@@ -119,4 +164,4 @@
                     <!--end: Navigation-->
                 </div>
             </div>
-        </header>
+        </header><?php }} ?>

@@ -1,10 +1,10 @@
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
-        <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/HistoryH02Nm_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
+        <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/OurPeopleH02_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
             <div class="container">
                 <div class="page-title">
-                    <h1>OUR MANAGEMENT</h1>
+                    <h1>ADVISORY BOARDS</h1>
                 </div>
             </div>
         </section>
@@ -22,7 +22,9 @@
                 </nav>
                 <!-- end: Portfolio Filter -->
                 <div class="heading heading-center p-t-30">
-                <h3>The Foundation’s Management Team is responsible for the day to day operation and management of Belantara’s conservation, restoration, and community development activities and projects.</h3></div>
+                <h3>The Advisory Committee is a group of respected and experienced individuals, selected from a broad range of backgrounds and groups.
+They are passionate about the vision and mission of the Belantara Foundation, and volunteer their time to help make the Foundation successful.
+One of the key roles of the Advisory Committee is to provide advice to the Governing Board about the ongoing development of the Belantara Foundation and its activities.</h3></div>
 
                 <!-- Portfolio -->
                 <div id="portfolio" class="grid-layout portfolio-4-columns" data-margin="20">

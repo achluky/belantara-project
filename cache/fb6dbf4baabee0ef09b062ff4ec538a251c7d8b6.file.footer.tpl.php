@@ -1,4 +1,25 @@
-        <!-- Footer -->
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 09:33:03
+         compiled from "application/views/front-end/footer.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:83263942059f94151ee6561-92590055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'fb6dbf4baabee0ef09b062ff4ec538a251c7d8b6' => 
+    array (
+      0 => 'application/views/front-end/footer.tpl',
+      1 => 1509525182,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '83263942059f94151ee6561-92590055',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f94151eff7e3_01487262',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_59f94151eff7e3_01487262')) {function content_59f94151eff7e3_01487262($_smarty_tpl) {?>        <!-- Footer -->
         <footer id="footer" class="footer-light">
             <div class="footer-content">
                 <div class="container">
@@ -6,7 +27,8 @@
                         <div class="col-md-4">
                             <!-- Footer widget area 1 -->
                             <div class="widget clearfix widget-contact-us">
-                                <img src="{base_url()}assets/front-end/images/logo.png" class="img-responsive" alt="">
+                                <img src="<?php echo base_url();?>
+assets/front-end/images/logo.png" class="img-responsive" alt="">
                                 <div class="social-icons social-icons-border float-left m-t-60">
                                     <ul>
                                         <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
@@ -88,32 +110,81 @@
     <a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
 
     <!--Plugins-->
-    <script src="{base_url()}assets/front-end/js/jquery.js"></script>
-    <script src="{base_url()}assets/front-end/js/plugins.js"></script>
-    <script src="{base_url()}assets/front-end/js/jquery.scrollme.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo base_url();?>
+assets/front-end/js/jquery.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo base_url();?>
+assets/front-end/js/plugins.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo base_url();?>
+assets/front-end/js/jquery.scrollme.js"><?php echo '</script'; ?>
+>
 
     <!--Template functions-->
-    <script src="{base_url()}assets/front-end/js/functions.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo base_url();?>
+assets/front-end/js/functions.js"><?php echo '</script'; ?>
+>
 
     <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-    <link rel="stylesheet" type="text/css" href="{base_url()}assets/front-end/js/plugins/revolution/css/settings.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{base_url()}assets/front-end/js/plugins/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="{base_url()}assets/front-end/js/plugins/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/css/navigation.css">
 
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/jquery.themepunch.tools.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/jquery.themepunch.revolution.min.js"><?php echo '</script'; ?>
+>
 
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="{base_url()}assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/extensions/revolution.extension.video.min.js"><?php echo '</script'; ?>
+>
 
-    <script type="text/javascript">
+    <?php echo '<script'; ?>
+ type="text/javascript">
         var tpj = jQuery;
 
         var revapi30;
@@ -123,7 +194,8 @@
             } else {
                 revapi30 = tpj("#rev_slider_30_1").show().revolution({
                     sliderType: "standard",
-                    jsFileLocation: "{base_url()}assets/front-end/js/plugins/revolution/js/",
+                    jsFileLocation: "<?php echo base_url();?>
+assets/front-end/js/plugins/revolution/js/",
                     sliderLayout: "fullscreen",
                     dottedOverlay: "none",
                     delay: 9000,
@@ -193,8 +265,10 @@
             }
         }); 
 
-    </script>
+    <?php echo '</script'; ?>
+>
 
 </body>
 
 </html>
+<?php }} ?>

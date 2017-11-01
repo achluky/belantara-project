@@ -1,14 +1,14 @@
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
-        <section id="page-title" style="background-image:url({base_url()}assets/front-end/images/parallax/5.jpg);">
+        <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/HistoryH02Nm_BelantaraFoundation_1920x600px.jpg');background-size: cover;
+background-position: center bottom;">
             <div class="container">
                 <div class="page-title">
                     <h1>Our Boards</h1>
                 </div>
             </div>
         </section>
-
         <section id="page-content">
             <div class="container">
 
@@ -17,7 +17,7 @@
                     <ul>
                         <li class="active"><a href="#" data-category="*">Show All</a></li>
                         {foreach $data.boards_category -> result() as $row}
-                        <li><a href="#" data-category=".{$row->sub_category}">{$row->sub_category}</a></li>
+                        <li><a href="#" data-category=".{$row->id}">{$row->category}</a></li>
                         {/foreach}
                     </ul>
                     <div class="grid-active-title">Show All</div>
@@ -32,15 +32,15 @@
                     <!-- portfolio item -->
 
                     {foreach $data.employee_boards -> result() as $row}
-                    <div class="portfolio-item no-overlay img-zoom {$row->sub_category} p-b-50">
+                    <div class="portfolio-item no-overlay img-zoom {$row->idcategory} p-b-50">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
-                                <a href="#"><img src="{base_url()}document/images/employee/{$row->image}" alt="" class="img-circle"></a>
+                                <img src="{base_url()}document/images/employee/{$row->image}" alt="" class="img-circle">
                             </div>
                             <div class="portfolio-description">
                                 <a href="portfolio-page-grid-gallery.html">
-                                    <h3>{$row->name}</h3>
-                                    <span>{$row->jabatan}</span>
+                                    <h3><a href="{base_url()}home/boardsdetail/{$row->id}" data-lightbox="ajax">{$row->name}</a></h3>
+                                    <span>{$row->category} - {$row->jabatan}</span>
                                 </a>
                             </div>
                         </div>
