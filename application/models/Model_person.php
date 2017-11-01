@@ -27,4 +27,11 @@ class Model_person extends CI_Model {
         $this->db->insert('person',$data);
         return TRUE;
     }
+
+    public function get_page_by_id($id){
+        $this->db->select('*');
+        $this->db->from('person');
+        $this->db->where('idPerson',$id);
+        return $this->db->get()->row();
+    }
 }

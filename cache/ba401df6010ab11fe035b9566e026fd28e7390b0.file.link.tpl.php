@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:38:27
-         compiled from "application/views/admin/person.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:187510706459f8aa480627d5-55910447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:40:23
+         compiled from "application/views/admin/link.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:21664606759f9dcd7c595b6-61202815%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a837b59fa6db1e1c8c6fd7fed1baa17431acb1ae' => 
+    'ba401df6010ab11fe035b9566e026fd28e7390b0' => 
     array (
-      0 => 'application/views/admin/person.tpl',
-      1 => 1509547104,
+      0 => 'application/views/admin/link.tpl',
+      1 => 1504155499,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '187510706459f8aa480627d5-55910447',
+  'nocache_hash' => '21664606759f9dcd7c595b6-61202815',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa480de8a2_56574416',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9dcd7ce20d0_69879592',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f8aa480de8a2_56574416')) {function content_59f8aa480de8a2_56574416($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59f9dcd7ce20d0_69879592')) {function content_59f9dcd7ce20d0_69879592($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -81,7 +81,15 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                     <!-- konten nantinya disini -->
                     
       <div class="row"> 
+
           <div class="col-xs-12">
+              <form action="<?php echo base_url();?>
+link/update" name="" method="POST">
+                <a href="<?php echo base_url();?>
+link/add"class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Add Link</a>
+                <a href="<?php echo base_url();?>
+link/update"><button class="btn btn-primary"><i class="glyphicon glyphicon-floppy-save"></i> Update Sorted Link</button></a>
+                <br/><br/>
 
                 <?php if (isset($_smarty_tpl->tpl_vars['data']->value['alert'])&&($_smarty_tpl->tpl_vars['data']->value['alert']!='')) {?>
                 <div class="callout callout-info">
@@ -90,65 +98,31 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 </p>
                 </div>
                 <?php }?>
-                
-                <div class="box box-primary">
-                  <div class="box-header">
-                    <h3 class="box-title">Employee List</h3>
-                    <a href="<?php echo base_url();?>
-person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Employee Data</a>
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th width="20px;">#id</th>
-                          <th width="200px;">Nama</th>
-                          <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub-kategori Boards</th>
-                          <th width="80px;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['person_list']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+
+                <div id="sortable">
+                <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['data']->value['link']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
-                        <tr>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
-</td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
-</td>
-
-                          <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
-</td>
-                          <?php } else { ?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
-</td>
-                          <?php }?>
-
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</td>
-                          <td>
-                              <a href="<?php echo base_url();?>
-person/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
-"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="<?php echo base_url();?>
-person/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
-" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
-                          </td>
-                        </tr>
-                        <?php } ?>
-                      </tbody>
-                    </table>
+                  <div class="box box-primary">
+                    <div class="box-header">
+                      <span class="glyphicon glyphicon-link"></span>
+                      <?php if ($_smarty_tpl->tpl_vars['data']->value['lang']=="ID") {?>
+                      <h3 class="box-title"><?php echo $_smarty_tpl->tpl_vars['row']->value->nama_links_ID;?>
+</h3>
+                      <?php } else { ?>
+                      <h3 class="box-title"><?php echo $_smarty_tpl->tpl_vars['row']->value->nama_links_EN;?>
+</h3>
+                      <?php }?>
+                      <input type="hidden" name="pos[]" value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id_links;?>
+">
+                    </div>
                   </div>
-                  <!-- /.box-body -->
+                <?php } ?>
                 </div>
-                <!-- /.box -->
+              </form>
           </div>
-          <!-- /.col -->
       </div>
 
                 </section><!-- /.content -->
@@ -196,21 +170,13 @@ assets/dist/js/app.min.js" type="text/javascript"><?php echo '</script'; ?>
 
 <!-- Addons Scripts -->
 
-<!-- DATA TABELS SCRIPT -->
 <?php echo '<script'; ?>
- src="<?php echo base_url();?>
-assets/plugins/datatables/jquery.dataTables.js" type="text/javascript"><?php echo '</script'; ?>
 >
-<?php echo '<script'; ?>
- src="<?php echo base_url();?>
-assets/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"><?php echo '</script'; ?>
->
-  <?php echo '<script'; ?>
->
-      $(function () {
-        $("#example1").DataTable();
-      });
-    <?php echo '</script'; ?>
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+<?php echo '</script'; ?>
 >
 
 

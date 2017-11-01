@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:22:58
-         compiled from "application/views/admin/person_add.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:173201079759f8aa47084a49-92058556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:12:13
+         compiled from "application/views/admin/news_add.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:40944112959f9d63d2d0b30-10917606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'e310687950fd91c59f8ae5f03aa20c431f9b96de' => 
+    '3063bf5d26d63a76e0a3b76cf8113c537c9fe5e9' => 
     array (
-      0 => 'application/views/admin/person_add.tpl',
-      1 => 1509546177,
+      0 => 'application/views/admin/news_add.tpl',
+      1 => 1504155499,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -17,24 +17,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '173201079759f8aa47084a49-92058556',
+  'nocache_hash' => '40944112959f9d63d2d0b30-10917606',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa4711b0b9_39690433',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9d63d3555e9_26539633',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f8aa4711b0b9_39690433')) {function content_59f8aa4711b0b9_39690433($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59f9d63d3555e9_26539633')) {function content_59f9d63d3555e9_26539633($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
         
+<link rel="stylesheet" href="<?php echo base_url();?>
+assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>
+assets/plugins/jasny-bootstrap/css/jasny-bootstrap.min.css" media="screen">
 
     </head>
     <body class="skin-blue fixed">
@@ -95,89 +99,106 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 
                 <div class="box box-primary">
                   <div class="box-header">
-                    <h3 class="box-title">Add Employee</h3>
+                    <h3 class="box-title">Add News</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body box-primary">
+
                       <form role="form" data-toggle="validator" class="form-horizontal" action="<?php echo base_url();?>
-person/save" name="" method="POST" enctype="multipart/form-data">
+news/save" name="" method="POST" enctype="multipart/form-data">
                         
                         <div class="box-body">
                             <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Nama</label>
+                              <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
                               <div class="col-sm-10">
-                                <input type="input" class="form-control" id="nama" name="nama" placeholder="Nama" value="" required>
+                                <input type="input" class="form-control" id="judul" name="judul_en" placeholder="Judul English" value="" required>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Jabatan</label>
+                              <label for="inputEmail3" class="col-sm-2 control-label">&nbsp;</label>
                               <div class="col-sm-10">
-                                <input type="input" class="form-control" id="nama" name="jabatan" placeholder="Jabatan" value="" required>
+                                <input type="input" class="form-control" id="judul" name="judul_id" placeholder="Judul Indonesia" value="" required>
                               </div>
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Ringkasan</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                <textarea class="form-control " rows="3" placeholder="Ringkasan English" name="ringkasan_en" required></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control" rows="3" placeholder="Ringkasan Indonesia" name="ringkasan_id" required></textarea>
                               </div>
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Foto</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Isi</label>
                               <div class="col-sm-10">
-                                <input type="file" class="form-control" id="keyword" placeholder="Keyword English" name="foto" value="" required>
+                                <textarea class="form-control isi_en" rows="10" placeholder="Isi English" name="isi_en" required></textarea>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['category'];?>
-</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <div class="col-sm-10">
-                                <select class="form-control" name="idcategory" readonly>
-                                  <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['category_employee']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-?>
-                                    <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
-                                    <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
-</option>
-                                    <?php } else { ?>
-                                    <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
-</option>
-                                    <?php }?>
-                                  <?php } ?>
-                                </select>
+                                <textarea class="form-control isi_id" rows="10" placeholder="Isi Indonesia" name="isi_id" required></textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Keyword</label>
+                              <div class="col-sm-10">
+                                <input type="input" class="form-control" id="keyword" placeholder="Keyword English" name="keyword_en" value="" required>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-kategori Boards</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <div class="col-sm-10">
-                                <select class="form-control" name="idsubcategory" readonly>
-                                  <option value="5">-Select-</option>
-                                  <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['sub_category_employee']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-?>
-                                  <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</option>
-                                  <?php } ?>
-                                </select>
+                                <input type="input" class="form-control" id="keyword" placeholder="Keyword Indonesia" name="keyword_id" value="" required>
                               </div>
                             </div>
-                        <!-- /.box-body -->
+                            
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Lokasi</label>
+                              <div class="col-sm-10">
+                                <input type="input" class="form-control" id="lokasi" placeholder="Lokasi" name="lokasi" value="">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Narasumber</label>
+                              <div class="col-sm-10">
+                                <input type="input" class="form-control" id="narasumber" placeholder="Narasumber" name="narasumber" value="">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Image</label>
+                              <div class="col-sm-10">
+                                    
+                                    <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                      <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> 
+                                      <span class="fileinput-filename"></span>
+                                      </div>
+                                      <span class="input-group-addon btn btn-default btn-file">
+                                      <span class="fileinput-new">Select file</span>
+                                      <span class="fileinput-exists">Change</span>
+                                      <input type="file" name="image" value="" required></span>
+                                      <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                    </div>
+                                    <i class="text-danger">Maksimal ukuran foto 360x240 pixel dan berekstensi .jpg</i>
+                              </div>
+                            </div>
                         </div>
+                        <!-- /.box-body -->
+
                         <div class="box-footer">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <a href="<?php echo base_url();?>
-page">Cancel</a>
+news">Cancel</a>
                               <button type="submit" class="btn btn-info pull-right">Save</button>
                         </div><!-- /.box-footer -->
-                        <br/>
+
                       </form>
 
                   </div>
@@ -235,6 +256,14 @@ assets/dist/js/app.min.js" type="text/javascript"><?php echo '</script'; ?>
 
 <?php echo '<script'; ?>
  src="<?php echo base_url();?>
+assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"><?php echo '</script'; ?>
+>
+<!-- <?php echo '<script'; ?>
+ src="<?php echo base_url();?>
+assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"><?php echo '</script'; ?>
+> -->
+<?php echo '<script'; ?>
+ src="<?php echo base_url();?>
 assets/plugins/ckeditor/ckeditor.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
@@ -244,8 +273,16 @@ assets/js/validator.min.js" type="text/javascript" charset="utf-8"><?php echo '<
 <?php echo '<script'; ?>
 >
     $(function () {
-        CKEDITOR.replace('content_EN');
-        CKEDITOR.replace('content_ID');
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('isi_en', {
+            filebrowserBrowseUrl: '<?php echo base_url();?>
+assets/plugins/filemanager/index.html'
+        });
+
+        CKEDITOR.replace('isi_id'); 
+        // $(".textarea").wysihtml5();
+        $(".fileinput").fileinput();
     });
   <?php echo '</script'; ?>
 >

@@ -47,6 +47,9 @@ class Person extends CI_Controller {
                 'Dashboard'=>base_url().'admin',
                 'Employee list' => base_url().'person'
             ),
+            'label' => array(
+                'category' => $this->lang->line('label.tabel.category_employee')
+            ),
             'category_employee' => $this->model_person->get_listcategory(),
             'sub_category_employee' => $this->model_person->get_listsub_category(),
             'title'=> 'Employee <small>management</small>',
@@ -117,7 +120,7 @@ class Person extends CI_Controller {
             );
         
         if (isset($_GET['n']) and $_GET['n'] != NULL){
-            $this->model_page->delete($id);
+            $this->model_person->delete($id);
             $alert = url_title("delete succses !");
             redirect('page/?n='.$alert,'refresh');   
         }
@@ -132,11 +135,16 @@ class Person extends CI_Controller {
             'alert' => isset($_GET['n'])?$_GET['n']:'',
             'breadcrumb' => array(
                 'Dashboard'=>base_url().'admin',
-                'Page list' => base_url().'page',
-                'page' => base_url()
+                'Employee list' => base_url().'page',
+                'Employee' => base_url()
                 ),
-            'page'=> $this->model_page->get_page_by_id($id),
-            'title'=> 'Page <small>management</small>',
+            'label' => array(
+                'category' => $this->lang->line('label.tabel.category_employee')
+            ),
+            'employee'=> $this->model_person->get_page_by_id($id),
+            'category_employee' => $this->model_person->get_listcategory(),
+            'sub_category_employee' => $this->model_person->get_listsub_category(),
+            'title'=> 'Employee <small>management</small>',
             'last_login' => $this->sess['last_login'],
             'session' => $this->sess['username'],
             'site_lang'=>$this->session->userdata('site_lang'),
@@ -160,7 +168,7 @@ class Person extends CI_Controller {
 
         $id = $this->input->post('id');
         //print_r($data);
-        if($this->model_page->update_page($id,$data)) {
+        if($this->model_person->update_page($id,$data)) {
             $alert = url_title("Update succses !");
             redirect('page/edit/'.$id.'?n='.$alert,'refresh');
         }else{

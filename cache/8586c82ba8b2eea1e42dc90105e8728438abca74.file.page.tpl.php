@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:38:27
-         compiled from "application/views/admin/person.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:187510706459f8aa480627d5-55910447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 14:55:27
+         compiled from "application/views/admin/page.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:169655168959f9d24fa164e9-01202191%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a837b59fa6db1e1c8c6fd7fed1baa17431acb1ae' => 
+    '8586c82ba8b2eea1e42dc90105e8728438abca74' => 
     array (
-      0 => 'application/views/admin/person.tpl',
-      1 => 1509547104,
+      0 => 'application/views/admin/page.tpl',
+      1 => 1509378275,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '187510706459f8aa480627d5-55910447',
+  'nocache_hash' => '169655168959f9d24fa164e9-01202191',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa480de8a2_56574416',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9d24faa3e96_26458328',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f8aa480de8a2_56574416')) {function content_59f8aa480de8a2_56574416($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59f9d24faa3e96_26458328')) {function content_59f9d24faa3e96_26458328($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -93,9 +93,9 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                 
                 <div class="box box-primary">
                   <div class="box-header">
-                    <h3 class="box-title">Employee List</h3>
+                    <h3 class="box-title">Page List</h3>
                     <a href="<?php echo base_url();?>
-person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Employee Data</a>
+page/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Page</a>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
@@ -103,40 +103,45 @@ person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon gly
                       <thead>
                         <tr>
                           <th width="20px;">#id</th>
-                          <th width="200px;">Nama</th>
-                          <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub-kategori Boards</th>
-                          <th width="80px;">Action</th>
+                          <th width="400px;">Judul</th>
+                          <th>Url</th>
+                          <th width="40px;">Keyword</th>
+                          <th width="140px;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['person_list']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['data']->value['page_list']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
                         <tr>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
-</td>
+                          <td><?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=='EN') {?>
+                                <?php echo $_smarty_tpl->tpl_vars['row']->value->title_EN;?>
 
-                          <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
-</td>
-                          <?php } else { ?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
-</td>
-                          <?php }?>
+                              <?php } else { ?>
+                                <?php echo $_smarty_tpl->tpl_vars['row']->value->title_ID;?>
 
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
+                              <?php }?></td>
+                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->url;?>
 </td>
                           <td>
+                              <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=='EN') {?>
+                                <?php echo $_smarty_tpl->tpl_vars['row']->value->keyword_EN;?>
+
+                              <?php } else { ?>
+                                <?php echo $_smarty_tpl->tpl_vars['row']->value->keyword_ID;?>
+
+                              <?php }?>
+                          </td>
+                          <td>
                               <a href="<?php echo base_url();?>
-person/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+page/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
 "  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
                               <a href="<?php echo base_url();?>
-person/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+page/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
 " class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>

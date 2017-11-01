@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:22:58
-         compiled from "application/views/admin/person_add.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:173201079759f8aa47084a49-92058556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:53:22
+         compiled from "application/views/admin/person_edit.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:193288468159f9dae98ddeb8-07239585%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'e310687950fd91c59f8ae5f03aa20c431f9b96de' => 
+    '690be9b11330f6da044b5436641e3d5f1c4708e5' => 
     array (
-      0 => 'application/views/admin/person_add.tpl',
-      1 => 1509546177,
+      0 => 'application/views/admin/person_edit.tpl',
+      1 => 1509548001,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '173201079759f8aa47084a49-92058556',
+  'nocache_hash' => '193288468159f9dae98ddeb8-07239585',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa4711b0b9_39690433',
+  'unifunc' => 'content_59f9dae9980624_02725539',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f8aa4711b0b9_39690433')) {function content_59f8aa4711b0b9_39690433($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59f9dae9980624_02725539')) {function content_59f9dae9980624_02725539($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -95,31 +95,44 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 
                 <div class="box box-primary">
                   <div class="box-header">
-                    <h3 class="box-title">Add Employee</h3>
+                    <h3 class="box-title">Edit Employee</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body box-primary">
                       <form role="form" data-toggle="validator" class="form-horizontal" action="<?php echo base_url();?>
-person/save" name="" method="POST" enctype="multipart/form-data">
+person/update" name="" method="POST" enctype="multipart/form-data">
                         
                         <div class="box-body">
+                            <input name="id" hidden value="<?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->idPerson;?>
+">
                             <div class="form-group">
                               <label for="inputEmail3" class="col-sm-2 control-label">Nama</label>
                               <div class="col-sm-10">
-                                <input type="input" class="form-control" id="nama" name="nama" placeholder="Nama" value="" required>
+                                <input type="input" class="form-control" id="nama" name="nama" placeholder="Nama" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->name;?>
+" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label for="inputEmail3" class="col-sm-2 control-label">Jabatan</label>
                               <div class="col-sm-10">
-                                <input type="input" class="form-control" id="nama" name="jabatan" placeholder="Jabatan" value="" required>
+                                <input type="input" class="form-control" id="nama" name="jabatan" placeholder="Jabatan" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->jabatan;?>
+" required>
                               </div>
                             </div>
 
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required><?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->deskripsi_ID;?>
+</textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi" required><?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->deskripsi_EN;?>
+</textarea>
                               </div>
                             </div>
 
@@ -127,6 +140,13 @@ person/save" name="" method="POST" enctype="multipart/form-data">
                               <label for="inputPassword3" class="col-sm-2 control-label">Foto</label>
                               <div class="col-sm-10">
                                 <input type="file" class="form-control" id="keyword" placeholder="Keyword English" name="foto" value="" required>
+                                <br/>
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<?php echo base_url();?>
+document/images/employee/<?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->image;?>
+" alt="" class="img-thumbnail" width="150px;"></a>
+                                </div>
+
                               </div>
                             </div>
                             <div class="form-group">
@@ -141,11 +161,13 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
                                     <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
                                     <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
+" <?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->idcategory==$_smarty_tpl->tpl_vars['row']->value->id ? "selected" : '';?>
+ ><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
 </option>
                                     <?php } else { ?>
                                     <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
+" <?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->idcategory==$_smarty_tpl->tpl_vars['row']->value->id ? "selected" : '';?>
+ ><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
 </option>
                                     <?php }?>
                                   <?php } ?>
@@ -163,7 +185,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
                                   <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
+" <?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->idsubcategory==$_smarty_tpl->tpl_vars['row']->value->id ? "selected" : '';?>
+ ><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
 </option>
                                   <?php } ?>
                                 </select>

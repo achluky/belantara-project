@@ -63,17 +63,21 @@
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Kategori</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.category}</label>
                               <div class="col-sm-10">
                                 <select class="form-control" name="idcategory" readonly>
                                   {foreach $data.category_employee -> result() as $row}
-                                  <option value="{$row->id}">{$row->category}</option>
+                                    {if $data.site_lang == "ID"}
+                                    <option value="{$row->id}">{$row->category_ID}</option>
+                                    {else}
+                                    <option value="{$row->id}">{$row->category_EN}</option>
+                                    {/if}
                                   {/foreach}
                                 </select>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-Kategori Manajement</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-kategori Boards</label>
                               <div class="col-sm-10">
                                 <select class="form-control" name="idsubcategory" readonly>
                                   <option value="5">-Select-</option>

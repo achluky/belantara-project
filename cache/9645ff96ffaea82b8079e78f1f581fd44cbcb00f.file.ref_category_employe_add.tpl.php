@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:38:27
-         compiled from "application/views/admin/person.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:187510706459f8aa480627d5-55910447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:08:54
+         compiled from "application/views/admin/ref_category_employe_add.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:103890780559f9ce17c862b8-60676087%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a837b59fa6db1e1c8c6fd7fed1baa17431acb1ae' => 
+    '9645ff96ffaea82b8079e78f1f581fd44cbcb00f' => 
     array (
-      0 => 'application/views/admin/person.tpl',
-      1 => 1509547104,
+      0 => 'application/views/admin/ref_category_employe_add.tpl',
+      1 => 1509544802,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -17,24 +17,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '187510706459f8aa480627d5-55910447',
+  'nocache_hash' => '103890780559f9ce17c862b8-60676087',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa480de8a2_56574416',
+  'unifunc' => 'content_59f9ce17d1e9f4_47331274',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f8aa480de8a2_56574416')) {function content_59f8aa480de8a2_56574416($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59f9ce17d1e9f4_47331274')) {function content_59f9ce17d1e9f4_47331274($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
         
+
     </head>
     <body class="skin-blue fixed">
         <div class="wrapper">
@@ -82,7 +83,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                     
       <div class="row"> 
           <div class="col-xs-12">
-
+                
                 <?php if (isset($_smarty_tpl->tpl_vars['data']->value['alert'])&&($_smarty_tpl->tpl_vars['data']->value['alert']!='')) {?>
                 <div class="callout callout-info">
                   <h4>Info!</h4>
@@ -90,59 +91,42 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 </p>
                 </div>
                 <?php }?>
-                
+
+
                 <div class="box box-primary">
                   <div class="box-header">
-                    <h3 class="box-title">Employee List</h3>
-                    <a href="<?php echo base_url();?>
-person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Employee Data</a>
+                    <h3 class="box-title">Add Employee Category</h3>
                   </div>
                   <!-- /.box-header -->
-                  <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th width="20px;">#id</th>
-                          <th width="200px;">Nama</th>
-                          <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub-kategori Boards</th>
-                          <th width="80px;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['person_list']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-?>
-                        <tr>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
-</td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
-</td>
-
-                          <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
-</td>
-                          <?php } else { ?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
-</td>
-                          <?php }?>
-
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</td>
-                          <td>
+                  <div class="box-body box-primary">
+                      <form role="form" data-toggle="validator" class="form-horizontal" action="<?php echo base_url();?>
+referensi/category_save" name="" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="box-body">
+                            <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['category'];?>
+</label>
+                              <div class="col-sm-10">
+                                <input type="input" class="form-control" id="nama" name="category_ID" placeholder="Kategori ID" value="" required>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">&nbsp</label>
+                              <div class="col-sm-10">
+                                <input type="input" class="form-control" id="nama" name="category_EN" placeholder="Kategori EN" value="" required>
+                              </div>
+                            </div>
+                        <!-- /.box-body -->
+                        </div>
+                        <div class="box-footer">
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <a href="<?php echo base_url();?>
-person/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
-"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="<?php echo base_url();?>
-person/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
-" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
-                          </td>
-                        </tr>
-                        <?php } ?>
-                      </tbody>
-                    </table>
+referensi/category">Cancel</a>
+                              <button type="submit" class="btn btn-info pull-right">Save</button>
+                        </div><!-- /.box-footer -->
+                        <br/>
+                      </form>
+
                   </div>
                   <!-- /.box-body -->
                 </div>
@@ -196,21 +180,21 @@ assets/dist/js/app.min.js" type="text/javascript"><?php echo '</script'; ?>
 
 <!-- Addons Scripts -->
 
-<!-- DATA TABELS SCRIPT -->
 <?php echo '<script'; ?>
  src="<?php echo base_url();?>
-assets/plugins/datatables/jquery.dataTables.js" type="text/javascript"><?php echo '</script'; ?>
+assets/plugins/ckeditor/ckeditor.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="<?php echo base_url();?>
-assets/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"><?php echo '</script'; ?>
+assets/js/validator.min.js" type="text/javascript" charset="utf-8"><?php echo '</script'; ?>
 >
-  <?php echo '<script'; ?>
+<?php echo '<script'; ?>
 >
-      $(function () {
-        $("#example1").DataTable();
-      });
-    <?php echo '</script'; ?>
+    $(function () {
+        CKEDITOR.replace('content_EN');
+        CKEDITOR.replace('content_ID');
+    });
+  <?php echo '</script'; ?>
 >
 
 

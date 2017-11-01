@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 05:05:47
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:02:48
          compiled from "application/views/admin/ref_category_employe.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:157491453159f9481bd564c8-45117981%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e3361f20f4f40ae9a75a438796dce0b4fdb2a25a' => 
     array (
       0 => 'application/views/admin/ref_category_employe.tpl',
-      1 => 1509437037,
+      1 => 1509544965,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9481bdea6d0_88623342',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f9481bdea6d0_88623342',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59f9481bdea6d0_88623342')) {function content_59f9481bdea6d0_88623342($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -94,7 +94,8 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                 <div class="box box-primary">
                   <div class="box-header">
                     <h3 class="box-title">Employee Category List</h3>
-                    <a href="" class="btn btn-primary" style="float:right;" disabled><i class="glyphicon glyphicon-plus-sign"></i> Add Category</a>
+                    <a href="<?php echo base_url();?>
+referensi/category_add" class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Category</a>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
@@ -115,11 +116,20 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
                         <tr>
                           <td><?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category;?>
+                          <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
+                            <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
 </td>
+                          <?php } else { ?>
+                            <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
+</td>
+                          <?php }?>
                           <td>
-                              <a href="" class="btn btn-xs" disabled><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="" class="btn btn-xs" disabled><i class="fa fa-remove fa-fw"></i> Delete</a>
+                              <a href="<?php echo base_url();?>
+referensi/category_edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
+" class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                              <a href="<?php echo base_url();?>
+referensi/category_delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
+" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>
                         <?php } ?>

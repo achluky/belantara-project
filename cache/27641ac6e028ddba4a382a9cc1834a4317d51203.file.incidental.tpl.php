@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:38:27
-         compiled from "application/views/admin/person.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:187510706459f8aa480627d5-55910447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:40:32
+         compiled from "application/views/admin/incidental.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:91576098059f9dce06fdbe7-18206261%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a837b59fa6db1e1c8c6fd7fed1baa17431acb1ae' => 
+    '27641ac6e028ddba4a382a9cc1834a4317d51203' => 
     array (
-      0 => 'application/views/admin/person.tpl',
-      1 => 1509547104,
+      0 => 'application/views/admin/incidental.tpl',
+      1 => 1504155499,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '187510706459f8aa480627d5-55910447',
+  'nocache_hash' => '91576098059f9dce06fdbe7-18206261',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa480de8a2_56574416',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9dce0788fa6_79896634',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f8aa480de8a2_56574416')) {function content_59f8aa480de8a2_56574416($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59f9dce0788fa6_79896634')) {function content_59f9dce0788fa6_79896634($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -80,76 +80,74 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                 <section class="content">
                     <!-- konten nantinya disini -->
                     
-      <div class="row"> 
-          <div class="col-xs-12">
-
-                <?php if (isset($_smarty_tpl->tpl_vars['data']->value['alert'])&&($_smarty_tpl->tpl_vars['data']->value['alert']!='')) {?>
+    <div class="row"> 
+        <div class="col-xs-12">
+            <?php if (isset($_smarty_tpl->tpl_vars['data']->value['alert'])&&($_smarty_tpl->tpl_vars['data']->value['alert']!='')) {?>
                 <div class="callout callout-info">
-                  <h4>Info!</h4>
-                  <p><?php echo $_smarty_tpl->tpl_vars['data']->value['alert'];?>
+                    <h4>Info!</h4>
+                    <p><?php echo $_smarty_tpl->tpl_vars['data']->value['alert'];?>
 </p>
                 </div>
-                <?php }?>
-                
-                <div class="box box-primary">
-                  <div class="box-header">
-                    <h3 class="box-title">Employee List</h3>
+            <?php }?>
+
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Incidental List</h3>
                     <a href="<?php echo base_url();?>
-person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Employee Data</a>
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body">
+incidental/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add INCIDENTAL</a>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
                     <table id="example1" class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th width="20px;">#id</th>
-                          <th width="200px;">Nama</th>
-                          <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub-kategori Boards</th>
-                          <th width="80px;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['person_list']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+                        <thead>
+                            <tr>
+                                <th width="300px;"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['content_text_id'];?>
+</th>
+                                <th><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['link'];?>
+</th>
+                                <th width="100px;"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['active'];?>
+</th>
+                                <th width="150px;"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['table_action'];?>
+</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['data']->value['incidental_list']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
-                        <tr>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+                                <tr>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['row']->value->content_text_id;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['row']->value->link;?>
 </td>
-
-                          <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
-</td>
-                          <?php } else { ?>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
-</td>
-                          <?php }?>
-
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</td>
-                          <td>
-                              <a href="<?php echo base_url();?>
-person/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+                                    <td>
+                                    <?php if ($_smarty_tpl->tpl_vars['row']->value->aktif==1) {?>
+                                    Aktif
+                                    <?php } else { ?>
+                                    Non-aktif
+                                    <?php }?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo base_url();?>
+incidental/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->id_incidental;?>
 "  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="<?php echo base_url();?>
-person/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+                                        <a href="<?php echo base_url();?>
+incidental/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->id_incidental;?>
 " class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
-                          </td>
-                        </tr>
-                        <?php } ?>
-                      </tbody>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
                     </table>
-                  </div>
-                  <!-- /.box-body -->
                 </div>
-                <!-- /.box -->
-          </div>
-          <!-- /.col -->
-      </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
 
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
@@ -196,20 +194,20 @@ assets/dist/js/app.min.js" type="text/javascript"><?php echo '</script'; ?>
 
 <!-- Addons Scripts -->
 
-<!-- DATA TABELS SCRIPT -->
-<?php echo '<script'; ?>
+    <!-- DATA TABELS SCRIPT -->
+    <?php echo '<script'; ?>
  src="<?php echo base_url();?>
 assets/plugins/datatables/jquery.dataTables.js" type="text/javascript"><?php echo '</script'; ?>
 >
-<?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="<?php echo base_url();?>
 assets/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"><?php echo '</script'; ?>
 >
-  <?php echo '<script'; ?>
+    <?php echo '<script'; ?>
 >
-      $(function () {
-        $("#example1").DataTable();
-      });
+        $(function () {
+            $("#example1").dataTable();
+        });
     <?php echo '</script'; ?>
 >
 
