@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-10-31 16:44:48
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:58:19
          compiled from "application/views/front-end/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2952040359f89255bbe3e2-79976045%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '55bcd848643038d658f1acd899b44a08471f3f5d' => 
     array (
       0 => 'application/views/front-end/footer.tpl',
-      1 => 1509464375,
+      1 => 1509548271,
       2 => 'file',
     ),
   ),
@@ -74,8 +74,6 @@ assets/front-end/images/logo.png" class="img-responsive" alt="">
                                 <h4>Updates</h4>
                                 <ul class="list-icon list-icon-caret list-icon-colored">
                                     <li><a href="#">News</a></li>
-                                    <li><a href="#">Anouncement</a></li>
-                                    <li><a href="#">Home</a></li>
                                     <li><a href="#">Resources</a></li>
                                 </ul>
                             </div>

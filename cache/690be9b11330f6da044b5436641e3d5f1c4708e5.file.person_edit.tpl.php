@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:53:22
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 16:45:06
          compiled from "application/views/admin/person_edit.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:193288468159f9dae98ddeb8-07239585%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '690be9b11330f6da044b5436641e3d5f1c4708e5' => 
     array (
       0 => 'application/views/admin/person_edit.tpl',
-      1 => 1509548001,
+      1 => 1509551095,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -123,7 +123,7 @@ person/update" name="" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required><?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->deskripsi_ID;?>
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required><?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->deskripsi_ID;?>
 </textarea>
                               </div>
                             </div>
@@ -131,7 +131,7 @@ person/update" name="" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi" required><?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->deskripsi_EN;?>
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi_EN" required><?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->deskripsi_EN;?>
 </textarea>
                               </div>
                             </div>
@@ -139,7 +139,7 @@ person/update" name="" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Foto</label>
                               <div class="col-sm-10">
-                                <input type="file" class="form-control" id="keyword" placeholder="Keyword English" name="foto" value="" required>
+                                <input type="file" class="form-control" id="keyword" placeholder="Keyword English" name="foto" value="">
                                 <br/>
                                 <div class="portfolio-image">
                                     <a href="#"><img src="<?php echo base_url();?>
@@ -174,31 +174,13 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
                                 </select>
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-kategori Boards</label>
-                              <div class="col-sm-10">
-                                <select class="form-control" name="idsubcategory" readonly>
-                                  <option value="5">-Select-</option>
-                                  <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['sub_category_employee']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-?>
-                                  <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-" <?php echo $_smarty_tpl->tpl_vars['data']->value['employee']->idsubcategory==$_smarty_tpl->tpl_vars['row']->value->id ? "selected" : '';?>
- ><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</option>
-                                  <?php } ?>
-                                </select>
-                              </div>
-                            </div>
                         <!-- /.box-body -->
                         </div>
                         <div class="box-footer">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <a href="<?php echo base_url();?>
 page">Cancel</a>
-                              <button type="submit" class="btn btn-info pull-right">Save</button>
+                              <button type="submit" class="btn btn-info pull-right">Update</button>
                         </div><!-- /.box-footer -->
                         <br/>
                       </form>

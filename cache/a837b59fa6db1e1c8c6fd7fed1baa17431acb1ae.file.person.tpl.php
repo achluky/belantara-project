@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:38:27
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 16:25:47
          compiled from "application/views/admin/person.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:187510706459f8aa480627d5-55910447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a837b59fa6db1e1c8c6fd7fed1baa17431acb1ae' => 
     array (
       0 => 'application/views/admin/person.tpl',
-      1 => 1509547104,
+      1 => 1509549945,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -105,7 +105,6 @@ person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon gly
                           <th width="20px;">#id</th>
                           <th width="200px;">Nama</th>
                           <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub-kategori Boards</th>
                           <th width="80px;">Action</th>
                         </tr>
                       </thead>
@@ -128,9 +127,6 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
                           <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
 </td>
                           <?php }?>
-
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</td>
                           <td>
                               <a href="<?php echo base_url();?>
 person/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>

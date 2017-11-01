@@ -52,7 +52,14 @@
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control deskripsi" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                <textarea class="form-control deskripsi" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required></textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi_EN" required></textarea>
                               </div>
                             </div>
 
@@ -72,17 +79,6 @@
                                     {else}
                                     <option value="{$row->id}">{$row->category_EN}</option>
                                     {/if}
-                                  {/foreach}
-                                </select>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-kategori Boards</label>
-                              <div class="col-sm-10">
-                                <select class="form-control" name="idsubcategory" readonly>
-                                  <option value="5">-Select-</option>
-                                  {foreach $data.sub_category_employee -> result() as $row}
-                                  <option value="{$row->id}">{$row->sub_category}</option>
                                   {/foreach}
                                 </select>
                               </div>

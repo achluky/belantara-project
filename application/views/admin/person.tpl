@@ -37,7 +37,6 @@
                           <th width="20px;">#id</th>
                           <th width="200px;">Nama</th>
                           <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub-kategori Boards</th>
                           <th width="80px;">Action</th>
                         </tr>
                       </thead>
@@ -52,8 +51,6 @@
                           {else}
                           <td>{$row->category_EN}</td>
                           {/if}
-
-                          <td>{$row->sub_category}</td>
                           <td>
                               <a href="{base_url()}person/edit/{$row->idPerson}"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
                               <a href="{base_url()}person/delete/{$row->idPerson}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>

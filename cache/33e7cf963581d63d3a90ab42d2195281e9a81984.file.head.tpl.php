@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-10-31 17:51:52
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:58:19
          compiled from "application/views/front-end/head.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:151352280659f8923b26ce14-91147444%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '33e7cf963581d63d3a90ab42d2195281e9a81984' => 
     array (
       0 => 'application/views/front-end/head.tpl',
-      1 => 1509468694,
+      1 => 1509548271,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.21-dev',
   'unifunc' => 'content_59f8923b27df15_54396984',
+  'variables' => 
+  array (
+    'data' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59f8923b27df15_54396984')) {function content_59f8923b27df15_54396984($_smarty_tpl) {?><!DOCTYPE html>
@@ -65,10 +69,14 @@ assets/front-end/images/logo.png" alt="Polo Logo">
                     <!--end: Top Search Form-->
                     <!--Header Extras-->
                     <div class="header-extras" style=" line-height: 75px;">
-                        <img src="<?php echo base_url();?>
-assets/front-end/images/id.png">
-                        <img src="<?php echo base_url();?>
-assets/front-end/images/gb.png">
+                        <a href="<?php echo base_url();?>
+lang/s/ID?url=<?php echo $_smarty_tpl->tpl_vars['data']->value['url'];?>
+"><img src="<?php echo base_url();?>
+assets/front-end/images/id.png"></a>
+                        <a href="<?php echo base_url();?>
+lang/s/EN?url=<?php echo $_smarty_tpl->tpl_vars['data']->value['url'];?>
+"><img src="<?php echo base_url();?>
+assets/front-end/images/gb.png"></a>
                     </div>
                     <!--end: Header Extras-->
 
@@ -78,7 +86,44 @@ assets/front-end/images/gb.png">
                     </div>
                     <!--end: Navigation Resposnive Trigger-->
 
-                    <!--Navigation-->
+                    <!--Navigation
+                    <div id="mainMenu" class="light">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.php">Home</a></li>
+                                    <li class="dropdown"> <a href="#">About</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="aboutus.php">About Us</a> </li>
+                                            <li> <a href="management.php">Our Management</a> </li>
+                                            <li> <a href="boards.php">Our Boards</a> </li>
+                                            <li><a href="ourprogram.php">Our Program</a></li>
+                                            <li><a href="workingarea.php">Working Area</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Programs</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="ourapproach.php">Our Approach</a> </li>
+                                            <li> <a href="advisory-committee.php">Advisory Committee</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Projects</a></li>
+                                    <li class="dropdown"> <a href="#">Grants</a></li>
+                                    <li class="dropdown"> <a href="#">News</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="blog.php">Blog</a> </li>
+                                            <li> <a href="anouncement.php">Anouncement</a> </li>
+                                            <li> <a href="press.php">Press Release</a> </li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Resource</a></li>
+                                    <li class="dropdown"> <a href="#">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>-->
+                    
                     <div id="mainMenu" class="light">
                         <div class="container">
                             <nav>
@@ -87,17 +132,24 @@ assets/front-end/images/gb.png">
 ">Home</a></li>
                                     <li class="dropdown"> <a href="#">About</a>
                                         <ul class="dropdown-menu">
-                                            <li> <a href="aboutus">About Us</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+about-us">About Us</a> </li>
                                             <li> <a href="<?php echo base_url();?>
 management">Our Management</a> </li>
                                             <li> <a href="<?php echo base_url();?>
 boards">Our Boards</a> </li>
                                             <li><a href="<?php echo base_url();?>
-ourprogram">Our Program</a></li>
+our-program">Our Program</a></li>
                                             <li><a href="<?php echo base_url();?>
-ourapproach">Our Approach</a></li>
-                                            <li><a href="<?php echo base_url();?>
-workingarea">Working Area</a></li>
+grant-distribution-area">Grant Distribution Area</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Programs</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="<?php echo base_url();?>
+our-approach">Our Approach</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+advisory-committee">Advisory Committee</a> </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"> <a href="#">Projects</a></li>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:22:58
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 16:29:34
          compiled from "application/views/admin/person_add.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:173201079759f8aa47084a49-92058556%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e310687950fd91c59f8ae5f03aa20c431f9b96de' => 
     array (
       0 => 'application/views/admin/person_add.tpl',
-      1 => 1509546177,
+      1 => 1509550138,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -119,7 +119,14 @@ person/save" name="" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                <textarea class="form-control deskripsi" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required></textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi_EN" required></textarea>
                               </div>
                             </div>
 
@@ -148,23 +155,6 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 "><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
 </option>
                                     <?php }?>
-                                  <?php } ?>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-kategori Boards</label>
-                              <div class="col-sm-10">
-                                <select class="form-control" name="idsubcategory" readonly>
-                                  <option value="5">-Select-</option>
-                                  <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['sub_category_employee']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-?>
-                                  <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-</option>
                                   <?php } ?>
                                 </select>
                               </div>
@@ -244,8 +234,7 @@ assets/js/validator.min.js" type="text/javascript" charset="utf-8"><?php echo '<
 <?php echo '<script'; ?>
 >
     $(function () {
-        CKEDITOR.replace('content_EN');
-        CKEDITOR.replace('content_ID');
+        CKEDITOR.replace('deskripsi');
     });
   <?php echo '</script'; ?>
 >

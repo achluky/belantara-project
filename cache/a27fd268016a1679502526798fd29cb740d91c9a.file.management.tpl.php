@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-10-31 18:28:13
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 16:00:57
          compiled from "application/views/front-end/management.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:195515835159f8a102318409-39023611%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a27fd268016a1679502526798fd29cb740d91c9a' => 
     array (
       0 => 'application/views/front-end/management.tpl',
-      1 => 1509470862,
+      1 => 1509548413,
       2 => 'file',
     ),
     'aa05a97be8403772d7ec676845277f02b53e3008' => 
@@ -30,11 +30,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     
     
-        <section id="page-title" style="background-image:url(<?php echo base_url();?>
-assets/front-end/images/parallax/5.jpg);">
+        <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/HistoryH02Nm_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
             <div class="container">
                 <div class="page-title">
-                    <h1>Our Management</h1>
+                    <h1>OUR MANAGEMENT</h1>
                 </div>
             </div>
         </section>
@@ -67,14 +66,16 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
                     <div class="portfolio-item no-overlay img-zoom Trustees p-b-50">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
-                                <a href="#"><img src="<?php echo base_url();?>
+                                <img src="<?php echo base_url();?>
 document/images/employee/<?php echo $_smarty_tpl->tpl_vars['row']->value->image;?>
-" alt="" class="img-circle"></a>
+" alt="" class="img-circle">
                             </div>
                             <div class="portfolio-description">
-                                <a href="portfolio-page-grid-gallery.html">
-                                    <h3><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
-</h3>
+                                <a href="">
+                                    <h3><a href="<?php echo base_url();?>
+home/boardsdetail/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+" data-lightbox="ajax"><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
+</a></h3>
                                     <span><?php echo $_smarty_tpl->tpl_vars['row']->value->jabatan;?>
 </span>
                                 </a>

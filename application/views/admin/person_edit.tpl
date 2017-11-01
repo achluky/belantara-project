@@ -53,21 +53,21 @@
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required>{$data.employee->deskripsi_ID}</textarea>
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required>{$data.employee->deskripsi_ID}</textarea>
                               </div>
                             </div>
 
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi" required>{$data.employee->deskripsi_EN}</textarea>
+                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi_EN" required>{$data.employee->deskripsi_EN}</textarea>
                               </div>
                             </div>
 
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Foto</label>
                               <div class="col-sm-10">
-                                <input type="file" class="form-control" id="keyword" placeholder="Keyword English" name="foto" value="" required>
+                                <input type="file" class="form-control" id="keyword" placeholder="Keyword English" name="foto" value="">
                                 <br/>
                                 <div class="portfolio-image">
                                     <a href="#"><img src="{base_url()}document/images/employee/{$data.employee->image}" alt="" class="img-thumbnail" width="150px;"></a>
@@ -89,23 +89,12 @@
                                 </select>
                               </div>
                             </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-kategori Boards</label>
-                              <div class="col-sm-10">
-                                <select class="form-control" name="idsubcategory" readonly>
-                                  <option value="5">-Select-</option>
-                                  {foreach $data.sub_category_employee -> result() as $row}
-                                  <option value="{$row->id}" {($data.employee->idsubcategory == $row->id)?"selected":""} >{$row->sub_category}</option>
-                                  {/foreach}
-                                </select>
-                              </div>
-                            </div>
                         <!-- /.box-body -->
                         </div>
                         <div class="box-footer">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <a href="{base_url()}page">Cancel</a>
-                              <button type="submit" class="btn btn-info pull-right">Save</button>
+                              <button type="submit" class="btn btn-info pull-right">Update</button>
                         </div><!-- /.box-footer -->
                         <br/>
                       </form>

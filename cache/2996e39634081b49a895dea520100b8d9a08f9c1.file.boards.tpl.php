@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 00:09:10
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 16:22:28
          compiled from "application/views/front-end/boards.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:30248066059f8b2d4d85e57-19152066%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2996e39634081b49a895dea520100b8d9a08f9c1' => 
     array (
       0 => 'application/views/front-end/boards.tpl',
-      1 => 1509491349,
+      1 => 1509549744,
       2 => 'file',
     ),
     'aa05a97be8403772d7ec676845277f02b53e3008' => 
@@ -30,15 +30,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     
     
-        <section id="page-title" style="background-image:url(<?php echo base_url();?>
-assets/front-end/images/parallax/5.jpg);">
+        <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/HistoryH02Nm_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
             <div class="container">
                 <div class="page-title">
                     <h1>Our Boards</h1>
                 </div>
             </div>
         </section>
-
         <section id="page-content">
             <div class="container">
 
@@ -51,8 +49,8 @@ assets/front-end/images/parallax/5.jpg);">
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
-                        <li><a href="#" data-category=".<?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
+                        <li><a href="#" data-category=".<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
 </a></li>
                         <?php } ?>
                     </ul>
@@ -72,19 +70,22 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
-                    <div class="portfolio-item no-overlay img-zoom <?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
+                    <div class="portfolio-item no-overlay img-zoom <?php echo $_smarty_tpl->tpl_vars['row']->value->idcategory;?>
  p-b-50">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
-                                <a href="#"><img src="<?php echo base_url();?>
+                                <img src="<?php echo base_url();?>
 document/images/employee/<?php echo $_smarty_tpl->tpl_vars['row']->value->image;?>
-" alt="" class="img-circle"></a>
+" alt="" class="img-circle">
                             </div>
                             <div class="portfolio-description">
                                 <a href="portfolio-page-grid-gallery.html">
-                                    <h3><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
-</h3>
-                                    <span><?php echo $_smarty_tpl->tpl_vars['row']->value->jabatan;?>
+                                    <h3><a href="<?php echo base_url();?>
+home/boardsdetail/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+" data-lightbox="ajax"><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
+</a></h3>
+                                    <span><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
+ - <?php echo $_smarty_tpl->tpl_vars['row']->value->jabatan;?>
 </span>
                                 </a>
                             </div>
