@@ -1,10 +1,40 @@
-{extends file="front-end/template.tpl"} 
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 09:32:00
+         compiled from "application/views/front-end/index.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:70323526159f94151e8baf4-43161945%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '83ce99a864cc6936dbf596f5ae379d2e5a2ac3d6' => 
+    array (
+      0 => 'application/views/front-end/index.tpl',
+      1 => 1509525119,
+      2 => 'file',
+    ),
+    '4f153afbf5ab44676433787db7c5dcc57bad2a2c' => 
+    array (
+      0 => 'application/views/front-end/template.tpl',
+      1 => 1509507395,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '70323526159f94151e8baf4-43161945',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f94151ed2e45_38127074',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_59f94151ed2e45_38127074')) {function content_59f94151ed2e45_38127074($_smarty_tpl) {?>
+    <?php echo $_smarty_tpl->getSubTemplate ('front-end/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-{block name="content"}
+    
+    
 <div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360">
 
             <!-- Slide 1 -->
-            <div class="slide kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/gajah.jpg');">
+            <div class="slide kenburns" style="background-image:url('<?php echo base_url();?>
+assets/front-end/images/slider/gajah.jpg');">
                 <div class="container">
                     <div class="slide-captions">
                         <!-- Captions 
@@ -16,7 +46,8 @@
             <!-- end: Slide 1 -->
 
             <!-- Slide 2 -->
-            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/monyet.jpg');">
+            <div class="slide  kenburns" style="background-image:url('<?php echo base_url();?>
+assets/front-end/images/slider/monyet.jpg');">
                 <div class="container">
                     <div class="slide-captions">
                         <!-- Captions
@@ -38,7 +69,8 @@
 
         </div>
         
-        <section class="background-overlay-grey  p-t-100 p-b-100" data-velocity="-.30" data-parallax-image="{base_url()}assets/front-end/images/parallax/04.jpg">
+        <section class="background-overlay-grey  p-t-100 p-b-100" data-velocity="-.30" data-parallax-image="<?php echo base_url();?>
+assets/front-end/images/parallax/04.jpg">
             <div class="container xs-text-center sm-text-center text-light">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 text-center"> 
@@ -69,8 +101,10 @@
                       <p>Dolor sit amet, consectetur adipisicing elit. Vero quod conseqt quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus.</p>
                   </div>  
                   <div class="col-lg-6 col-md-6 col-sm-6">
-                    <video class="text-center" width="100%" height="100%" controls="" poster="{base_url()}assets/front-end/video/cover.png">
-                        <source src="{base_url()}assets/front-end/video/home.mp4" type="video/mp4">
+                    <video class="text-center" width="100%" height="100%" controls="" poster="<?php echo base_url();?>
+assets/front-end/video/cover.png">
+                        <source src="<?php echo base_url();?>
+assets/front-end/video/home.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                   </div>
@@ -89,7 +123,8 @@
             <div class="p-t-80">
                 <div class="row">
                     <div class="col-md-6 col-lg-8">
-                        <img class="img-responsive" src="{base_url()}assets/front-end/images/about/infograph.jpg"> 
+                        <img class="img-responsive" src="<?php echo base_url();?>
+assets/front-end/images/about/infograph.jpg"> 
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <h2>MULTISTAKHOLDER APPROACH : <span class="text-green">CONNECTING THE PIECES</span></h2>
@@ -131,11 +166,13 @@
         <section class="p-t-50 background-1">
             <div class="container">
                 <h3 class="text-center">GRANT DISTRIBUTION MAP</h3>
-                <img class="img-responsive animated fadeInUpBig visible" data-animation="fadeInUpBig" src="{base_url()}assets/front-end/images/about/peta.png">
+                <img class="img-responsive animated fadeInUpBig visible" data-animation="fadeInUpBig" src="<?php echo base_url();?>
+assets/front-end/images/about/peta.png">
             </div>
         </section>
         
-        <section class="background-overlay-one p-t-50 p-b-50" data-velocity="-.10" data-parallax-image="{base_url()}assets/front-end/images/parallax/parallax.png">
+        <section class="background-overlay-one p-t-50 p-b-50" data-velocity="-.10" data-parallax-image="<?php echo base_url();?>
+assets/front-end/images/parallax/parallax.png">
             <div class="container">
                 <div class="heading heading-center text-light">
                     <h2>OUR BLOG</h2>
@@ -147,7 +184,8 @@
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
                                 <a href="#">
-                                    <img alt="" src="{base_url()}assets/front-end/images/upload/1.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/1.jpg">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
@@ -162,7 +200,8 @@
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
                                 <a href="#">
-                                    <img alt="" src="{base_url()}assets/front-end/images/upload/2.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/2.jpg">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
@@ -178,7 +217,8 @@
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
                                 <a href="#">
-                                    <img alt="" src="{base_url()}assets/front-end/images/upload/3.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/3.jpg">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
@@ -278,4 +318,9 @@
             </div>
         </section>
 
-{/block}
+
+                
+    <?php echo $_smarty_tpl->getSubTemplate ('front-end/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+    
+	<?php }} ?>

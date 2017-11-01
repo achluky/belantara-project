@@ -52,7 +52,7 @@
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                <textarea class="form-control deskripsi" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
                               </div>
                             </div>
 
@@ -112,8 +112,7 @@
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        CKEDITOR.replace('content_EN');
-        CKEDITOR.replace('content_ID');
+        CKEDITOR.replace('deskripsi');
     });
   </script>
 {/block}

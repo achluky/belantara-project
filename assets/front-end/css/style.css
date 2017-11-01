@@ -12692,6 +12692,7 @@ screen and (max-height: 300px) {
 .mfp-ajax-holder .mfp-content {
 	background: #F8F8F8;
 	max-width: 1000px;
+    border-radius: 3px;
 }
 
 .mfp-ajax-holder .ajax-quick-view {
@@ -19510,3 +19511,5 @@ body.device-xs .col-md-3 .flickr-widget img {
 .alignCenter {
     align-items: center;
 }
+
+.img-people{ float: left; padding-right: 20px; max-width: 300px;}

@@ -1,12 +1,46 @@
-<?php include('head.php'); ?>
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 10:43:05
+         compiled from "application/views/front-end/workingarea.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:173850970259f98db65e4e73-75653209%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3083cb9364471c39241517a5a18bf2bcc074dd6f' => 
+    array (
+      0 => 'application/views/front-end/workingarea.tpl',
+      1 => 1509527882,
+      2 => 'file',
+    ),
+    '4f153afbf5ab44676433787db7c5dcc57bad2a2c' => 
+    array (
+      0 => 'application/views/front-end/template.tpl',
+      1 => 1509507395,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '173850970259f98db65e4e73-75653209',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f98db6613313_12899928',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_59f98db6613313_12899928')) {function content_59f98db6613313_12899928($_smarty_tpl) {?>
+    <?php echo $_smarty_tpl->getSubTemplate ('front-end/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+    
+    
+
 <section id="page-title" class="page-title-center working-area-header">
     <div class="container">
         <div class="row">
         	<div class="col-md-3"></div>
-        	<div class="col-md-4"></div>
-        	<div class="col-md-5">
+        	<div class="col-md-3"></div>
+        	<div class="col-md-6">
         		<br><br>
-        		<h1 style="color: #fff;" class="pull-right">Working Area</h1>
+        		<div class="page-title">
+                    <h1 style="color: #fff;" class="pull-right">GRANT DISTRIBUTION AREA</h1>
+                </div>
         	</div>
         </div>
     </div>
@@ -18,7 +52,8 @@
 			<div class="text-center"><h2>THE <span style="color:#44a34b">GRANT</span></h2></div>
 			<div class="text-center"><h2><span style="color:#44a34b">DISTRIBUTION</span> AREAS</h2></div>
 			<div class="col-md-12 p-t-80">
-				<img src="./images/gd-map.png" alt="" class="img-responsive">
+				<img src="<?php echo base_url();?>
+assets/front-end/images/gd-map.png" alt="" class="img-responsive">
 			</div>
 		</div>	
         <hr>
@@ -38,4 +73,9 @@
         </div>
 	</div>
 </section>
-<?php include('footer.php'); ?>
+
+                
+    <?php echo $_smarty_tpl->getSubTemplate ('front-end/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+    
+	<?php }} ?>

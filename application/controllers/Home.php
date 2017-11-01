@@ -11,10 +11,17 @@ class Home extends CI_Controller {
     }
 
     public function index() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/index.tpl');
     }
 
     public function management(){
+        
     	$data = array(
             'url'=> $this->url,
 
@@ -24,6 +31,55 @@ class Home extends CI_Controller {
 
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/management.tpl');
+    }
+    
+    public function adv_committee(){
+    	$data = array(
+            'url'=> $this->url,
+            'employee_management' => $this->model_home->get_employee_adv_committee(),
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/advisory.tpl');
+    }
+    
+    public function aboutus(){
+    	$data = array(
+            'url'=> $this->url,
+            'site_lang'=>$this->session->userdata('site_lang')
+        );
+        
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/aboutus.tpl');
+    }
+    
+    public function program(){
+    	$data = array(
+            'url'=> $this->url,
+            'site_lang'=>$this->session->userdata('site_lang')
+        );
+
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/program.tpl');
+    }
+    public function grantarea(){
+    	$data = array(
+            'url'=> $this->url,
+            'site_lang'=>$this->session->userdata('site_lang')
+        );
+
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/workingarea.tpl');
+    }
+    public function approach(){
+    	$data = array(
+            'url'=> $this->url,
+            'site_lang'=>$this->session->userdata('site_lang')
+        );
+
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/approach.tpl');
     }
     public function boards(){
     	$data = array(
@@ -37,4 +93,18 @@ class Home extends CI_Controller {
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/boards.tpl');
     }
+    
+    
+    public function boardsdetail($id)
+    {
+        $data = array(
+            'site_lang' => $this->session->userdata('site_lang'),
+            'people'    => $this->model_home->get_detail_boards($id)
+        );
+        
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/people-ajax.tpl');
+    }
+    
+    
 }
