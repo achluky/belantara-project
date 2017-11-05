@@ -193,3 +193,6 @@ $lang['label.hkitahun'] = 'Paten dan HKI Per Year';
 
 
 $lang['label.tabel.sematkan'] ="Sematkan";
+
+//ref employee
+$lang['label.tabel.category_employee'] = "kategori";

@@ -27,7 +27,7 @@
                 <div class="box box-primary">
                   <div class="box-header">
                     <h3 class="box-title">Employee Category List</h3>
-                    <a href="" class="btn btn-primary" style="float:right;" disabled><i class="glyphicon glyphicon-plus-sign"></i> Add Category</a>
+                    <a href="{base_url()}referensi/category_add" class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Category</a>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
@@ -43,10 +43,14 @@
                         {foreach $data.category_person_list -> result() as $row}
                         <tr>
                           <td>{$row->id}</td>
-                          <td>{$row->category}</td>
+                          {if $data.site_lang == "ID"}
+                            <td>{$row->category_ID}</td>
+                          {else}
+                            <td>{$row->category_EN}</td>
+                          {/if}
                           <td>
-                              <a href="" class="btn btn-xs" disabled><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="" class="btn btn-xs" disabled><i class="fa fa-remove fa-fw"></i> Delete</a>
+                              <a href="{base_url()}referensi/category_edit/{$row->id}" class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                              <a href="{base_url()}referensi/category_delete/{$row->id}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>
                         {/foreach}

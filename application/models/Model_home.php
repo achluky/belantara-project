@@ -22,7 +22,7 @@ class Model_home extends CI_Model {
     }
 
     public function get_employee_boards(){
-        $sql = "select a.*, b.category from person a left join ref_category_employee b ON b.id = a.idcategory where a.idcategory <> 7 and a.idcategory <> 12";
+        $sql = "select a.*, b.category_EN, b.category_ID from person a left join ref_category_employee b ON b.id = a.idcategory where a.idcategory <> 7 and a.idcategory <> 12";
         $result = $this->db->query($sql);
         return $result;
     }
@@ -35,7 +35,7 @@ class Model_home extends CI_Model {
     
     public function get_detail_boards($id)
     {
-        $sql = "select * from person a left join ref_category_employee b ON b.id = a.idcategory where a.id=$id";
+        $sql = "select * from person a left join ref_category_employee b ON b.id = a.idcategory where a.idPerson=$id";
         $result = $this->db->query($sql);
         return $result->row();
     }

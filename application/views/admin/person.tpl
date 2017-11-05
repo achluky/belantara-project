@@ -35,22 +35,25 @@
                       <thead>
                         <tr>
                           <th width="20px;">#id</th>
-                          <th width="400px;">Nama</th>
+                          <th width="200px;">Nama</th>
                           <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub Kategori Manajement</th>
-                          <th width="140px;">Action</th>
+                          <th width="80px;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         {foreach $data.person_list -> result() as $row}
                         <tr>
-                          <td>{$row->id}</td>
+                          <td>{$row->idPerson}</td>
                           <td>{$row->name}</td>
-                          <td>{$row->category}</td>
-                          <td>{$row->sub_category}</td>
+
+                          {if $data.site_lang == "ID"}
+                          <td>{$row->category_ID}</td>
+                          {else}
+                          <td>{$row->category_EN}</td>
+                          {/if}
                           <td>
-                              <a href=""  class="btn btn-xs" disabled><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="" class="btn btn-xs" disabled><i class="fa fa-remove fa-fw"></i> Delete</a>
+                              <a href="{base_url()}person/edit/{$row->idPerson}"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                              <a href="{base_url()}person/delete/{$row->idPerson}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>
                         {/foreach}

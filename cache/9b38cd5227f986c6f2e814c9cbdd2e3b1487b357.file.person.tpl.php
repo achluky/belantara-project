@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 06:32:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 11:09:21
          compiled from "application/views/admin/person.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3267362259fea271db9877-10429599%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:11353945959fee3515e9709-42993557%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9b38cd5227f986c6f2e814c9cbdd2e3b1487b357' => 
     array (
       0 => 'application/views/admin/person.tpl',
-      1 => 1509507395,
+      1 => 1509876303,
       2 => 'file',
     ),
     'f724b491564f7f403f316fafca5537229a955f47' => 
@@ -17,7 +17,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3267362259fea271db9877-10429599',
+  'nocache_hash' => '11353945959fee3515e9709-42993557',
   'function' => 
   array (
   ),
@@ -27,9 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59fea271e37e09_27332203',
+  'unifunc' => 'content_59fee351666d39_98605156',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59fea271e37e09_27332203')) {function content_59fea271e37e09_27332203($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59fee351666d39_98605156')) {function content_59fee351666d39_98605156($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -103,10 +103,9 @@ person/add" class="btn btn-primary" style="float:right;"><i class="glyphicon gly
                       <thead>
                         <tr>
                           <th width="20px;">#id</th>
-                          <th width="400px;">Nama</th>
+                          <th width="200px;">Nama</th>
                           <th width="40px;">Kategori</th>
-                          <th width="40px;">Sub Kategori Manajement</th>
-                          <th width="140px;">Action</th>
+                          <th width="80px;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -116,17 +115,25 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
                         <tr>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
 </td>
                           <td><?php echo $_smarty_tpl->tpl_vars['row']->value->name;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category;?>
+
+                          <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
+                          <?php } else { ?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
 </td>
+                          <?php }?>
                           <td>
-                              <a href=""  class="btn btn-xs" disabled><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="" class="btn btn-xs" disabled><i class="fa fa-remove fa-fw"></i> Delete</a>
+                              <a href="<?php echo base_url();?>
+person/edit/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                              <a href="<?php echo base_url();?>
+person/delete/<?php echo $_smarty_tpl->tpl_vars['row']->value->idPerson;?>
+" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>
                         <?php } ?>

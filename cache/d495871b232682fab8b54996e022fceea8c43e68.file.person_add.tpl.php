@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 06:34:16
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 11:34:35
          compiled from "application/views/admin/person_add.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:80999687659fea27457b184-12845315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:183114329259fee4fc58d318-49435798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd495871b232682fab8b54996e022fceea8c43e68' => 
     array (
       0 => 'application/views/admin/person_add.tpl',
-      1 => 1509860053,
+      1 => 1509878073,
       2 => 'file',
     ),
     'f724b491564f7f403f316fafca5537229a955f47' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '80999687659fea27457b184-12845315',
+  'nocache_hash' => '183114329259fee4fc58d318-49435798',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59fea274600733_77750547',
+  'unifunc' => 'content_59fee4fc603ad7_80715521',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59fea274600733_77750547')) {function content_59fea274600733_77750547($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59fee4fc603ad7_80715521')) {function content_59fee4fc603ad7_80715521($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -129,7 +129,6 @@ person/save" name="" method="POST" enctype="multipart/form-data">
                                 <textarea class="form-control deskripsi_EN" rows="10" placeholder="Deskripsi" name="deskripsi_EN" required></textarea>
                               </div>
                             </div>
-
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Foto</label>
                               <div class="col-sm-10">
@@ -137,7 +136,8 @@ person/save" name="" method="POST" enctype="multipart/form-data">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Kategori</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['category'];?>
+</label>
                               <div class="col-sm-10">
                                 <select class="form-control" name="idcategory" readonly>
                                   <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
@@ -145,26 +145,15 @@ person/save" name="" method="POST" enctype="multipart/form-data">
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
-                                  <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->category;?>
+                                    <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=="ID") {?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_ID;?>
 </option>
-                                  <?php } ?>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sub-Kategori Manajement</label>
-                              <div class="col-sm-10">
-                                <select class="form-control" name="idsubcategory" readonly>
-                                  <option value="5">-Select-</option>
-                                  <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data']->value['sub_category_employee']->result(); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
-$_smarty_tpl->tpl_vars['row']->_loop = true;
-?>
-                                  <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['row']->value->sub_category;?>
+                                    <?php } else { ?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value->category_EN;?>
 </option>
+                                    <?php }?>
                                   <?php } ?>
                                 </select>
                               </div>

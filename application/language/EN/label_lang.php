@@ -189,3 +189,7 @@ $lang['label.title_dosen_kepakaran_exsport_lanjut'] = 'Export More';
 $lang['label.title_phd_kepakaran'] = 'List Lecturer Whith PhD and Expertise';
 $lang['label.hkitahun'] = 'Paten and HKI Per Year';
 $lang['label.tabel.sematkan'] ="Embed";
+
+
+// ref employee
+$lang['label.tabel.category_employee'] = "category";
