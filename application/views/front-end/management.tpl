@@ -30,7 +30,7 @@
 
                     <!-- portfolio item -->
                     {foreach $data.employee_management -> result() as $row}
-                    <div class="portfolio-item no-overlay img-zoom Trustees p-b-50">
+                    <div class="portfolio-item no-overlay img-zoom Trustees">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
                                 <img src="{base_url()}document/images/employee/{$row->image}" alt="" class="img-circle">
@@ -50,5 +50,6 @@
                 <!-- end: Portfolio -->
 
             </div>
+            <img src="{base_url()}document/images/employee/struktur_belantara.jpg" class="img-responsive">
         </section>
 {/block}

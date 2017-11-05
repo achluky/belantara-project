@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 06:26:34
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 06:34:16
          compiled from "application/views/admin/person_add.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:52876471659f94606a3bab6-91023605%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:80999687659fea27457b184-12845315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd495871b232682fab8b54996e022fceea8c43e68' => 
     array (
       0 => 'application/views/admin/person_add.tpl',
-      1 => 1509513987,
+      1 => 1509860053,
       2 => 'file',
     ),
     'f724b491564f7f403f316fafca5537229a955f47' => 
@@ -17,19 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '52876471659f94606a3bab6-91023605',
+  'nocache_hash' => '80999687659fea27457b184-12845315',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f94606ac38c3_79437401',
+  'unifunc' => 'content_59fea274600733_77750547',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f94606ac38c3_79437401')) {function content_59f94606ac38c3_79437401($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59fea274600733_77750547')) {function content_59fea274600733_77750547($_smarty_tpl) {?><!DOCTYPE html>
 <html>
     <head>
         <?php echo $_smarty_tpl->getSubTemplate ('admin/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -117,9 +117,16 @@ person/save" name="" method="POST" enctype="multipart/form-data">
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi(ID)</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control deskripsi" rows="10" placeholder="Deskripsi" name="deskripsi" required></textarea>
+                                <textarea class="form-control deskripsi_ID" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required></textarea>
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi(EN)</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control deskripsi_EN" rows="10" placeholder="Deskripsi" name="deskripsi_EN" required></textarea>
                               </div>
                             </div>
 
@@ -237,7 +244,8 @@ assets/js/validator.min.js" type="text/javascript" charset="utf-8"><?php echo '<
 <?php echo '<script'; ?>
 >
     $(function () {
-        CKEDITOR.replace('deskripsi');
+        CKEDITOR.replace('deskripsi_ID');
+        CKEDITOR.replace('deskripsi_EN');
     });
   <?php echo '</script'; ?>
 >

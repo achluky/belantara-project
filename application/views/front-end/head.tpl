@@ -86,7 +86,7 @@
                             </nav>
                         </div>
                     </div>-->
-                    
+                    {if $data.site_lang eq 'EN' }
                     <div id="mainMenu" class="light">
                         <div class="container">
                             <nav>
@@ -109,13 +109,62 @@
                                     </li>
                                     <li class="dropdown"> <a href="#">Projects</a></li>
                                     <li class="dropdown"> <a href="#">Grants</a></li>
-                                    <li class="dropdown"> <a href="#">News</a></li>
-                                    <li class="dropdown"> <a href="#">Resource</a></li>
-                                    <li class="dropdown"> <a href="#">Contact</a></li>
+                                    <li class="dropdown"> <a href="#">Publication</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="{base_url()}blog">Blog</a> </li>
+                                            <li> <a href="{base_url()}gallery">Gallery</a> </li>
+                                            <li> <a href="{base_url()}related-news">Related News</a> </li>
+                                            <li> <a href="{base_url()}press-release">Press Release</a> </li>
+                                            <li> <a href="{base_url()}references">References</a> </li>
+                                            <li> <a href="{base_url()}resources">Resources</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="{base_url()}contact-us">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                    
+                    {else }
+                    <div id="mainMenu" class="light">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="{base_url()}">Beranda</a></li>
+                                    <li class="dropdown"> <a href="#">Tentang</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="{base_url()}about-us">Tentang Kami</a> </li>
+                                            <li> <a href="{base_url()}management">Manajemen Kami</a> </li>
+                                            <li> <a href="{base_url()}boards">Our Boards</a> </li>
+                                            <li><a href="{base_url()}our-program">Progream Kami</a></li>
+                                            <li><a href="{base_url()}grant-distribution-area">Wilayah Distribusi Hibah</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Progam</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="{base_url()}our-approach">Pendekatan Kami</a> </li>
+                                            <li> <a href="{base_url()}advisory-committee">Komite Penasihat</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Proyek</a></li>
+                                    <li class="dropdown"> <a href="#">Hibah</a></li>
+                                    <li class="dropdown"> <a href="#">Publikasi</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="{base_url()}blog">Blog</a> </li>
+                                            <li> <a href="{base_url()}gallery">Galeri</a> </li>
+                                            <li> <a href="{base_url()}related-news">Berita Terkait</a> </li>
+                                            <li> <a href="{base_url()}press-release">Press Release</a> </li>
+                                            <li> <a href="{base_url()}references">Referensi</a> </li>
+                                            <li> <a href="{base_url()}resources">Resources</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="{base_url()}contact-us">Kontak</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    {/if}
                     <!--end: Navigation-->
                 </div>
             </div>

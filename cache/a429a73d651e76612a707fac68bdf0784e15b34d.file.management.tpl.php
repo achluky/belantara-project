@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 12:04:04
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-04 12:00:01
          compiled from "application/views/front-end/management.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:56135177859f94beeadd4e9-98773937%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:110189463559fbec729135f8-00705584%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a429a73d651e76612a707fac68bdf0784e15b34d' => 
     array (
       0 => 'application/views/front-end/management.tpl',
-      1 => 1509533522,
+      1 => 1509793191,
       2 => 'file',
     ),
     '4f153afbf5ab44676433787db7c5dcc57bad2a2c' => 
@@ -17,15 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '56135177859f94beeadd4e9-98773937',
+  'nocache_hash' => '110189463559fbec729135f8-00705584',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f94beeb20171_83944099',
+  'unifunc' => 'content_59fbec72950111_28499611',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f94beeb20171_83944099')) {function content_59f94beeb20171_83944099($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_59fbec72950111_28499611')) {function content_59fbec72950111_28499611($_smarty_tpl) {?>
     <?php echo $_smarty_tpl->getSubTemplate ('front-end/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
     
@@ -63,7 +63,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
-                    <div class="portfolio-item no-overlay img-zoom Trustees p-b-50">
+                    <div class="portfolio-item no-overlay img-zoom Trustees">
                         <div class="portfolio-item-wrap">
                             <div class="portfolio-image">
                                 <img src="<?php echo base_url();?>
@@ -89,6 +89,8 @@ home/boardsdetail/<?php echo $_smarty_tpl->tpl_vars['row']->value->id;?>
                 <!-- end: Portfolio -->
 
             </div>
+            <img src="<?php echo base_url();?>
+document/images/employee/struktur_belantara.jpg" class="img-responsive">
         </section>
 
                 

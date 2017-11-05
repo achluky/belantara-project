@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 09:33:03
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-04 02:49:33
          compiled from "application/views/front-end/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:83263942059f94151ee6561-92590055%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:89454783959fa0f061b8551-06565820%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'fb6dbf4baabee0ef09b062ff4ec538a251c7d8b6' => 
     array (
       0 => 'application/views/front-end/footer.tpl',
-      1 => 1509525182,
+      1 => 1509760110,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '83263942059f94151ee6561-92590055',
+  'nocache_hash' => '89454783959fa0f061b8551-06565820',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f94151eff7e3_01487262',
+  'unifunc' => 'content_59fa0f061d6761_14414599',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f94151eff7e3_01487262')) {function content_59f94151eff7e3_01487262($_smarty_tpl) {?>        <!-- Footer -->
+<?php if ($_valid && !is_callable('content_59fa0f061d6761_14414599')) {function content_59fa0f061d6761_14414599($_smarty_tpl) {?>        <!-- Footer -->
         <footer id="footer" class="footer-light">
             <div class="footer-content">
                 <div class="container">
@@ -31,13 +31,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 assets/front-end/images/logo.png" class="img-responsive" alt="">
                                 <div class="social-icons social-icons-border float-left m-t-60">
                                     <ul>
-                                        <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
-                                        <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                        <li class="social-youtube"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                        <li class="social-pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li class="social-gplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li class="social-facebook"><a href="https://www.facebook.com/BelantaraFoundation/"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="social-twitter"><a href="https://twitter.com/belantara" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="social-instagram"><a href="https://instagram.com/belantara_found" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                        <li class="social-youtube"><a href="https://www.youtube.com/channel/UCqfoC1TtQihrB_nYnKIFJYQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
                                     </ul>
                                 </div>
                                 <!-- end: Social icons -->

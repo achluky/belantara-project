@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 04:36:48
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 19:32:34
          compiled from "application/views/admin/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:176188478959f5474c7bed25-44647442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:147923439859fa1342966923-47731498%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '176188478959f5474c7bed25-44647442',
+  'nocache_hash' => '147923439859fa1342966923-47731498',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f5474c7c7b65_13564301',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59fa1342971b97_24615476',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f5474c7c7b65_13564301')) {function content_59f5474c7c7b65_13564301($_smarty_tpl) {?>    <meta charset="UTF-8">
+<?php if ($_valid && !is_callable('content_59fa1342971b97_24615476')) {function content_59fa1342971b97_24615476($_smarty_tpl) {?>    <meta charset="UTF-8">
     <title>Belantara Fondation</title>
     <link rel="icon" type="image/png" href="<?php echo base_url();?>
 assets/img/ipb.ico" />

@@ -68,9 +68,16 @@ $route['view/(:any)'] = 'view/index/$1';
 
 // front end
 $route['advisory-committee'] = "home/adv_committee";
+$route['gallery'] = "home/gallery";
+$route['references'] = "home/references";
+$route['contact-us'] = "home/contact";
+$route['resources'] = "home/resources";
+$route['press-release'] = "home/press_release";
+$route['related-news'] = "home/related_news";
 $route['management'] = "home/management";
 $route['grant-distribution-area'] = "home/grantarea";
 $route['about-us'] = "home/aboutus";
 $route['our-approach'] = "home/approach";
 $route['our-program'] = "home/program";
 $route['boards'] = "home/boards";
+$route['blog/(:any)'] = "blog/detail/$1";

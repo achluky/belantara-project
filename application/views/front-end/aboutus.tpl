@@ -4,11 +4,8 @@
 <section id="page-title" class="page-title-center approach-header" style="background-image:url('http://belantara.or.id/wp-content/uploads/HistoryH01_BelantaraFoundation_1920x600px1.jpg') !important">
     <div class="container">
         <div class="row">
-        	<div class="col-md-5">
-        		<br><br><div class="page-title">
-                <h1 style="color: #333;">ABOUT US</h1></div>
-        		<p style="color: #fff;">Yayasan Bersama Lestarikan Nusantara (“Yayasan Belantara”) is an Indonesian grant-making institution formed in 2014 with the goal of delivering wide- ranging community and conservation results. It takes its name from the Indonesian word ‘Belantara’ which means wilderness or pristine forest.</p>
-        	</div>
+        	
+        	
             <div class="col-md-3"></div>
         	<div class="col-md-4"></div>
         	
@@ -18,19 +15,22 @@
 
 <section id="page-content" class="p-t-100">
 	<div class="container p-b-20">
+        <div class="page-title text-center p-b-20">
+                <h1 style="color: #333;">ABOUT US</h1></div>
 		<div class="row scrollme">
 			<div class="col-md-6">
+                <p>Yayasan Bersama Lestarikan Nusantara (“Yayasan Belantara”) is an Indonesian grant-making institution formed in 2014 with the goal of delivering wide- ranging community and conservation results. It takes its name from the Indonesian word ‘Belantara’ which means wilderness or pristine forest.</p>
 				<p>Belantara primary focus is to allocate grants to support restoration, protection, conservation of endangered species (speci cally Sumatran Tiger, Sumatran Elephant, as well as Sumatran and
 Bornean Orangutan), Institutional development,
 and community development and empowerment initiatives in Conservation Area, Production Forest, Protection Forest, and Social Forestry on the ten speci ed grant distribution areas across  ve provinces on the islands of Sumatra and Kalimantan (Indonesian Borneo).</p>
 			</div>
 			<div class="col-md-6" data-animation="fadeInRight" data-animation-delay="200">
-				<img src="{base_url()}assets/front-end/images/about-photo2.jpg" alt="about us 1" class="img-responsive" style="margin-top: 20px; z-index: 1; position: relative;">
+				<img src="{base_url()}assets/front-end/images/PA4.jpg" alt="about us 1" class="img-responsive" style="margin-top: 20px; z-index: 1; position: relative;">
 			</div>
 		</div>
 		<div class="row scrollme">
-			<div class="col-lg-8 col-md-6 col-sm-6 animateme" data-when="view" data-from="0.65" data-to="0.15" data-translatex="-200" data-opacity="0"  >
-				<img src="{base_url()}assets/front-end/images/about-photo1.jpg" alt="about us 1" class="img-responsive" style="z-index: -10; position: relative; margin-top: -100px;">
+			<div class="col-lg-8 hidden-xs hidden-sm col-md-6 col-sm-6 animateme" data-when="view" data-from="0.65" data-to="0.15" data-translatex="-200" data-opacity="0"  >
+				<img src="{base_url()}assets/front-end/images/PA5.jpg" alt="about us 1" class="img-responsive" style="z-index: -10; position: relative; margin-top: -30px;">
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-6 p-t-50">
 				<p>Working with local communities, governments, the private sector and NGOs, Belantara relies on a multi-stakeholder approach to better inform decision-making when addressing resource management problems   s the  ssential Ecosystem Areas (KEE) stretch across the grant distribution areas, a coordinated response bet een all stakeholders for the effective management and preservation of critical ecosystems is required.</p>
@@ -41,12 +41,12 @@ and community development and empowerment initiatives in Conservation Area, Prod
 				<p>As an independent foundation, Belantara aims to work with all parties that shares its goals, coordinating and collaborating ith partner pro ects  ithin each of its ten speci ed grant distribution areas   elantara aims to ensure that existing initiatives are aligned, minimizing the risk of projects overlapping while maximizing information and data sharing. <br> Co-founder  sia  ulp and  aper signi cantly contributed in getting the  oundation off the ground, providing substantial  nancing   dditional  nancial resources are being raised from the public and private sectors,  hile investment de-risking initiatives will follow to achieve a more holistic scope of  nancing modalities. <br>Fundamentally, Belantara fully supports the focus and priority initiatives of the Ministry of Environment and Forestry of government of  ndonesia  To be speci c,  elantara supports the Development of Large-Scale Ecosystem Conservation in Sumatra and Kalimantan.</p>
 			</div>
 			<div class="col-md-6">
-				<img src="{base_url()}assets/front-end/images/about-photo3.jpg" alt="" class="img-responsive">	
+				<img src="{base_url()}assets/front-end/images/PA6.jpg" alt="" class="img-responsive">	
 			</div>
 		</div>
 		
 	</div>
-    <div class="background-grey">
+    <div class="">
         <div class="container">
             <div class="row scrollme animateme p-t-30" data-when="enter" data-from="0.5" data-to="0" data-crop="false" data-opacity="0" data-scale="1.5" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
                 <div class="col-md-6">
@@ -60,7 +60,7 @@ and community development and empowerment initiatives in Conservation Area, Prod
         </div>
     </div>
 </section>
-<section id="page-content">
+<section id="page-content" class="no-display">
 	<div class="container">
 		<div class="row scrollme animateme p-t-30" data-when="enter" data-from="0.5" data-to="0" data-crop="false" data-opacity="0" data-scale="1.5" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
 			<div class="col-md-4">

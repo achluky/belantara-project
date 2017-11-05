@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 11:11:40
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 06:07:52
          compiled from "application/views/front-end/head.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:50686149359f94151ed6533-15884671%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:186095683359fa0f061850b9-64384043%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a76e1c81e59bdeb129c3092107f61d9c9719bcf8' => 
     array (
       0 => 'application/views/front-end/head.tpl',
-      1 => 1509531088,
+      1 => 1509858412,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '50686149359f94151ed6533-15884671',
+  'nocache_hash' => '186095683359fa0f061850b9-64384043',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f94151ee4338_61718786',
+  'unifunc' => 'content_59fa0f061ad356_82968054',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_59f94151ee4338_61718786')) {function content_59f94151ee4338_61718786($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_59fa0f061ad356_82968054')) {function content_59fa0f061ad356_82968054($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -123,7 +123,7 @@ assets/front-end/images/gb.png"></a>
                             </nav>
                         </div>
                     </div>-->
-                    
+                    <?php if ($_smarty_tpl->tpl_vars['data']->value['site_lang']=='EN') {?>
                     <div id="mainMenu" class="light">
                         <div class="container">
                             <nav>
@@ -154,13 +154,84 @@ advisory-committee">Advisory Committee</a> </li>
                                     </li>
                                     <li class="dropdown"> <a href="#">Projects</a></li>
                                     <li class="dropdown"> <a href="#">Grants</a></li>
-                                    <li class="dropdown"> <a href="#">News</a></li>
-                                    <li class="dropdown"> <a href="#">Resource</a></li>
-                                    <li class="dropdown"> <a href="#">Contact</a></li>
+                                    <li class="dropdown"> <a href="#">Publication</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="<?php echo base_url();?>
+blog">Blog</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+gallery">Gallery</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+related-news">Related News</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+press-release">Press Release</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+references">References</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+resources">Resources</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="<?php echo base_url();?>
+contact-us">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+                    
+                    <?php } else { ?>
+                    <div id="mainMenu" class="light">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="<?php echo base_url();?>
+">Beranda</a></li>
+                                    <li class="dropdown"> <a href="#">Tentang</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="<?php echo base_url();?>
+about-us">Tentang Kami</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+management">Manajemen Kami</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+boards">Our Boards</a> </li>
+                                            <li><a href="<?php echo base_url();?>
+our-program">Progream Kami</a></li>
+                                            <li><a href="<?php echo base_url();?>
+grant-distribution-area">Wilayah Distribusi Hibah</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Progam</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="<?php echo base_url();?>
+our-approach">Pendekatan Kami</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+advisory-committee">Komite Penasihat</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="#">Proyek</a></li>
+                                    <li class="dropdown"> <a href="#">Hibah</a></li>
+                                    <li class="dropdown"> <a href="#">Publikasi</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="<?php echo base_url();?>
+blog">Blog</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+gallery">Galeri</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+related-news">Berita Terkait</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+press-release">Press Release</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+references">Referensi</a> </li>
+                                            <li> <a href="<?php echo base_url();?>
+resources">Resources</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"> <a href="<?php echo base_url();?>
+contact-us">Kontak</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <?php }?>
                     <!--end: Navigation-->
                 </div>
             </div>

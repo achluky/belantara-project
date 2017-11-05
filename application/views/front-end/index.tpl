@@ -1,10 +1,10 @@
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
-<div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360">
+<div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" data-autoplay="true">
 
             <!-- Slide 1 -->
-            <div class="slide kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/gajah.jpg');">
+            <div class="slide kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/gajah_nyusu.jpg');">
                 <div class="container">
                     <div class="slide-captions">
                         <!-- Captions 
@@ -16,7 +16,16 @@
             <!-- end: Slide 1 -->
 
             <!-- Slide 2 -->
-            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/monyet.jpg');">
+            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/IMG_4911-2.jpg');">
+                <div class="container">
+                    <div class="slide-captions">
+                        <!-- Captions
+                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
+                        <!-- end: Captions -->
+                    </div>
+                </div>
+            </div>
+            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/IMG_7430.jpg');">
                 <div class="container">
                     <div class="slide-captions">
                         <!-- Captions
@@ -38,7 +47,7 @@
 
         </div>
         
-        <section class="background-overlay-grey  p-t-100 p-b-100" data-velocity="-.30" data-parallax-image="{base_url()}assets/front-end/images/parallax/04.jpg">
+        <section class="background-overlay-grey  p-t-100 p-b-100" data-velocity="-.30" data-parallax-image="{base_url()}assets/front-end/images/slider/IMG_4530.jpg">
             <div class="container xs-text-center sm-text-center text-light">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 text-center"> 
@@ -60,17 +69,17 @@
                 <div class="row">
                   <div class="col-lg-6 col-md-6">
                       <h2 >Get to know us better.</h2>
-                      <p class="m-b-10">Belantara is an Indonesia grant-making institution. That aims to contribute to the protection and restoration of forests while improving the livelihoods of local communities in the 10 grant distribution areas across 5 province.</p>
-                      <ul class="list-icon list-icon-check list-icon-colored m-b-10">
+                      <p class="m-b-10">Belantara is an Indonesia grant-making institution. That aims to contribute to the protection and restoration of forests while improving the livelihoods of local communities in the 10 grant distribution areas across 5 province.It takes its name from the Indonesian word ‘Belantara’ which means wilderness or pristine forest.</p>
+                      <!--<ul class="list-icon list-icon-check list-icon-colored m-b-10">
                         <li class="lihome">Nulla vehicula nisl cum soluta nobis est eligendi optio cumque </li>
                         <li class="lihome">nihil impeditnon enim fermentum veniamDuis nec aliquet massa</li>
                         <li class="lihome">sed dapibus mauris. Nulla vehicula nisl cum soluta nobis est eligendi</li>
-                      </ul> 
-                      <p>Dolor sit amet, consectetur adipisicing elit. Vero quod conseqt quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus.</p>
+                      </ul> -->
+                      <p>Belantara primary focus is to allocate grants to support restoration, protection, conservation of endangered species (speci cally Sumatran Tiger, Sumatran Elephant, as well as Sumatran and Bornean Orangutan), Institutional development, and community development and empowerment initiatives in Conservation Area, Production Forest, Protection Forest, and Social Forestry on the ten specified grant distribution areas across five provinces on the islands of Sumatra and Kalimantan (Indonesian Borneo).</p>
                   </div>  
                   <div class="col-lg-6 col-md-6 col-sm-6">
-                    <video class="text-center" width="100%" height="100%" controls="" poster="{base_url()}assets/front-end/video/cover.png">
-                        <source src="{base_url()}assets/front-end/video/home.mp4" type="video/mp4">
+                    <video class="text-center" width="100%" height="100%" controls="" poster="http://demo.belantara.or.id/video/cover.png">
+                        <source src="http://demo.belantara.or.id/video/home.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                   </div>
@@ -101,29 +110,22 @@
             </div>
             </div>
         </section>
-        
         <section class="background-orange"><div class="container">
             <div class="row text-light">
-              <div class="col-md-4">
-                <div class="icon-box effect medium border center">
-                  <div class="icon"> <a href="#"><i class="fa fa-heart"></i></a> </div>
-                  <div class="counter bold"> <span data-speed="3500" data-refresh-interval="50" data-to="88000" data-from="0" data-seperator="true">88000</span> </div>
-                  <p>On Going Restoration Initiative</p>
-                </div>
+              <div class="col-md-4 text-center">
+                  <div class="icon-icon-blantara-restoration home"> </div>
+                <div class="counter large"> <span data-speed="3500" data-refresh-interval="50" data-to="443" data-from="0" data-seperator="true">443</span> </div>
+                <p>On Going Restoration Initiative</p>
               </div>
-              <div class="col-md-4">
-                <div class="icon-box effect medium border center">
-                  <div class="icon"> <a href="#"><i class="fa fa-lightbulb-o"></i></a> </div>
-                  <div class="counter"> <span data-speed="1500" data-refresh-interval="50" data-to="4500" data-from="1000" data-seperator="true">4500</span> </div>
-                  <p>On Going Protection Initiative</p>
-                </div>
+              <div class="col-md-4 text-center">
+                  <div class="icon-icon-blantara-protection home"> </div>
+                <div class="counter large"> <span data-speed="3500" data-refresh-interval="50" data-to="534" data-from="0" data-seperator="true">534</span> </div>
+                <p>On Going Protection Initiative</p>
               </div>
-              <div class="col-md-4">
-                <div class="icon-box effect medium border center">
-                  <div class="icon"> <a href="#"><i class="fa fa-child"></i></a> </div>
-                  <div class="counter bold"> <span data-speed="3500" data-refresh-interval="50" data-to="88000" data-from="0" data-seperator="true">88000</span> </div>
-                  <p>On Going Social Forestry Initiative</p>
-                </div>
+              <div class="col-md-4 text-center">
+                  <div class="icon-icon-blantara-community home"> </div>
+                <div class="counter large"> <span data-speed="3500" data-refresh-interval="50" data-to="269" data-from="0" data-seperator="true">269</span> </div>
+                <p>On Going Social Forestry Initiative</p>
               </div>
             </div>
         </div></section>
@@ -135,7 +137,7 @@
             </div>
         </section>
         
-        <section class="background-overlay-one p-t-50 p-b-50" data-velocity="-.10" data-parallax-image="{base_url()}assets/front-end/images/parallax/parallax.png">
+        <section class="background-overlay-one p-t-50 p-b-50" data-velocity="-.10" data-parallax-image="{base_url()}assets/front-end/images/parallax/parallax.jpg">
             <div class="container">
                 <div class="heading heading-center text-light">
                     <h2>OUR BLOG</h2>
@@ -146,12 +148,12 @@
                     <div class="post-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 0px; top: 0px;">
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="{base_url()}assets/front-end/images/upload/1.jpg">
+                                <a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">
+                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/Realising-A-New-Vision-for-the-LandscapeB_1200x798px.jpg">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
-                                <h2><a href="#">Lighthouse, standard post with a single image</a></h2>
+                                <h2><a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">Realising a new vision for the landscape</a></h2>
                             </div>
                         </div>
                     </div>
@@ -161,12 +163,12 @@
                     <div class="post-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 386px; top: 0px;">
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="{base_url()}assets/front-end/images/upload/2.jpg">
+                                <a href="{base_url()}blog/ipfest-2016">
+                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/DSC_7771.jpg">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
-                                <h2><a href="#">Lighthouse, standard post with a single image</a></h2>
+                                <h2><a href="{base_url()}blog/ipfest-2016">IPFEST 2016 – Promosi Program Yayasan Belantara pada Ajang Berbagi dan Menggalang Sinergi untuk Restorasi Bentang Alam</a></h2>
                             </div>
                         </div>
                     </div>
@@ -177,12 +179,12 @@
                     <div class="post-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 773px; top: 0px;">
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
-                                <a href="#">
-                                    <img alt="" src="{base_url()}assets/front-end/images/upload/3.jpg">
+                                <a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">
+                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/Stakeholder-Consultation-on-Landscape-Conservation-Master-PlanB_1200x798px.jpg">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
-                                <h2><a href="#">Lighthouse, standard post with a single image</a></h2>
+                                <h2><a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">Stakeholder Consultation on Landscape Conservation Master Plan</a></h2>
                             </div>
                         </div>
                     </div>
@@ -219,21 +221,21 @@
                             <h3>Latest News</h3>
                             <div class="post-thumbnail-list">
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/3.jpg">
+                                    <img alt="" src="{base_url()}document/images/link.png">
                                     <div class="post-thumbnail-content">
-                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+                                        <a href="http://www.narrativematters.co.uk/betterbusiness-episodes/tony-juniper" target="_blank">Episode #5 – Tony Juniper + how the world’s biggest paper company is atoning for its sins</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/2_thumb.jpg">
+                                    <img alt="" src="{base_url()}document/images/link.png">
                                     <div class="post-thumbnail-content">
-                                        <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
+                                        <a href="http://www.theguardian.com/world/ng-interactive/2015/oct/28/indonesia-burning-forest-fires-predicted-to-be-worst-on-record" target="_blank">Indonesia Burning: Forest Fires Predicted to be Worst on Record</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/1_thumb.jpeg">
+                                    <img alt="" src="{base_url()}document/images/link.png">
                                     <div class="post-thumbnail-content">
-                                        <a href="#">Consectetur adipiscing elit</a>
+                                        <a href="http://news.mongabay.com/2015/05/ongoing-overkill-loss-of-big-herbivores-leading-to-empty-landscapes/" target="_blank">Ongoing Overkill Loss of Big Herbivores Leading to Empty Landscapes</a>
                                     </div>
                                 </div>
                             </div>
@@ -245,21 +247,9 @@
                             <h3>Latest Resource</h3>
                             <div class="post-thumbnail-list">
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/3.jpg">
+                                    <img alt="" src="{base_url()}document/images/icon-pdf.jpg">
                                     <div class="post-thumbnail-content">
-                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                                    </div>
-                                </div>
-                                <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/2_thumb.jpg">
-                                    <div class="post-thumbnail-content">
-                                        <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
-                                    </div>
-                                </div>
-                                <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/1_thumb.jpeg">
-                                    <div class="post-thumbnail-content">
-                                        <a href="#">Consectetur adipiscing elit</a>
+                                        <a href="https://drive.google.com/file/d/0B3QpLlNlOkDLcUZISWxJQlYybUU/view">Partnership Programs In West Kalimantan Province</a>
                                     </div>
                                 </div>
                             </div>

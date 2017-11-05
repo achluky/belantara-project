@@ -68,7 +68,7 @@ class Person extends CI_Controller {
         $config ['max_size'] = '5500';
         $this->upload->initialize($config); // meng set config yang sudah di atur
 
-        if ( ($this->input->post('nama') != NULL) and ($this->input->post('deskripsi') != NULL) ) {
+        if ( ($this->input->post('nama') != NULL) ) {
             if (isset($file_image['name']) and $file_image['name'] != '') {
                 if (!$this->upload->do_upload('foto')) {
                     $alert = $this->upload->display_errors();
@@ -77,7 +77,8 @@ class Person extends CI_Controller {
                     $data = array(
                         'name' => $this->input->post('nama'),
                         'jabatan' => $this->input->post('jabatan'),
-                        'deskripsi' => $this->input->post('deskripsi'),
+                        'deskripsi_EN' => $this->input->post('deskripsi_EN'),
+                        'deskripsi_ID' => $this->input->post('deskripsi_ID'),
                         'create_date'=> date('Y-m-d h:i:s'),
                         'image'=> $file_image['name'],
                         'idcategory'=> $this->input->post('idcategory'),
