@@ -7,7 +7,7 @@
             <div class="slide kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/gajah.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions 
+                        <!-- Captions -->
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -19,7 +19,7 @@
             <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/monyet.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions
+                        <!-- Captions -->
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -28,7 +28,7 @@
             <div class="slide  kenburns" style="background-image:url('http://belantara.or.id/wp-content/uploads/BelantaraSlider02_1920x1313px.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions
+                        <!-- Captions -->
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -219,19 +219,19 @@
                             <h3>Latest News</h3>
                             <div class="post-thumbnail-list">
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/3.jpg">
+                                    <img alt="" src="{base_url()}assets/front-end/images/upload/3.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/2_thumb.jpg">
+                                    <img alt="" src="{base_url()}assets/front-end/images/upload/2_thumb.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/1_thumb.jpeg">
+                                    <img alt="" src="{base_url()}assets/front-end/images/upload/1_thumb.jpeg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Consectetur adipiscing elit</a>
                                     </div>
@@ -245,19 +245,19 @@
                             <h3>Latest Resource</h3>
                             <div class="post-thumbnail-list">
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/3.jpg">
+                                    <img alt="" src="{base_url()}assets/front-end/images/upload/3.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/2_thumb.jpg">
+                                    <img alt="" src="{base_url()}assets/front-end/images/upload/2_thumb.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/1_thumb.jpeg">
+                                    <img alt="" src="{base_url()}assets/front-end/images/upload/1_thumb.jpeg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Consectetur adipiscing elit</a>
                                     </div>

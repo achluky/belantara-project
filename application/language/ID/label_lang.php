@@ -20,11 +20,20 @@ $lang['label.tabel.cancel'] = 'Cancel';
 $lang['label.tabel.save'] = 'Simpan';
 
 
+$lang['label.news.title'] = 'Judul';
+$lang['label.news.summary'] = 'Ringkasn';
+$lang['label.news.content']= 'Isi';
+$lang['label.news.keyword']= 'Kata Kunci';
+$lang['label.news.image']= 'Gambar';
+$lang['label.news.save']= 'Save';
+$lang['label.news.cancel']= 'Cancel';
+
+
 $lang['label.tabel_date_start'] = 'Mulai';
 $lang['label.tabel_date_start'] = 'Berakhir';
 
 $lang['label.newsEdit'] = 'Edit Berita';
-$lang['label.news.title'] = 'Judu;';
+$lang['label.news.title'] = 'Judul';
 $lang['label.news.summary'] = 'Ringkasan';
 $lang['label.news.content'] = 'Isi';
 $lang['label.news.location'] = 'Lokasi';
@@ -43,15 +52,24 @@ $lang['label.tabel.judul_inovasi'] = 'Judul Inovasi';
 $lang['label.tabel.persfektif'] = 'Persfektif';
 $lang['label.tabel.taggalTerdaftar'] = 'Taggal Terdaftar';
 
-$lang['label.announcementEdit'] = 'News Edit';
-$lang['label.announcement.title'] = 'Title';
-$lang['label.announcement.content'] = 'Content';
-$lang['label.announcement.location'] = 'Location';
-$lang['label.announcement.interviewees'] = 'Interviewees';
-$lang['label.announcement.keyword'] = 'Keyword';
-$lang['label.announcement.image'] = 'Image';
-$lang['label.announcement.update'] = 'Update';
-$lang['label.announcement.cancel'] = 'Cancel';
+$lang['label.resource.programEdit'] = 'Edit Resource';
+$lang['label.resource.programAdd'] = 'Tambah Resource';
+$lang['label.resource.tipe'] = 'Tipe';
+$lang['label.resource.judul'] = 'Judul';
+$lang['label.resource.isi'] = 'Isi';
+$lang['label.resource.file'] = 'Dokumen';
+$lang['label.resource.gambar'] = 'Gambar';
+$lang['label.resource.date'] = 'Waktu';
+$lang['label.resource.lang'] = 'Bahasa';
+$lang['label.resource.edit'] = 'Edit';
+$lang['label.resource.delete'] = 'Hapus';
+$lang['label.resource.save'] = 'Save';
+$lang['label.resource.update'] = 'Update';
+$lang['label.resource.cancel'] = 'Cancel';
+$lang['label.resource.action'] = 'Aksi';
+
+$lang['label.resource.save'] = 'Save';
+$lang['label.resource.cancel'] = 'Cancel';
 
 
 $lang['label.tabel.content_text_id'] = "Konten Teks";

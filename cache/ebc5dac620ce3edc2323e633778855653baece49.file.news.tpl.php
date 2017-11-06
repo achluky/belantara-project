@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:12:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-04 11:07:41
          compiled from "application/views/admin/news.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:47120977359f9d63e3d1733-16471043%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ebc5dac620ce3edc2323e633778855653baece49' => 
     array (
       0 => 'application/views/admin/news.tpl',
-      1 => 1509462471,
+      1 => 1509788391,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9d63e44cc68_09816631',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f9d63e44cc68_09816631',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59f9d63e44cc68_09816631')) {function content_59f9d63e44cc68_09816631($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -95,7 +95,7 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
                   <div class="box-header">
                     <h3 class="box-title">News List</h3>
                     <a href="<?php echo base_url();?>
-news/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add NEWS</a>
+news/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add News</a>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">

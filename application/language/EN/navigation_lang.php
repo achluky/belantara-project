@@ -69,6 +69,10 @@ $lang['navigation.navbar.news'] = 'News Management';
 $lang['navigation.navbar.news.add'] = 'Add News';
 $lang['navigation.navbar.news.list'] = 'List News';
 
+$lang['navigation.navbar.blog'] = 'Blog Management';
+$lang['navigation.navbar.blog.add'] = 'Add Blog';
+$lang['navigation.navbar.blog.list'] = 'List Blog';
+
 $lang['navigation.navbar.person'] = 'Employe Manajement';
 $lang['navigation.navbar.person.add'] = 'Tambah Employe';
 $lang['navigation.navbar.person.list'] = 'List Employe';
@@ -77,14 +81,14 @@ $lang['navigation.navbar.person.list'] = 'List Employe';
 $lang['navigation.navbar.ref'] = 'References';
 $lang['navigation.navbar.ref.person'] = 'Employee Category';
 
+$lang['navigation.navbar.resource'] = 'Resource Management';
+$lang['navigation.navbar.resource.add'] = 'Add Resource';
+$lang['navigation.navbar.resource.list'] = 'List Resource';
 
+$lang['navigation.navbar.program'] = 'Program Management';
+$lang['navigation.navbar.program.add'] = 'Add Program';
+$lang['navigation.navbar.program.list'] = 'List Program';
 
-$lang['navigation.navbar.event'] = 'Event Management';
-$lang['navigation.navbar.event.add'] = 'Add Event';
-$lang['navigation.navbar.event.list'] = 'List Event';
-$lang['navigation.navbar.announcement'] = 'Announcement Man.';
-$lang['navigation.navbar.announcement.add'] = 'Add Announcement';
-$lang['navigation.navbar.announcement.list'] = 'List Announcement';
 $lang['navigation.navbar.banner'] = 'Banner Images Management';
 $lang['navigation.navbar.page'] = 'Page Management';
 $lang['navigation.navbar.links'] = 'Links Menu Management';

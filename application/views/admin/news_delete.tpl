@@ -21,7 +21,7 @@
           </div>
           {/if}
           <a href="{base_url()}news"><button type="button" class="btn btn-primary">Cancle</button></a>
-          <a href="{base_url()}news/delete/{$data.lang}/{$data.id_berita}?n=true"><button type="submit" class="btn btn-primary">Delete</button></a>
+          <a href="{base_url()}news/delete/{$data.lang}/{$data.id_berita}?n=true"><button type="submit" class="btn btn-danger">Delete</button></a>
     </div>
     <!-- /.col -->
 </div>

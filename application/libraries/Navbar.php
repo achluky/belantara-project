@@ -29,9 +29,10 @@ class Navbar {
 		// $this->setMenuWur();
 		//$this->setMenuReferensiDBINTEGRASI();
 		$this->setMenuNews();
+		$this->setMenuBlog();
+		// $this->setMenuEvent();
+		$this->setMenuResourcet();
 		$this->setMenuPage();
-		$this->setMenuEvent();
-		$this->setMenuAnnouncement();
 		$this->setPerson();
 		$this->setRef();
 		// $this->setMenuCampus();
@@ -40,9 +41,9 @@ class Navbar {
 		// $this->setMenuMedia();
 		// $this->setMenuBanner();
 		// $this->setMenuInfografis();
-		$this->setMainMenu();
-		$this->setMenuLink();
-		$this->setMenuIncidental();
+		// $this->setMainMenu();
+		// $this->setMenuLink();
+		// $this->setMenuIncidental();
 		$this->setMenuUser();
 		$this->setMenuSetting();
 	}
@@ -62,7 +63,7 @@ class Navbar {
 
 	private function setMenuDashboard(){
 		$this->menu['dashboard']=array("name"=>$this->controller->lang->line('navigation.navbar.dashboard'),
-							"url"=>base_url(),
+							"url"=>base_url()."login",
 							"status"=>"", 
 							"class"=>"glyphicon glyphicon-home",
 							"submenu"=>null);
@@ -227,17 +228,36 @@ class Navbar {
 											)
 							);
 	}
+	private function setMenuBlog(){
+		$this->menu['blog']=array("name"=>$this->controller->lang->line('navigation.navbar.blog'),
+							"url"=>base_url()."blog",
+							"status"=>"", 
+							"class"=>"glyphicon glyphicon-file",
+							"submenu"=>array(
+												"add"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.blog.add'),
+												"url"=>base_url()."blog/add",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												),
+												"list"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.blog.list'),
+												"url"=>base_url()."blog",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												)
+											)
+							);
+	}
 	private function setMenuEvent(){
 		$this->menu['event']=array("name"=>$this->controller->lang->line('navigation.navbar.event'),
 							"url"=>base_url()."event",
 							"status"=>"", 
-							"class"=>"ion ion-calendar",
+							"class"=>"ion ion-wifi", // resource
 							"submenu"=>array(
 												"add"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.event.add'),
 												"url"=>base_url()."event/add",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
 												),
 												"list"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.event.list'),
@@ -248,21 +268,21 @@ class Navbar {
 											)
 							);
 	}
-	private function setMenuAnnouncement(){
-		$this->menu['announcement']=array("name"=>$this->controller->lang->line('navigation.navbar.announcement'),
-							"url"=>base_url()."announcement",
+	private function setMenuResourcet(){
+		$this->menu['resource']=array("name"=>$this->controller->lang->line('navigation.navbar.resource'),
+							"url"=>base_url()."resource",
 							"status"=>"", 
-							"class"=>"glyphicon glyphicon-bullhorn",
+							"class"=>"ion ion-wifi",
 							"submenu"=>array(
 												"add"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.announcement.add'),
-												"url"=>base_url()."announcement/add",
+												"name"=>$this->controller->lang->line('navigation.navbar.resource.add'),
+												"url"=>base_url()."resource/add",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												),
 												"list"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.announcement.list'),
-												"url"=>base_url()."announcement",
+												"name"=>$this->controller->lang->line('navigation.navbar.resource.list'),
+												"url"=>base_url()."resource",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												)

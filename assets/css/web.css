@@ -58,9 +58,9 @@
 }
 
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side{
-	/*background:#003667;*/
+	background:#003667;
     /*background: #4f8e5f;*/
-    background: #00a65a;
+    /*background: #00a65a;*/
 }
 .skin-blue .sidebar-menu > li > a:hover, .skin-blue .sidebar-menu > li.active > a{
 /*color: #FFF;

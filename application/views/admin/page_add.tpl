@@ -36,6 +36,7 @@
                       <form role="form" data-toggle="validator" class="form-horizontal" action="{base_url()}page/save" name="" method="POST" enctype="multipart/form-data">
                         
                         <div class="box-body">
+
                             <div class="form-group">
                               <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
                               <div class="col-sm-10">
@@ -46,19 +47,6 @@
                               <label for="inputEmail3" class="col-sm-2 control-label">&nbsp;</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="judul" name="title_ID" placeholder="Judul Indonesia" value="" required>
-                              </div>
-                            </div>
-
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Isi</label>
-                              <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Isi English" name="content_EN" required></textarea>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
-                              <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Isi Indonesia" name="content_ID" required></textarea>
                               </div>
                             </div>
 
@@ -81,12 +69,10 @@
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Sidebar Content</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Template</label>
                               <div class="col-sm-10">
-                                <select class="form-control" name="sidebar" readonly>
-                                  <option value="0" selected="">-Menu-</option>
-                                  <option value="0">Profile</option>
-                                  <option value="0">Link</option>
+                                <select name="" class="form-control">
+                                  <option value="">-Pilih Template-</option>
                                 </select>
                               </div>
                             </div>

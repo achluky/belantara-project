@@ -40,8 +40,10 @@
                 <div class="box-header">
                     <h3 class="box-title">Edit Page</h3>
                 </div>
+
                 <!-- /.box-header -->
                 <form action="{base_url()}page/update" class="form-horizontal" method="POST" name="">
+
                     <div class="box-body box-primary">
                         <div class="box-body">
                             <div class="form-group">
@@ -64,25 +66,6 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="inputPassword3">
-                                    Isi
-                                </label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" name="content_EN" placeholder="Isi English" required="" rows="10">
-                                    {$data.page->content_EN}
-                                    </textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="inputPassword3">
-                                </label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" name="content_ID" placeholder="Isi Indonesia" required="" rows="10">
-                                    {$data.page->content_ID}
-                                    </textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="inputPassword3">
                                     Keyword
                                 </label>
                                 <div class="col-sm-10">
@@ -98,33 +81,26 @@
                                     </input>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="inputPassword3">
                                     URL
                                 </label>
                                 <div class="col-sm-10">
                                     <input class="form-control" id="keyword" name="url" placeholder="Alamat URL" required="" type="input" value="{$data.page->url}">
-                                    </input>
+                                    </input>    
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label class="col-sm-2 control-label" for="inputPassword3">
-                                    Sidebar Content
-                                </label>
-                                <div class="col-sm-10">
-                                    <select class="form-control" name="sidebar" readonly="">
-                                        <option selected="" value="0">
-                                            -Menu-
-                                        </option>
-                                        <option value="0">
-                                            Profile
-                                        </option>
-                                        <option value="0">
-                                            Link
-                                        </option>
-                                    </select>
-                                </div>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Template</label>
+                              <div class="col-sm-10">
+                                <select name="" class="form-control">
+                                  <option value="">-Pilih Template-</option>
+                                </select>
+                              </div>
                             </div>
+                            
                             <!-- /.box-body -->
                         </div>
                     </div>
@@ -132,7 +108,7 @@
                     <div class="box-footer">
                         <label class="col-sm-2 control-label" for="inputPassword3">
                         </label>
-                        <a href="{base_url()}main_menu">
+                        <a href="{base_url()}page">
                             Cancel
                         </a>
                         <button class="btn btn-info pull-right" type="submit">

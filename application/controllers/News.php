@@ -101,6 +101,15 @@ class News extends CI_Controller {
                 'News list' => base_url() . 'news',
                 'Add News' => base_url() . 'news/add'
             ),
+            'label' => array(
+                'news_title' => $this->lang->line('label.news.title'),
+                'news_summary' => $this->lang->line('label.news.summary'),
+                'news_content' => $this->lang->line('label.news.content'),
+                'news_keyword' => $this->lang->line('label.news.keyword'),
+                'news_image' => $this->lang->line('label.news.image'),
+                'news_save' => $this->lang->line('label.news.save'),
+                'news_cancel' => $this->lang->line('label.news.cancel')
+            ),
             'title' => 'News <small>management</small>',
             'last_login' => $this->sess['last_login'],
             'session' => $this->sess['username']
@@ -231,7 +240,7 @@ class News extends CI_Controller {
 
     public function save() {
         $file_image = (isset($_FILES['image']) == TRUE ? $_FILES['image'] : null); // ambil dahulu
-        $config ['upload_path'] = "../ipb/media/images/news/"; // lokasi folder yang akan digunakan untuk menyimpan file
+        $config ['upload_path'] = "./document/images/news/"; // lokasi folder yang akan digunakan untuk menyimpan file
         $config ['allowed_types'] = 'JPG|jpg|JPEG|jpeg|PNG|png'; // extension yang diperbolehkan untuk diupload
         $config ['file_name'] = url_title(slug($this->input->post('judul_id')))."-news";
         $config ['max_size'] = '5500';
@@ -250,8 +259,7 @@ class News extends CI_Controller {
                         'ringkasan_id' => $this->input->post('ringkasan_id'),
                         'isi_en' => $this->input->post('isi_en'),
                         'isi_id' => $this->input->post('isi_id'),
-                        'lokasi' => $this->input->post('lokasi'),
-                        'narasumber' => $this->input->post('narasumber'),
+                        'kategori' => 'news',
                         'keyword_id' => $this->input->post('keyword_id'),
                         'keyword_en' => $this->input->post('keyword_en')
                     );
@@ -305,19 +313,16 @@ class News extends CI_Controller {
         foreach ($list as $news) {
             $no++;
             $row = array();
-            //$row[] = '<a href="'. base_url().'news/post/'.date('Y', $news->waktu).'/'.  slug($news->judul).'">'.$news->judul.'</a>';
             $row[] = '<a href="'.base_url().'news/post/'. convert_date_format('Y', $news->waktu).'/'. convert_date_format('m', $news->waktu).'/'.strtolower($news->id_bahasa).'/'.slug($news->judul).'/'.$news->id_berita.'/">'.$news->judul.'</a>'
                     . '<br>'.$news->ringkasan.'';
             $data[] = $row;
         }
-
         $output = array(
             "draw" => $_POST['draw'],
             "recordsTotal" => $this->model_news->count_all(),
             "recordsFiltered" => $this->model_news->count_filtered(),
             "data" => $data,
         );
-        //output to json format
         echo json_encode($output);
     }
     

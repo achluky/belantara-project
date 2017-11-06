@@ -42,7 +42,7 @@
                         
                         <div class="box-body">
                             <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
+                              <label for="inputEmail3" class="col-sm-2 control-label">{$data.label.news_title}</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="judul" name="judul_en" placeholder="Judul English" value="" required>
                               </div>
@@ -55,7 +55,7 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Ringkasan</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_summary}</label>
                               <div class="col-sm-10">
                                 <textarea class="form-control " rows="3" placeholder="Ringkasan English" name="ringkasan_en" required></textarea>
                               </div>
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Isi</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_content}</label>
                               <div class="col-sm-10">
                                 <textarea class="form-control isi_en" rows="10" placeholder="Isi English" name="isi_en" required></textarea>
                               </div>
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Keyword</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_keyword}</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="keyword" placeholder="Keyword English" name="keyword_en" value="" required>
                               </div>
@@ -92,21 +92,8 @@
                                 <input type="input" class="form-control" id="keyword" placeholder="Keyword Indonesia" name="keyword_id" value="" required>
                               </div>
                             </div>
-                            
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Lokasi</label>
-                              <div class="col-sm-10">
-                                <input type="input" class="form-control" id="lokasi" placeholder="Lokasi" name="lokasi" value="">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Narasumber</label>
-                              <div class="col-sm-10">
-                                <input type="input" class="form-control" id="narasumber" placeholder="Narasumber" name="narasumber" value="">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Image</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_image}</label>
                               <div class="col-sm-10">
                                     
                                     <div class="fileinput fileinput-new input-group" data-provides="fileinput">
@@ -127,10 +114,10 @@
 
                         <div class="box-footer">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
-                              <a href="{base_url()}news">Cancel</a>
-                              <button type="submit" class="btn btn-info pull-right">Save</button>
+                              <a href="{base_url()}news">{$data.label.news_cancel}</a>
+                              <button type="submit" class="btn btn-info pull-right">{$data.label.news_save}</button>
                         </div><!-- /.box-footer -->
-
+                        <br/>
                       </form>
 
                   </div>
@@ -150,12 +137,9 @@
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
         CKEDITOR.replace('isi_en', {
             filebrowserBrowseUrl: '{base_url()}assets/plugins/filemanager/index.html'
         });
-
         CKEDITOR.replace('isi_id'); 
         // $(".textarea").wysihtml5();
         $(".fileinput").fileinput();

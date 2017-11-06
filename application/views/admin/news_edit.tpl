@@ -62,18 +62,6 @@
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_location}</label>
-                              <div class="col-sm-10">
-                                <input type="input" class="form-control" id="judul" placeholder="{$data.label.news_location}" name="lokasi" value="{$data.news->lokasi}" required>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_interviewees}</label>
-                              <div class="col-sm-10">
-                                <input type="input" class="form-control" id="judul" placeholder="{$data.label.news_interviewees}" name="narasumber" value="{$data.news->narasumber}" required>
-                              </div>
-                            </div>
-                            <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">{$data.label.news_keyword}</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="keyword" placeholder="{$data.label.news_keyword}" name="keyword" value="{$data.news->keyword}" required>
@@ -91,7 +79,7 @@
                                       <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                     </div>
                                     {if (isset($data.news->image)) and ($data.news->image != "") }
-                                    <img src="http://ipb.ac.id/media/images/news/{$data.news->image}"  class="img-rounded img-responsive thumbnail">
+                                    <img src="{base_url()}document/images/news/{$data.news->image}"  class="img-rounded img-responsive thumbnail">
                                     {/if}
                               </div> 
                             </div>
@@ -101,6 +89,7 @@
                               <a href="{base_url()}news">{$data.label.news_cancel}</a>
                               <button type="submit" class="btn btn-info pull-right">{$data.label.news_update}</button>
                         </div><!-- /.box-footer -->
+                        <br/>
                       </form>
 
                   </div>

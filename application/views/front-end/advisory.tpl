@@ -39,7 +39,7 @@ One of the key roles of the Advisory Committee is to provide advice to the Gover
                             </div>
                             <div class="portfolio-description">
                                 <a href="">
-                                    <h3><a href="{base_url()}home/boardsdetail/{$row->id}" data-lightbox="ajax">{$row->name}</a></h3>
+                                    <h3><a href="{base_url()}home/boardsdetail/{$row->idPerson}" data-lightbox="ajax">{$row->name}</a></h3>
                                     <span>{$row->jabatan}</span>
                                 </a>
                             </div>

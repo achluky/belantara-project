@@ -37,7 +37,7 @@
                           <th width="20px;">#id</th>
                           <th width="400px;">Judul</th>
                           <th>Url</th>
-                          <th width="40px;">Keyword</th>
+                          <th width="240px;">Keyword</th>
                           <th width="140px;">Action</th>
                         </tr>
                       </thead>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:58:19
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-04 02:36:02
          compiled from "application/views/front-end/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:122623937159f8923b21e893-52407981%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3f6f5b0b1f57b251e0815d3f41fb32caf533dc18' => 
     array (
       0 => 'application/views/front-end/index.tpl',
-      1 => 1509548271,
+      1 => 1509759361,
       2 => 'file',
     ),
     'aa05a97be8403772d7ec676845277f02b53e3008' => 
@@ -37,7 +37,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 assets/front-end/images/slider/gajah.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions 
+                        <!-- Captions -->
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -50,7 +50,7 @@ assets/front-end/images/slider/gajah.jpg');">
 assets/front-end/images/slider/monyet.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions
+                        <!-- Captions -->
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -59,7 +59,7 @@ assets/front-end/images/slider/monyet.jpg');">
             <div class="slide  kenburns" style="background-image:url('http://belantara.or.id/wp-content/uploads/BelantaraSlider02_1920x1313px.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions
+                        <!-- Captions -->
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -259,19 +259,22 @@ assets/front-end/images/upload/3.jpg">
                             <h3>Latest News</h3>
                             <div class="post-thumbnail-list">
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/3.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/3.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/2_thumb.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/2_thumb.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/1_thumb.jpeg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/1_thumb.jpeg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Consectetur adipiscing elit</a>
                                     </div>
@@ -285,19 +288,22 @@ assets/front-end/images/upload/3.jpg">
                             <h3>Latest Resource</h3>
                             <div class="post-thumbnail-list">
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/3.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/3.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/2_thumb.jpg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/2_thumb.jpg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/upload/1_thumb.jpeg">
+                                    <img alt="" src="<?php echo base_url();?>
+assets/front-end/images/upload/1_thumb.jpeg">
                                     <div class="post-thumbnail-content">
                                         <a href="#">Consectetur adipiscing elit</a>
                                     </div>

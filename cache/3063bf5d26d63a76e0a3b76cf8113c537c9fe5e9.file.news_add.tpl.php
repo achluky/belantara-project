@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 15:12:13
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-04 11:04:44
          compiled from "application/views/admin/news_add.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:40944112959f9d63d2d0b30-10917606%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3063bf5d26d63a76e0a3b76cf8113c537c9fe5e9' => 
     array (
       0 => 'application/views/admin/news_add.tpl',
-      1 => 1504155499,
+      1 => 1509789660,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9d63d3555e9_26539633',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f9d63d3555e9_26539633',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59f9d63d3555e9_26539633')) {function content_59f9d63d3555e9_26539633($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -109,7 +109,8 @@ news/save" name="" method="POST" enctype="multipart/form-data">
                         
                         <div class="box-body">
                             <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Judul</label>
+                              <label for="inputEmail3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_title'];?>
+</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="judul" name="judul_en" placeholder="Judul English" value="" required>
                               </div>
@@ -122,7 +123,8 @@ news/save" name="" method="POST" enctype="multipart/form-data">
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Ringkasan</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_summary'];?>
+</label>
                               <div class="col-sm-10">
                                 <textarea class="form-control " rows="3" placeholder="Ringkasan English" name="ringkasan_en" required></textarea>
                               </div>
@@ -135,7 +137,8 @@ news/save" name="" method="POST" enctype="multipart/form-data">
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Isi</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_content'];?>
+</label>
                               <div class="col-sm-10">
                                 <textarea class="form-control isi_en" rows="10" placeholder="Isi English" name="isi_en" required></textarea>
                               </div>
@@ -148,7 +151,8 @@ news/save" name="" method="POST" enctype="multipart/form-data">
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Keyword</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_keyword'];?>
+</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="keyword" placeholder="Keyword English" name="keyword_en" value="" required>
                               </div>
@@ -159,21 +163,9 @@ news/save" name="" method="POST" enctype="multipart/form-data">
                                 <input type="input" class="form-control" id="keyword" placeholder="Keyword Indonesia" name="keyword_id" value="" required>
                               </div>
                             </div>
-                            
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Lokasi</label>
-                              <div class="col-sm-10">
-                                <input type="input" class="form-control" id="lokasi" placeholder="Lokasi" name="lokasi" value="">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Narasumber</label>
-                              <div class="col-sm-10">
-                                <input type="input" class="form-control" id="narasumber" placeholder="Narasumber" name="narasumber" value="">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Image</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_image'];?>
+</label>
                               <div class="col-sm-10">
                                     
                                     <div class="fileinput fileinput-new input-group" data-provides="fileinput">
@@ -195,10 +187,12 @@ news/save" name="" method="POST" enctype="multipart/form-data">
                         <div class="box-footer">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
                               <a href="<?php echo base_url();?>
-news">Cancel</a>
-                              <button type="submit" class="btn btn-info pull-right">Save</button>
+news"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_cancel'];?>
+</a>
+                              <button type="submit" class="btn btn-info pull-right"><?php echo $_smarty_tpl->tpl_vars['data']->value['label']['news_save'];?>
+</button>
                         </div><!-- /.box-footer -->
-
+                        <br/>
                       </form>
 
                   </div>
@@ -273,13 +267,10 @@ assets/js/validator.min.js" type="text/javascript" charset="utf-8"><?php echo '<
 <?php echo '<script'; ?>
 >
     $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
         CKEDITOR.replace('isi_en', {
             filebrowserBrowseUrl: '<?php echo base_url();?>
 assets/plugins/filemanager/index.html'
         });
-
         CKEDITOR.replace('isi_id'); 
         // $(".textarea").wysihtml5();
         $(".fileinput").fileinput();

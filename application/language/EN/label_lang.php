@@ -32,6 +32,16 @@ $lang['label.news.image'] = 'Image';
 $lang['label.news.update'] = 'Update';
 $lang['label.news.cancel'] = 'Cancel';
 
+
+$lang['label.news.title'] = 'Title';
+$lang['label.news.summary'] = 'Summary';
+$lang['label.news.content']= 'Content';
+$lang['label.news.keyword']= 'Keyword';
+$lang['label.news.image']= 'Image';
+$lang['label.news.save']= 'Save';
+$lang['label.news.cancel']= 'Cancel';
+
+
 $lang['label.tabel.nim'] = 'NIM';
 $lang['label.tabel.nama_std'] = 'Name';
 $lang['label.tabel.strata'] = 'Strata';
@@ -40,16 +50,23 @@ $lang['label.tabel.judul_inovasi'] = 'Inovasi Title';
 $lang['label.tabel.persfektif'] = 'Persfektif';
 $lang['label.tabel.taggalTerdaftar'] = 'Taggal Terdaftar';
 
-$lang['label.announcementEdit'] = 'News Edit';
-$lang['label.announcement.title'] = 'Title';
-$lang['label.news.summary'] = 'Summary';
-$lang['label.announcement.content'] = 'Content';
-$lang['label.announcement.location'] = 'Location';
-$lang['label.announcement.interviewees'] = 'Interviewees';
-$lang['label.announcement.keyword'] = 'Keyword';
-$lang['label.announcement.image'] = 'Image';
-$lang['label.announcement.update'] = 'Update';
-$lang['label.announcement.cancel'] = 'Cancel';
+$lang['label.resource.programEdit'] = 'Resource Edit';
+$lang['label.resource.programAdd'] = 'Resource Add';
+$lang['label.resource.tipe'] = 'Type';
+$lang['label.resource.title'] = 'Title';
+$lang['label.resource.content'] = 'Content';
+$lang['label.resource.summary'] = 'Summary';
+$lang['label.resource.image'] = 'Image';
+$lang['label.resource.keyword']= 'Keyword';
+$lang['label.resource.file'] = 'File';
+$lang['label.resource.date'] = 'Date';
+$lang['label.resource.lang'] = 'Language';
+$lang['label.resource.edit'] = 'Edit';
+$lang['label.resource.delete'] = 'Delete';
+$lang['label.resource.save'] = 'Save';
+$lang['label.resource.update'] = 'Update';
+$lang['label.resource.cancel'] = 'Cancel';
+$lang['label.resource.action'] = 'Action';
 
 
 $lang['label.tabel_date_start'] = 'Start';
@@ -62,8 +79,8 @@ $lang['label.tabel.active'] = "Active";
 
 $lang['label.dashboard.title'] = "Website Management Belantara Fondation";
 $lang['label.dashboard.news'] = "News";
-$lang['label.dashboard.event'] = "Event";
-$lang['label.dashboard.announcment'] = "Announcment";
+$lang['label.dashboard.blog'] = "Blog";
+$lang['label.dashboard.resource'] = "Resource";
 $lang['label.dashboard.banner'] = "Banner";
 $lang['label.dashboard.page'] = "Page";
 $lang['label.dashboard.link'] = "Link";

@@ -2,7 +2,6 @@
 
 class Model_news extends CI_Model {
     
-
     var $column = array('waktu','judul','id_bahasa');
     var $order = array('waktu' => 'DESC');
 
@@ -19,7 +18,7 @@ class Model_news extends CI_Model {
             $l=$limit;
         }
 
-    	$sql = "select * from berita_ini WHERE id_bahasa = '".$this->session->userdata('site_lang')."' ORDER BY waktu DESC";
+    	$sql = "select * from berita_ini WHERE id_bahasa = '".$this->session->userdata('site_lang')."' and kategori='news' ORDER BY waktu DESC";
     	$result = $this->db->query($sql);
     	return $result;
     }
@@ -27,6 +26,7 @@ class Model_news extends CI_Model {
     public function _get_datatables_query()
     {
         $this->db->where("id_bahasa",$this->session->userdata('site_lang'));
+        $this->db->where("kategori",'news');
         $this->db->order_by('waktu','desc');
         $this->db->from("berita_ini");
         $i = 0;
@@ -72,7 +72,7 @@ class Model_news extends CI_Model {
 
     public function get_news($id, $id_bahasa="EN")
     {
-    	$sql = "select * from berita_ini WHERE id_bahasa= '".$id_bahasa."' and id_berita='".$id."' ";
+    	$sql = "select * from berita_ini WHERE id_bahasa= '".$id_bahasa."' and id_berita='".$id."'  and kategori='news' ";
     	$result = $this->db->query($sql);
     	return $result->row();
     }
@@ -91,13 +91,7 @@ class Model_news extends CI_Model {
         $this->db->where('id_berita',$data['id']);
         $this->db->where('id_bahasa',$id_bahasa);
         $this->db->update('berita_ini',$update);
-
         return TRUE;
-    	// $sql = "update berita_ini 
-    	// 		SET judul='".$data['judul']."', ringkasan='".$data['ringkasan']."',  
-    	// 			isi='".$data['isi']."', lokasi='".$data['lokasi']."', narasumber='".$data['narasumber']."', image='".$image."', keyword='".$data['keyword']."' 
-    	// 		WHERE id_berita = '".$data['id']."' and id_bahasa='".$id_bahasa."'";
-    	// return $this->db->query($sql);
     }
 
     public function save_news($data, $image)
@@ -113,8 +107,7 @@ class Model_news extends CI_Model {
             'ringkasan'=>$data['ringkasan_id'],
             'isi'=>$data['isi_id'],
             'keyword'=>$data['keyword_id'],
-            'lokasi'=>$data['lokasi'],
-            'narasumber'=>$data['narasumber'],
+            'kategori'=>'news',
             'image'=>$image,
             'file_pdf'=>url_title($data['judul_id']),
         );
@@ -127,8 +120,7 @@ class Model_news extends CI_Model {
             'ringkasan'=>$data['ringkasan_en'],
             'isi'=>$data['isi_en'],
             'keyword'=>$data['keyword_en'],
-            'lokasi'=>$data['lokasi'],
-            'narasumber'=>$data['narasumber'],
+            'kategori'=>'news',
             'image'=>$image,
             'file_pdf'=>url_title($data['judul_en']),
         );

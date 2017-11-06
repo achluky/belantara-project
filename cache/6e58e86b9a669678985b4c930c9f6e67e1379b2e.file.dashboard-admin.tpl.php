@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-10-31 17:52:20
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 15:46:44
          compiled from "application/views/dashboard/dashboard-admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:102709702359f8aa4480c145-86286828%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e58e86b9a669678985b4c930c9f6e67e1379b2e' => 
     array (
       0 => 'application/views/dashboard/dashboard-admin.tpl',
-      1 => 1509032724,
+      1 => 1509893204,
       2 => 'file',
     ),
     'c27e342567b2c47ed5f4a3a2dbffce0bdd1f3163' => 
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f8aa448942d7_48440219',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f8aa448942d7_48440219',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59f8aa448942d7_48440219')) {function content_59f8aa448942d7_48440219($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -92,11 +92,11 @@ event" class="small-box-footer">
                   <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.event');?>
+                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.blog');?>
 </strong></p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-calendar"></i>
+                      <i class="ion ion-document"></i>
                     </div>
                   </div>
               </a>
@@ -107,98 +107,17 @@ event" class="small-box-footer">
 announcement" class="small-box-footer">
                   <div class="small-box bg-green">
                     <div class="inner">
-                      <h3><img src="<?php echo base_url();?>
-assets/img/www.png" alt="www" style="width:30px;"/></h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.announcment');?>
+                      <h3>150</h3>
+                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.resource');?>
 </strong></p>
                     </div>
                     <div class="icon">
-                      <i class="glyphicon glyphicon-bullhorn"></i>
+                      <i class="ion ion-wifi"></i>
                     </div>
                   </div>
                 </a>
             </div><!-- ./col -->
 			
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-                <a href="<?php echo base_url();?>
-banner" class="small-box-footer">
-                  <div class="small-box bg-green">
-                    <div class="inner">
-                      <h3>150</h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.banner');?>
-</strong></p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-images"></i>
-                    </div>
-                  </div>
-                </a>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-                <a href="<?php echo base_url();?>
-page" class="small-box-footer">
-                  <div class="small-box bg-green">
-                    <div class="inner">
-                      <h3>150</h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.page');?>
-</strong></p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-android-folder"></i>
-                    </div>
-                  </div>
-                </a>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-                <a href="<?php echo base_url();?>
-link" class="small-box-footer">
-                  <div class="small-box bg-green">
-                    <div class="inner">
-                      <h3>150</h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.link');?>
-</strong></p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-link"></i>
-                    </div>
-                  </div>
-                </a>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-                <a href="<?php echo base_url();?>
-link" class="small-box-footer">
-                  <div class="small-box bg-green">
-                    <div class="inner">
-                      <h3>150</h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.menu');?>
-</strong></p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-drag"></i>
-                    </div>
-                  </div>
-                </a>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-                <a href="<?php echo base_url();?>
-incidental" class="small-box-footer">
-                  <div class="small-box bg-green">
-                    <div class="inner">
-                      <h3>150</h3>
-                      <p><strong style="text-transform: uppercase;"><?php echo lang('label.dashboard.incidental');?>
-</strong></p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-ios-infinite"></i>
-                    </div>
-                  </div>
-                </a>
-            </div><!-- ./col -->
     </div>
     <hr/>
 	  <div class="row">

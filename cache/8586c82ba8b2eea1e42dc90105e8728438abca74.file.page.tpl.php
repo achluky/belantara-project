@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-01 14:55:27
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-11-05 15:56:41
          compiled from "application/views/admin/page.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:169655168959f9d24fa164e9-01202191%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8586c82ba8b2eea1e42dc90105e8728438abca74' => 
     array (
       0 => 'application/views/admin/page.tpl',
-      1 => 1509378275,
+      1 => 1509893801,
       2 => 'file',
     ),
     '3d258d7b854b8ea9ff0b1aa93dfbf0411f25470d' => 
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_59f9d24faa3e96_26458328',
   'variables' => 
   array (
     'data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_59f9d24faa3e96_26458328',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_59f9d24faa3e96_26458328')) {function content_59f9d24faa3e96_26458328($_smarty_tpl) {?><!DOCTYPE html>
 <html>
@@ -105,7 +105,7 @@ page/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphi
                           <th width="20px;">#id</th>
                           <th width="400px;">Judul</th>
                           <th>Url</th>
-                          <th width="40px;">Keyword</th>
+                          <th width="240px;">Keyword</th>
                           <th width="140px;">Action</th>
                         </tr>
                       </thead>

@@ -71,6 +71,10 @@ $lang['navigation.navbar.news'] = 'Berita';
 $lang['navigation.navbar.news.add'] = 'Tambah Berita';
 $lang['navigation.navbar.news.list'] = 'List Berita';
 
+$lang['navigation.navbar.blog'] = 'Blog';
+$lang['navigation.navbar.blog.add'] = 'Tambah Blog';
+$lang['navigation.navbar.blog.list'] = 'List Blog';
+
 $lang['navigation.navbar.person'] = 'Manajement Karyawan';
 $lang['navigation.navbar.person.add'] = 'Tambah Karyawan';
 $lang['navigation.navbar.person.list'] = 'List Karywan';
@@ -78,13 +82,15 @@ $lang['navigation.navbar.person.list'] = 'List Karywan';
 $lang['navigation.navbar.ref'] = 'Referensi';
 $lang['navigation.navbar.ref.person'] = 'Kategori Karyawan';
 
-$lang['navigation.navbar.event'] = 'Kegiatan';
-$lang['navigation.navbar.event.add'] = 'Tambah Kegiatan';
-$lang['navigation.navbar.event.list'] = 'List Kegiatan';
-$lang['navigation.navbar.announcement'] = 'Pengumuman';
-$lang['navigation.navbar.announcement.add'] = 'Tambah Pengumuman';
-$lang['navigation.navbar.announcement.list'] = 'List Pengumuman';
-$lang['navigation.navbar.banner'] = 'Spanduk';
+$lang['navigation.navbar.resource'] = 'Resource';
+$lang['navigation.navbar.resource.add'] = 'Tambah Resource';
+$lang['navigation.navbar.resource.list'] = 'Daftar Resource';
+
+$lang['navigation.navbar.program'] = 'Pengaturan Program.';
+$lang['navigation.navbar.program.add'] = 'Tambah Program';
+$lang['navigation.navbar.program.list'] = 'List Program';
+
+
 $lang['navigation.navbar.page'] = 'Halaman';
 $lang['navigation.navbar.links'] = 'Tautan';
 $lang['navigation.navbar.main_menu'] = 'Menu Utama';

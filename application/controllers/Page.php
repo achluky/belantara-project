@@ -57,16 +57,13 @@ class Page extends CI_Controller {
         $this->smartyci->display('admin/page_add.tpl');
     }
     public function save(){
-        if ( ($this->input->post('content_EN') != NULL) and ($this->input->post('content_ID') != NULL) ) {
+        if ( ($this->input->post('title_EN') != NULL) and ($this->input->post('title_ID') != NULL) ) {
             $data = array(
                 'title_EN' => $this->input->post('title_EN'),
                 'title_ID' => $this->input->post('title_ID'),
                 'keyword_EN' => $this->input->post('title_EN'),
                 'keyword_ID' => $this->input->post('title_EN'),
-                'content_EN' => $this->input->post('content_EN'),
-                'content_ID' => $this->input->post('content_ID'),
                 'waktu'=> date('Y-m-d h:i:s'),
-                'sidebar'=> $this->input->post('sidebar'),
                 'url'=> $this->input->post('url')
             );
 
@@ -129,19 +126,14 @@ class Page extends CI_Controller {
 
     public function update(){
         $data = array(
-          'title_EN' => $this->input->post('title_EN'),
+                'title_EN' => $this->input->post('title_EN'),
                 'title_ID' => $this->input->post('title_ID'),
-                'keyword_EN' => $this->input->post('title_EN'),
-                'keyword_ID' => $this->input->post('title_EN'),
-                'content_EN' => $this->input->post('content_EN'),
-                'content_ID' => $this->input->post('content_ID'),
+                'keyword_EN' => $this->input->post('keyword_EN'),
+                'keyword_ID' => $this->input->post('keyword_ID'),
                 'waktu'=> date('Y-m-d h:i:s'),
-                'sidebar'=> $this->input->post('sidebar'),
                 'url'=> $this->input->post('url')
         );
-
         $id = $this->input->post('id');
-        //print_r($data);
         if($this->model_page->update_page($id,$data)) {
             $alert = url_title("Update succses !");
             redirect('page/edit/'.$id.'?n='.$alert,'refresh');
