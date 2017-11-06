@@ -50,19 +50,18 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi(ID)</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control deskripsi" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required></textarea>
+                                <textarea class="form-control deskripsi_ID" rows="10" placeholder="Deskripsi" name="deskripsi_ID" required></textarea>
                               </div>
                             </div>
-
+                            
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Deskripsi(EN)</label>
                               <div class="col-sm-10">
-                                <textarea class="form-control" rows="10" placeholder="Deskripsi EN" name="deskripsi_EN" required></textarea>
+                                <textarea class="form-control deskripsi_EN" rows="10" placeholder="Deskripsi" name="deskripsi_EN" required></textarea>
                               </div>
                             </div>
-
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Foto</label>
                               <div class="col-sm-10">
@@ -108,7 +107,8 @@
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        CKEDITOR.replace('deskripsi');
+        CKEDITOR.replace('deskripsi_ID');
+        CKEDITOR.replace('deskripsi_EN');
     });
   </script>
 {/block}

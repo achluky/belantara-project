@@ -9,13 +9,10 @@
                                 <img src="{base_url()}assets/front-end/images/logo.png" class="img-responsive" alt="">
                                 <div class="social-icons social-icons-border float-left m-t-60">
                                     <ul>
-                                        <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
-                                        <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                        <li class="social-youtube"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                        <li class="social-pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li class="social-gplus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li class="social-facebook"><a href="https://www.facebook.com/BelantaraFoundation/"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="social-twitter"><a href="https://twitter.com/belantara" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="social-instagram"><a href="https://instagram.com/belantara_found" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                        <li class="social-youtube"><a href="https://www.youtube.com/channel/UCqfoC1TtQihrB_nYnKIFJYQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
                                     </ul>
                                 </div>
                                 <!-- end: Social icons -->

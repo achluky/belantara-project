@@ -190,6 +190,18 @@ a:active {
 	/* Legacy iOS */
 }
 
+@font-face {
+  font-family: "belantara";
+  src:url("../fonts/belantara.eot");
+  src:url("../fonts/belantara.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/belantara.woff") format("woff"),
+    url("../fonts/belantara.ttf") format("truetype"),
+    url("../fonts/belantara.svg#belantara") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 html {
 	overflow-x: hidden;
 	font-family: 'avenir','Open Sans', 'Helvetica', 'Arial';
@@ -5361,6 +5373,7 @@ body.device-xs {
 .grid-item .grid-item-wrap {
 	position: relative;
 	overflow: hidden;
+    min-height: 375px;
 }
 
 .portfolio-item .portfolio-item-wrap>a,
@@ -6939,7 +6952,7 @@ span.rec-by {
 .post-thumbnail-list .post-thumbnail-entry>img {
 	float: left;
 	display: block;
-	height: 60px;
+	height: 80px;
 	width: 80px;
 	margin-right: 16px;
 	border-radius: 2px;
@@ -19513,3 +19526,42 @@ body.device-xs .col-md-3 .flickr-widget img {
 }
 
 .img-people{ float: left; padding-right: 20px; max-width: 300px;}
+
+[data-icon]:before {
+  font-family: "belantara" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "belantara" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-blantara-restoration:before {
+  content: "\61";
+}
+.icon-icon-blantara-community:before {
+  content: "\62";
+}
+.icon-icon-blantara-protection:before {
+  content: "\63";
+}
+.icon-icon-blantara-restoration.home:before{color: fff;font-size: 100px;}
+.icon-icon-blantara-community.home:before{color: fff;font-size: 100px;}
+.icon-icon-blantara-protection.home:before{color: fff;font-size: 100px;}

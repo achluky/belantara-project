@@ -17,7 +17,83 @@ class Home extends CI_Controller {
             'site_lang'=>$this->session->userdata('site_lang'),
         );
         $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/index.tpl');
+        if ($data['site_lang']=='ID')
+        {
+            $this->smartyci->display('front-end/index_id.tpl');
+        }
+        else
+        {
+            $this->smartyci->display('front-end/index.tpl');
+        }
+        
+    }
+    
+    public function contact() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
+        if ($data['site_lang']=='ID')
+        {
+            $this->smartyci->display('front-end/contact.tpl');
+        }
+        else
+        {
+            $this->smartyci->display('front-end/contact.tpl');
+        }
+        
+    }
+    
+    public function gallery() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/gallery.tpl');
+    }
+    
+    public function related_news() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/related-news.tpl');
+    }
+    
+    public function references() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/references.tpl');
+    }
+    
+    public function resources() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/resources.tpl');
+    }
+    
+    public function press_release() {
+        $data = array(
+            'url'=> $this->url,
+
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/press-release.tpl');
     }
 
     public function management(){
@@ -51,7 +127,14 @@ class Home extends CI_Controller {
         );
         
         $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/aboutus.tpl');
+        if ($data['site_lang']=='ID')
+        {
+            $this->smartyci->display('front-end/aboutus_id.tpl');
+        }
+        else
+        {
+            $this->smartyci->display('front-end/aboutus.tpl');
+        }
     }
     
     public function program(){
@@ -61,7 +144,14 @@ class Home extends CI_Controller {
         );
 
         $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/program.tpl');
+        if ($data['site_lang']=='ID')
+        {
+            $this->smartyci->display('front-end/program_id.tpl');
+        }
+        else
+        {
+            $this->smartyci->display('front-end/program.tpl');
+        }
     }
     public function grantarea(){
     	$data = array(
@@ -70,7 +160,14 @@ class Home extends CI_Controller {
         );
 
         $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/workingarea.tpl');
+        if ($data['site_lang']=='ID')
+        {
+            $this->smartyci->display('front-end/workingarea_id.tpl');
+        }
+        else
+        {
+            $this->smartyci->display('front-end/workingarea.tpl');
+        }
     }
     public function approach(){
     	$data = array(
