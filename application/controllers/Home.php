@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 		$this->load->model('model_home');
         $this->url = current_url();
     }
-
+    
     public function index() {
         $data = array(
             'url'=> $this->url,
@@ -123,9 +123,9 @@ class Home extends CI_Controller {
     public function aboutus(){
     	$data = array(
             'url'=> $this->url,
+            'session_group_name' => $this->session->userdata('group_name'),
             'site_lang'=>$this->session->userdata('site_lang')
         );
-        
         $this->smartyci->assign('data',$data);
         if ($data['site_lang']=='ID')
         {

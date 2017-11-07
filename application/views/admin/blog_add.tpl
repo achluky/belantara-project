@@ -38,7 +38,7 @@
                   <!-- /.box-header -->
                   <div class="box-body box-primary">
 
-                      <form role="form" data-toggle="validator" class="form-horizontal" action="{base_url()}blog/save" name="" method="POST" enctype="multipart/form-data">
+                      <form role="form" data-toggle="validator" class="form-horizontal" action="{base_url()}adminblog/save" name="" method="POST" enctype="multipart/form-data">
                         
                         <div class="box-body">
                             <div class="form-group">

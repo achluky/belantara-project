@@ -35,10 +35,10 @@
                       <thead>
                         <tr>
                           <th width="20px;">#id</th>
-                          <th width="400px;">Judul</th>
+                          <th width="200px;">Judul</th>
                           <th>Url</th>
-                          <th width="240px;">Keyword</th>
-                          <th width="140px;">Action</th>
+                          <th width="240px;">Controller</th>
+                          <th width="240px;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -52,13 +52,10 @@
                               {/if}</td>
                           <td>{$row->url}</td>
                           <td>
-                              {if $data.site_lang eq 'EN'}
-                                {$row->keyword_EN}
-                              {else}
-                                {$row->keyword_ID}
-                              {/if}
+                              {$row->controller}
                           </td>
                           <td>
+                              <a href="{base_url()}page/content_edit/{$row->url}"  class="btn btn-xs btn-primary" target="_blank_"><i class="fa fa-edit fa-fw"></i>Content Edit</a>
                               <a href="{base_url()}page/edit/{$row->id}"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
                               <a href="{base_url()}page/delete/{$row->id}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>

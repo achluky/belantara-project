@@ -27,7 +27,7 @@
                 <div class="box box-primary">
                   <div class="box-header">
                     <h3 class="box-title">Blog List</h3>
-                    <a href="{base_url()}blog/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Blog</a>
+                    <a href="{base_url()}adminblog/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Blog</a>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
@@ -67,7 +67,7 @@
    
           // Load data for the table's content from an Ajax source
           "ajax": {
-              "url": "{base_url()}blog/blog_list",
+              "url": "{base_url()}adminblog/blog_list",
               "type": "POST"
           },
    

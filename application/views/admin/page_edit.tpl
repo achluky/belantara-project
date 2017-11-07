@@ -87,7 +87,16 @@
                                     URL
                                 </label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" id="keyword" name="url" placeholder="Alamat URL" required="" type="input" value="{$data.page->url}">
+                                    <input class="form-control" id="keyword" name="url" placeholder="Alamat URL/Slug" required="" type="input" value="{$data.page->url}">
+                                    </input>    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputPassword3">
+                                    &nbsp;
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="keyword" name="controller" placeholder="Controller" required="" type="input" value="{$data.page->controller}">
                                     </input>    
                                 </div>
                             </div>

@@ -131,7 +131,8 @@ class Page extends CI_Controller {
                 'keyword_EN' => $this->input->post('keyword_EN'),
                 'keyword_ID' => $this->input->post('keyword_ID'),
                 'waktu'=> date('Y-m-d h:i:s'),
-                'url'=> $this->input->post('url')
+                'url'=> $this->input->post('url'),
+                'controller'=> $this->input->post('controller')
         );
         $id = $this->input->post('id');
         if($this->model_page->update_page($id,$data)) {
@@ -141,5 +142,16 @@ class Page extends CI_Controller {
             $alert = url_title("Save failde !");
             redirect('page/edit/'.$id.'?n='.$alert,'refresh');
         }
+    }
+
+    public function content_edit(){
+        $data = array(
+            'url'=> $this->url,
+            'session_group_name' => $this->sess['group_name'],
+            'session' => $this->sess['username'],
+            'site_lang'=>$this->session->userdata('site_lang')
+        );
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/aboutus.tpl');
     }
 }

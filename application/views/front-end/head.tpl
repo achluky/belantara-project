@@ -13,6 +13,8 @@
     <link href="{base_url()}assets/front-end/css/plugins.css" rel="stylesheet">
     <link href="{base_url()}assets/front-end/css/style.css" rel="stylesheet">
     <link href="{base_url()}assets/front-end/css/responsive.css" rel="stylesheet"> 
+
+    {block name="addon_styles"}{/block}
 </head>
 <body class="">
     <div class="no-page-loader"></div>

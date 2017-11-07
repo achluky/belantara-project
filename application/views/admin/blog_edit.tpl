@@ -39,7 +39,7 @@
 
 
                   <div class="box-body box-primary">
-                      <form class="form-horizontal" action="{base_url()}blog/update" name="" method="POST" enctype="multipart/form-data">
+                      <form class="form-horizontal" action="{base_url()}adminblog/update" name="" method="POST" enctype="multipart/form-data">
                         <div class="box-body">
                             <input type="hidden" name="id" value="{$data.news->id_berita}">
                             <input type="hidden" name="id_bahasa" value="{$data.news->id_bahasa}">

@@ -78,6 +78,9 @@ $lang['navigation.navbar.person.add'] = 'Tambah Employe';
 $lang['navigation.navbar.person.list'] = 'List Employe';
 
 
+$lang['navigation.navbar.slider'] = 'Slider';
+
+
 $lang['navigation.navbar.ref'] = 'References';
 $lang['navigation.navbar.ref.person'] = 'Employee Category';
 

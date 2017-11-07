@@ -65,9 +65,20 @@
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">URL</label>
                               <div class="col-sm-10">
-                                <input type="input" class="form-control" id="keyword" placeholder="Alamat URL" name="url" value="" required>
+                                <input type="input" class="form-control" id="keyword" placeholder="Alamat URL/slug" name="url" value="" required>
                               </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="inputPassword3">
+                                    &nbsp;
+                                </label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" id="keyword" name="controller" placeholder="Controller" required="" type="input">
+                                    </input>    
+                                </div>
+                            </div>
+
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">Template</label>
                               <div class="col-sm-10">

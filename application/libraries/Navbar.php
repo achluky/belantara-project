@@ -33,6 +33,7 @@ class Navbar {
 		// $this->setMenuEvent();
 		$this->setMenuResourcet();
 		$this->setMenuPage();
+		$this->setMenuSlider();
 		$this->setPerson();
 		$this->setRef();
 		// $this->setMenuCampus();
@@ -230,19 +231,19 @@ class Navbar {
 	}
 	private function setMenuBlog(){
 		$this->menu['blog']=array("name"=>$this->controller->lang->line('navigation.navbar.blog'),
-							"url"=>base_url()."blog",
+							"url"=>base_url()."adminblog",
 							"status"=>"", 
 							"class"=>"glyphicon glyphicon-file",
 							"submenu"=>array(
 												"add"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.blog.add'),
-												"url"=>base_url()."blog/add",
+												"url"=>base_url()."adminblog/add",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												),
 												"list"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.blog.list'),
-												"url"=>base_url()."blog",
+												"url"=>base_url()."adminblog",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												)
@@ -338,6 +339,14 @@ class Navbar {
 							"url"=>base_url()."page",
 							"status"=>"", 
 							"class"=>"ion ion-android-folder",
+							"submenu"=>null);
+	}
+
+	private function setMenuSlider(){
+		$this->menu['slider']=array("name"=>$this->controller->lang->line('navigation.navbar.slider'),
+							"url"=>base_url()."slider",
+							"status"=>"", 
+							"class"=>"ion ion-images",
 							"submenu"=>null);
 	}
 

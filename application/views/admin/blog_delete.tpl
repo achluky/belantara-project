@@ -20,8 +20,8 @@
             <p>{$data.alert}</p>
           </div>
           {/if}
-          <a href="{base_url()}blog"><button type="button" class="btn btn-primary">Cancle</button></a>
-          <a href="{base_url()}blog/delete/{$data.lang}/{$data.id_berita}?n=true"><button type="submit" class="btn btn-danger">Delete</button></a>
+          <a href="{base_url()}adminblog"><button type="button" class="btn btn-primary">Cancle</button></a>
+          <a href="{base_url()}adminblog/delete/{$data.lang}/{$data.id_berita}?n=true"><button type="submit" class="btn btn-danger">Delete</button></a>
     </div>
     <!-- /.col -->
 </div>
