@@ -13,8 +13,7 @@
     <link href="{base_url()}assets/front-end/css/plugins.css" rel="stylesheet">
     <link href="{base_url()}assets/front-end/css/style.css" rel="stylesheet">
     <link href="{base_url()}assets/front-end/css/responsive.css" rel="stylesheet"> 
-
-    {block name="addon_styles"}{/block}
+    <link href="{base_url()}assets/front-end/css/custom.css" rel="stylesheet"> 
 </head>
 <body class="">
     <div class="no-page-loader"></div>
@@ -109,7 +108,7 @@
                                             <li> <a href="{base_url()}advisory-committee">Advisory Committee</a> </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"> <a href="#">Projects</a></li>
+                                    <li> <a href="{base_url()}project">Projects</a></li>
                                     <li class="dropdown"> <a href="#">Grants</a></li>
                                     <li class="dropdown"> <a href="#">Publication</a>
                                         <ul class="dropdown-menu">
@@ -138,7 +137,7 @@
                                             <li> <a href="{base_url()}about-us">Tentang Kami</a> </li>
                                             <li> <a href="{base_url()}management">Manajemen Kami</a> </li>
                                             <li> <a href="{base_url()}boards">Our Boards</a> </li>
-                                            <li><a href="{base_url()}our-program">Progream Kami</a></li>
+                                            <li><a href="{base_url()}our-program">Program Kami</a></li>
                                             <li><a href="{base_url()}grant-distribution-area">Wilayah Distribusi Hibah</a></li>
                                         </ul>
                                     </li>
@@ -148,7 +147,7 @@
                                             <li> <a href="{base_url()}advisory-committee">Komite Penasihat</a> </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"> <a href="#">Proyek</a></li>
+                                    <li > <a href="{base_url()}project">Proyek</a></li>
                                     <li class="dropdown"> <a href="#">Hibah</a></li>
                                     <li class="dropdown"> <a href="#">Publikasi</a>
                                         <ul class="dropdown-menu">

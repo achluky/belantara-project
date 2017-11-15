@@ -413,13 +413,7 @@ class Navbar {
 							"status"=>"", 
 							"class"=>"glyphicon glyphicon-cog",
 							"submenu"=>array(
-												/*"pengaturan_sistem"=>array(
-													"name"=>$this->controller->lang->line('navigation.navbar.setting.pengaturan_sistem'),
-													"url"=>base_url()."setting/pengaturan_sistem",
-													"status"=>"", 
-													"class"=>"fa fa-circle-o",
-												),*/
-												"long_lat"=>array(
+												"pengaturan_sistem"=>array(
 													"name"=>$this->controller->lang->line('navigation.navbar.setting.longlat'),
 													"url"=>base_url()."setting/pengaturan_sistem",
 													"status"=>"", 

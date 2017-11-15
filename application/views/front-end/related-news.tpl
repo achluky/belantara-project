@@ -21,6 +21,22 @@
                             <div class="post-item">
                                 <div class="post-item-wrap">
                                     <div class="post-item-description">
+                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Octiber 27, 2017 | DETAK PALEMBANG</span>
+                                        <h2><a href="http://detak-palembang.com/sumsel-segera-miliki-cagar-biofer/" target="_blank">Sumsel Segera Miliki Cagar Biofer </a></h2>
+                                        <p>Guna mewujudkan pembangunan daerah,  menyelaraskan pembangunan ekonomi, dan perlindungan lingkungan dan kesejahteraan masyarakat, Pemprov Sumsel telah menyusun dan menerapkan program pertumbuhan ekonomi hijau (South Sumatra Green Growth) dengan pendekatan ecoregion…</p>
+
+                                        <a href="http://detak-palembang.com/sumsel-segera-miliki-cagar-biofer/" target="_blank" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- end: Post item-->
+
+                            <!-- Post item-->
+                            <div class="post-item">
+                                <div class="post-item-wrap">
+                                    <div class="post-item-description">
                                         <span class="post-meta-date"><i class="fa fa-calendar-o"></i>February 15, 2016 | NARRATIVEMATTERS</span>
                                         <h2><a href="http://www.narrativematters.co.uk/betterbusiness-episodes/tony-juniper" target="_blank">Episode #5 – Tony Juniper + how the world’s biggest paper company is atoning for its sins</a></h2>
                                         <p>APP is one of the biggest pulp and paper companies in the world, based in Jakarta, Indonesia. It manufactures about 18 million tonnes of paper products a year and sells them into 120 countries…</p>

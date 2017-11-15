@@ -97,14 +97,24 @@ class Home extends CI_Controller {
     }
 
     public function management(){
-        
-    	$data = array(
+          
+        $data = array(
             'url'=> $this->url,
-            'session_group_name' => $this->session->userdata('group_name'),
+
             'employee_management' => $this->model_home->get_employee_management(),
             'site_lang'=>$this->session->userdata('site_lang'),
         );
 
+        if ($data['site_lang']=='ID')
+        {
+            $data['page_title'] = 'MANAJEMEN KAMI';
+            $data['header'] = 'Tim Manajemen Belantara bertanggung jawab dalam pelaksanaan operasional sehari-hari, pengelolaan kegiatan konservasi, restorasi, program - program dan proyek - proyek pengembangan masyarakat  Belantara.';
+        }
+        else
+        {
+            $data['page_title'] = 'OUR MANAGEMENT';
+            $data['header'] = 'The Foundation’s Management Team is responsible for the day to day operation and management of Belantara’s conservation, restoration, and community development activities and projects.';
+        }
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/management.tpl');
     }
@@ -177,6 +187,15 @@ class Home extends CI_Controller {
 
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/approach.tpl');
+    }
+    public function project(){
+        $data = array(
+            'url'=> $this->url,
+            'site_lang'=>$this->session->userdata('site_lang')
+        );
+
+        $this->smartyci->assign('data',$data);
+        $this->smartyci->display('front-end/modal_test.tpl');
     }
     public function boards(){
     	$data = array(

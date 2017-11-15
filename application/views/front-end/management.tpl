@@ -4,7 +4,7 @@
         <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/HistoryH02Nm_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
             <div class="container">
                 <div class="page-title">
-                    <h1>OUR MANAGEMENT</h1>
+                    <h1>{$data.page_title}</h1>
                 </div>
             </div>
         </section>
@@ -22,7 +22,8 @@
                 </nav>
                 <!-- end: Portfolio Filter -->
                 <div class="heading heading-center p-t-30">
-                <h3>The Foundation’s Management Team is responsible for the day to day operation and management of Belantara’s conservation, restoration, and community development activities and projects.</h3></div>
+                    <h3>{$data.header}</h3>
+                </div>
 
                 <!-- Portfolio -->
                 <div id="portfolio" class="grid-layout portfolio-4-columns" data-margin="20">

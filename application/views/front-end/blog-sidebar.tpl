@@ -23,27 +23,24 @@
                                         <div class="tab-pane active" id="tab3">
                                             <div class="post-thumbnail-list">
                                                 <div class="post-thumbnail-entry">
-                                                    <img alt="" src="images/blog/thumbnail/7.jpg">
+                                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/DSC_7771.jpg">
                                                     <div class="post-thumbnail-content">
-                                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                                                        <span class="post-date"><i class="fa fa-clock-o"></i> 11h ago</span>
-                                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
+                                                        <a href="{base_url()}blog/ipfest-2016">IPFEST 2016 – Promosi Program Yayasan Belantara pada Ajang Berbagi dan Menggalang Sinergi untuk Restorasi Bentang Alam</a>
+                                                        <span class="post-date"><i class="fa fa-clock-o"></i> Nov 1, 2016</span>
                                                     </div>
                                                 </div>
                                                 <div class="post-thumbnail-entry">
-                                                    <img alt="" src="images/blog/thumbnail/8.jpg">
+                                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/Realising-A-New-Vision-for-the-LandscapeB_1200x798px.jpg">
                                                     <div class="post-thumbnail-content">
-                                                        <a href="#">Fringilla luctus Lorem ipsum dolor sit amet</a>
-                                                        <span class="post-date"><i class="fa fa-clock-o"></i> 11h ago</span>
-                                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
+                                                        <a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">Realising a new vision for the landscape</a>
+                                                        <span class="post-date"><i class="fa fa-clock-o"></i> Sept 25, 2015</span>
                                                     </div>
                                                 </div>
                                                 <div class="post-thumbnail-entry">
-                                                    <img alt="" src="images/blog/thumbnail/6.jpg">
+                                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/Stakeholder-Consultation-on-Landscape-Conservation-Master-PlanB_1200x798px.jpg">
                                                     <div class="post-thumbnail-content">
-                                                        <a href="#">Consectetur adipiscing elit</a>
-                                                        <span class="post-date"><i class="fa fa-clock-o"></i> 24h ago</span>
-                                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
+                                                        <a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">Stakeholder Consultation on Landscape Conservation Master Plan</a>
+                                                        <span class="post-date"><i class="fa fa-clock-o"></i> Sept 25, 2015</span>
                                                     </div>
                                                 </div>
                                             </div>

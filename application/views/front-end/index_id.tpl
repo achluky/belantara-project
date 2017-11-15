@@ -1,14 +1,23 @@
-
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
 <div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360">
 
+            
+            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/IMG_7430.jpg');">
+                <div class="container">
+                    <div class="slide-captions">
+                        <!-- Captions
+                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
+                        <!-- end: Captions -->
+                    </div>
+                </div>
+            </div>
             <!-- Slide 1 -->
             <div class="slide kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/gajah_nyusu.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions -->
+                        <!-- Captions 
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>
@@ -26,19 +35,10 @@
                     </div>
                 </div>
             </div>
-            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/IMG_7430.jpg');">
-                <div class="container">
-                    <div class="slide-captions">
-                        <!-- Captions -->
-                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
-                        <!-- end: Captions -->
-                    </div>
-                </div>
-            </div>
             <div class="slide  kenburns" style="background-image:url('http://belantara.or.id/wp-content/uploads/BelantaraSlider02_1920x1313px.jpg');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions -->
+                        <!-- Captions
                         <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
                         <!-- end: Captions -->
                     </div>

@@ -35,7 +35,7 @@
              <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTCAsXiCfqrU0uj2NSlhf8Nv3OYpRYPDc&callback=initMap">
     </script>
-            <div id="map"  data-height-lg="200" class="map" data-map-address="Melburne, Australia" data-map-zoom="10" data-map-icon="images/markers/marker1.png" data-map-type="ROADMAP"></div>
+            <div id="map"  data-height-lg="200" class="map" ></div>
         </section>
         <!-- end: Page title -->
 

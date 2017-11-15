@@ -15,6 +15,24 @@
 
                         <!-- Blog -->
                         <div id="blog">
+                            
+                            <div class="post-item p-b-30">
+                                <div class="post-item-wrap">
+                                    <div class="post-image">
+                                        <a href="#">
+                                            <img alt="" src="http://belantara.or.id/wp-content/uploads/DSC_7771.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="post-item-description">
+                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Nov 1, 2016</span>
+                                        <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>0 Comments</a></span>
+                                        <h2><a href="{base_url()}blog/ipfest-2016">IPFEST 2016 – Promosi Program Yayasan Belantara pada Ajang Berbagi dan Menggalang Sinergi untuk Restorasi Bentang Alam</a></h2>
+                                        <p>Indonesia Philanthropy Festival 2016 (IPFest 2016) memiliki tujuan salah satunya yaitu mempertemukan dan memfasilitasi terjadinya sinergi dan kemitraan di antara para pelaku filantropi dan organisasi pelaksana program khususnya dalam pencapaian target Tujuan Pembangunan Berkelanjutan (Sustainable Development Goals – SDGs).</p>
+                                        <a href="{base_url()}blog/ipfest-2016" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Post item-->
                             <div class="post-item p-b-30">
@@ -27,29 +45,9 @@
                                     <div class="post-item-description">
                                         <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Sept 25, 2015</span>
                                         <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>0 Comments</a></span>
-                                        <h2><a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">Realising a new vision for the landscape
-</a></h2>
+                                        <h2><a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">Realising a new vision for the landscape</a></h2>
                                         <p>I have overseen a fair share of projects and programs throughout my 25 years working in environmental organisations dedicated to conserving Indonesia’s natural landscapes. </p>
                                         <a href="{base_url()}blog/realising-a-new-vision-for-the-landscape" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="post-item p-b-30">
-                                <div class="post-item-wrap">
-                                    <div class="post-image">
-                                        <a href="#">
-                                            <img alt="" src="http://belantara.or.id/wp-content/uploads/DSC_7771.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="post-item-description">
-                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Nov 1, 2016</span>
-                                        <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>0 Comments</a></span>
-                                        <h2><a href="{base_url()}blog/ipfest-2016">IPFEST 2016 – Promosi Program Yayasan Belantara pada Ajang Berbagi dan Menggalang Sinergi untuk Restorasi Bentang Alam
-</a></h2>
-                                        <p>Indonesia Philanthropy Festival 2016 (IPFest 2016) memiliki tujuan salah satunya yaitu mempertemukan dan memfasilitasi terjadinya sinergi dan kemitraan di antara para pelaku filantropi dan organisasi pelaksana program khususnya dalam pencapaian target Tujuan Pembangunan Berkelanjutan (Sustainable Development Goals – SDGs).</p>
-                                        <a href="{base_url()}blog/ipfest-2016" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
 
                                     </div>
                                 </div>
@@ -65,8 +63,7 @@
                                     <div class="post-item-description">
                                         <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Sept 25, 2015</span>
                                         <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>0 Comments</a></span>
-                                        <h2><a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">Stakeholder Consultation on Landscape Conservation Master Plan
-</a></h2>
+                                        <h2><a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">Stakeholder Consultation on Landscape Conservation Master Plan</a></h2>
                                         <p>Although Indonesia only covers approximately 1.3% of the world’s total land mass, it is one of 17 of the world’s mostmegadiverse[1]countries,and so conservation projects to protect Indonesia’s forests have attracted the support ofmany civil society organizations and foreign governments.</p>
                                         <a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
 
