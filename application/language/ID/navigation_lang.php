@@ -106,6 +106,7 @@ $lang['navigation.navbar.user'] = 'Pengguna';
 $lang['navigation.navbar.user.list'] = 'List Pengguna';
 $lang['navigation.navbar.user.group.list'] = 'List Grup';
 $lang['navigation.navbar.setting'] = 'Pengaturan';
+$lang['navigation.navbar.setting.longlat'] = 'Lokasi Geografi';
 $lang['navigation.navbar.setting.import_user'] = 'Import Pengguna';
 $lang['navigation.navbar.setting.pengaturan_sistem'] = "Umum";
 $lang['navigation.navbar.setting.social_media'] = "Sosial Media";

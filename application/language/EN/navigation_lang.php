@@ -104,6 +104,7 @@ $lang['navigation.navbar.user'] = 'User Management';
 $lang['navigation.navbar.user.list'] = 'User List';
 $lang['navigation.navbar.user.group.list'] = 'Groups List';
 $lang['navigation.navbar.setting'] = 'Setting';
+$lang['navigation.navbar.setting.longlat'] = 'Geo Location';
 $lang['navigation.navbar.setting.import_user'] = 'Import User';
 $lang['navigation.navbar.setting.pengaturan_sistem'] = "General";
 $lang['navigation.navbar.setting.social_media'] = 'Social Media';

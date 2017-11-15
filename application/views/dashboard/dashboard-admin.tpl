@@ -15,9 +15,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}news" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>50</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.news')}</strong></p>
                     </div>
                     <div class="icon">
@@ -29,9 +29,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}adminblog" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.blog')}</strong></p>
                     </div>
                     <div class="icon">
@@ -43,9 +43,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}resource" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.resource')}</strong></p>
                     </div>
                     <div class="icon">
@@ -57,9 +57,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}page" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.page')}</strong></p>
                     </div>
                     <div class="icon">
@@ -71,9 +71,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}pagehome" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.pagehome')}</strong></p>
                     </div>
                     <div class="icon">
@@ -85,9 +85,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}slider" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.slider')}</strong></p>
                     </div>
                     <div class="icon">
@@ -99,9 +99,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}gallery_manajement" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.banner')}</strong></p>
                     </div>
                     <div class="icon">
@@ -113,9 +113,9 @@
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
                 <a href="{base_url()}person" class="small-box-footer">
-                  <div class="small-box bg-green">
+                  <div class="small-box bg-blue">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.person')}</strong></p>
                     </div>
                     <div class="icon">
@@ -133,7 +133,7 @@
                 <a href="{base_url()}user" class="small-box-footer">
                   <div class="small-box bg-gray">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.user')}</strong></p>
                     </div>
                     <div class="icon">
@@ -147,7 +147,7 @@
                 <a href="{base_url()}setting" class="small-box-footer">
                   <div class="small-box bg-gray">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
                       <p><strong style="text-transform: uppercase;">{lang('label.dashboard.setting')}</strong></p>
                     </div>
                     <div class="icon">

@@ -419,6 +419,12 @@ class Navbar {
 													"status"=>"", 
 													"class"=>"fa fa-circle-o",
 												),*/
+												"long_lat"=>array(
+													"name"=>$this->controller->lang->line('navigation.navbar.setting.longlat'),
+													"url"=>base_url()."setting/pengaturan_sistem",
+													"status"=>"", 
+													"class"=>"fa fa-circle-o",
+												),
 												"sosial_media"=>array(
 													"name"=>$this->controller->lang->line('navigation.navbar.setting.social_media'),
 													"url"=>base_url()."socmed",

@@ -34,6 +34,15 @@ class Model_pengaturansistem extends CI_Model {
         }
         return TRUE;
     }
+    public function update_longlat($data){
+        foreach ($data as $key => $value) {
+            $this->db->where('id',$key+1);
+            $get['nilai']=$value;   
+            $this->db->update('pengaturan_sistem',$get);
+        }
+        return TRUE;
+    }
+    
 
     public function delete_reputation($id){
         $this->db->where('id',$id);

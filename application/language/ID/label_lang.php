@@ -95,6 +95,9 @@ $lang['label.dashboard.research_publication'] = "Penelitian dan Publikasi";
 $lang['label.dashboard.data_university'] = "Data Universitas";
 $lang['label.dashboard.user'] = "Pengaturan Pengguna";
 $lang['label.dashboard.setting'] = "Pengaturan";
+$lang['label.dashboard.blog'] = "Blog";
+$lang['label.dashboard.resource'] = "Resource";
+
 
 
 $lang['label.judul_kegiatan'] = 'Judul Kegiatan';
