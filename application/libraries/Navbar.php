@@ -295,7 +295,7 @@ class Navbar {
 		$this->menu['person']=array("name"=>$this->controller->lang->line('navigation.navbar.person'),
 							"url"=>base_url()."person",
 							"status"=>"", 
-							"class"=>"glyphicon glyphicon-file",
+							"class"=>"ion ion-person-stalker",
 							"submenu"=>array(
 												"add"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.person.add'),

@@ -7,7 +7,7 @@
 			<img src="{base_url()}assets/front-end/images/logo.png" alt="Logo Belantara" class="pull-right" style="margin-right: 10px;margin-top:-6px;" />
 			<h1><small>{lang('label.dashboard.title')}</small></h1>
 		</div>
-		<img src="" alt="header image" class="animation-pulseSlow" />
+		<img src="{base_url()}assets/img/profile_header4.jpg" alt="header image" class="animation-pulseSlow" />
 	</div>
 {/block}
 {block name="content"}
@@ -28,7 +28,7 @@
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-                <a href="{base_url()}event" class="small-box-footer">
+                <a href="{base_url()}adminblog" class="small-box-footer">
                   <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
@@ -42,7 +42,7 @@
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-                <a href="{base_url()}announcement" class="small-box-footer">
+                <a href="{base_url()}resource" class="small-box-footer">
                   <div class="small-box bg-green">
                     <div class="inner">
                       <h3>150</h3>
@@ -50,6 +50,76 @@
                     </div>
                     <div class="icon">
                       <i class="ion ion-wifi"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}page" class="small-box-footer">
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>150</h3>
+                      <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.page')}</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-android-folder"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}pagehome" class="small-box-footer">
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>150</h3>
+                      <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.pagehome')}</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-android-folder"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}slider" class="small-box-footer">
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>150</h3>
+                      <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.slider')}</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-images"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}gallery_manajement" class="small-box-footer">
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>150</h3>
+                      <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.banner')}</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-images"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}person" class="small-box-footer">
+                  <div class="small-box bg-green">
+                    <div class="inner">
+                      <h3>150</h3>
+                      <p><strong style="text-transform: uppercase;">{lang('navigation.navbar.person')}</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-person-stalker"></i>
                     </div>
                   </div>
                 </a>
