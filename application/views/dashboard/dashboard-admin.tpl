@@ -4,7 +4,7 @@
 
     <div class="judul-atas-dashboard content-header-media">
 		<div class="header-section">
-			<img src="" alt="Logo Belantara" class="pull-right" style="margin-right: 10px;margin-top:-6px;" />
+			<img src="{base_url()}assets/front-end/images/logo.png" alt="Logo Belantara" class="pull-right" style="margin-right: 10px;margin-top:-6px;" />
 			<h1><small>{lang('label.dashboard.title')}</small></h1>
 		</div>
 		<img src="" alt="header image" class="animation-pulseSlow" />

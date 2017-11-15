@@ -144,14 +144,53 @@ class Page extends CI_Controller {
         }
     }
 
-    public function content_edit(){
+    public function content_edit($slug){
+        if ($slug == 'contact-us') {
+            $data = array(
+                'url'=> $this->url,
+                'alert' => isset($_GET['n'])?$_GET['n']:'',
+                'breadcrumb' => array(
+                    'Dashboard'=>base_url().'admin',
+                    'Page list' => base_url().'page',
+                    'page' => base_url()
+                ),
+                'page' => $this->model_page->get_page_by_slug($slug),
+                'title'=> 'Page <small>management</small>',
+                'last_login' => $this->sess['last_login'],
+                'session' => $this->sess['username'],
+                'site_lang'=>$this->session->userdata('site_lang'),
+            );
+            $this->smartyci->assign('data',$data);
+            $this->smartyci->display('admin/contact-us-edit.tpl');
+        } else {
+            $data = array(
+                'url'=> $this->url,
+                'session_group_name' => $this->sess['group_name'],
+                'session' => $this->sess['username'],
+                'site_lang'=>$this->session->userdata('site_lang')
+            );
+            $this->smartyci->assign('data',$data);
+            $this->smartyci->display('front-end/'.$slug.'.tpl');
+        }
+    }
+
+    public function update_contact(){
         $data = array(
-            'url'=> $this->url,
-            'session_group_name' => $this->sess['group_name'],
-            'session' => $this->sess['username'],
-            'site_lang'=>$this->session->userdata('site_lang')
+                'title_EN' => $this->input->post('title_EN'),
+                'title_ID' => $this->input->post('title_ID'),
+                'content_EN' => $this->input->post('deskripsi_EN'),
+                'content_ID' => $this->input->post('deskripsi_ID'),
+                'other_EN' => $this->input->post('alamat_EN'),
+                'other_ID' => $this->input->post('alamat_ID'),
         );
-        $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/aboutus.tpl');
+
+        $slug = $this->input->post('slug');
+        if($this->model_page->update_page_contact($slug,$data)) {
+            $alert = url_title("Update succses !");
+            redirect('page/content_edit/contact-us/?n='.$alert,'refresh');
+        }else{
+            $alert = url_title("Save failde !");
+            redirect('page/content_edit/contact-us/?n='.$alert,'refresh');
+        }
     }
 }

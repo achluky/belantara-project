@@ -91,7 +91,14 @@ $lang['navigation.navbar.program.add'] = 'Tambah Program';
 $lang['navigation.navbar.program.list'] = 'List Program';
 
 
+$lang['navigation.navbar.banner'] = 'Galleri';
+
+
+$lang['navigation.navbar.slider'] = 'Slider';
+
 $lang['navigation.navbar.page'] = 'Halaman';
+$lang['navigation.navbar.pagehome'] = 'Pengatuan Halaman Utama';
+
 $lang['navigation.navbar.links'] = 'Tautan';
 $lang['navigation.navbar.main_menu'] = 'Menu Utama';
 $lang['navigation.navbar.incidental'] = 'Insidentil Menu';

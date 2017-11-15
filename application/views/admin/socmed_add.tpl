@@ -67,7 +67,7 @@
 
                         <div class="box-footer">
                               <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
-                              <a href="{base_url()}event">Cancel</a>
+                              <a href="{base_url()}socmed">Cancel</a>
                               <button type="submit" class="btn btn-info pull-right">Save</button>
                         </div><!-- /.box-footer -->
 

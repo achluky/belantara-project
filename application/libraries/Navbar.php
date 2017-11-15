@@ -33,14 +33,15 @@ class Navbar {
 		// $this->setMenuEvent();
 		$this->setMenuResourcet();
 		$this->setMenuPage();
+		$this->setMenuPageHome();
 		$this->setMenuSlider();
+		$this->setMenuBanner();
 		$this->setPerson();
 		$this->setRef();
 		// $this->setMenuCampus();
 		// $this->setMenuFaculties();
 		// $this->setMenuReputation();
 		// $this->setMenuMedia();
-		// $this->setMenuBanner();
 		// $this->setMenuInfografis();
 		// $this->setMainMenu();
 		// $this->setMenuLink();
@@ -327,8 +328,8 @@ class Navbar {
 							);
 	}
 	private function setMenuBanner(){
-		$this->menu['banner']=array("name"=>$this->controller->lang->line('navigation.navbar.banner'),
-							"url"=>base_url()."banner",
+		$this->menu['gallery']=array("name"=>$this->controller->lang->line('navigation.navbar.banner'),
+							"url"=>base_url()."gallery_manajement",
 							"status"=>"", 
 							"class"=>"ion ion-images",
 							"submenu"=>null);
@@ -341,6 +342,15 @@ class Navbar {
 							"class"=>"ion ion-android-folder",
 							"submenu"=>null);
 	}
+
+	private function setMenuPageHome(){
+		$this->menu['pagehome']=array("name"=>$this->controller->lang->line('navigation.navbar.pagehome'),
+							"url"=>base_url()."pagehome",
+							"status"=>"", 
+							"class"=>"ion ion-android-folder",
+							"submenu"=>null);
+	}
+
 
 	private function setMenuSlider(){
 		$this->menu['slider']=array("name"=>$this->controller->lang->line('navigation.navbar.slider'),
@@ -403,12 +413,12 @@ class Navbar {
 							"status"=>"", 
 							"class"=>"glyphicon glyphicon-cog",
 							"submenu"=>array(
-												"pengaturan_sistem"=>array(
+												/*"pengaturan_sistem"=>array(
 													"name"=>$this->controller->lang->line('navigation.navbar.setting.pengaturan_sistem'),
 													"url"=>base_url()."setting/pengaturan_sistem",
 													"status"=>"", 
 													"class"=>"fa fa-circle-o",
-												),
+												),*/
 												"sosial_media"=>array(
 													"name"=>$this->controller->lang->line('navigation.navbar.setting.social_media'),
 													"url"=>base_url()."socmed",

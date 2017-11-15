@@ -13,7 +13,7 @@ class Home extends CI_Controller {
     public function index() {
         $data = array(
             'url'=> $this->url,
-
+            'session_group_name' => $this->session->userdata('group_name'),
             'site_lang'=>$this->session->userdata('site_lang'),
         );
         $this->smartyci->assign('data',$data);
@@ -31,7 +31,7 @@ class Home extends CI_Controller {
     public function contact() {
         $data = array(
             'url'=> $this->url,
-
+            'session_group_name' => $this->session->userdata('group_name'),
             'site_lang'=>$this->session->userdata('site_lang'),
         );
         $this->smartyci->assign('data',$data);
@@ -100,7 +100,7 @@ class Home extends CI_Controller {
         
     	$data = array(
             'url'=> $this->url,
-
+            'session_group_name' => $this->session->userdata('group_name'),
             'employee_management' => $this->model_home->get_employee_management(),
             'site_lang'=>$this->session->userdata('site_lang'),
         );
@@ -202,6 +202,8 @@ class Home extends CI_Controller {
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/people-ajax.tpl');
     }
+    
+
     
     
 }

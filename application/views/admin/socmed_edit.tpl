@@ -72,7 +72,7 @@
 
                         <div class="box-footer">
                             <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
-                            <a href="{base_url()}campus">Cancel</a>
+                            <a href="{base_url()}socmed">Cancel</a>
                             <button type="submit" class="btn btn-info pull-right">Update</button>
                         </div><!-- /.box-footer -->
 

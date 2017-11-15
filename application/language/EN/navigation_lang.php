@@ -92,8 +92,11 @@ $lang['navigation.navbar.program'] = 'Program Management';
 $lang['navigation.navbar.program.add'] = 'Add Program';
 $lang['navigation.navbar.program.list'] = 'List Program';
 
-$lang['navigation.navbar.banner'] = 'Banner Images Management';
+$lang['navigation.navbar.banner'] = 'Gallery';
 $lang['navigation.navbar.page'] = 'Page Management';
+
+$lang['navigation.navbar.pagehome'] = 'Page Home Management';
+
 $lang['navigation.navbar.links'] = 'Links Menu Management';
 $lang['navigation.navbar.main_menu'] = 'Main Menu Management';
 $lang['navigation.navbar.incidental'] = 'Incindental Menu Management';
