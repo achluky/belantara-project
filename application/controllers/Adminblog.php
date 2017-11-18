@@ -251,7 +251,8 @@ class Adminblog extends CI_Controller {
                         'isi_id' => $this->input->post('isi_id'),
                         'kategori' => 'blog',
                         'keyword_id' => $this->input->post('keyword_id'),
-                        'keyword_en' => $this->input->post('keyword_en')
+                        'keyword_en' => $this->input->post('keyword_en'),
+                        'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul_en'))
                     );
 
                     if ($this->model_blog->save_blog($data, $this->upload->file_name)) {

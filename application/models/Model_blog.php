@@ -118,6 +118,7 @@ class Model_blog extends CI_Model {
             'kategori'=>'blog',
             'image'=>$image,
             'file_pdf'=>url_title($data['judul_id']),
+            'slug'=>$data['slug'],
         );
         $data_english = array(
             'id'=>generateId(),
@@ -131,6 +132,7 @@ class Model_blog extends CI_Model {
             'kategori'=>'blog',
             'image'=>$image,
             'file_pdf'=>url_title($data['judul_en']),
+            'slug'=>$data['slug'],
         );
 
         $insert_indonesia = $this->db->insert('berita_ini',$data_indonesia);

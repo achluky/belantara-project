@@ -4,7 +4,13 @@
             <div class="widget  widget-newsletter">
                 <form id="widget-search-form-sidebar" action="" method="get" class="form-inline">
                     <div class="input-group">
+
+                        {if $data.site_lang eq 'EN'}
                         <input type="text" aria-required="true" name="q" class="form-control widget-search-form" placeholder="Search for pages...">
+                        {else}
+                        <input type="text" aria-required="true" name="q" class="form-control widget-search-form" placeholder="Pencarian Halaman...">
+                        {/if}
+
                         <span class="input-group-btn">
                             <button type="submit" id="widget-widget-search-form-button" class="btn btn-default">
                             <i class="fa fa-search"></i></button>
