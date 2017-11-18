@@ -63,6 +63,7 @@ class Page extends CI_Controller {
                 'title_ID' => $this->input->post('title_ID'),
                 'keyword_EN' => $this->input->post('title_EN'),
                 'keyword_ID' => $this->input->post('title_EN'),
+                'widget' => $this->input->post('widget'),
                 'waktu'=> date('Y-m-d h:i:s'),
                 'url'=> $this->input->post('url')
             );
@@ -115,6 +116,7 @@ class Page extends CI_Controller {
                 'page' => base_url()
                 ),
             'page'=> $this->model_page->get_page_by_id($id),
+            'widget_list'=> $this->model_page->get_widget_byURL($id),
             'title'=> 'Page <small>management</small>',
             'last_login' => $this->sess['last_login'],
             'session' => $this->sess['username'],
@@ -125,6 +127,13 @@ class Page extends CI_Controller {
     }
 
     public function update(){
+
+        if( count($_POST['widget_selected']) > 0){
+            $widget_content = implode("-", $_POST['widget_selected']);
+        } else {
+            $widget_content = '';
+        }
+
         $data = array(
                 'title_EN' => $this->input->post('title_EN'),
                 'title_ID' => $this->input->post('title_ID'),
@@ -132,8 +141,10 @@ class Page extends CI_Controller {
                 'keyword_ID' => $this->input->post('keyword_ID'),
                 'waktu'=> date('Y-m-d h:i:s'),
                 'url'=> $this->input->post('url'),
-                'controller'=> $this->input->post('controller')
+                'controller'=> $this->input->post('controller'),
+                'widget_content' => $widget_content
         );
+
         $id = $this->input->post('id');
         if($this->model_page->update_page($id,$data)) {
             $alert = url_title("Update succses !");
@@ -144,6 +155,7 @@ class Page extends CI_Controller {
         }
     }
 
+    // ========================== EDIT CONTENT ====================================
     public function content_edit($slug){
         if ($slug == 'contact-us') {
             $data = array(
@@ -170,7 +182,7 @@ class Page extends CI_Controller {
                 'site_lang'=>$this->session->userdata('site_lang')
             );
             $this->smartyci->assign('data',$data);
-            $this->smartyci->display('front-end/'.$slug.'.tpl');
+            $this->smartyci->display('admin/'.$slug.'.tpl');
         }
     }
 
@@ -191,6 +203,77 @@ class Page extends CI_Controller {
         }else{
             $alert = url_title("Save failde !");
             redirect('page/content_edit/contact-us/?n='.$alert,'refresh');
+        }
+    }
+
+    public function widget($act){
+        $data = array(
+            'url'=> $this->url,
+            'alert' => isset($_GET['n'])?$_GET['n']:'',
+            'breadcrumb' => array(
+                'Dashboard'=>base_url().'admin',
+                'Page list' => base_url().'page',
+                'Widget list' => base_url().'page/widget/list',
+                'Add widget' => base_url().'page'
+            ),
+            'title'=> 'Page - Widget <small>management</small>',
+            'last_login' => $this->sess['last_login'],
+            'session' => $this->sess['username'],
+            'site_lang'=>$this->session->userdata('site_lang'),
+        );
+
+        if ($act == 'save') {
+            if ( ($this->input->post('name') != NULL) ) {
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'content_EN' => $this->input->post('content_EN'),
+                    'content_ID' => $this->input->post('content_ID')
+                );
+
+                if($this->model_page->save_page_widget($data)){
+                    $alert = url_title("Saved!");
+                    redirect('page/widget/list?n='.$alert,'refresh');
+                }else{
+                    $alert = url_title("save failed !");
+                    redirect('page/widget/add?n='.$alert,'refresh');
+                }
+            }else{
+                $alert = url_title("is empty !");
+                redirect('page/widget/add?n='.$alert,'refresh');
+            }
+        } else if ($act == 'list') {
+            $data['widget'] = $this->model_page->get_page_widget();
+            $this->smartyci->assign('data',$data);
+            $this->smartyci->display('admin/page_widget_list.tpl');
+        } else if ($act == 'edit'){
+            $id = isset($_GET['id'])?$_GET['id']:'';
+            if ($id == '') {
+                $alert = url_title("ID widget Kososng!");
+                redirect('page/widget/list?n='.$alert,'refresh');
+            } else {
+                $data['widget'] = $this->model_page->get_widget($id);
+                $this->smartyci->assign('data',$data);
+                $this->smartyci->display('admin/page_widget_edit.tpl');
+            }
+        } else if($act == 'update'){
+            $id = $this->input->post('id');
+            $data = array(
+                'name' => $this->input->post('name'),
+                'content_EN' => $this->input->post('content_EN'),
+                'content_ID' => $this->input->post('content_ID'),
+                'urutan' => $this->input->post('urutan')
+            );
+
+            if($this->model_page->update_page_widget($data, $id)){
+                $alert = url_title("Update succses");
+                redirect('page/widget/edit/?id='.$id.'&n='.$alert,'refresh');
+            }else{
+                $alert = url_title("save failed !");
+                redirect('page/widget/add?n='.$alert,'refresh');
+            }
+        }else {
+            $this->smartyci->assign('data',$data);
+            $this->smartyci->display('admin/page_widget_add.tpl');
         }
     }
 }

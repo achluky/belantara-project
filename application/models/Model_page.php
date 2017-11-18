@@ -21,7 +21,7 @@ class Model_page extends CI_Model {
     public function get_page_by_id($id){
         $this->db->select('*');
         $this->db->from('page_ini');
-        $this->db->where('id',$id);
+        $this->db->where('url',$id);
         return $this->db->get()->row();
     }
 
@@ -35,6 +35,36 @@ class Model_page extends CI_Model {
     public function save_page($data){
         $this->db->insert('page_ini',$data);
         return TRUE;
+    }
+
+    public function save_page_widget($data){
+        $this->db->insert('widget',$data);
+        return TRUE;
+    }
+
+    public function update_page_widget($data, $id){
+        $this->db->where('id_widget',$id);
+        $this->db->update('widget',$data);
+        return TRUE;
+    }
+    public function get_page_widget(){
+        $sql = "select * from widget";
+        $result = $this->db->query($sql);
+        return $result;   
+    }
+
+    public function get_widget_byURL($url){
+        $sql = "select * from widget where name = '$url'";
+        $result = $this->db->query($sql);
+        return $result;   
+    }
+
+    public function get_widget($id_widget){
+        $this->db->select('*');
+        $this->db->from('widget');
+        $this->db->where('id_widget',$id_widget);
+        return $this->db->get()->row();
+
     }
 
     public function update_page($id,$data){

@@ -1,49 +1,17 @@
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
-<div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" data-autoplay="true">
+        <div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" data-autoplay="true">
 
-            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/IMG_7430.jpg');">
+            {foreach $data.slider -> result() as $row}
+            <div class="slide  kenburns" style="background-image:url('{base_url()}document/images/slider/{$row->image}');">
                 <div class="container">
                     <div class="slide-captions">
-                        <!-- Captions
-                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
-                        <!-- end: Captions -->
+                        <h1 data-caption-animation="zoom-out">{$row->title}</h1>
                     </div>
                 </div>
             </div>
-            <!-- Slide 1 -->
-            <div class="slide kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/gajah_nyusu.jpg');">
-                <div class="container">
-                    <div class="slide-captions">
-                        <!-- Captions 
-                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
-                        <!-- end: Captions -->
-                    </div>
-                </div>
-            </div>
-            <!-- end: Slide 1 -->
-
-            <!-- Slide 2 -->
-            <div class="slide  kenburns" style="background-image:url('{base_url()}assets/front-end/images/slider/IMG_4911-2.jpg');">
-                <div class="container">
-                    <div class="slide-captions">
-                        <!-- Captions
-                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
-                        <!-- end: Captions -->
-                    </div>
-                </div>
-            </div>
-            <div class="slide  kenburns" style="background-image:url('http://belantara.or.id/wp-content/uploads/BelantaraSlider02_1920x1313px.jpg');">
-                <div class="container">
-                    <div class="slide-captions">
-                        <!-- Captions
-                        <h1 data-caption-animation="zoom-out">Conserve <br> Indonesia's<br>Natural</br>Environment</h1>
-                        <!-- end: Captions -->
-                    </div>
-                </div>
-            </div>
-            <!-- end: Slide 2 -->
+            {/foreach}
 
         </div>
         
@@ -68,18 +36,24 @@
             <div class="container">
                 <div class="row">
                   <div class="col-lg-6 col-md-6">
-                      <h2 >Get to know us better.</h2>
-                      <p class="m-b-10">Belantara is an Indonesia grant-making institution. That aims to contribute to the protection and restoration of forests while improving the livelihoods of local communities in the 10 grant distribution areas across 5 province.It takes its name from the Indonesian word ‘Belantara’ which means wilderness or pristine forest.</p>
-                      <!--<ul class="list-icon list-icon-check list-icon-colored m-b-10">
-                        <li class="lihome">Nulla vehicula nisl cum soluta nobis est eligendi optio cumque </li>
-                        <li class="lihome">nihil impeditnon enim fermentum veniamDuis nec aliquet massa</li>
-                        <li class="lihome">sed dapibus mauris. Nulla vehicula nisl cum soluta nobis est eligendi</li>
-                      </ul> -->
-                      <p>Belantara primary focus is to allocate grants to support restoration, protection, conservation of endangered species (speci cally Sumatran Tiger, Sumatran Elephant, as well as Sumatran and Bornean Orangutan), Institutional development, and community development and empowerment initiatives in Conservation Area, Production Forest, Protection Forest, and Social Forestry on the ten specified grant distribution areas across five provinces on the islands of Sumatra and Kalimantan (Indonesian Borneo).</p>
+                    <h2 >
+                        {if $data.site_lang eq 'EN'}
+                            {$data.page_home->section_3_judul_EN}
+                        {else}
+                            {$data.page_home->section_3_judul_ID}
+                        {/if}
+                    </h2>
+                    <p>
+                        {if $data.site_lang eq 'EN'}
+                            {$data.page_home->section_3_deskripsi_EN}
+                        {else}
+                            {$data.page_home->section_3_deskripsi_ID}
+                        {/if}
+                    </p>
                   </div>  
                   <div class="col-lg-6 col-md-6 col-sm-6">
-                    <video class="text-center" width="100%" height="100%" controls="" poster="http://demo.belantara.or.id/video/cover.png">
-                        <source src="http://demo.belantara.or.id/video/home.mp4" type="video/mp4">
+                    <video class="text-center" width="100%" height="100%" controls="" poster="{base_url()}assets/video/cover.png">
+                        <source src="{$data.page_home->section_3_video}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                   </div>
@@ -88,23 +62,46 @@
             <div class="call-to-action background-grey m-b-0">
                 <div class="container">
                     <div class="col-md-6 col-lg-9">
-                        <h3>We Have More Stories For You to Know</h3>
-                        <p>Belantara Foundation believes that a sustainable landscape approach must incorporate a harmony of principles that not only protect the livelihoods of the people, particularly at a grassroots level, but also see to a value added protection of natural resources and biodiversity long into the future.</p>
+                        <h3>
+                            {if $data.site_lang eq 'EN'}
+                                {$data.page_home->section_4_judul_EN}
+                            {else}
+                                {$data.page_home->section_4_judul_ID}
+                            {/if}
+                        </h3>
+                        <p>
+                            {if $data.site_lang eq 'EN'}
+                                {$data.page_home->section_4_deskripsi_EN}
+                            {else}
+                                {$data.page_home->section_4_deskripsi_ID}
+                            {/if}
+                        </p>
                     </div>
-                    <div class="col-md-6 col-lg-3 text-center "> <a class="btn btn-lg " href="aboutus.php">Project</a> </div>
+                    <div class="col-md-6 col-lg-3 text-center "> <a class="btn btn-lg " href="{base_url()}about-us">Project</a> </div>
                 </div>
             </div>
             <div class="container">
             <div class="p-t-80">
                 <div class="row">
                     <div class="col-md-6 col-lg-8">
-                        <img class="img-responsive" src="{base_url()}assets/front-end/images/about/infograph.jpg"> 
+                        <img class="img-responsive" src="{base_url()}document/images/{$data.page_home->section_5_image}"> 
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <h2>MULTISTAKHOLDER APPROACH : <span class="text-green">CONNECTING THE PIECES</span></h2>
+                        <h2>
+                            {if $data.site_lang eq 'EN'}
+                                {$data.page_home->section_5_judul_EN}
+                            {else}
+                                {$data.page_home->section_5_judul_ID}
+                            {/if}
+                        </h2>
                         <hr>
-                        <p>Belantara align conservation activities carried out by multiple stakeholders and ensure these initiatives support an environmentally, socially, culturally, and economically sustainable landscape.</p>
-                    
+                        <p>
+                            {if $data.site_lang eq 'EN'}
+                                {$data.page_home->section_5_deskripsi_EN}
+                            {else}
+                                {$data.page_home->section_5_deskripsi_ID}
+                            {/if}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -133,7 +130,7 @@
         <section class="p-t-50 background-1">
             <div class="container">
                 <h3 class="text-center">GRANT DISTRIBUTION MAP</h3>
-                <img class="img-responsive animated fadeInUpBig visible" data-animation="fadeInUpBig" src="{base_url()}assets/front-end/images/about/peta.png">
+                <img class="img-responsive animated fadeInUpBig visible" data-animation="fadeInUpBig" src="{base_url()}document/images/{$data.page_home->distribution_maps}">
             </div>
         </section>
         
@@ -145,50 +142,22 @@
                 <div id="blog" class="grid-layout post-3-columns grid-loaded" data-item="post-item" style="margin: 0px -20px -20px 0px; position: relative; height: 375px;">
 
                     <!-- Post item-->
+                    {foreach $data.blog -> result() as $row}
                     <div class="post-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 0px; top: 0px;">
                         <div class="post-item-wrap background-transparent">
                             <div class="post-image">
-                                <a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">
-                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/Realising-A-New-Vision-for-the-LandscapeB_1200x798px.jpg">
+                                <a href="{base_url()}blog/">
+                                    <img alt="" src="{base_url()}document/images/blog/{$row->image}">
                                 </a>
                             </div>
                             <div class="post-item-description text-light">
-                                <h2><a href="{base_url()}blog/realising-a-new-vision-for-the-landscape">Realising a new vision for the landscape</a></h2>
+                                <h2><a href="{base_url()}blog">{$row->judul}</a></h2>
                             </div>
                         </div>
                     </div>
+                    {/foreach}
                     <!-- end: Post item-->
 
-                    <!-- Post item-->
-                    <div class="post-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 386px; top: 0px;">
-                        <div class="post-item-wrap background-transparent">
-                            <div class="post-image">
-                                <a href="{base_url()}blog/ipfest-2016">
-                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/DSC_7771.jpg">
-                                </a>
-                            </div>
-                            <div class="post-item-description text-light">
-                                <h2><a href="{base_url()}blog/ipfest-2016">IPFEST 2016 – Promosi Program Yayasan Belantara pada Ajang Berbagi dan Menggalang Sinergi untuk Restorasi Bentang Alam</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end: Post item-->
-
-
-                    <!-- Post item-->
-                    <div class="post-item" style="padding: 0px 20px 20px 0px; position: absolute; left: 773px; top: 0px;">
-                        <div class="post-item-wrap background-transparent">
-                            <div class="post-image">
-                                <a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">
-                                    <img alt="" src="http://belantara.or.id/wp-content/uploads/Stakeholder-Consultation-on-Landscape-Conservation-Master-PlanB_1200x798px.jpg">
-                                </a>
-                            </div>
-                            <div class="post-item-description text-light">
-                                <h2><a href="{base_url()}blog/stakeholder-consultation-on-landscape-conservation-master-plan">Stakeholder Consultation on Landscape Conservation Master Plan</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end: Post item-->
                 </div>
             </div>
         </section>
@@ -203,8 +172,8 @@
                             <span class="input-group-addon background-green"><i class="fa fa-paper-plane"></i></span>
                             <input type="email" aria-required="true" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
                             <span class="input-group-btn">
-											<button type="submit" class="btn">Subscribe</button>
-										</span>
+                                            <button type="submit" class="btn">Subscribe</button>
+                                        </span>
                         </div>
                         <small class="text-light">Stay informed on our latest news!</small>
                     </form>
@@ -220,24 +189,14 @@
                         <div class="widget">
                             <h3>Latest News</h3>
                             <div class="post-thumbnail-list">
+                                {foreach $data.last_news -> result() as $row}
                                 <div class="post-thumbnail-entry">
                                     <img alt="" src="{base_url()}document/images/link.png">
                                     <div class="post-thumbnail-content">
-                                        <a href="http://www.narrativematters.co.uk/betterbusiness-episodes/tony-juniper" target="_blank">Episode #5 – Tony Juniper + how the world’s biggest paper company is atoning for its sins</a>
+                                        <a href="http://www.narrativematters.co.uk/betterbusiness-episodes/tony-juniper" target="_blank">{$row->judul}</a>
                                     </div>
                                 </div>
-                                <div class="post-thumbnail-entry">
-                                    <img alt="" src="{base_url()}document/images/link.png">
-                                    <div class="post-thumbnail-content">
-                                        <a href="http://www.theguardian.com/world/ng-interactive/2015/oct/28/indonesia-burning-forest-fires-predicted-to-be-worst-on-record" target="_blank">Indonesia Burning: Forest Fires Predicted to be Worst on Record</a>
-                                    </div>
-                                </div>
-                                <div class="post-thumbnail-entry">
-                                    <img alt="" src="{base_url()}document/images/link.png">
-                                    <div class="post-thumbnail-content">
-                                        <a href="http://news.mongabay.com/2015/05/ongoing-overkill-loss-of-big-herbivores-leading-to-empty-landscapes/" target="_blank">Ongoing Overkill Loss of Big Herbivores Leading to Empty Landscapes</a>
-                                    </div>
-                                </div>
+                                {/foreach}
                             </div>
                          </div>
                     </div>
@@ -246,12 +205,16 @@
                         <div class="widget">
                             <h3>Latest Resource</h3>
                             <div class="post-thumbnail-list">
+
+                                {foreach $data.last_resource -> result() as $row}
                                 <div class="post-thumbnail-entry">
                                     <img alt="" src="{base_url()}document/images/icon-pdf.jpg">
                                     <div class="post-thumbnail-content">
-                                        <a href="https://drive.google.com/file/d/0B3QpLlNlOkDLcUZISWxJQlYybUU/view">Partnership Programs In West Kalimantan Province</a>
+                                        <a href="{base_url()}document/resource/{$row->image}">{$row->judul}</a>
                                     </div>
                                 </div>
+                                {/foreach}
+
                             </div>
                          </div>
                     </div>

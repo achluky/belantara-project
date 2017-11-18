@@ -79,6 +79,13 @@ class Model_blog extends CI_Model {
     	return $result->row();
     }
 
+    public function get_blog_front($slug, $id_bahasa="EN")
+    {
+        $sql = "select * from berita_ini WHERE id_bahasa= '".$id_bahasa."' and slug='".$slug."'  and kategori='blog' ";
+        $result = $this->db->query($sql);
+        return $result->row();
+    }
+
     public function update_blog($data, $image, $id_bahasa)
     {
         $update = array(
@@ -86,7 +93,8 @@ class Model_blog extends CI_Model {
             'ringkasan'=>$data['ringkasan'],
             'isi'=>$data['isi'],
             'image'=>$image,
-            'keyword'=>$data['keyword']
+            'keyword'=>$data['keyword'],
+            'slug'=>$data['slug']
         );
         $this->db->where('id_berita',$data['id']);
         $this->db->where('id_bahasa',$id_bahasa);
@@ -141,6 +149,12 @@ class Model_blog extends CI_Model {
             return TRUE;
         else
             return FALSE;
+    }
+
+    public function get_blog_all($id_bahasa="EN"){
+        $sql = "select * from berita_ini where kategori='blog' and id_bahasa = '".$id_bahasa."'";
+        $result = $this->db->query($sql);
+        return $result;
     }
     
     function get_feeds() {

@@ -264,8 +264,8 @@
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
-        CKEDITOR.replace('content_EN');
-        CKEDITOR.replace('content_ID');
+        CKEDITOR.replace('deskripsi_EN');
+        CKEDITOR.replace('deskripsi_ID');
     });
   </script>
 {/block}

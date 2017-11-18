@@ -33,7 +33,7 @@ class Slider extends CI_Controller {
             'alert' => isset($_GET['n'])?$_GET['n']:'',
             'breadcrumb' => array(
                 'Dashboard'=>base_url().'admin',
-                'slider list' => base_url().'slider_manajement'
+                'slider list' => base_url().'slider'
             ),
             'slider_list' => $this->model_slider->get_listslider($offset, $limit),
             'title'=> 'slider <small>management</small>',
@@ -67,7 +67,7 @@ class Slider extends CI_Controller {
             'alert' => isset($_GET['n'])?$_GET['n']:'',
             'breadcrumb' => array(
                 'Dashboard'=>base_url().'admin',
-                'slider list' => base_url().'slider_manajement',
+                'slider list' => base_url().'slider',
                 'slider' => base_url()
             ),
             'slider' => $this->model_slider->get_slider($id),
@@ -176,7 +176,7 @@ class Slider extends CI_Controller {
             'alert' => "Anda yakin akan mendelete data ini !",
             'breadcrumb' => array(
                 'Dashboard'=>base_url().'admin',
-                'slider list' => base_url().'barner'
+                'slider list' => base_url().'slider'
             ),
             'title'=> 'slider <small>management</small>',
             'last_login' => $this->sess['last_login'],

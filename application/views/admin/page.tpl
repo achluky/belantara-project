@@ -27,7 +27,15 @@
                 <div class="box box-primary">
                   <div class="box-header">
                     <h3 class="box-title">Page List</h3>
-                    <a href="{base_url()}page/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add Page</a>
+
+                    <div class="btn-group pull-right">
+
+                        <a href="{base_url()}page/add" class="btn btn-primary" type="button"><i class="glyphicon glyphicon-plus-sign"></i> Add Page</a> 
+                        <a href="{base_url()}page/widget/add" class="btn btn-danger" type="button" ><i class="glyphicon glyphicon-plus-sign"></i> Add Widget</a>
+                        <a href="{base_url()}page/widget/list" class="btn btn-success" type="button" ><i class="glyphicon glyphicon-list"></i> List Widget</a>
+
+                    </div>
+
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body">
@@ -37,7 +45,7 @@
                           <th width="20px;">#id</th>
                           <th width="200px;">Judul</th>
                           <th>Url</th>
-                          <th width="240px;">Controller</th>
+                          <th width="200px;">Controller</th>
                           <th width="240px;">Action</th>
                         </tr>
                       </thead>
@@ -55,9 +63,9 @@
                               {$row->controller}
                           </td>
                           <td>
-                              <a href="{base_url()}page/content_edit/{$row->url}"  class="btn btn-xs btn-primary" target="_blank_"><i class="fa fa-edit fa-fw"></i>Content Edit</a>
-                              <a href="{base_url()}page/edit/{$row->id}"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="{base_url()}page/delete/{$row->id}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
+                              <!-- <a href="{base_url()}page/content_edit/{$row->url}"  class="btn btn-xs btn-primary" target="_blank_"><i class="fa fa-edit fa-fw"></i>Content Edit</a> -->
+                              <a href="{base_url()}page/edit/{$row->url}"  class="btn btn-xs  btn-primary"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                              <a href="{base_url()}page/delete/{$row->url}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>
                         {/foreach}

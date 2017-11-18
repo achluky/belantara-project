@@ -25,12 +25,10 @@
 			
 			<div class="row scrollme">
 				<div class="col-md-6" >
-					<a href="#"  id="about_us1" data-type="wysihtml5" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">
 	                <p>Yayasan Bersama Lestarikan Nusantara (“Yayasan Belantara”) is an Indonesian grant-making institution formed in 2014 with the goal of delivering wide- ranging community and conservation results. It takes its name from the Indonesian word ‘Belantara’ which means wilderness or pristine forest.</p>
 					<p>Belantara primary focus is to allocate grants to support restoration, protection, conservation of endangered species (speci cally Sumatran Tiger, Sumatran Elephant, as well as Sumatran and
 					Bornean Orangutan), Institutional development,
 					and community development and empowerment initiatives in Conservation Area, Production Forest, Protection Forest, and Social Forestry on the ten speci ed grant distribution areas across  ve provinces on the islands of Sumatra and Kalimantan (Indonesian Borneo).</p>
-					</a>
 				</div>
 				<div class="col-md-6" data-animation="fadeInRight" data-animation-delay="200">
 					<img src="{base_url()}assets/front-end/images/PA4.jpg" alt="about us 1" class="img-responsive" style="margin-top: 20px; z-index: 1; position: relative;">
@@ -98,31 +96,5 @@
 
 
 {block name="addon_scripts"}
-
-	{if $data.session_group_name eq 'admin'}
-		<script src="{base_url()}assets/assert/js/jquery-2.0.3.min.js"></script> 
-		<script src="{base_url()}assets/assert/js/bootstrap.min.js"></script>
-		<script src="{base_url()}assets/assert/js/bootstrap-editable.min.js"></script>
-
-
-        <!-- wysihtml5 --> 
-        <script src="{base_url()}assets/assert/js/wysihtml5-0.3.0.min.js"></script>  
-        <script src="{base_url()}assets/assert/js/bootstrap-wysihtml5-0.0.3.min.js"></script>
-        <script src="{base_url()}assets/assert/js/wysihtml5-0.0.3.js"></script>
-        
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$.fn.editable.defaults.mode = 'inline';
-				$('#about_us').editable({
-				    type: 'text',
-				    pk: 1,
-				    url: '/post',
-				    title: 'Enter username'
-				});
-    			$('#about_us1').editable(); 
-			});
-		</script>
-	{/if}
 
 {/block}

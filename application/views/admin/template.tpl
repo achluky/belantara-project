@@ -31,8 +31,8 @@
             </div><!-- /.content-wrapper -->
 
             <footer class="main-footer">
-				<div class="pull-right hidden-xs">
-                    <b><a href="http://ict.ipb.ac.id">DIDSI IPB</a></b>
+				<div class="hidden-xs">
+                    <b><a href="belantara.org">BELANTARA INDONESIA</a></b>
                 </div>
                 <strong>Copyright &copy; {date('Y')} | All rights reserved.
 				</strong>    

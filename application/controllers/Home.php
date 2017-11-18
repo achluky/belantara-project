@@ -15,16 +15,14 @@ class Home extends CI_Controller {
             'url'=> $this->url,
             'session_group_name' => $this->session->userdata('group_name'),
             'site_lang'=>$this->session->userdata('site_lang'),
+            'slider' => $this->model_home->get_slider(),
+            'page_home' => $this->model_home->get_page_home(),
+            'blog' => $this->model_home->get_blog($this->session->userdata('site_lang')),
+            'last_news' => $this->model_home->get_news($this->session->userdata('site_lang')),
+            'last_resource' => $this->model_home->get_resource($this->session->userdata('site_lang'))
         );
         $this->smartyci->assign('data',$data);
-        if ($data['site_lang']=='ID')
-        {
-            $this->smartyci->display('front-end/index_id.tpl');
-        }
-        else
-        {
-            $this->smartyci->display('front-end/index.tpl');
-        }
+        $this->smartyci->display('front-end/index.tpl');
         
     }
     
@@ -143,7 +141,7 @@ class Home extends CI_Controller {
         }
         else
         {
-            $this->smartyci->display('front-end/aboutus.tpl');
+            $this->smartyci->display('front-end/about-us.tpl');
         }
     }
     

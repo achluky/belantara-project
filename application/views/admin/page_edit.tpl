@@ -1,6 +1,7 @@
 {extends file="admin/template.tpl"} 
 
 {block name="addon_styles"}
+<link href="{base_url()}assets/css/chosen.css" rel="stylesheet">
 {/block}
 
 {block name="breadcrumb"}
@@ -47,7 +48,7 @@
                     <div class="box-body box-primary">
                         <div class="box-body">
                             <div class="form-group">
-                                <input name="id" hidden value="{$data.page->id}">
+                                <input name="id" hidden value="{$data.page->url}">
                                 <label class="col-sm-2 control-label" for="inputEmail3">
                                     Judul
                                 </label>
@@ -102,10 +103,22 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Template</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Menggunakan Widget ?</label>
                               <div class="col-sm-10">
-                                <select name="" class="form-control">
-                                  <option value="">-Pilih Template-</option>
+                                <select name="widget" class="form-control">
+                                  <option value="1" {($data.page->widget == 1)?"selected":""}>Ya</option>
+                                  <option value="0" {($data.page->widget == 0)?"selected":""}>Tidak</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">List Widget</label>
+                              <div class="col-sm-10">
+                                <select name="widget_selected[]" class="form-control chosen-select"  multiple>
+                                    {foreach $data.widget_list -> result() as $row}
+                                    <option value="{$row->id_widget}" {( in_array($row->id_widget, explode("-", $data.page->widget_content)) )?"selected":"ok"} >{$row->name} [{$row->urutan}]</option>
+                                    {/foreach}
                                 </select>
                               </div>
                             </div>
@@ -138,14 +151,11 @@
 
 
 {block name="addon_scripts"}
-<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js">
-</script>
-<script charset="utf-8" src="{base_url()}assets/js/validator.min.js" type="text/javascript">
-</script>
+<script src="{base_url()}assets/plugins/chosen/chosen.jquery.js"></script>
+<script charset="utf-8" src="{base_url()}assets/js/validator.min.js" type="text/javascript"></script>
 <script>
     $(function () {
-        CKEDITOR.replace('content_EN');
-        CKEDITOR.replace('content_ID');
+        $('.chosen-select').chosen();
     });
 </script>
 {/block}

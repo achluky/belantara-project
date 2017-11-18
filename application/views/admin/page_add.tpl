@@ -80,10 +80,11 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Template</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">Menggunakan Widget ?</label>
                               <div class="col-sm-10">
-                                <select name="" class="form-control">
-                                  <option value="">-Pilih Template-</option>
+                                <select name="widget" class="form-control">
+                                  <option value="1">Ya</option>
+                                  <option value="0">Tidak</option>
                                 </select>
                               </div>
                             </div>

@@ -7,6 +7,35 @@ class Model_home extends CI_Model {
         parent::__construct();
     }
 
+    public function get_slider(){
+        $sql = "select * from slide_image_new";
+        $result = $this->db->query($sql);
+        return $result;
+    }
+
+    public function get_page_home(){
+        $sql = "select * from page_home where id =1000";
+        $result = $this->db->query($sql);
+        return $result->row();
+    }
+
+    public function get_blog($lang){
+        $sql = "select * from berita_ini where kategori = 'blog' and id_bahasa = '".$lang."' LIMIT 3";
+        $result = $this->db->query($sql);
+        return $result;
+    }
+
+    public function get_news($lang){
+        $sql = "select * from berita_ini where kategori = 'news' and id_bahasa = '".$lang."' ORDER BY waktu DESC LIMIT 3";
+        $result = $this->db->query($sql);
+        return $result;
+    }
+
+    public function get_resource($lang){
+        $sql = "select * from berita_ini where kategori = 'resource' and id_bahasa = '".$lang."' ORDER BY waktu DESC LIMIT 3";
+        $result = $this->db->query($sql);
+        return $result;
+    }
     public function get_employee_management()
     {
     	$sql = "select * from person where idcategory = 7";

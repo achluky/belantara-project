@@ -39,7 +39,7 @@ class Adminblog extends CI_Controller {
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'Blog list' => base_url() . 'blog'
+                'Blog list' => base_url() . 'adminblog'
             ),
             'label' => array(
                 'tabel_title' => $this->lang->line('label.tabel.title'),
@@ -72,9 +72,9 @@ class Adminblog extends CI_Controller {
             $row[] = $news->waktu;
             $row[] = $news->id_bahasa;
             //add html for action
-            $row[] = '<a href="'.base_url('blog').'/'.strtolower($news->id_bahasa).'/'. convert_date_format('Y', $news->waktu).'/'. convert_date_format('m', $news->waktu).'/'.slug($news->judul).'/'.$news->id_berita.'"  class="btn btn-xs"><i class="fa fa-file fa-fw"></i> view</a>
-                      <a href="' . base_url() . 'blog/edit/' . $news->id_bahasa . '/' . $news->id_berita . '"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                      <a href="' . base_url() . 'blog/delete/' . $news->id_bahasa . '/' . $news->id_berita . '" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>';
+            $row[] = '<a href="'.base_url('blog').'/'.strtolower($news->id_bahasa).'/'. convert_date_format('Y', $news->waktu).'/'. convert_date_format('m', $news->waktu).'/'.slug($news->judul).'/'.$news->id_berita.'"  class="btn btn-xs" target = "_blank_"><i class="fa fa-file fa-fw"></i> view</a>
+                      <a href="' . base_url() . 'adminblog/edit/' . $news->id_bahasa . '/' . $news->id_berita . '"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                      <a href="' . base_url() . 'adminblog/delete/' . $news->id_bahasa . '/' . $news->id_berita . '" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>';
             $data[] = $row;
         }
 
@@ -97,8 +97,8 @@ class Adminblog extends CI_Controller {
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'Blog list' => base_url() . 'blog',
-                'Add Blog' => base_url() . 'blog/add'
+                'Blog list' => base_url() . 'adminblog',
+                'Add Blog' => base_url() . 'adminblog/add'
             ),
             'title' => 'Blog <small>management</small>',
             'last_login' => $this->sess['last_login'],
@@ -114,7 +114,7 @@ class Adminblog extends CI_Controller {
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'Blog list' => base_url() . 'blog',
+                'Blog list' => base_url() . 'adminblog',
                 'Edit Blog' => base_url()
             ),
             'label' => array(
@@ -139,6 +139,7 @@ class Adminblog extends CI_Controller {
     }
 
     public function update() {
+
         $id = $this->input->post('id');
         $file_image = (isset($_FILES['image']) == TRUE ? $_FILES['image'] : null); // ambil dahulu
         $config ['upload_path'] = "./document/images/blog/"; // lokasi folder yang akan digunakan untuk menyimpan file
@@ -150,7 +151,7 @@ class Adminblog extends CI_Controller {
         if (isset($file_image['name']) and $file_image['name'] != '') {
             if (!$this->upload->do_upload('image')) {
                 $alert = $this->upload->display_errors();
-                redirect('blog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
             } else {
                 $data = array(
                     'id' => $this->input->post('id'),
@@ -158,33 +159,35 @@ class Adminblog extends CI_Controller {
                     'judul' => $this->input->post('judul'),
                     'ringkasan' => $this->input->post('ringkasan'),
                     'isi' => $this->input->post('isi'),
-                    'keyword' => $this->input->post('keyword')
+                    'keyword' => $this->input->post('keyword'),
+                    'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul'))
                 );
                 
                 if ($this->model_blog->update_blog($data, $this->upload->file_name, $this->input->post('id_bahasa'))){
                     $alert = url_title("update succses !");
-                    redirect('blog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                    redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
                 } else {
                 $alert = url_title("update failed !");
-                redirect('blog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
                 }
             }
         } else {
-                $data = array(
-                    'id' => $this->input->post('id'),
-                    'id_bahasa' => $this->input->post('id_bahasa'),
-                    'judul' => $this->input->post('judul'),
-                    'ringkasan' => $this->input->post('ringkasan'),
-                    'isi' => $this->input->post('isi'),
-                    'keyword' => $this->input->post('keyword')
-                );
-            
+            $data = array(
+                'id' => $this->input->post('id'),
+                'id_bahasa' => $this->input->post('id_bahasa'),
+                'judul' => $this->input->post('judul'),
+                'ringkasan' => $this->input->post('ringkasan'),
+                'isi' => $this->input->post('isi'),
+                'keyword' => $this->input->post('keyword'),
+                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9]/',' ', strtolower( $this->input->post('judul')))) 
+            );
+
             if ($this->model_blog->update_blog($data, $this->input->post('image'), $this->input->post('id_bahasa'))) {
                 $alert = url_title("update succses !");
-                redirect('blog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
             } else {
                 $alert = url_title("update failed !");
-                redirect('blog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
             }
         }
     }
@@ -209,7 +212,7 @@ class Adminblog extends CI_Controller {
             'alert' => "Anda yakin akan mendelete data ini !",
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'Blog list' => base_url() . 'blog',
+                'Blog list' => base_url() . 'adminblog',
                 'Delete Blog' => base_url() . ''
             ),
             'title' => 'Blog <small>management</small>',
@@ -219,7 +222,7 @@ class Adminblog extends CI_Controller {
         if (isset($_GET['n']) and $_GET['n'] != NULL)
             if ($this->model_blog->delete($id)) {
                 $alert = url_title("delete succses !");
-                redirect('blog/?n=' . $alert, 'refresh');
+                redirect('adminblog/?n=' . $alert, 'refresh');
             }
         $this->smartyci->assign('data', $data);
         $this->smartyci->display('admin/blog_delete.tpl');
@@ -253,19 +256,19 @@ class Adminblog extends CI_Controller {
 
                     if ($this->model_blog->save_blog($data, $this->upload->file_name)) {
                         $alert = url_title("Save succses !");
-                        redirect('blog?n=' . $alert, 'refresh');
+                        redirect('adminblog?n=' . $alert, 'refresh');
                     } else {
                         $alert = url_title("Save failde !");
-                        redirect('blog/add?n=' . $alert, 'refresh');
+                        redirect('adminblog/add?n=' . $alert, 'refresh');
                     }
                 }
             } else {
                 $alert = url_title("File Not Found !");
-                redirect('blog/add?n=' . $alert, 'refresh');
+                redirect('adminblog/add?n=' . $alert, 'refresh');
             }
         } else {
             $alert = url_title("Isi empty !");
-            redirect('blog/add?n=' . $alert, 'refresh');
+            redirect('adminblog/add?n=' . $alert, 'refresh');
         }
     }
     
@@ -332,20 +335,6 @@ class Adminblog extends CI_Controller {
         );
         $this->smartyci->assign('data', $data);
         $this->smartyci->display('frontend/post_blog.tpl');
-    }
-    
-    public function rss() {
-        $data['feed_name'] = 'Bogor Agricultural University';
-        $data['encoding'] = 'utf-8';
-        $data['feed_url'] = 'http://ipb.ac.id/rss';
-        $data['page_language'] = 'en';
-        $data['page_description'] = 'Bogor Agricultural University';
-        $data['creator_email'] = 'humas@ipb.ac.id';
-        $data['event'] = $this->model_blog->get_feeds();
-        
-        header('Content-type: application/xml; charset="ISO-8859-1"',true);
-        $this->smartyci->assign('data',$data);
-        $this->smartyci->display('frontend/feed_blog.tpl');
     }
     
     public function sitemap(){
