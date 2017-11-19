@@ -59,7 +59,6 @@ $route['news/id/(:num)/(:num)/(:any)/(:any)'] = 'news/post/ID/$1/$2/$3/$4';
 $route['blog/(:any)'] = "blog/detail/$1";
 
 $route['advisory-committee'] = "home/adv_committee";
-$route['gallery'] = "home/gallery";
 $route['references'] = "home/references";
 $route['contact-us'] = "home/contact";
 $route['resources'] = "home/resources";

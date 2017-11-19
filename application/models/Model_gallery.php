@@ -13,6 +13,11 @@ class Model_gallery extends CI_Model {
     	return $result;
     }
 
+    public function get_gallery_all($lang){
+        $sql = "select * from gallery ORDER BY tanggal DESC ";
+        return $this->db->query($sql);
+    }
+
     public function get_gallery($id)
     {
     	$sql = "select * from gallery WHERE  id='".$id."' ";
