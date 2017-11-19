@@ -1,7 +1,7 @@
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
-        <section id="page-title" style="background-image: url('http://belantara.or.id/wp-content/uploads/OurPeopleH02_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
+        <section id="page-title" style="background-image: url('{base_url()}assets/img/OurPeopleH02_BelantaraFoundation_1920x600px.jpg');background-size: cover; background-position: center bottom;">
             <div class="container">
                 <div class="page-title">
                     <h1>ADVISORY BOARDS</h1>

@@ -1,7 +1,7 @@
 {extends file="front-end/template.tpl"} 
 
 {block name="content"}
-<section id="page-title" class="page-title-center approach-header" style="background-image:url('http://belantara.or.id/wp-content/uploads/OurApproachH01b_BelantaraFoundation_1920x600px.jpg')">
+<section id="page-title" class="page-title-center approach-header" style="background-image:url('{base_url()}assets/img/OurApproachH01b_BelantaraFoundation_1920x600px.jpg')">
     <div class="container">
         <div class="row">
         	<div class="col-md-3"></div>
