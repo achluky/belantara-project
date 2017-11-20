@@ -153,7 +153,7 @@ class Adminreference extends CI_Controller {
                     'judul' => $this->input->post('judul'),
                     'ringkasan' => $this->input->post('ringkasan'),
                     'keyword' => $this->input->post('keyword'),
-                    'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul'))
+                    'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
                 );
                 
                 if ($this->model_reference->update_reference($data, $this->upload->file_name, $this->input->post('id_bahasa'))){
@@ -171,7 +171,7 @@ class Adminreference extends CI_Controller {
                 'judul' => $this->input->post('judul'),
                 'ringkasan' => $this->input->post('ringkasan'),
                 'keyword' => $this->input->post('keyword'),
-                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9]/',' ', strtolower( $this->input->post('judul')))) 
+                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
             );
             if ($this->model_reference->update_reference($data,$this->input->post('pdf'), $this->input->post('id_bahasa'))) {
                 $alert = url_title("update succses !");

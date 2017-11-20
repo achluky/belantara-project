@@ -113,8 +113,8 @@ class Adminpressrelease extends CI_Controller {
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'press_release list' => base_url() . 'adminpressrelease',
-                'Edit press_release' => base_url()
+                'Press Release list' => base_url() . 'adminpressrelease',
+                'Edit Press Release' => base_url()
             ),
             'label' => array(
                 'news_edit' => $this->lang->line('label.newsEdit'),
@@ -159,7 +159,7 @@ class Adminpressrelease extends CI_Controller {
                     'ringkasan' => $this->input->post('ringkasan'),
                     'isi' => $this->input->post('isi'),
                     'keyword' => $this->input->post('keyword'),
-                    'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul'))
+                    'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
                 );
                 
                 if ($this->model_press_release->update_press_release($data, $this->upload->file_name, $this->input->post('id_bahasa'))){
@@ -178,7 +178,7 @@ class Adminpressrelease extends CI_Controller {
                 'ringkasan' => $this->input->post('ringkasan'),
                 'isi' => $this->input->post('isi'),
                 'keyword' => $this->input->post('keyword'),
-                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9]/',' ', strtolower( $this->input->post('judul')))) 
+                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
             );
 
             if ($this->model_press_release->update_press_release($data, $this->input->post('image'), $this->input->post('id_bahasa'))) {
@@ -224,35 +224,30 @@ class Adminpressrelease extends CI_Controller {
         $this->upload->initialize($config); // meng set config yang sudah di atur
 
         if (($this->input->post('isi_en') != NULL) and ( $this->input->post('isi_id') != NULL)) {
-            if (isset($file_image['name']) and $file_image['name'] != '') {
-                if (!$this->upload->do_upload('image')) {
-                    $alert = $this->upload->display_errors();
-                    redirect('adminpressrelease/add?n=' . $alert, 'refresh');
-                } else {
-                    $data = array(
-                        'judul_en' => $this->input->post('judul_en'),
-                        'judul_id' => $this->input->post('judul_id'),
-                        'ringkasan_en' => $this->input->post('ringkasan_en'),
-                        'ringkasan_id' => $this->input->post('ringkasan_id'),
-                        'isi_en' => $this->input->post('isi_en'),
-                        'isi_id' => $this->input->post('isi_id'),
-                        'kategori' => 'press_release',
-                        'keyword_id' => $this->input->post('keyword_id'),
-                        'keyword_en' => $this->input->post('keyword_en'),
-                        'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul_en'))
-                    );
-
-                    if ($this->model_press_release->save_press_release($data, $this->upload->file_name)) {
-                        $alert = url_title("Save succses !");
-                        redirect('adminpressrelease?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Save failde !");
-                        redirect('adminpressrelease/add?n=' . $alert, 'refresh');
-                    }
-                }
-            } else {
-                $alert = url_title("File Not Found !");
+            if (!$this->upload->do_upload('image')) {
+                $alert = $this->upload->display_errors();
                 redirect('adminpressrelease/add?n=' . $alert, 'refresh');
+            } else {
+                $data = array(
+                    'judul_en' => $this->input->post('judul_en'),
+                    'judul_id' => $this->input->post('judul_id'),
+                    'ringkasan_en' => $this->input->post('ringkasan_en'),
+                    'ringkasan_id' => $this->input->post('ringkasan_id'),
+                    'isi_en' => $this->input->post('isi_en'),
+                    'isi_id' => $this->input->post('isi_id'),
+                    'kategori' => 'press_release',
+                    'keyword_id' => $this->input->post('keyword_id'),
+                    'keyword_en' => $this->input->post('keyword_en'),
+                    'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
+                );
+
+                if ($this->model_press_release->save_press_release($data, $this->upload->file_name)) {
+                    $alert = url_title("Save succses !");
+                    redirect('adminpressrelease?n=' . $alert, 'refresh');
+                } else {
+                    $alert = url_title("Save failde !");
+                    redirect('adminpressrelease/add?n=' . $alert, 'refresh');
+                }
             }
         } else {
             $alert = url_title("Isi empty !");

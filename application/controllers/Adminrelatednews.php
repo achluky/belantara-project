@@ -142,7 +142,7 @@ class Adminrelatednews extends CI_Controller {
             'ringkasan' => $this->input->post('ringkasan'),
             'isi' => $this->input->post('link'),
             'keyword' => $this->input->post('keyword'),
-            'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9]/',' ', strtolower( $this->input->post('judul')))) 
+            'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
         );
 
         if ($this->model_related_news->update_related_news($data, $this->input->post('id_bahasa'))) {
@@ -190,7 +190,7 @@ class Adminrelatednews extends CI_Controller {
                 'kategori' => 'related_news',
                 'keyword_id' => $this->input->post('keyword_id'),
                 'keyword_en' => $this->input->post('keyword_en'),
-                'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul_en'))
+                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9 ]/',' ',strtolower($this->input->post('judul'))))
             );
             if ($this->model_related_news->save_related_news($data)) {
                 $alert = url_title("Save succses !");
