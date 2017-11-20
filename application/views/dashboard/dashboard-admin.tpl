@@ -56,6 +56,49 @@
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
+                <a href="{base_url()}adminrelatednews" class="small-box-footer">
+                  <div class="small-box bg-blue">
+                    <div class="inner">
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
+                      <p><strong style="text-transform: uppercase;">Related News</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-document"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}adminpressrelease" class="small-box-footer">
+                  <div class="small-box bg-blue">
+                    <div class="inner">
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
+                      <p><strong style="text-transform: uppercase;">Press Release</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-document"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <a href="{base_url()}adminreference" class="small-box-footer">
+                  <div class="small-box bg-blue">
+                    <div class="inner">
+                      <h3><img src="{base_url()}assets/img/www.png" alt="www" style="width:30px;"></h3>
+                      <p><strong style="text-transform: uppercase;">Reference Manajement</strong></p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-document"></i>
+                    </div>
+                  </div>
+                </a>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
                 <a href="{base_url()}page" class="small-box-footer">
                   <div class="small-box bg-blue">
                     <div class="inner">

@@ -67,7 +67,7 @@ class Adminrelatednews extends CI_Controller {
             $row[] = $news->waktu;
             $row[] = $news->id_bahasa;
             //add html for action
-            $row[] = '<a href="'.base_url('related-news').'/'.$news->slug.'"  class="btn btn-xs" target = "_blank_"><i class="fa fa-file fa-fw"></i> view </a>
+            $row[] = '<a href="'.$news->isi.'"  class="btn btn-xs" target = "_blank_"><i class="fa fa-file fa-fw"></i> view </a>
                       <a href="' . base_url() . 'adminrelatednews/edit/' . $news->id_bahasa . '/' . $news->id_berita . '"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
                       <a href="' . base_url() . 'adminrelatednews/delete/' . $news->id_bahasa . '/' . $news->id_berita . '" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>';
             $data[] = $row;

@@ -214,7 +214,6 @@ class Page extends CI_Controller {
                 'Dashboard'=>base_url().'admin',
                 'Page list' => base_url().'page',
                 'Widget list' => base_url().'page/widget/list',
-                'Add widget' => base_url().'page'
             ),
             'title'=> 'Page - Widget <small>management</small>',
             'last_login' => $this->sess['last_login'],

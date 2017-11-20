@@ -26,7 +26,7 @@
                 
                 <div class="box box-primary">
                   <div class="box-header">
-                    <h3 class="box-title">Page List</h3>
+                    <h3 class="box-title">Page Widget List</h3>
 
                     <div class="btn-group pull-right">
 

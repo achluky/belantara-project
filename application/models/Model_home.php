@@ -41,6 +41,11 @@ class Model_home extends CI_Model {
         $result = $this->db->query($sql);
         return $result;
     }
+    public function get_related_news_all($lang){
+        $sql = "select * from berita_ini where kategori = 'related_news' and id_bahasa = '".$lang."' ORDER BY waktu DESC";
+        $result = $this->db->query($sql);
+        return $result;
+    }
     public function get_employee_management()
     {
     	$sql = "select * from person where idcategory = 7";

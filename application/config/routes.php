@@ -63,7 +63,7 @@ $route['references'] = "home/references";
 $route['contact-us'] = "home/contact";
 $route['resources'] = "home/resources";
 $route['press-release'] = "home/press_release";
-$route['related-news'] = "related_news";
+$route['related-news'] = "home/related_news";
 $route['management'] = "home/management";
 $route['boards'] = "home/boards";
 
