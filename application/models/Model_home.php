@@ -51,7 +51,18 @@ class Model_home extends CI_Model {
         $result = $this->db->query($sql);
         return $result;
     }
-    
+    public function get_widget($url){
+        $sql = "select * from page_ini where url = '".$url."'";
+        $result = $this->db->query($sql);
+        $row =  $result->row();
+        $widget_id = explode("-", $row->widget_content);
+
+
+        $this->db->from('widget');
+        $this->db->where_in('id_widget', $widget_id);
+        $this->db->order_by("urutan", "asc");
+        return $this->db->get();
+    }
     
     public function get_employee_management()
     {

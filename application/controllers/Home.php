@@ -109,18 +109,12 @@ class Home extends CI_Controller {
     public function aboutus(){
     	$data = array(
             'url'=> $this->url,
-            'session_group_name' => $this->session->userdata('group_name'),
-            'site_lang'=>$this->session->userdata('site_lang')
+            'site_lang'=>$this->session->userdata('site_lang'),
+            'about_us' => $this->model_home->get_widget('about-us')
         );
+
         $this->smartyci->assign('data',$data);
-        if ($data['site_lang']=='ID')
-        {
-            $this->smartyci->display('front-end/aboutus_id.tpl');
-        }
-        else
-        {
-            $this->smartyci->display('front-end/about-us.tpl');
-        }
+        $this->smartyci->display('front-end/about-us.tpl');
     }
     
     public function program(){
