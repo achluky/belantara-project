@@ -29,6 +29,7 @@ class Home extends CI_Controller {
         $data = array(
             'url'=> $this->url,
             'site_lang'=>$this->session->userdata('site_lang'),
+            'references' => $this->model_home->get_references_all($this->session->userdata('site_lang')),
         );
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/references.tpl');
@@ -42,15 +43,6 @@ class Home extends CI_Controller {
         );
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/resources.tpl');
-    }
-    
-    public function press_release() {
-        $data = array(
-            'url'=> $this->url,
-            'site_lang'=>$this->session->userdata('site_lang'),
-        );
-        $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/press-release.tpl');
     }
 
     public function related_news(){
