@@ -51,8 +51,6 @@
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                        <a class="btn btn-default btn-flat" href="{base_url('admin/edit_profile')}"><i class="fa fa-pencil"></i>{lang('navigation.label.edit_profile')}</a>
-                                
                                         <a class="btn btn-default btn-flat" href="{base_url('admin/logout')}"><i class="fa fa-sign-out"></i>{lang('navigation.label.logout')}</a>
                                 </li>
                             </ul>
@@ -63,7 +61,7 @@
 </header>
 <aside class="main-sidebar affix">
     <section class="sidebar">
-		<div class="profile">
+		<!-- <div class="profile">
                 <ul>
                     <li>
                         <img src="{base_url('assets/img/belantara_profile.png')}" class="user-image" alt="User Image">
@@ -71,7 +69,7 @@
                     <li>{strtoupper($data['session'])}</li>
                     <li>{lang('navigation.label.last_login')}: {$data['last_login']}</li>
                 </ul>
-		</div>
+		</div> -->
         <ul class="sidebar-menu">
             <li class="header">{lang('navigation.label.main.navigation')}</li>
 			{if isset($navbar)}

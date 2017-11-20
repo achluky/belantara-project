@@ -73,6 +73,22 @@ $lang['navigation.navbar.blog'] = 'Blog Management';
 $lang['navigation.navbar.blog.add'] = 'Add Blog';
 $lang['navigation.navbar.blog.list'] = 'List Blog';
 
+
+$lang['navigation.navbar.rn'] = 'Related News';
+$lang['navigation.navbar.rn.add'] = 'Add Related News ';
+$lang['navigation.navbar.rn.list'] = 'List Related News ';
+
+
+$lang['navigation.navbar.pr'] = 'Press Release';
+$lang['navigation.navbar.pr.add'] = 'Add Press Release';
+$lang['navigation.navbar.pr.list'] = 'List Press Release';
+
+
+$lang['navigation.navbar.reference'] = 'Reference Management';
+$lang['navigation.navbar.reference.add'] = 'Add Reference';
+$lang['navigation.navbar.reference.list'] = 'List Reference';
+
+
 $lang['navigation.navbar.person'] = 'Employe Manajement';
 $lang['navigation.navbar.person.add'] = 'Tambah Employe';
 $lang['navigation.navbar.person.list'] = 'List Employe';

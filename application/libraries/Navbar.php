@@ -30,6 +30,9 @@ class Navbar {
 		//$this->setMenuReferensiDBINTEGRASI();
 		$this->setMenuNews();
 		$this->setMenuBlog();
+		$this->setMenuRelatedNews();
+		$this->setMenuPressRelease();
+		$this->setMenuReferences();
 		// $this->setMenuEvent();
 		$this->setMenuResourcet();
 		$this->setMenuPage();
@@ -251,6 +254,71 @@ class Navbar {
 											)
 							);
 	}
+
+	private function setMenuRelatedNews(){
+		$this->menu['related_news']=array("name"=>$this->controller->lang->line('navigation.navbar.rn'),
+							"url"=>base_url()."adminrelatednews",
+							"status"=>"", 
+							"class"=>"ion ion-social-rss",
+							"submenu"=>array(
+												"add"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.rn.add'),
+												"url"=>base_url()."adminrelatednews/add",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												),
+												"list"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.rn.list'),
+												"url"=>base_url()."adminrelatednews",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												)
+											)
+							);
+	}
+	private function setMenuPressRelease(){
+		$this->menu['press_release']=array("name"=>$this->controller->lang->line('navigation.navbar.pr'),
+							"url"=>base_url()."pressrelease",
+							"status"=>"", 
+							"class"=>"glyphicon glyphicon-file",
+							"submenu"=>array(
+												"add"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.pr.add'),
+												"url"=>base_url()."pressrelease/add",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												),
+												"list"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.pr.list'),
+												"url"=>base_url()."pressrelease",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												)
+											)
+							);
+	}
+	private function setMenuReferences(){
+		$this->menu['reference']=array("name"=>$this->controller->lang->line('navigation.navbar.reference'),
+							"url"=>base_url()."adminreference",
+							"status"=>"", 
+							"class"=>"ion ion-ios-analytics",
+							"submenu"=>array(
+												"add"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.reference.add'),
+												"url"=>base_url()."adminreference/add",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												),
+												"list"=>array(
+												"name"=>$this->controller->lang->line('navigation.navbar.reference.list'),
+												"url"=>base_url()."adminreference",
+												"status"=>"", 
+												"class"=>"fa fa-circle-o",
+												)
+											)
+							);
+	}
+
 	private function setMenuEvent(){
 		$this->menu['event']=array("name"=>$this->controller->lang->line('navigation.navbar.event'),
 							"url"=>base_url()."event",

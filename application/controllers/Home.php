@@ -26,16 +26,6 @@ class Home extends CI_Controller {
         
     }
     
-    public function related_news() {
-        $data = array(
-            'url'=> $this->url,
-
-            'site_lang'=>$this->session->userdata('site_lang'),
-        );
-        $this->smartyci->assign('data',$data);
-        $this->smartyci->display('front-end/related-news.tpl');
-    }
-    
     public function references() {
         $data = array(
             'url'=> $this->url,

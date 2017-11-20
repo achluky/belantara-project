@@ -65,9 +65,7 @@ class Admin extends CI_Controller {
                     $this->load->library('ldap_auth');
 					$result = $this->ldap_auth->auth($_POST['user'], $_POST['pwd']);
 					if($result){
-						// ini menggunakanan user ldap	
 						if($salt===null){
-							// create new user
 							$this->model_admin->save_user_from_ldap($result[0], $_POST['user'], $_POST['pwd']);
 						}
 						$result = $this->model_admin->auth_ldap($result[0]["uid"][0], $salt);
@@ -87,13 +85,11 @@ class Admin extends CI_Controller {
 							redirect($this->config->item('base_url').'admin', 'refresh');
 						}
 					}
-					
 					if($salt===null){
 						$data['error_msg']  = "Not Found username";      
 					}else{
 						$data['error_msg']  = "Invalid password";      
 					}
-					   
                 }
 
             }else{
