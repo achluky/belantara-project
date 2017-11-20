@@ -86,12 +86,12 @@ class Model_reference extends CI_Model {
         return $result->row();
     }
 
-    public function update_reference($data, $id_bahasa)
+    public function update_reference($data, $pdf, $id_bahasa)
     {
         $update = array(
             'judul'=>$data['judul'],
             'ringkasan'=>$data['ringkasan'],
-            'isi'=>$data['isi'],
+            'isi'=>$pdf,
             'keyword'=>$data['keyword'],
             'slug'=>$data['slug']
         );
@@ -112,7 +112,7 @@ class Model_reference extends CI_Model {
             'waktu'=>date('Y-m-d H:i:s'),
             'judul'=>$data['judul_id'],
             'ringkasan'=>$data['ringkasan_id'],
-            'isi'=>$data['isi_id'],
+            'isi'=>$pdf,
             'keyword'=>$data['keyword_id'],
             'kategori'=>'reference',
             'file_pdf'=>url_title($data['judul_id']),
@@ -125,7 +125,7 @@ class Model_reference extends CI_Model {
             'waktu'=>date('Y-m-d H:i:s'),
             'judul'=>$data['judul_en'],
             'ringkasan'=>$data['ringkasan_en'],
-            'isi'=>$data['isi_en'],
+            'isi'=>$pdf,
             'keyword'=>$data['keyword_en'],
             'kategori'=>'reference',
             'file_pdf'=>url_title($data['judul_en']),

@@ -67,9 +67,9 @@ class Adminreference extends CI_Controller {
             $row[] = $news->waktu;
             $row[] = $news->id_bahasa;
             //add html for action
-            $row[] = '<a href="'.base_url('related-news').'/'.$news->slug.'"  class="btn btn-xs" target = "_blank_"><i class="fa fa-file fa-fw"></i> view </a>
-                      <a href="' . base_url() . 'adminrelatednews/edit/' . $news->id_bahasa . '/' . $news->id_berita . '"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                      <a href="' . base_url() . 'adminrelatednews/delete/' . $news->id_bahasa . '/' . $news->id_berita . '" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>';
+            $row[] = '<a href="'.base_url('references').'/'.$news->slug.'"  class="btn btn-xs" target = "_blank_"><i class="fa fa-file fa-fw"></i> view </a>
+                      <a href="' . base_url() . 'adminreference/edit/' . $news->id_bahasa . '/' . $news->id_berita . '"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
+                      <a href="' . base_url() . 'adminreference/delete/' . $news->id_bahasa . '/' . $news->id_berita . '" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>';
             $data[] = $row;
         }
 
@@ -92,8 +92,8 @@ class Adminreference extends CI_Controller {
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'Reference list' => base_url() . 'adminrelatednews',
-                'Add Reference' => base_url() . 'adminrelatednews/add'
+                'Reference list' => base_url() . 'adminreference',
+                'Add Reference' => base_url() . 'adminreference/add'
             ),
             'title' => 'Reference <small>management</small>',
             'last_login' => $this->sess['last_login'],
@@ -109,7 +109,7 @@ class Adminreference extends CI_Controller {
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
-                'Reference list' => base_url() . 'adminrelatednews',
+                'Reference list' => base_url() . 'adminreference',
                 'Edit Reference' => base_url()
             ),
             'label' => array(
@@ -124,33 +124,62 @@ class Adminreference extends CI_Controller {
                 'news_update' => $this->lang->line('label.news.update'),
                 'news_cancel' => $this->lang->line('label.news.cancel')
             ),
-            'news' => $this->model_related_news->get_related_news($id, $id_bahasa),
+            'news' => $this->model_reference->get_reference($id, $id_bahasa),
             'title' => 'reference <small>management</small>',
             'last_login' => $this->sess['last_login'],
             'session' => $this->sess['username']
         );
         $this->smartyci->assign('data', $data);
-        $this->smartyci->display('admin/related_news_edit.tpl');
+        $this->smartyci->display('admin/reference_edit.tpl');
     }
 
     public function update() {
-        $id = $this->input->post('id');
-        $data = array(
-            'id' => $this->input->post('id'),
-            'id_bahasa' => $this->input->post('id_bahasa'),
-            'judul' => $this->input->post('judul'),
-            'ringkasan' => $this->input->post('ringkasan'),
-            'isi' => $this->input->post('link'),
-            'keyword' => $this->input->post('keyword'),
-            'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9]/',' ', strtolower( $this->input->post('judul')))) 
-        );
 
-        if ($this->model_related_news->update_related_news($data, $this->input->post('id_bahasa'))) {
-            $alert = url_title("update succses !");
-            redirect('adminrelatednews/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+        $id = $this->input->post('id');
+        $file_image = (isset($_FILES['pdf']) == TRUE ? $_FILES['pdf'] : null); // ambil dahulu
+        $config ['upload_path'] = "./document/reference/"; // lokasi folder yang akan digunakan untuk menyimpan file
+        $config ['allowed_types'] = 'pdf'; // extension yang diperbolehkan untuk diupload
+        $config ['file_name'] = url_title(slug($this->input->post('title_ID')))."-reference";
+        $this->upload->initialize($config); // meng set config yang sudah di atur
+
+        if (isset($file_image['name']) and $file_image['name'] != '') {
+            if (!$this->upload->do_upload('pdf')) {
+                $alert = $this->upload->display_errors();
+                redirect('adminreference/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+            } else {
+                $data = array(
+                    'id' => $this->input->post('id'),
+                    'id_bahasa' => $this->input->post('id_bahasa'),
+                    'judul' => $this->input->post('judul'),
+                    'ringkasan' => $this->input->post('ringkasan'),
+                    'keyword' => $this->input->post('keyword'),
+                    'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul'))
+                );
+                
+                if ($this->model_reference->update_reference($data, $this->upload->file_name, $this->input->post('id_bahasa'))){
+                    $alert = url_title("update succses !");
+                    redirect('adminreference/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                } else {
+                $alert = url_title("update failed !");
+                redirect('adminreference/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+                }
+            }
         } else {
-            $alert = url_title("update failed !");
-            redirect('adminrelatednews/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+            $data = array(
+                'id' => $this->input->post('id'),
+                'id_bahasa' => $this->input->post('id_bahasa'),
+                'judul' => $this->input->post('judul'),
+                'ringkasan' => $this->input->post('ringkasan'),
+                'keyword' => $this->input->post('keyword'),
+                'slug' => str_replace(" ", "-", preg_replace('/[^a-zA-Z0-9]/',' ', strtolower( $this->input->post('judul')))) 
+            );
+            if ($this->model_reference->update_reference($data,$this->input->post('pdf'), $this->input->post('id_bahasa'))) {
+                $alert = url_title("update succses !");
+                redirect('adminreference/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+            } else {
+                $alert = url_title("update failed !");
+                redirect('adminreference/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
+            }
         }
     }
 
@@ -170,12 +199,12 @@ class Adminreference extends CI_Controller {
             'session' => $this->sess['username']
         );
         if (isset($_GET['n']) and $_GET['n'] != NULL)
-            if ($this->model_related_news->delete($id)) {
+            if ($this->model_reference->delete($id)) {
                 $alert = url_title("delete succses !");
-                redirect('adminrelatednews/?n=' . $alert, 'refresh');
+                redirect('adminreference/?n=' . $alert, 'refresh');
             }
         $this->smartyci->assign('data', $data);
-        $this->smartyci->display('admin/related_news_delete.tpl');
+        $this->smartyci->display('admin/reference_delete.tpl');
     }
 
     public function save() {
@@ -204,7 +233,7 @@ class Adminreference extends CI_Controller {
                         'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul_en'))
                     );
 
-                    if ($this->model_adminreference->save_adminreference($data, $this->upload->file_name)) {
+                    if ($this->model_reference->save_reference($data, $this->upload->file_name)) {
                         $alert = url_title("Save succses !");
                         redirect('adminreference?n=' . $alert, 'refresh');
                     } else {
@@ -269,30 +298,6 @@ class Adminreference extends CI_Controller {
         echo json_encode($output);
     }
     
-    public function post($id_bahasa,$year,$month,$title,$id){
-        $data = array(
-            'url' => $this->url,
-            'alert' => isset($_GET['n']) ? $_GET['n'] : '',
-            'breadcrumb' => array(
-                'Dashboard' => base_url() . 'admin',
-                'News list' => base_url() . 'news',
-                $this->model_reference->get_reference($id)->judul => base_url()
-            ),
-            'news' => $this->model_reference->get_reference($id,$id_bahasa),
-            'title' => $this->model_reference->get_reference($id)->judul,
-            'last_login' => $this->sess['last_login'],
-            'session' => $this->sess['username']
-        );
-        $this->smartyci->assign('data', $data);
-        $this->smartyci->display('frontend/post_reference.tpl');
-    }
-    
-    public function sitemap(){
-        $data['event'] = $this->model_reference->get_feeds();
-        header('Content-type: application/xml; charset="ISO-8859-1"',true);
-        $this->smartyci->assign('data',$data);
-        $this->smartyci->display('frontend/sitemap_reference.tpl');
-    }
 
     public function generated(){
         echo generateId();
