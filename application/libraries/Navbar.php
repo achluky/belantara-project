@@ -278,19 +278,19 @@ class Navbar {
 	}
 	private function setMenuPressRelease(){
 		$this->menu['press_release']=array("name"=>$this->controller->lang->line('navigation.navbar.pr'),
-							"url"=>base_url()."pressrelease",
+							"url"=>base_url()."adminpressrelease",
 							"status"=>"", 
-							"class"=>"glyphicon glyphicon-file",
+							"class"=>"ion ion-speakerphone",
 							"submenu"=>array(
 												"add"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.pr.add'),
-												"url"=>base_url()."pressrelease/add",
+												"url"=>base_url()."adminpressrelease/add",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												),
 												"list"=>array(
 												"name"=>$this->controller->lang->line('navigation.navbar.pr.list'),
-												"url"=>base_url()."pressrelease",
+												"url"=>base_url()."adminpressrelease",
 												"status"=>"", 
 												"class"=>"fa fa-circle-o",
 												)
