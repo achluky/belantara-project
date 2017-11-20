@@ -2,13 +2,13 @@
 
 {block name="content-headline"}
 
-    <div class="judul-atas-dashboard content-header-media">
+  <!-- <div class="judul-atas-dashboard content-header-media">
 		<div class="header-section">
 			<img src="{base_url()}assets/front-end/images/logo.png" alt="Logo Belantara" class="pull-right" style="margin-right: 10px;margin-top:-6px;" />
 			<h1><small>{lang('label.dashboard.title')}</small></h1>
 		</div>
 		<img src="{base_url()}assets/img/profile_header4.jpg" alt="header image" class="animation-pulseSlow" />
-	</div>
+	</div> -->
 {/block}
 {block name="content"}
     <div class="row">

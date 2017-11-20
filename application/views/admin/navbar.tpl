@@ -61,15 +61,15 @@
 </header>
 <aside class="main-sidebar affix">
     <section class="sidebar">
-		<!-- <div class="profile">
+		<div class="profile">
                 <ul>
                     <li>
-                        <img src="{base_url('assets/img/belantara_profile.png')}" class="user-image" alt="User Image">
+                        <img src="{base_url('assets/img/belantara_profile.png')}" class="user-image" style="width: 50px; height: 50px;" alt="User Image">
                     </li>
                     <li>{strtoupper($data['session'])}</li>
                     <li>{lang('navigation.label.last_login')}: {$data['last_login']}</li>
                 </ul>
-		</div> -->
+		</div>
         <ul class="sidebar-menu">
             <li class="header">{lang('navigation.label.main.navigation')}</li>
 			{if isset($navbar)}
