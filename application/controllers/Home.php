@@ -117,36 +117,24 @@ class Home extends CI_Controller {
     }
     
     public function program(){
+        $this->load->helper('page');
     	$data = array(
             'url'=> $this->url,
-            'site_lang'=>$this->session->userdata('site_lang')
+            'site_lang'=>$this->session->userdata('site_lang'),
+            'slug' => $this->uri->segment(1, 0)
         );
-
-        $this->smartyci->assign('data',$data);
-        if ($data['site_lang']=='ID')
-        {
-            $this->smartyci->display('front-end/program_id.tpl');
-        }
-        else
-        {
-            $this->smartyci->display('front-end/program.tpl');
-        }
+        $this->smartyci->assign('data',$data);      
+        $this->smartyci->display('front-end/program.tpl');
     }
     public function grantarea(){
+        $this->load->helper('page');
     	$data = array(
             'url'=> $this->url,
-            'site_lang'=>$this->session->userdata('site_lang')
+            'site_lang'=>$this->session->userdata('site_lang'),
+            'slug' => $this->uri->segment(1, 0)
         );
-
         $this->smartyci->assign('data',$data);
-        if ($data['site_lang']=='ID')
-        {
-            $this->smartyci->display('front-end/workingarea_id.tpl');
-        }
-        else
-        {
-            $this->smartyci->display('front-end/workingarea.tpl');
-        }
+        $this->smartyci->display('front-end/workingarea.tpl');
     }
     public function approach(){
     	$data = array(
