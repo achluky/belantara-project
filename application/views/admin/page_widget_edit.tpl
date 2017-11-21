@@ -88,12 +88,12 @@
 
 
 {block name="addon_scripts"}
-<!-- <script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     $(function () {
         CKEDITOR.replace('content_EN');
         CKEDITOR.replace('content_ID');
     });
-</script> -->
+</script>
 {/block}
