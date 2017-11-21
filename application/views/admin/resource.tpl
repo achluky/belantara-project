@@ -35,7 +35,7 @@
                       <thead>
                         <tr>
                           <th width="20px;">No</th>
-                          <th width="500px;">{$data.label.tabel_title}</th>
+                          <th width="400px;">{$data.label.tabel_title}</th>
                           <th width="100px;">{$data.label.tabel_date}</th>
                           <th width="20px;">{$data.label.tabel_lang}</th>
                           <th width="150px;">{$data.label.table_action}</th>

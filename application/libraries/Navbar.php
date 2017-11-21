@@ -28,7 +28,7 @@ class Navbar {
 	private function allowAdmin(){
 		// $this->setMenuWur();
 		//$this->setMenuReferensiDBINTEGRASI();
-		$this->setMenuNews();
+		// $this->setMenuNews();
 		$this->setMenuBlog();
 		$this->setMenuRelatedNews();
 		$this->setMenuPressRelease();

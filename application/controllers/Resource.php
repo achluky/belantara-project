@@ -69,7 +69,7 @@ class Resource extends CI_Controller {
             $row[] = $resource->id_bahasa;
 
             //add html for action
-            $row[] = '<a href="'.base_url('resource').'/'.strtolower($resource->id_bahasa).'/'. convert_date_format('Y', $resource->waktu).'/'. convert_date_format('m', $resource->waktu).'/'.slug($resource->judul).'/'.$resource->id_berita.'"  class="btn btn-xs"><i class="fa fa-file fa-fw"></i> view</a>
+            $row[] = '
                       <a href="' . base_url() . 'resource/edit/' . $resource->id_bahasa . '/' . $resource->id_berita . '"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
                       <a href="' . base_url() . 'resource/delete/' . $resource->id_bahasa . '/' . $resource->id_berita . '" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>';
             $data[] = $row;

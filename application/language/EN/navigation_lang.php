@@ -49,7 +49,7 @@ $lang['navigation.navbar.wcu.data_university.wur2'] = 'Academic Faculty Staff wi
 $lang['navigation.navbar.wcu.data_university.wur3'] = 'Undergraduate Students';
 $lang['navigation.navbar.wcu.data_university.wur4'] = 'Graduate/Postgraduate Students';
 
-$lang['navigation.navbar.referensi'] = 'Reference';
+$lang['navigation.navbar.referensi'] = 'Master Data';
 $lang['navigation.navbar.referensi.jenis_kegiatan_mahasiswa'] = 'Jenis Kegiatan Mahasiswa';
 $lang['navigation.navbar.referensi.jenis_kelamin'] = 'Gender';
 $lang['navigation.navbar.referensi.status_penulis'] = 'Status Penulis';
@@ -97,7 +97,7 @@ $lang['navigation.navbar.person.list'] = 'List Employe';
 $lang['navigation.navbar.slider'] = 'Slider';
 
 
-$lang['navigation.navbar.ref'] = 'References';
+$lang['navigation.navbar.ref'] = 'Data Master';
 $lang['navigation.navbar.ref.person'] = 'Employee Category';
 
 $lang['navigation.navbar.resource'] = 'Resource Management';

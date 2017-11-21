@@ -51,7 +51,7 @@ $lang['navigation.navbar.wcu.data_university.wur3'] = 'Undergraduate Students';
 $lang['navigation.navbar.wcu.data_university.wur4'] = 'Graduate/Postgraduate Students';
 
 
-$lang['navigation.navbar.referensi'] = 'Referensi';
+$lang['navigation.navbar.referensi'] = 'Data Master';
 $lang['navigation.navbar.referensi.jenis_kegiatan_mahasiswa'] = 'Jenis Kegiatan Mahasiswa';
 $lang['navigation.navbar.referensi.jenis_kelamin'] = 'Jenis Kelamin';
 $lang['navigation.navbar.referensi.status_penulis'] = 'Status Penulis';
@@ -79,7 +79,7 @@ $lang['navigation.navbar.person'] = 'Manajement Karyawan';
 $lang['navigation.navbar.person.add'] = 'Tambah Karyawan';
 $lang['navigation.navbar.person.list'] = 'List Karywan';
 
-$lang['navigation.navbar.ref'] = 'Referensi';
+$lang['navigation.navbar.ref'] = 'Data Master';
 $lang['navigation.navbar.ref.person'] = 'Kategori Karyawan';
 
 $lang['navigation.navbar.resource'] = 'Resource';
@@ -91,8 +91,22 @@ $lang['navigation.navbar.program.add'] = 'Tambah Program';
 $lang['navigation.navbar.program.list'] = 'List Program';
 
 
-$lang['navigation.navbar.banner'] = 'Galleri';
+$lang['navigation.navbar.rn'] = 'Berita Terkait';
+$lang['navigation.navbar.rn.add'] = 'Tambah Berita Terkait';
+$lang['navigation.navbar.rn.list'] = 'List Berita Terkait';
 
+
+$lang['navigation.navbar.pr'] = 'Press Release';
+$lang['navigation.navbar.pr.add'] = 'Add Press Release';
+$lang['navigation.navbar.pr.list'] = 'List Press Release';
+
+
+$lang['navigation.navbar.reference'] = 'Reference Management';
+$lang['navigation.navbar.reference.add'] = 'Add Reference';
+$lang['navigation.navbar.reference.list'] = 'List Reference';
+
+
+$lang['navigation.navbar.banner'] = 'Galleri';
 
 $lang['navigation.navbar.slider'] = 'Slider';
 
