@@ -137,9 +137,11 @@ class Home extends CI_Controller {
         $this->smartyci->display('front-end/workingarea.tpl');
     }
     public function approach(){
+        $this->load->helper('page');
     	$data = array(
             'url'=> $this->url,
-            'site_lang'=>$this->session->userdata('site_lang')
+            'site_lang'=>$this->session->userdata('site_lang'),
+            'slug' => $this->uri->segment(1, 0)
         );
 
         $this->smartyci->assign('data',$data);
