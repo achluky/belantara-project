@@ -144,7 +144,6 @@ class Page extends CI_Controller {
                 'controller'=> $this->input->post('controller'),
                 'widget_content' => $widget_content
         );
-
         $id = $this->input->post('id');
         if($this->model_page->update_page($id,$data)) {
             $alert = url_title("Update succses !");

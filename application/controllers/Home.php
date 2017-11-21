@@ -74,7 +74,6 @@ class Home extends CI_Controller {
     }
 
     public function management(){
-          
         $data = array(
             'url'=> $this->url,
             'employee_management' => $this->model_home->get_employee_management(),
@@ -107,12 +106,12 @@ class Home extends CI_Controller {
     }
     
     public function aboutus(){
+        $this->load->helper('page');
     	$data = array(
             'url'=> $this->url,
             'site_lang'=>$this->session->userdata('site_lang'),
-            'about_us' => $this->model_home->get_widget('about-us')
+            'slug' => $this->uri->segment(1, 0)
         );
-
         $this->smartyci->assign('data',$data);
         $this->smartyci->display('front-end/about-us.tpl');
     }

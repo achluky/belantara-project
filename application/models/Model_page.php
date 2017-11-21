@@ -68,7 +68,7 @@ class Model_page extends CI_Model {
     }
 
     public function update_page($id,$data){
-        $this->db->where('id',$id);
+        $this->db->where('url',$id);
         $this->db->update('page_ini',$data);
         return TRUE;
     }

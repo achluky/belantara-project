@@ -111,7 +111,7 @@
                                 </select>
                               </div>
                             </div>
-
+                            {if $data.page->widget == 1 }
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">List Widget</label>
                               <div class="col-sm-10">
@@ -122,7 +122,7 @@
                                 </select>
                               </div>
                             </div>
-                            
+                            {/if}
                             <!-- /.box-body -->
                         </div>
                     </div>
