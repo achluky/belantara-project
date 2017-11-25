@@ -1,10 +1,5 @@
-<?php
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-/*
-* @bogor agriculture university
-*/
 class View extends CI_Controller {
     public $url;
     function __construct() 

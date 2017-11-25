@@ -77,3 +77,11 @@ foreach( $result as $row )
 {
     $route[ $row->url ] = $row->controller;
 }
+
+
+
+// grant application
+
+$route['grant'] = "grant/login";
+
+

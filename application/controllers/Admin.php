@@ -19,13 +19,10 @@ class Admin extends CI_Controller {
     }
     
     public function index(){
-        //cek session login
         if (!$this->session->userdata('logged_in')) {
             redirect($this->config->item('base_url'), 'refresh');            
         }
-
         $sess = $this->session->userdata('logged_in');
-        
         $data = array(
             'url'=> $this->url,
             'title'=> 'DASHBOARD',
@@ -34,7 +31,6 @@ class Admin extends CI_Controller {
             'last_login' => $sess['last_login'],
             'content'=> 'widget'
         );
-		
 		$this->smartyci->assign('data',$data);
         $this->smartyci->display('dashboard/dashboard-'.$data['group_name'].'.tpl');
     }
@@ -43,75 +39,57 @@ class Admin extends CI_Controller {
     {
         if (isset($_POST['user']) and $_POST['user'] != NULL) {
             if(isset($_POST['pwd']) and $_POST['pwd'] != NULL){
-                
-                $salt       = $this->model_admin->get_salt($_POST['user']);
-                $result     = $this->model_admin->auth($_POST['user'], $_POST['pwd'], $salt);
-				
-                if($result->num_rows()){
-                    $sess_array = array();
-                    foreach ($result->result() as $row)
-                    {
-					    $sess_array = array(
-                          'id' => $row->id,
-                          'username' => $row->username,
-                          'group_name' => strtolower($row->group_name),
-                          'last_login' => $row->last_login
-                        );
-                        $this->session->set_userdata('logged_in', $sess_array);
+                $active_status       = $this->model_admin->status($_POST['user']);
+                if ($active_status != NULL) {
+                    if ($active_status) {
+                        $salt       = $this->model_admin->get_salt($_POST['user']);
+                        $result     = $this->model_admin->auth($_POST['user'], $_POST['pwd'], $salt);
+                        if($result->num_rows()){
+                            $sess_array = array();
+                            foreach ($result->result() as $row)
+                            {
+        					    $sess_array = array(
+                                  'id' => $row->id,
+                                  'username' => $row->email,
+                                  'email' => $row->username,
+                                  'group_name' => strtolower($row->group_name),
+                                  'last_login' => $row->last_login
+                                );
+                                $this->session->set_userdata('logged_in', $sess_array);
+                            }
+        					$this->model_admin->set_last_login($sess_array['username']);
+                            redirect($this->config->item('base_url').'admin', 'refresh');
+                        } else {
+                            $data['error_msg']  = "Not Found username"; 
+                        }
+                    } else {
+                        $data['error_msg']  = "Akun Anda Belum Aktif. Silahkan Cek Email Anda Untuk Aktivasi";
                     }
-					$this->model_admin->set_last_login($sess_array['username']);
-                    redirect($this->config->item('base_url').'admin', 'refresh');
-                }else{
-                    $this->load->library('ldap_auth');
-					$result = $this->ldap_auth->auth($_POST['user'], $_POST['pwd']);
-					if($result){
-						if($salt===null){
-							$this->model_admin->save_user_from_ldap($result[0], $_POST['user'], $_POST['pwd']);
-						}
-						$result = $this->model_admin->auth_ldap($result[0]["uid"][0], $salt);
-						if($result->num_rows()){
-							$sess_array = array();
-							foreach ($result->result() as $row)
-							{
-								$sess_array = array(
-								  'id' => $row->id,
-								  'username' => $row->username,
-								  'group_name' => strtolower($row->group_name),
-								  'last_login' => $row->last_login
-								);
-								$this->session->set_userdata('logged_in', $sess_array);
-							}
-							$this->model_admin->set_last_login($sess_array['username']);
-							redirect($this->config->item('base_url').'admin', 'refresh');
-						}
-					}
-					if($salt===null){
-						$data['error_msg']  = "Not Found username";      
-					}else{
-						$data['error_msg']  = "Invalid password";      
-					}
+                } else {
+                     $data['error_msg']  = "Akun Anda Belum Terdaftar. Silahkan Daftar Terlebih Dahulu. <a href='".base_url()."grant/pendaftaran'>Daftar</a>";
                 }
-
+                
             }else{
                 $data['error_msg']  = "Invalid username or password";
-                
             }
         }else{
             $data['error_msg']  = "Invalid username or password";
         }
         $this->smartyci->assign('data',$data);
+        if ( isset($_POST['grant']) and $_POST['grant'] == 'grant' )  {
+        $this->smartyci->display('grant/login.tpl');
+        } else {
         $this->smartyci->display('login.tpl');
+        }
     }
 
     public function logout()
     {
-        if($this->session->userdata('logged_in'))
-        {
+        if($this->session->userdata('logged_in')){
             $this->session->sess_destroy();
             redirect($this->config->item('base_url').'login', 'refresh');
         }else{
             redirect($this->config->item('base_url').'login', 'refresh');
         }
     }
-
 }
