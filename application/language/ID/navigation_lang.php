@@ -139,3 +139,8 @@ $lang['navigation.navbar.media.document'] = "Dokumen";
 
 $lang['navigation.navbar.year'] = 'Tahun';
 $lang['navigation.navbar.infografis'] = 'Infografis';
+
+
+
+$lang['navigation.navbar.todo'] = 'Todo List';
+$lang['navigation.navbar.app'] = 'Semua Proposal';

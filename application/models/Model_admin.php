@@ -10,7 +10,7 @@ class Model_admin extends CI_Model {
     public function auth($username, $password, $salt)
     {
         $password   = sha1($salt.$password);
-        $sql        = "SELECT sf_guard_user.id, username, last_login, sf_guard_group.name AS group_name, sf_guard_user.email FROM sf_guard_user LEFT JOIN sf_guard_group ON sf_guard_user.is_super_admin= sf_guard_group.id  WHERE username = '{$username}' and password = '{$password}'";
+        $sql        = "SELECT sf_guard_user.id, username, last_login, sf_guard_group.name AS group_name FROM sf_guard_user LEFT JOIN sf_guard_group ON sf_guard_user.is_super_admin= sf_guard_group.id  WHERE username = '{$username}' and password = '{$password}'";
         $result     = $this->db->query($sql);
         return $result;
     }

@@ -17,23 +17,22 @@ class Navbar {
 		switch(strtolower($sess['group_name'])){
 			case "admin": $this->allowAdmin();
 			break;
-			case "editor":$this->allowEditor();
+			case "gm":$this->allowGm();
 			break;
-			case "wcu":$this->allowWUR();
+			case "comittee":$this->allowComittee();
+			break;
+			case "bm":$this->allowBm();
+			break;
+			case "applican":$this->allowApplican();
 			break;
 		}
     }
-	
-	// admin akses
+
 	private function allowAdmin(){
-		// $this->setMenuWur();
-		//$this->setMenuReferensiDBINTEGRASI();
-		// $this->setMenuNews();
 		$this->setMenuBlog();
 		$this->setMenuRelatedNews();
 		$this->setMenuPressRelease();
 		$this->setMenuReferences();
-		// $this->setMenuEvent();
 		$this->setMenuResourcet();
 		$this->setMenuPage();
 		$this->setMenuPageHome();
@@ -41,28 +40,13 @@ class Navbar {
 		$this->setMenuBanner();
 		$this->setPerson();
 		$this->setRef();
-		// $this->setMenuCampus();
-		// $this->setMenuFaculties();
-		// $this->setMenuReputation();
-		// $this->setMenuMedia();
-		// $this->setMenuInfografis();
-		// $this->setMainMenu();
-		// $this->setMenuLink();
-		// $this->setMenuIncidental();
 		$this->setMenuUser();
 		$this->setMenuSetting();
 	}
 	
-	// Edit akses
-	private function allowEditor(){
-		$this->setMenuNews();
-		$this->setMenuEvent();
-		$this->setMenuAnnouncement();
-		$this->setMenuBanner();
-		$this->setMenuPage();
-		$this->setMainMenu();
-		$this->setMenuLink();
-		$this->setMenuIncidental();
+	private function allowGm(){
+		$this->setMenuTodo();
+		$this->setMenuAllApplication();
 	}
 	
 
@@ -212,6 +196,24 @@ class Navbar {
 											)
 							);
 	}
+
+	private function setMenuTodo(){
+		$this->menu['todo']=array("name"=>$this->controller->lang->line('navigation.navbar.todo'),
+							"url"=>base_url()."grant/todo",
+							"status"=>"", 
+							"class"=>"ion ion-images",
+							"submenu"=>null);
+
+	}
+
+	private function setMenuAllApplication(){
+		$this->menu['application']=array("name"=>$this->controller->lang->line('navigation.navbar.app'),
+							"url"=>base_url()."grant/todo",
+							"status"=>"", 
+							"class"=>"ion ion-nitif",
+							"submenu"=>null);
+	}
+
 	private function setMenuNews(){
 		$this->menu['news']=array("name"=>$this->controller->lang->line('navigation.navbar.news'),
 							"url"=>base_url()."news",
@@ -493,12 +495,13 @@ class Navbar {
 													"status"=>"", 
 													"class"=>"fa fa-circle-o",
 												),
+												/*
 												"import_user"=>array(
 													"name"=>$this->controller->lang->line('navigation.navbar.setting.import_user'),
 													"url"=>base_url()."setting/import_user",
 													"status"=>"", 
 													"class"=>"fa fa-circle-o",
-												),
+												),*/
 											)
 							);
 	}
