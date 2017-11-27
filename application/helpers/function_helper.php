@@ -54,45 +54,9 @@ function slug($text) {
     }
     return $text;
 }
-function checkApproval($id, $idReference, $table){
-    $Ci =& get_instance();
-	$SELECT = "SELECT * FROM ".$table." WHERE ".$idReference."='".$id."'";
-	$rst =$Ci->db->query($SELECT);
-	if($rst->num_rows())
-		return TRUE;
-	else
-		return FALSE;
-}
-function getStrata($id){
-	$Ci =& get_instance();
-	$SELECT = "SELECT * FROM refStrata WHERE ID=".$id."";
-	$rst =$Ci->db->query($SELECT);
-	if($rst->num_rows()){
-		$row = $rst->row();
-		return $row->Nama;
-	}else{
-		return NULL;
-	}
-}
-function getStructur($id){
-	$Ci =& get_instance();
-	$SELECT = "SELECT * FROM mstStrukturOrganisasi WHERE ID=".$id."";
-	$rst =$Ci->db->query($SELECT);
-	if($rst->num_rows()){
-		$row = $rst->row();
-		return $row->Nama;
-	}else{
-		return NULL;
-	}
-}
-function getJenisKelaminID($id){
-	$Ci =& get_instance();
-	$SELECT = "SELECT * FROM refJenisKelamin WHERE ID=".$id."";
-	$rst =$Ci->db->query($SELECT);
-	if($rst->num_rows()){
-		$row = $rst->row();
-		return $row->Nama;
-	}else{
-		return NULL;
-	}
+
+function random_hast( $length = 8 ) {
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
+    $password = substr( str_shuffle( $chars ), 0, $length );
+    return $password;
 }

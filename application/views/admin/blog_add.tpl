@@ -132,7 +132,6 @@
 
 {block name="addon_scripts"}
 <script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
-<!-- <script src="{base_url()}assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 <script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script>

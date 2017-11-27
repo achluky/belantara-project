@@ -13,7 +13,7 @@
 								<h2><i class="ion ion-person-add"></i>&nbsp; <b>Daftar</b></h2>
 							</div>
 							<div class="form-body">
-								<form action="{base_url()}pendaftaran/save" method="post">
+								<form action="{base_url()}grant/pendaftaran/save" method="post">
 									<div class="form-group">
 										<p class="login-box-msg">{$data['error_msg']}</p>
 											
@@ -46,7 +46,6 @@
   </body>
 	<script src="{base_url()}assets/js/jquery-2.0.3.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-
 		$("#agree").click(function() {
 		    var checked_status = this.checked;
 		    if (checked_status == true) {

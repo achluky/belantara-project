@@ -48,6 +48,20 @@ class Navbar {
 		$this->setMenuTodo();
 		$this->setMenuAllApplication();
 	}
+
+	private function allowComittee(){
+
+	}
+
+	private function allowApplican(){
+		$this->setPengaturan();
+		$this->setGrant();
+		$this->setBerkas();
+	}
+	
+	private function allowBm(){
+		
+	}
 	
 
 	private function setMenuDashboard(){
@@ -58,144 +72,6 @@ class Navbar {
 							"submenu"=>null);
 	}
 	
-	private function setMenuWur(){
-		$this->menu['wur']=array("name"=>$this->controller->lang->line('navigation.navbar.wcu'),
-							"url"=>base_url()."wcu",
-							"status"=>"", 
-							"class"=>"glyphicon glyphicon-globe",
-							"submenu"=>array(
-												"academic_reputation"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.wcu.academic_reputation'),
-												"url"=>base_url()."wcu/academic",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"employee_reputation"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.wcu.employee_reputation'),
-												"url"=>base_url()."wcu/employee",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"internasionalization"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.wcu.internationalization'),
-												"url"=>base_url()."wcu/internationalization",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"research_publication"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.wcu.reserach_publication'),
-												"url"=>base_url()."wcu/reserach_publication",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"data_university"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.wcu.data_university'),
-												"url"=>base_url()."wcu/data_university",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"grafik_data"=>array(
-												"name"=>"Grafik WUR",
-												"url"=>"http://dev.ipb.ac.id/data/",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												)
-											)
-							);
-	}
-	private function setMenuReferensiDBINTEGRASI(){
-		$this->menu['reference']=array("name"=>$this->controller->lang->line('navigation.navbar.referensi'),
-							"url"=>base_url()."referensi",
-							"status"=>"", 
-							"class"=>"glyphicon glyphicon-globe",
-							"submenu"=>array(
-												"jenis_kegiatan_mahasiswa"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.jenis_kegiatan_mahasiswa'),
-												"url"=>base_url()."referensi/jenis_kegiatan_mahasiswa",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"jenis_kelamin"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.jenis_kelamin'),
-												"url"=>base_url()."referensi/jenis_kelamin",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"status_penulis"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.status_penulis'),
-												"url"=>base_url()."referensi/status_penulis",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"jenis_kontak_survey"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.jenis_kontak_survey'),
-												"url"=>base_url()."referensi/jenis_kontak_survey",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"jenis_artikel"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.jenis_artikel'),
-												"url"=>base_url()."referensi/jenis_artikel",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"asosiasi_profesi"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.asosiasi_profesi'),
-												"url"=>base_url()."referensi/asosiasi_profesi",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"lembaga_pengakreditasi"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.lembaga_pengakreditasi'),
-												"url"=>base_url()."referensi/lembaga_pengakreditasi",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"lingkup"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.lingkup'),
-												"url"=>base_url()."referensi/lingkup",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"negara"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.negara'),
-												"url"=>base_url()."referensi/negara",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"prestasi_mahasiswa"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.prestasi_mahasiswa'),
-												"url"=>base_url()."referensi/prestasi_mahasiswa",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"ruang"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.ruang'),
-												"url"=>base_url()."referensi/ruang",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"status_kepegawaian"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.status_kepegawaian'),
-												"url"=>base_url()."referensi/status_kepegawaian",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"status_pegawai"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.status_pegawai'),
-												"url"=>base_url()."referensi/status_pegawai",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-												"strata"=>array(
-												"name"=>$this->controller->lang->line('navigation.navbar.referensi.strata'),
-												"url"=>base_url()."referensi/strata",
-												"status"=>"", 
-												"class"=>"fa fa-circle-o",
-												),
-											)
-							);
-	}
 
 	private function setMenuTodo(){
 		$this->menu['todo']=array("name"=>$this->controller->lang->line('navigation.navbar.todo'),
@@ -593,13 +469,45 @@ class Navbar {
 		);
 	}
 
-	private function setMenuInfografis(){
-		$this->menu['infografis']=array("name"=>$this->controller->lang->line('navigation.navbar.infografis'),
-							"url"=>base_url()."infografis",
-							"status"=>"", 
-							"class"=>"ion ion-images",
-							"submenu"=>null);
+
+	private function setPengaturan(){
+		$this->menu['pengaturan']=array("name"=>"Pengaturan",
+			"url"=>"",
+			"status"=>"", 
+			"class"=>"ion ion-ios-infinite",
+			"submenu"=>array(
+					"add"=>array(
+						"name"=>"Profil",
+						"url"=>base_url()."grant/profil",
+						"status"=>"", 
+						"class"=>"fa fa-circle-o",
+					),
+					"list"=>array(
+						"name"=>"Pengaturan Lanjut",
+						"url"=>base_url()."grant/profil/lanjut",
+						"status"=>"", 
+						"class"=>"fa fa-circle-o",
+					)
+				)
+		);
 	}
+	private function setGrant(){
+		$this->menu['grant']=array("name"=> "Proposal",
+							"url"=>base_url()."grant/aplikasi",
+							"status"=>"", 
+							"class"=>"glyphicon glyphicon-file",
+							"submenu"=>null);
+
+	}
+	private function setBerkas(){
+		$this->menu['link']=array("name"=>"Berkas",
+							"url"=>base_url()."grant/archive",
+							"status"=>"", 
+							"class"=>"glyphicon glyphicon-th-list",
+							"submenu"=>null);
+
+	}
+
 
 	public function setMenuActive($index){
 		$this->menuActive = $index;

@@ -27,9 +27,9 @@ class Admin extends CI_Controller {
             'url'=> $this->url,
             'title'=> 'DASHBOARD',
             'session' => $sess['username'],
+            'name' => $sess['name'],
             'group_name' => $sess['group_name'],
-            'last_login' => $sess['last_login'],
-            'content'=> 'widget'
+            'last_login' => $sess['last_login']
         );
 		$this->smartyci->assign('data',$data);
         $this->smartyci->display('dashboard/dashboard-'.$data['group_name'].'.tpl');
@@ -51,6 +51,7 @@ class Admin extends CI_Controller {
         					    $sess_array = array(
                                   'id' => $row->id,
                                   'username' => $row->username,
+                                  'name' => $row->name,
                                   'group_name' => strtolower($row->group_name),
                                   'last_login' => $row->last_login
                                 );

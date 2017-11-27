@@ -36,21 +36,26 @@ class Pendaftaran extends CI_Controller {
 		$this->form_validation->set_rules('agree','agree','required');
 
 		if ($this->form_validation->run() and $agree) {
-			$hast_number = random_hast();
-			$dhor=md5($password);
-			$pass=$hast_number.$dhor;
+			$salt = random_hast();
+        	$pass   = sha1($salt.$password);
 			$insert = array(
 				'name' => $name,
-				'email' => $email,
+				'username' => $email,
 				'password' => $pass,
-				'hast_number' => $hast_number
+				'salt' => $salt,
+				'is_super_admin' => 7, 
+                'last_login' => date("Y-m-d H:i:s"),
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' =>  date("Y-m-d H:i:s") 
+
 			);
 			$insertdb=$this->model_pendaftaran->insert($insert);
             $alert  = url_title("Silahkan Periksa Email Anda Untuk Mengaktifkan Akun");	
-            redirect('pendaftaran/?info=' . $alert, 'refresh'); 
+            redirect('grant//pendaftaran/?info=' . $alert, 'refresh'); 
 		} else{ 
             $data['error_msg']  = "Seluruh Filed Harus Diisi";
 		}
+		
         $this->smartyci->assign('data', $data);
         $this->smartyci->display('grant/pendaftaran.tpl');
 	}
