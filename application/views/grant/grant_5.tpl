@@ -51,7 +51,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Kegiatan</th>
-                                                    <th>Dana</th>
+                                                    <th width="200px;">Dana</th>
                                                     <th width="200px;">Tindakan</th>
                                                 </tr>
                                             </thead>
@@ -67,7 +67,7 @@
                                                                     </td>
                                                                     <td>
                                                                         <input type="hidden" name="kegiatan_dana_jumlah[]" value="{$data.session_all['grant_kegiatan_dana']['kegiatan_dana_jumlah'][$foo]}">
-                                                                        {$data.session_all['grant_kegiatan_dana']['kegiatan_dana_jumlah'][$foo]}
+                                                                        Rp. {$data.session_all['grant_kegiatan_dana']['kegiatan_dana_jumlah'][$foo]|number_format:2:",":"." }
                                                                     </td>
                                                                     <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
                                                                 </tr>
@@ -153,7 +153,7 @@
                             "</td>"+
                             "<td>"+
                             " <input type=\"hidden\" name=\"kegiatan_dana_jumlah[]\" id=\"kegiatan_dana_jumlah\" value=\""+kegiatan_dana_jumlah+"\">"+
-                            " "+ kegiatan_dana_jumlah +""+
+                            " Rp. "+ kegiatan_dana_jumlah +""+
                             "</td>"+
                             "<td>  "+
                             "<a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+

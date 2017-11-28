@@ -172,16 +172,22 @@
                                                         {for $foo=0 to ($data.session_all['grant']['grant_portofolio']['portofolio_project']|count)-1}
                                                             <tr>
                                                                 <td>
-                                                                    <input type="hidden" name="grant_portofolio[portofolio_project][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_project'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_project'][$foo]}</td>
+                                                                    <input type="hidden" name="grant_portofolio[portofolio_project][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_project'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_project'][$foo]}
+                                                                </td>
                                                                 <td>
-                                                                <input type="hidden" name="grant_portofolio[portofolio_dana][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_dana'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_dana'][$foo]}</td>
+                                                                    <input type="hidden" name="grant_portofolio[portofolio_dana][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_dana'][$foo]}"> Rp. {$data.session_all['grant']['grant_portofolio']['portofolio_dana'][$foo]|number_format:2:",":"." }
+                                                                </td>
                                                                 <td>
-                                                                <input type="hidden" name="grant_portofolio[portofolio_sumber][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_sumber'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_sumber'][$foo]}</td>
+                                                                    <input type="hidden" name="grant_portofolio[portofolio_sumber][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_sumber'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_sumber'][$foo]}
+                                                                </td>
                                                                 <td>
-                                                                <input type="hidden" name="grant_portofolio[portofolio_periode][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_periode'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_periode'][$foo]}</td>
+                                                                    <input type="hidden" name="grant_portofolio[portofolio_periode][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_periode'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_periode'][$foo]}</td>
                                                                 <td>
-                                                                <input type="hidden" name="grant_portofolio[portofolio_durasi][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_durasi'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_durasi'][$foo]}</td>
-                                                                <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
+                                                                    <input type="hidden" name="grant_portofolio[portofolio_durasi][]" value="{$data.session_all['grant']['grant_portofolio']['portofolio_durasi'][$foo]}">{$data.session_all['grant']['grant_portofolio']['portofolio_durasi'][$foo]} Tahun
+                                                                </td>
+                                                                <td>
+                                                                    <a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a>
+                                                                </td>
                                                             </tr>
                                                         {/for}
                                                     {/if}

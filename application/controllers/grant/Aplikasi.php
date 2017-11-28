@@ -24,6 +24,7 @@ class Aplikasi extends CI_Controller {
         $profil = $this->model_profil->get($this->sess['id']);
         $data = array(
             'url' => $this->url,
+            'alert' => isset($_GET['n']) ? $_GET['n'] : '',
             'breadcrumb' => array(
                 'Dashboard' => base_url() . 'admin',
                 'Propsal' => base_url() . ''
@@ -237,45 +238,6 @@ class Aplikasi extends CI_Controller {
             $this->smartyci->assign('data', $data);
             $this->smartyci->display('grant/grant_6.tpl');
         }
-    }
-
-
-    public function upload_doc(){
-        var_dump($_FILES);
-        /*
-        $this->load->library('upload');
-        $file_doc = (isset($_FILES['image']) == TRUE ? $_FILES['image'] : null); // ambil dahulu
-        $config ['upload_path'] = "./document/images/blog/"; // lokasi folder yang akan digunakan untuk menyimpan file
-        $config ['allowed_types'] = 'JPG|jpg|JPEG|jpeg|PNG|png'; // extension yang diperbolehkan untuk diupload
-        $config ['file_name'] = url_title(slug($this->input->post('title_ID')))."-blog";
-        $config ['max_size'] = '5500';
-        $this->upload->initialize($config); // meng set config yang sudah di atur
-
-        if (isset($file_doc['name']) and $file_doc['name'] != '') {
-            if (!$this->upload->do_upload('image')) {
-                $alert = $this->upload->display_errors();
-                redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
-            } else {
-                $data = array(
-                    'id' => $this->input->post('id'),
-                    'id_bahasa' => $this->input->post('id_bahasa'),
-                    'judul' => $this->input->post('judul'),
-                    'ringkasan' => $this->input->post('ringkasan'),
-                    'isi' => $this->input->post('isi'),
-                    'keyword' => $this->input->post('keyword'),
-                    'slug' => preg_replace('/[^a-zA-Z0-9 ]/',' ',$this->input->post('judul'))
-                );
-                
-                if ($this->model_blog->update_blog($data, $this->upload->file_name, $this->input->post('id_bahasa'))){
-                    $alert = url_title("update succses !");
-                    redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
-                } else {
-                $alert = url_title("update failed !");
-                redirect('adminblog/edit/' . $this->input->post('id_bahasa') . '/' . $this->input->post('id') . '?n=' . $alert, 'refresh');
-                }
-            }
-        } else {
-        }*/
     }
 
     public function edit($level){
@@ -545,4 +507,27 @@ class Aplikasi extends CI_Controller {
             $this->smartyci->display('grant/grant_6.tpl');
         }
     }
+
+    public function upload_doc(){
+        var_dump($_FILES);
+    }
+
+    public function save(){
+        if ($this->model_grant->save_app_aplication()) {
+            $alert = url_title("Proses Penyimpanan atau Pengiriman Sukses !");
+            redirect('/grant/aplikasi/?n=' . $alert, 'refresh');
+        } else {
+            $alert = url_title("Proses Penyimpanan atau Pengiriman failed !");
+            redirect('/grant/aplikasi/create/6/n=' . $alert, 'refresh');
+        }
+
+
+    }
 }
+
+
+
+
+
+
+

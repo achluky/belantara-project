@@ -45,27 +45,27 @@
                                               <tr>
                                                   <td>1</td>
                                                   <td>Informasi pengaju</td>
-                                                  <td>{7/$data.session_all['grant']|count * 100}%</td>
+                                                  <td>{7/((isset($data.session_all['grant']))?($data.session_all['grant']|count):0) * 100}%</td>
                                               </tr>
                                               <tr>
                                                   <td>2</td>
                                                   <td>Ringkasan Proyek</td>
-                                                  <td>{12/$data.session_all['grant_proyek']|count * 100}%</td>
+                                                  <td>{12/((isset($data.session_all['grant_proyek']))?$data.session_all['grant_proyek']:0)|count * 100}%</td>
                                               </tr>
                                               <tr>
                                                   <td>3</td>
                                                   <td>Risalah</td>
-                                                  <td>{4/$data.session_all['grant_risalah']|count * 100}%</td>
+                                                  <td>{4/((isset($data.session_all['grant_risalah']))?$data.session_all['grant_risalah']:0)|count * 100}%</td>
                                               </tr>
                                               <tr>
                                                   <td>4</td>
                                                   <td>Indikator Ketercapaian Keberhasilan</td>
-                                                  <td>{(isset($data.session_all['grant_indikator']) )?'100':''}%</td>
+                                                  <td>{(isset($data.session_all['grant_indikator']) )?'100':'0'}%</td>
                                               </tr>
                                               <tr>
                                                   <td>5</td>
                                                   <td>Kegiatan Dan Dana</td>
-                                                  <td>{3/$data.session_all['grant_kegiatan_dana']|count * 100}%</td>
+                                                  <td>{3/((isset($data.session_all['grant_kegiatan_dana']))?$data.session_all['grant_kegiatan_dana']:0)|count * 100}%</td>
                                               </tr>
                                               
                                           </table>
@@ -114,9 +114,10 @@
                     </div>
                     <!-- /.modal -->
 
-                    <!-- <pre>
+                    <pre>
                       {print_r($data.session_all)}
-                    </pre> -->
+                    </pre>
+
                   </div>
                   <!-- /.box-body -->
                 </div>

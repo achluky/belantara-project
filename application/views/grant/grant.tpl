@@ -62,11 +62,11 @@
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                <table class="table table-bordered">
+                                <table class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Judul Proposal</th>
+                                            <th width="500px;">Judul Proposal</th>
                                             <th>Tanggal Simpan</th>
                                             <th>Tanggal Kirim</th>
                                             <th>Status</th>
@@ -79,7 +79,7 @@
                                         {foreach $data.grant -> result() as $row}
                                         <tr>
                                             <td>{$data.no++}</td>
-                                            <td>-</td>
+                                            <td>{$row->proyek_judul}</td>
                                             <td>{$row->date_simpan}</td>
                                             <td>{$row->date_kirim}</td>
                                             <td>{$row->status}</td>
