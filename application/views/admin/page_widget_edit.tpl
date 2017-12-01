@@ -46,20 +46,40 @@
                             </div>
 
                             <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">Tipe Widget</label>
+                              <div class="col-sm-10">
+                                <select class="form-control tipe_widget" name="tipe">
+                                  <option value="text" {($data.widget->tipe == 'text')?"selected":""}>Text</option>
+                                  <option value="img" {($data.widget->tipe == 'img')?"selected":""}>Image</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            {if $data.widget->tipe == 'text'}
+                            <div class="form-group content_EN">
                               <label for="inputPassword3" class="col-sm-2 control-label">Content EN</label>
                               <div class="col-sm-10">
                                 <textarea  class="form-control" id="keyword" placeholder="Content English" name="content_EN" >{$data.widget->content_EN}</textarea>
                               </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group content_ID">
                               <label for="inputPassword3" class="col-sm-2 control-label">Content ID</label>
                               <div class="col-sm-10">
                                 <textarea  class="form-control" id="keyword" placeholder="Content Indonesia" name="content_ID" >{$data.widget->content_ID}</textarea>
                               </div>
                             </div>
-
-
+                            {/if}
+                            {if $data.widget->tipe == 'img'}
+                            <div class="form-group img_ID">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Image</label>
+                              <div class="col-sm-10 ">
+                                <input type="file" name="content_ID" class="form-control" value="{strip_tags($data.widget->content_ID)}">
+                                <br/>
+                                <img src="{base_url()}assets/front-end/images/{strip_tags($data.widget->content_ID)}" class="img-rounded img-responsive thumbnail">
+                              </div>
+                            </div>
+                            {/if}
                             <div class="form-group">
                               <label for="inputPassword3" class="col-sm-2 control-label">No Urut</label>
                               <div class="col-sm-10">
@@ -94,6 +114,22 @@
     $(function () {
         CKEDITOR.replace('content_EN');
         CKEDITOR.replace('content_ID');
+
+
+        $(".img_ID").hide();
+        $(".tipe_widget").change(function(){
+
+           if($(".tipe_widget").val() == 'img'){
+              $(".content_ID").hide();
+              $(".content_EN").hide();
+              $(".img_ID").show();
+           }
+           else{
+              $(".content_ID").show();
+              $(".content_EN").show();
+           }
+        });
+
     });
 </script>
 {/block}

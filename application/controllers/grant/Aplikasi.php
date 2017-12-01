@@ -232,15 +232,12 @@ class Aplikasi extends CI_Controller {
                 'last_login' => $this->sess['last_login']
             );
 
-            if ($action == 'save') {
-            } 
-
             $this->smartyci->assign('data', $data);
             $this->smartyci->display('grant/grant_6.tpl');
         }
     }
 
-    public function edit($level){
+    public function edit($level, $id_grant, $action = NULL){
         if ($level == 1) {
             $profil = $this->model_profil->get($this->sess['id']);
             $data = array(
@@ -252,7 +249,50 @@ class Aplikasi extends CI_Controller {
                 ),
                 'error_msg' => '',
                 'profil' => $profil,
-                'grant' => $this->model_grant->get_grant($profil->id_biodata),
+                'grant' => $this->model_grant->get_grant($id_grant),
+                'document' => $this->model_grant->get_document($id_grant),
+                'portofolio' => $this->model_grant->get_portofolio($id_grant),
+                'title' => 'Profil <small> Grant</small>',
+                'session' => $this->sess['username'],
+                'name' => $this->sess['name'],
+                'last_login' => $this->sess['last_login']
+            );
+            if ($action == 'save') {
+                if ($_POST['id_grant'] != NULL and $_POST['id_grant'] != '') {
+                    $id_grant = $_POST['id_grant'];
+                    unset($_POST['id_grant']);
+                    if($this->model_grant->update_grant($_POST, $id_grant)){
+                        $alert = url_title("Data Berhasil Diupdate");
+                        redirect('grant/aplikasi/edit/2/'.$id_grant.'?n=' . $alert, 'refresh');
+                    } else { 
+                        $alert = url_title("Data Gagal Diupdate");
+                        redirect('grant/aplikasi/edit/1/'.$id_grant.'?n=' . $alert, 'refresh');
+                    }
+                } else {
+                    $data['error_msg']  = "Proposal belum dibuat"; 
+                }
+            } 
+
+            $this->smartyci->assign('data', $data);
+            $this->smartyci->display('grant/grant_1_edit.tpl');
+        }
+        if ($level == 2) {
+            $profil = $this->model_profil->get($this->sess['id']);
+            $grant_proyek = $this->model_grant->get_poyek($id_grant);
+            $data = array(
+                'url' => $this->url,
+                'alert' => isset($_GET['n']) ? $_GET['n'] : '',
+                'breadcrumb' => array(
+                    'Dashboard' => base_url() . 'admin',
+                    'Proposal' => base_url() . ''
+                ),
+                'error_msg' => '',
+                'profil' => $profil,
+                'grant_proyek' => $grant_proyek,
+                'proyek_kategori_kegiatan' => $this->model_grant->proyek_kategori_kegiatan($grant_proyek->id_proyek),
+                'proyek_tematik_kegiatan' => $this->model_grant->proyek_tematik_kegiatan($grant_proyek->id_proyek),
+                'kategori_kegiatan' => $this->model_grant->kategori_kegiatan(),
+                'tematik_kegiatan' => $this->model_grant->tematik_kegiatan(),
                 'title' => 'Profil <small> Grant</small>',
                 'session' => $this->sess['username'],
                 'name' => $this->sess['name'],
@@ -263,72 +303,20 @@ class Aplikasi extends CI_Controller {
                 if ($_POST['id_grant'] != NULL and $_POST['id_grant'] != '') {
                     $id_grant = $_POST['id_grant'];
                     unset($_POST['id_grant']);
-                    if($this->model_grant->update_grant($_POST, $id_grant)){
+                    if($this->model_grant->update_grant_proyek($_POST, $id_grant)){
                         $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $data['error_msg']  = "Data Gagal Diupdate"; 
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
+                        redirect('grant/aplikasi/edit/3/'.$id_grant.'?n=' . $alert, 'refresh');
+                    } else { 
+                        $alert = url_title("Data Gagal Diupdate");
+                        redirect('grant/aplikasi/edit/3/'.$id_grant.'?n=' . $alert, 'refresh');
                     }
                 } else {
-                    if($this->model_grant->insert_grant($_POST)){
-                        $alert = url_title("Data Berhasil Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Data Gagal Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
+                    $data['error_msg']  = "Proposal belum dibuat"; 
                 }
             } 
 
             $this->smartyci->assign('data', $data);
-            $this->smartyci->display('grant/grant_1.tpl');
-        }
-        if ($level == 2) {
-            $profil = $this->model_profil->get($this->sess['id']);
-            $data = array(
-                'url' => $this->url,
-                'alert' => isset($_GET['n']) ? $_GET['n'] : '',
-                'breadcrumb' => array(
-                    'Dashboard' => base_url() . 'admin',
-                    'Proposal' => base_url() . ''
-                ),
-                'error_msg' => '',
-                'profil' => $profil,
-                'grant' => $this->model_grant->get_poyek(4),
-                'title' => 'Profil <small> Grant</small>',
-                'session' => $this->sess['username'],
-                'name' => $this->sess['name'],
-                'last_login' => $this->sess['last_login']
-            );
-
-            if ($action == 'save') {
-
-                if ($_POST['proyek_judul'] != NULL) {
-                    $id_biodata = $_POST['id_biodata'];
-                    unset($_POST['id_biodata']);
-                    if($this->model_grant->update($_POST, $id_biodata)){
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $data['error_msg']  = "Data Gagal Diupdate"; 
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
-                } else {
-                    if($this->model_grant->insert_grant_proyek($_POST)){
-                        $alert = url_title("Data Berhasil Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Data Gagal Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
-                }
-            } 
-
-            $this->smartyci->assign('data', $data);
-            $this->smartyci->display('grant/grant_2.tpl');
+            $this->smartyci->display('grant/grant_2_edit.tpl');
         }
         if ($level == 3) {
             $profil = $this->model_profil->get($this->sess['id']);
@@ -341,7 +329,7 @@ class Aplikasi extends CI_Controller {
                 ),
                 'error_msg' => '',
                 'profil' => $profil,
-                'grant' => $this->model_grant->get($profil->id_biodata),
+                'grant_risalah' => $this->model_grant->get_risalah($id_grant),
                 'title' => 'Profil <small> Grant</small>',
                 'session' => $this->sess['username'],
                 'name' => $this->sess['name'],
@@ -349,30 +337,23 @@ class Aplikasi extends CI_Controller {
             );
 
             if ($action == 'save') {
-                if ($_POST['pengaju_pejabat_utama'] != NULL) {
-                    $id_biodata = $_POST['id_biodata'];
-                    unset($_POST['id_biodata']);
-                    if($this->model_grant->update($_POST, $id_biodata)){
+                if ($_POST['id_grant'] != NULL and $_POST['id_grant'] != '') {
+                    $id_grant = $_POST['id_grant'];
+                    unset($_POST['id_grant']);
+                    if($this->model_grant->update_grant_risalah($_POST, $id_grant)){
                         $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $data['error_msg']  = "Data Gagal Diupdate"; 
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
+                        redirect('grant/aplikasi/edit/4/'.$id_grant.'?n=' . $alert, 'refresh');
+                    } else { 
+                        $alert = url_title("Data Gagal Diupdate");
+                        redirect('grant/aplikasi/edit/4/'.$id_grant.'?n=' . $alert, 'refresh');
                     }
                 } else {
-                    if($this->model_grant->insert($_POST)){
-                        $alert = url_title("Data Berhasil Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Data Gagal Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
+                    $data['error_msg']  = "Proposal belum dibuat"; 
                 }
             } 
 
             $this->smartyci->assign('data', $data);
-            $this->smartyci->display('grant/grant_3.tpl');
+            $this->smartyci->display('grant/grant_3_edit.tpl');
         }
         if ($level == 4) {
             $profil = $this->model_profil->get($this->sess['id']);
@@ -385,7 +366,8 @@ class Aplikasi extends CI_Controller {
                 ),
                 'error_msg' => '',
                 'profil' => $profil,
-                'grant' => $this->model_grant->get($profil->id_biodata),
+                'id_grant' => $id_grant,
+                'grant_indikator' => $this->model_grant->get_grant_indikator($id_grant),
                 'title' => 'Profil <small> Grant</small>',
                 'session' => $this->sess['username'],
                 'name' => $this->sess['name'],
@@ -393,33 +375,27 @@ class Aplikasi extends CI_Controller {
             );
 
             if ($action == 'save') {
-                if ($_POST['pengaju_pejabat_utama'] != NULL) {
-                    $id_biodata = $_POST['id_biodata'];
-                    unset($_POST['id_biodata']);
-                    if($this->model_grant->update($_POST, $id_biodata)){
+                if ($_POST['id_grant'] != NULL and $_POST['id_grant'] != '') {
+                    $id_grant = $_POST['id_grant'];
+                    unset($_POST['id_grant']);
+                    if($this->model_grant->update_grant_indikator($_POST, $id_grant)){
                         $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $data['error_msg']  = "Data Gagal Diupdate"; 
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
+                        redirect('grant/aplikasi/edit/5/'.$id_grant.'?n=' . $alert, 'refresh');
+                    } else { 
+                        $alert = url_title("Data Gagal Diupdate");
+                        redirect('grant/aplikasi/edit/5/'.$id_grant.'?n=' . $alert, 'refresh');
                     }
                 } else {
-                    if($this->model_grant->insert($_POST)){
-                        $alert = url_title("Data Berhasil Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Data Gagal Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
+                    $data['error_msg']  = "Proposal belum dibuat"; 
                 }
             } 
 
             $this->smartyci->assign('data', $data);
-            $this->smartyci->display('grant/grant_4.tpl');
+            $this->smartyci->display('grant/grant_4_edit.tpl');
         }
         if ($level == 5) {
             $profil = $this->model_profil->get($this->sess['id']);
+            $grant_kegiatan_dana = $this->model_grant->get_grant_kegiatan_dana($id_grant);
             $data = array(
                 'url' => $this->url,
                 'alert' => isset($_GET['n']) ? $_GET['n'] : '',
@@ -429,7 +405,8 @@ class Aplikasi extends CI_Controller {
                 ),
                 'error_msg' => '',
                 'profil' => $profil,
-                'grant' => $this->model_grant->get($profil->id_biodata),
+                'grant_kegiatan_dana'=> $grant_kegiatan_dana,
+                'grant_kegiatan_dana_lanjut' => $this->model_grant->get_grant_kegiatan_dana_lanjut($grant_kegiatan_dana->id_kegiatan_dana),
                 'title' => 'Profil <small> Grant</small>',
                 'session' => $this->sess['username'],
                 'name' => $this->sess['name'],
@@ -437,30 +414,25 @@ class Aplikasi extends CI_Controller {
             );
 
             if ($action == 'save') {
-                if ($_POST['pengaju_pejabat_utama'] != NULL) {
-                    $id_biodata = $_POST['id_biodata'];
-                    unset($_POST['id_biodata']);
-                    if($this->model_grant->update($_POST, $id_biodata)){
+                if ($_POST['id_grant'] != NULL and $_POST['id_grant'] != '') {
+                    $id_grant = $_POST['id_grant'];
+                    $id_kegiatan_dana = $_POST['id_kegiatan_dana'];
+                    unset($_POST['id_grant']);
+                    unset($_POST['id_kegiatan_dana']);
+                    if($this->model_grant->update_grant_kegiatan_dana($_POST, $id_grant, $id_kegiatan_dana)){
                         $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $data['error_msg']  = "Data Gagal Diupdate"; 
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
+                        redirect('grant/aplikasi/edit/6/'.$id_grant.'?n=' . $alert, 'refresh');
+                    } else { 
+                        $alert = url_title("Data Gagal Diupdate");
+                        redirect('grant/aplikasi/edit/6/'.$id_grant.'?n=' . $alert, 'refresh');
                     }
                 } else {
-                    if($this->model_grant->insert($_POST)){
-                        $alert = url_title("Data Berhasil Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Data Gagal Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
+                    $data['error_msg']  = "Proposal belum dibuat"; 
                 }
             } 
 
             $this->smartyci->assign('data', $data);
-            $this->smartyci->display('grant/grant_5.tpl');
+            $this->smartyci->display('grant/grant_5_edit.tpl');
         }
         if ($level == 6) {
             $profil = $this->model_profil->get($this->sess['id']);
@@ -473,38 +445,15 @@ class Aplikasi extends CI_Controller {
                 ),
                 'error_msg' => '',
                 'profil' => $profil,
-                'grant' => $this->model_grant->get($profil->id_biodata),
+                'grant' => $this->model_grant->persent_grant($id_grant),
+                'id_grant' => $id_grant,
                 'title' => 'Profil <small> Grant</small>',
                 'session' => $this->sess['username'],
                 'name' => $this->sess['name'],
                 'last_login' => $this->sess['last_login']
             );
-
-            if ($action == 'save') {
-                if ($_POST['pengaju_pejabat_utama'] != NULL) {
-                    $id_biodata = $_POST['id_biodata'];
-                    unset($_POST['id_biodata']);
-                    if($this->model_grant->update($_POST, $id_biodata)){
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $data['error_msg']  = "Data Gagal Diupdate"; 
-                        $alert = url_title("Data Berhasil Diupdate");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
-                } else {
-                    if($this->model_grant->insert($_POST)){
-                        $alert = url_title("Data Berhasil Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    } else {
-                        $alert = url_title("Data Gagal Disimpan");
-                        redirect('grant/aplikasi/create/2?n=' . $alert, 'refresh');
-                    }
-                }
-            } 
-
             $this->smartyci->assign('data', $data);
-            $this->smartyci->display('grant/grant_6.tpl');
+            $this->smartyci->display('grant/grant_6_edit.tpl');
         }
     }
 

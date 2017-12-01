@@ -31,6 +31,14 @@
                 {/if}
 
                 <div class="box box-primary">
+
+
+                  <ul class="nav nav-pills nav-justified">
+                    <li role="presentation" class="{($data.site_lang == 'ID')?'active':''}"><a href="{base_url()}lang/s/ID?url={$data.url}"><img src="{base_url()}assets/img/id.png" alt="ID"> Indonesia</a></li>
+                    <li role="presentation" class="{($data.site_lang == 'EN')?'active':''}"><a href="{base_url()}lang/s/EN?url={$data.url}"><img src="{base_url()}assets/img/en.png" alt="ID"> English</a></li>
+                  </ul>
+                  <br/>
+
                   <div class="box-header">
                     <h3 class="box-title">Edit Reference : {$data.news->judul}</h3>
                   </div>
@@ -73,7 +81,8 @@
                                       <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                     </div>
                                     {if (isset($data.news->isi)) and ($data.news->isi != "") }
-                                    <img src="{base_url()}document/reference/{$data.news->isi}"  class="img-rounded img-responsive thumbnail">
+                                    File Name : {$data.news->isi} <br/>
+                                    Download: <a href="{base_url()}document/reference/{$data.news->isi}">link</a>
                                     {/if}
                               </div> 
                             </div>

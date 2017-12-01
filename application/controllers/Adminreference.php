@@ -126,6 +126,7 @@ class Adminreference extends CI_Controller {
             ),
             'news' => $this->model_reference->get_reference($id, $id_bahasa),
             'title' => 'reference <small>management</small>',
+            'site_lang'=>$this->session->userdata('site_lang'),
             'last_login' => $this->sess['last_login'],
             'session' => $this->sess['username']
         );

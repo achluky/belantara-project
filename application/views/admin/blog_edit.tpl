@@ -31,11 +31,17 @@
                 {/if}
 
                 <div class="box box-primary">
+
+                  <ul class="nav nav-pills nav-justified">
+                    <li role="presentation" class="{($data.site_lang == 'ID')?'active':''}"><a href="{base_url()}lang/s/ID?url={$data.url}"><img src="{base_url()}assets/img/id.png" alt="ID"> Indonesia</a></li>
+                    <li role="presentation" class="{($data.site_lang == 'EN')?'active':''}"><a href="{base_url()}lang/s/EN?url={$data.url}"><img src="{base_url()}assets/img/en.png" alt="ID"> English</a></li>
+                  </ul>
+                  <br/>
+                  
                   <div class="box-header">
                     <h3 class="box-title">Edit Blog : {$data.news->judul}</h3>
                   </div>
                   <!-- /.box-header -->
-
 
 
                   <div class="box-body box-primary">
@@ -91,7 +97,6 @@
                         </div><!-- /.box-footer -->
                         <br/>
                       </form>
-
                   </div>
                   <!-- /.box-body -->
                 </div>

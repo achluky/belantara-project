@@ -131,6 +131,7 @@ class Adminpressrelease extends CI_Controller {
             'news' => $this->model_press_release->get_press_release($id, $id_bahasa),
             'title' => 'press_release <small>management</small>',
             'last_login' => $this->sess['last_login'],
+            'site_lang'=>$this->session->userdata('site_lang'),
             'session' => $this->sess['username']
         );
         $this->smartyci->assign('data', $data);

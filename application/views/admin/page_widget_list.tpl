@@ -42,7 +42,8 @@
                       <thead>
                         <tr>
                           <th width="20px;">#id</th>
-                          <th width="200px;">name</th>
+                          <th width="200px;">Name</th>
+                          <th width="30px;">Tipe</th>
                           <th width="200px;">Content</th>
                           <th width="20px;">Urutan</th>
                           <th width="20px;">Action</th>
@@ -53,6 +54,7 @@
                         <tr>
                           <td>{$row->id_widget}</td>
                           <td>{$row->name}</td>
+                          <td>{$row->tipe}</td>
                           <td>{if $data.site_lang eq 'EN'}
                                 {$row->content_EN}
                               {else}
@@ -64,7 +66,7 @@
                           </td>
                           <td>
                               <a href="{base_url()}page/widget/edit/?id={$row->id_widget}"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>
-                              <a href="{base_url()}page/widget/edit/?id={$row->id_widget}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
+                              <a href="{base_url()}page/widget/delete/?id={$row->id_widget}" class="btn btn-xs"><i class="fa fa-remove fa-fw"></i> Delete</a>
                           </td>
                         </tr>
                         {/foreach}

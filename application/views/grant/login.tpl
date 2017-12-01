@@ -18,7 +18,7 @@
 									<div class="form-group">
 										<p class="login-box-msg">{$data['error_msg']}</p>
 											
-										<input class="form-control" data-val="true" data-val-required="The Email field is required." id="user" name="user" placeholder="Email" value="a@gmail.com" type="email">
+										<input class="form-control" data-val="true" data-val-required="The Email field is required." id="user" name="user" placeholder="Email" value="luky.lucky24@gmail.com" type="email">
 									</div>
 									<div class="form-group">
 											<div class="text-error">

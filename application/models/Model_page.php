@@ -47,6 +47,13 @@ class Model_page extends CI_Model {
         $this->db->update('widget',$data);
         return TRUE;
     }
+
+    public function delete_page_widget( $id){
+        $hasil['id_widget'] = $id;
+        $this->db->delete('widget',$hasil);
+        return TRUE;
+    }
+
     public function get_page_widget(){
         $sql = "select * from widget";
         $result = $this->db->query($sql);
@@ -54,7 +61,7 @@ class Model_page extends CI_Model {
     }
 
     public function get_widget_byURL($url){
-        $sql = "select * from widget where name = '$url'";
+        $sql = "select * from widget where name = '$url' order by urutan ASC";
         $result = $this->db->query($sql);
         return $result;   
     }

@@ -56,20 +56,15 @@ class Home extends CI_Controller {
     }
 
     public function contact() {
+        $this->load->helper('page');
         $data = array(
             'url'=> $this->url,
             'session_group_name' => $this->session->userdata('group_name'),
             'site_lang'=>$this->session->userdata('site_lang'),
+            'slug' => $this->uri->segment(1, 0)
         );
         $this->smartyci->assign('data',$data);
-        if ($data['site_lang']=='ID')
-        {
-            $this->smartyci->display('front-end/contact.tpl');
-        }
-        else
-        {
-            $this->smartyci->display('front-end/contact.tpl');
-        }
+        $this->smartyci->display('front-end/contact.tpl');
         
     }
 

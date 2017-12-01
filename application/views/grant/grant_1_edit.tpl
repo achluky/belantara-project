@@ -40,7 +40,7 @@
                     {/if}
 
 
-                    <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/create/1/save" name="" method="POST" >
+                    <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/edit/1/{$data.grant->id_grant}/save" name="" method="POST" >
 
                         <div class="box-header">
                             <h3 class="box-title">1. INFORMASI PENGAJU <small>Input Proposal Baru</small> </h3>
@@ -49,7 +49,6 @@
 
                         <div class="box-body">
                             <input type="hidden" class="form-control" id="id_grant" name="id_grant" placeholder="" value="{(isset($data.grant->id_grant))?$data.grant->id_grant:''}" >
-                            <input type="hidden" class="form-control" id="id_biodata" name="id_biodata" placeholder="" value="{$data.profil->id_biodata}" >
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="col-md-6">
@@ -79,12 +78,23 @@
                                             <table class="table table-striped">
                                                 <thead>
                                                     <tr>
-                                                        <th>No</th>
                                                         <th>Nama Dokumen</th>
                                                         <th>Nama Berkas</th>
+                                                        <th>Tindakan</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody id="add-listener">
+                                                <tbody id="list_doc">
+                                                    {foreach $data.document->result() as $row}
+                                                    <tr>
+                                                        <td>
+                                                            <input type="hidden" name="grant_dokumen[dokumen_nama][]" value="{$row->dokumen_nama}">
+                                                            {$row->dokumen_nama}</td>
+                                                        <td>
+                                                            <input type="hidden" name="grant_dokumen[dokumen_file][]" value="{$row->dokumen_file}">
+                                                            {$row->dokumen_file}</td>
+                                                        <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
+                                                    </tr>
+                                                    {/foreach}
                                                 </tbody>
                                             </table>
                                             
@@ -137,18 +147,35 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>No</th>
                                                     <th>Project/Program/Kegiatan</th>
                                                     <th>Dana Yang Dikelola</th>
                                                     <th>Sumber</th>
                                                     <th>Periode</th>
                                                     <th>Durasi</th>
+                                                    <th width="80px;">Tindakan</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="add-listener">
+                                            <tbody id="add_portofolio">
+                                                {foreach $data.portofolio->result() as $row}
+                                                <tr>
+                                                    <td>
+                                                        <input type="hidden" name="grant_portofolio[portofolio_project][]" value="{$row->portofolio_project}">{$row->portofolio_project}</td>
+                                                    <td>
+                                                        <input type="hidden" name="grant_portofolio[portofolio_dana][]" value="{$row->portofolio_dana}">Rp. {$row->portofolio_dana|number_format:2:",":"."}</td>
+                                                    <td>
+                                                        <input type="hidden" name="grant_portofolio[portofolio_sumber][]" value="{$row->portofolio_sumber}">{$row->portofolio_sumber}</td>
+                                                    <td>
+                                                        <input type="hidden" name="grant_portofolio[portofolio_periode][]" value="{$row->portofolio_periode}">{$row->portofolio_periode}</td>
+                                                    <td>
+                                                        <input type="hidden" name="grant_portofolio[portofolio_durasi][]" value="{$row->portofolio_durasi}">{$row->portofolio_durasi} Tahun</td>
+                                                    <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
+                                                </tr>
+                                                {/foreach}
                                             </tbody>
                                         </table>
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tambah</button>
+
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_portofolio"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tambah</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -156,11 +183,80 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer">
-                            <br/>
-                            <button type="submit" class="btn btn-info pull-right"><i class="glyphicon glyphicon-floppy-saved"></i> Simpan</button>
+                            <div class="btn-group pull-right">
+                                <a href="{base_url()}grant/aplikasi"  class="btn btn-danger"><i class="glyphicon glyphicon-list"></i> List Proposal</a>
+                                <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-floppy-saved"></i> Simpan</button>
+                            </div>
                         </div><!-- /.box-footer -->
                         <br/><br/>
                     </form>
+                     <!-- Modal  -->
+                    <div class="modal fade dok_lampiran" role="dialog">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <form role="form" id="attachform" enctype="multipart/form-data" method="POST" >
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                  <h4 class="modal-title" id="mySmallModalLabel">Tambahkan Dokumen Lampiran</h4>
+                                </div>
+                                <div class="modal-body">
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Nama Dokumen</label>
+                                            <input type="input" class="form-control" id="nama_doc" name="nama_doc" placeholder="Nama Doc">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputPassword1">File Dokumen</label>
+                                            <input type="file" class="form-control" id="file_doc" name="file_doc" placeholder="">
+                                          </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary add_doc">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End modal  --> 
+
+                    <!-- Modal  -->
+                    <div class="modal fade dok_portofolio" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content modal-sm">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                  <h4 class="modal-title" id="mySmallModalLabel">Portofolio Pengaju</h4>
+                                </div>
+                                <div class="modal-body">
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Project/Program/Kegiatan</label>
+                                            <input type="input" class="form-control" id="portofolio_project" placeholder="Project/Program/Kegiatan">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Dana Yang Dikelola</label>
+                                            <input type="input" class="form-control" id="portofolio_dana" placeholder="Dana Yang Dikelola">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Sumber</label>
+                                            <input type="input" class="form-control" id="portofolio_sumber" placeholder="Sumber">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Periode</label>
+                                            <input type="input" class="form-control" id="portofolio_periode" placeholder="Periode">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail1">Durasi</label>
+                                            <input type="input" class="form-control" id="portofolio_durasi" placeholder="Durasi">
+                                          </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary add_portofolio">Save</button>
+                                </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End modal  -->
 
                   </div>
                   <!-- /.box-body -->
@@ -173,36 +269,72 @@
 
 
 {block name="addon_scripts"}
-
-<div class="modal fade dok_lampiran" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-        <form role="form" data-toggle="validator" action="{base_url()}grant/profil/save" name="" method="POST" >
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <h4 class="modal-title" id="mySmallModalLabel">Tambahkan Dokumen Lampiran</h4>
-            </div>
-            <div class="modal-body">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Nama Dokumen</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">File Dokumen</label>
-                        <input type="file" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                      </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </form>
-
-    </div>
-  </div>
-</div>
-
-
-
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $(".add_doc").click(function(){
+            var name = $("#nama_doc").val();
+            var file = $("#file_doc").val().replace(/C:\\fakepath\\/i, '');
+            var data = "<tr>"+
+                            "<td>"+
+                            " <input type=\"hidden\" name=\"grant_dokumen[dokumen_nama][]\" value=\""+ name +"\">"+
+                            " "+ name +""+
+                            "</td>"+
+                            "<td>"+
+                            "    <input type=\"hidden\" name=\"grant_dokumen[dokumen_file][]\" value=\""+ file +"\">"+
+                            "    "+ file +""+
+                            "</td>"+
+                            "<td>  "+
+                            "<a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+
+                            "</td>"+
+                        "</tr>";
+            $("#list_doc").append(data);
+            $(".dok_lampiran").modal('hide');
+        });
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+        $(".add_portofolio").click(function(){
+            var portofolio_project = $("#portofolio_project").val();
+            var portofolio_dana = $("#portofolio_dana").val();
+            var portofolio_sumber = $("#portofolio_sumber").val();
+            var portofolio_periode = $("#portofolio_periode").val();
+            var portofolio_periode = $("#portofolio_periode").val();
+            var portofolio_durasi = $("#portofolio_durasi").val();
+            var data = "<tr>"+
+                            "<td>"+
+                            "  <input type=\"hidden\" name=\"grant_portofolio[portofolio_project][]\" value=\""+portofolio_project+"\">"+
+                            " "+portofolio_project+""+
+                            "</td>"+
+                            "<td>"+
+                            "    <input type=\"hidden\" name=\"grant_portofolio[portofolio_dana][]\" value=\""+portofolio_dana+"\">"+
+                            " "+portofolio_dana+""+
+                            "</td>"+
+                            "<td>"+
+                            "    <input type=\"hidden\" name=\"grant_portofolio[portofolio_sumber][]\" value=\""+portofolio_sumber+"\">"+
+                            " "+portofolio_sumber+""+
+                            "</td>"+
+                            "<td>"+
+                            "    <input type=\"hidden\" name=\"grant_portofolio[portofolio_periode][]\" value=\""+portofolio_periode+"\">"+
+                            " "+portofolio_periode+""+
+                            "</td>"+
+                            "<td>"+
+                            "    <input type=\"hidden\" name=\"grant_portofolio[portofolio_durasi][]\" value=\""+portofolio_durasi+"\">"+
+                            "  "+portofolio_durasi+""+
+                            "</td>"+
+                            "<td>  "+
+                            "  <a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+
+                            "</td>"+
+                        "</tr>";
+            $("#add_portofolio").append(data);
+            $(".dok_portofolio").modal('hide');
+        });
+
+    });    
+</script>
 {/block}

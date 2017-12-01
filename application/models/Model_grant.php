@@ -19,7 +19,7 @@ class Model_grant extends CI_Model{
 	
 	//
 	public function grant($id_biodata){
-		return $this->db->query("SELECT * FROM `grant` JOIN grant_proyek ON `grant`.`id_grant`= `grant_proyek`.`id_grant` WHERE `grant`.`id_biodata` = ".$id_biodata."");
+		return $this->db->query("SELECT * FROM `grant` JOIN grant_proyek ON `grant`.`id_grant`= `grant_proyek`.`id_grant` JOIN grant_status ON `grant_status`.`id_status` = `grant`.`status` WHERE `grant`.`id_biodata` = ".$id_biodata."");
 	}
 
 	public function get_grant($id_grant){
@@ -27,17 +27,87 @@ class Model_grant extends CI_Model{
 		return $query->row();
 	}
 
+    public function get_document($id_grant){
+        return $this->db->query("SELECT * FROM `grant_dokumen` WHERE id_grant = ".$id_grant."");
+    }
+
+    public function get_portofolio($id_grant){
+        return $this->db->query("SELECT * FROM `grant_portofolio` WHERE id_grant = ".$id_grant."");
+    }
+
 	public function insert_grant($data){
         $this->db->insert('grant',$data);
         return $this->db->error();
 	}
 
-	public function update_grant($data, $id){
-		$this->db->where('id_grant', $id);
-		$this->db->update('grant', $data);
-        return $this->db->error();
-	}
+	public function update_grant($data, $id_grant){
 
+        $this->db->trans_begin();
+        $grant_portofolio = $data['grant_portofolio'];
+        $grant_dokumen =  $data['grant_dokumen'];
+        
+        $count = 0;
+        if (!empty($data["pengaju_pejabat_utama"])) {
+            $count += 1;
+        }
+        if (!empty($data["pengaju_pejabat_utama_jabatan"])) {
+            $count += 1;
+        }
+        if (!empty($data["pengaju_pejabat_kegiatan"])) {
+            $count += 1;
+        }
+        if (!empty($data["pengaju_pejabat_kegiatan_jabatan"])) {
+            $count += 1;
+        }
+        if (count($data["grant_dokumen"]['dokumen_nama'])>0) {
+            $count += 1;
+        }
+        if (count($data["grant_portofolio"]['portofolio_project'])>0) {
+            $count += 1;
+        }
+        $persen  = ($count/6) * 100;
+
+        $data['resume'] = $persen;
+        unset($data['grant_portofolio']);
+        unset($data['grant_dokumen']);
+
+        $this->db->trans_begin();
+		$this->db->where('id_grant', $id_grant);
+		$this->db->update('grant', $data);
+        $error = $this->db->error();    
+
+        // Dokumen Lampiran
+        $sql_delete = "DELETE FROM grant_dokumen WHERE id_grant = $id_grant";
+        $this->db->query($sql_delete);
+        $error = $this->db->error();    
+
+
+        for ($i=0; $i < count($grant_dokumen['dokumen_nama']); $i++) {
+            $sql = "INSERT INTO grant_dokumen (dokumen_nama, dokumen_file, id_grant) VALUES ('".$grant_dokumen['dokumen_nama'][$i]."','".$grant_dokumen['dokumen_file'][$i]."', ".$id_grant.") ";
+            $this->db->query($sql);
+            $error = $this->db->error();
+        }
+        
+        // Portofolio
+        $sql_delete = "DELETE FROM grant_portofolio WHERE id_grant = $id_grant";
+        $this->db->query($sql_delete);
+        $error = $this->db->error();    
+
+        for ($j=0; $j < count($grant_portofolio['portofolio_project']); $j++) { 
+            $sql = "INSERT INTO grant_portofolio (portofolio_project, portofolio_dana, portofolio_sumber, portofolio_periode, portofolio_durasi, id_grant) VALUES ('".$grant_portofolio['portofolio_project'][$j]."','".$grant_portofolio['portofolio_dana'][$j]."','".$grant_portofolio['portofolio_sumber'][$j]."','".$grant_portofolio['portofolio_periode'][$j]."','".$grant_portofolio['portofolio_durasi'][$j]."', ".$id_grant.") ";
+            $this->db->query($sql);
+            $error = $this->db->error();
+        }
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return array('result'=>$error );
+        } else {
+            $this->db->trans_commit();
+            return array('result'=>$error);
+        }  
+
+	}
 
 	public function get_poyek($id){
 		$query = $this->db->query("SELECT * FROM `grant_proyek` WHERE id_grant = ".$id."");
@@ -49,6 +119,160 @@ class Model_grant extends CI_Model{
         return $this->db->error();
 	}
 
+    public function update_grant_proyek($data, $id_grant){
+
+        $this->db->trans_begin();
+        $id_grant_proyek = $data['id_grant_proyek'];
+        $proyek_tematik_kegiatan = $data['proyek_tematik_kegiatan'];
+        $proyek_kategori_kegiatan = $data['proyek_kategori_kegiatan'];
+
+        unset($data['proyek_tematik_kegiatan']);
+        unset($data['proyek_kategori_kegiatan']);
+        unset($data['id_grant_proyek']);
+
+        $this->db->trans_begin();
+        $this->db->where('id_grant', $id_grant);
+        $this->db->update('grant_proyek', $data);
+        $error = $this->db->error();    
+
+        // Proyek Grant-Tematika Kegiatan
+        $sql_delete = "DELETE FROM grant_proyek_tematik_kegiatan WHERE id_grant_proyek = $id_grant_proyek";
+        $this->db->query($sql_delete);
+        $error = $this->db->error();    
+
+        foreach ($proyek_tematik_kegiatan as $index => $value) {
+            $sql = "INSERT INTO grant_proyek_tematik_kegiatan (id_grant_proyek, id_tematik) VALUES ('".$id_grant_proyek."','".$index."') ";
+            $this->db->query($sql);
+            $error = $this->db->error();
+        }
+        // Proyek Grant-Tematika Kegiatan
+        $sql_delete = "DELETE FROM grant_proyek_kategori_kegiatan WHERE id_grant_proyek = $id_grant_proyek";
+        $this->db->query($sql_delete);
+        $error = $this->db->error();   
+
+        foreach ($proyek_kategori_kegiatan as $key => $value) {
+            $sql = "INSERT INTO grant_proyek_kategori_kegiatan (id_grant_proyek, id_kegiatan) VALUES ('".$id_grant_proyek."','".$key."') ";
+            $this->db->query($sql);
+            $error = $this->db->error();
+        }
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return $error;
+        } else {
+            $this->db->trans_commit();
+            return $error;
+        }  
+
+    }
+
+    public function kategori_kegiatan(){
+        return $this->db->query("SELECT * FROM `grant_kategori_kegiatan` ");
+    }
+
+    public function tematik_kegiatan(){
+        return $this->db->query("SELECT * FROM `grant_tematik_kegiatan` ");
+    }
+
+    public function proyek_kategori_kegiatan($id_grant_proyek){
+        $result = $this->db->query("SELECT * FROM `grant_proyek_kategori_kegiatan` WHERE id_grant_proyek = $id_grant_proyek ");
+        $arr_kegiatan = array();
+        foreach($result->result() as $row){
+            array_push($arr_kegiatan, $row->id_kegiatan);
+        }
+        return $arr_kegiatan;
+    }
+
+    public function proyek_tematik_kegiatan($id_grant_proyek){
+        $result =  $this->db->query("SELECT * FROM `grant_proyek_tematik_kegiatan` WHERE id_grant_proyek = $id_grant_proyek");
+        $arr_tematik = array();
+        foreach($result->result() as $row){
+            array_push($arr_tematik, $row->id_tematik);
+        }
+        return $arr_tematik;
+    }
+
+    public function get_risalah($id_grant){
+        $query = $this->db->query("SELECT * FROM `grant_risalah` WHERE id_grant = ".$id_grant."");
+        return $query->row();
+    }
+
+    public function update_grant_risalah($data, $id_grant){
+        $this->db->trans_begin();
+        $this->db->where('id_grant', $id_grant);
+        $this->db->update('grant_risalah', $data);
+        $error = $this->db->error(); 
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return $error;
+        } else {
+            $this->db->trans_commit();
+            return $error;
+        }  
+    }
+
+    public function get_grant_indikator($id_grant){
+        return $this->db->query("SELECT * FROM `grant_indikator` WHERE id_grant = ".$id_grant."");
+    }
+
+    public function update_grant_indikator($data, $id_grant){
+        $this->db->trans_begin();
+        $sql_delete = "DELETE FROM grant_indikator WHERE id_grant = $id_grant";
+        $this->db->query($sql_delete);
+        $error = $this->db->error();  
+        foreach ($data['indikator_nama'] as $indexof => $value) {
+            $sql = "INSERT INTO grant_indikator (indikator_nama, id_grant) VALUES ('".$value."','".$id_grant."') ";
+            $this->db->query($sql);
+            $error = $this->db->error();
+        }
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return $error;
+        } else {
+            $this->db->trans_commit();
+            return $error;
+        }  
+    }
+
+    public function get_grant_kegiatan_dana($id_grant){
+        return $this->db->query("SELECT * FROM `grant_kegiatan_dana` WHERE id_grant = ".$id_grant."")->row();
+    }
+
+    public function get_grant_kegiatan_dana_lanjut($id_kegiatan_dana){
+        return $this->db->query("SELECT * FROM `grant_kegiatan_dana_lanjut` WHERE id_kegiatan_dana = ".$id_kegiatan_dana."");
+    }
+
+    public function update_grant_kegiatan_dana($data, $id_grant, $id_kegiatan_dana){
+        $kegiatan_dana_nama = $data['kegiatan_dana_nama'];
+        $kegiatan_dana_jumlah = $data['kegiatan_dana_jumlah'];
+
+        unset($data['kegiatan_dana_nama']);
+        unset($data['kegiatan_dana_jumlah']);
+
+        $this->db->trans_begin();
+        $this->db->where('id_grant', $id_grant);
+        $this->db->update('grant_kegiatan_dana', $data);
+        $error = $this->db->error(); 
+
+        $sql_delete = "DELETE FROM grant_kegiatan_dana_lanjut WHERE id_kegiatan_dana = $id_kegiatan_dana";
+        $this->db->query($sql_delete);
+        $error = $this->db->error();  
+
+        for ($x=0; $x < count($kegiatan_dana_nama); $x++) { 
+            $sql = "INSERT INTO grant_kegiatan_dana_lanjut (id_kegiatan_dana, nama, jumlah) VALUES ('".$id_kegiatan_dana."','".$kegiatan_dana_nama[$x]."', '".$kegiatan_dana_jumlah[$x]."') ";
+            $this->db->query($sql);
+            $error = $this->db->error();
+        }
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return $error;
+        } else {
+            $this->db->trans_commit();
+            return $error;
+        }  
+    }
 
 	public function save_app_aplication(){
 		$grant = $_SESSION['grant'];
@@ -59,6 +283,9 @@ class Model_grant extends CI_Model{
         unset($grant['grant_dokumen']);
 
         // Informasi Pengaju
+        $grant['date_simpan'] =date("Y-m-d");
+        $grant['date_kirim'] =date("Y-m-d");
+
         $this->db->trans_begin();
         $this->db->insert('grant', $grant);
         $error = $this->db->error();    
@@ -155,5 +382,11 @@ class Model_grant extends CI_Model{
             return array('result'=>$error);
         }  
 	}
+
+    // cek persen
+
+    public function persent_grant($id_grant){
+        return $this->db->query("SELECT resume FROM `grant` WHERE id_grant = $id_grant")->row();
+    }
 }
 ?>

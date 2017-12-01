@@ -22,7 +22,7 @@
 			<div class="text-center p-b-50"><h1>STRATEGIC <span style="color:#44a34b">PROGRAMS</span></h1></div>
 			<div class="col-md-3" data-animation="fadeInRight" data-animation-delay="200">
                 {$result = get_page(1,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
                 
                 {$result = get_page(2,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -33,7 +33,7 @@
 			</div>
 			<div class="col-md-3" data-animation="fadeInRight" data-animation-delay="600">
                 {$result = get_page(3,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(4,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -44,7 +44,7 @@
 			</div>
 			<div class="col-md-3" data-animation="fadeInRight" data-animation-delay="1000">
                 {$result = get_page(5,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(6,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -55,7 +55,7 @@
 			</div>
 			<div class="col-md-3" data-animation="fadeInRight" data-animation-delay="1400">
                 {$result = get_page(7,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(8,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -70,7 +70,7 @@
 			<div class="text-center p-b-50"><h1>SUPPORTING <span style="color:#44a34b">PROGRAMS:</span></h1></div>
 			<div class="col-md-3"  data-animation="fadeInRight" data-animation-delay="200">
                 {$result = get_page(9,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(10,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -81,7 +81,7 @@
 			</div>
 			<div class="col-md-3"  data-animation="fadeInRight" data-animation-delay="600">
                 {$result = get_page(11,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(12,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -92,7 +92,7 @@
 			</div>
 			<div class="col-md-3"  data-animation="fadeInRight" data-animation-delay="1000">
                 {$result = get_page(13,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(14,$data.slug)}
                 {if $data.site_lang eq 'EN'}
@@ -103,7 +103,7 @@
 			</div>
 			<div class="col-md-3"  data-animation="fadeInRight" data-animation-delay="1400">
                 {$result = get_page(15,$data.slug)}
-				<img src="{base_url()}assets/front-end/images/icons/{$result->content_EN}" alt="" class="img-responsive">
+				<img src="{base_url()}assets/front-end/images/{$result->content_EN}" alt="" class="img-responsive">
 				
                 {$result = get_page(16,$data.slug)}
                 {if $data.site_lang eq 'EN'}

@@ -38,25 +38,49 @@
                         <div class="box-body">
 
                             <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">URL</label>
+                              <label for="inputEmail3" class="col-sm-2 control-label">Nama Widget</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="judul" name="name" placeholder="Name Widget" value="" required>
                               </div>
                             </div>
-
                             <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">Tipe Widget</label>
+                              <div class="col-sm-10">
+                                <select class="form-control tipe_widget" name="tipe">
+                                  <option value="text">Text</option>
+                                  <option value="img">Image</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="form-group content_EN">
                               <label for="inputPassword3" class="col-sm-2 control-label">Content EN</label>
-                              <div class="col-sm-10">
-                                <textarea  class="form-control" id="keyword" placeholder="Content English" name="content_EN" ></textarea>
+                              <div class="col-sm-10 ">
+                                <textarea  class="form-control" id="content_EN" placeholder="Content English" name="content_EN" ></textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group content_ID">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Content ID</label>
+                              <div class="col-sm-10 ">
+                                <textarea  class="form-control" id="content_ID" placeholder="Content Indonesia" name="content_ID" ></textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group img_ID">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Image</label>
+                              <div class="col-sm-10 ">
+                                <input type="file" name="content_ID" class="form-control">
                               </div>
                             </div>
 
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Content ID</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">No Urut</label>
                               <div class="col-sm-10">
-                                <textarea  class="form-control" id="keyword" placeholder="Content Indonesia" name="content_ID" ></textarea>
+                                <input type="input" class="form-control" id="judul" name="urutan" placeholder="No Urut" value="" required>
                               </div>
                             </div>
+
 
                         <!-- /.box-body -->
                         </div>
@@ -85,6 +109,20 @@
     $(function () {
         CKEDITOR.replace('content_EN');
         CKEDITOR.replace('content_ID');
+
+        $(".img_ID").hide();
+        $(".tipe_widget").change(function(){
+
+           if($(".tipe_widget").val() == 'img'){
+              $(".content_ID").hide();
+              $(".content_EN").hide();
+              $(".img_ID").show();
+           }
+           else{
+              $(".content_ID").show();
+              $(".content_EN").show();
+           }
+        });
     });
 </script>
 {/block}

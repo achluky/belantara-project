@@ -25,11 +25,13 @@
                 {/if}
                 
                 <div class="box box-primary">
+                  
                   <div class="box-header">
                     <h3 class="box-title">News List</h3>
                     <a href="{base_url()}news/add"class="btn btn-primary" style="float:right;"><i class="glyphicon glyphicon-plus-sign"></i> Add News</a>
                   </div>
                   <!-- /.box-header -->
+
                   <div class="box-body">
                     <table id="example1" class="table table-bordered table-hover">
                       <thead>

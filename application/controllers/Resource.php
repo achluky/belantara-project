@@ -135,6 +135,7 @@ class Resource extends CI_Controller {
             ),
             'resource' => $this->model_resource->get_resource($id, $id_bahasa),
             'title' => 'resource <small>management</small>',
+            'site_lang'=>$this->session->userdata('site_lang'),
             'last_login' => $this->sess['last_login'],
             'session' => $this->sess['username']
         );

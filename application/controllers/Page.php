@@ -127,8 +127,7 @@ class Page extends CI_Controller {
     }
 
     public function update(){
-
-        if( count($_POST['widget_selected']) > 0){
+        if( isset($_POST['widget_selected']) and count($_POST['widget_selected']) > 0){
             $widget_content = implode("-", $_POST['widget_selected']);
         } else {
             $widget_content = '';
@@ -142,6 +141,7 @@ class Page extends CI_Controller {
                 'waktu'=> date('Y-m-d h:i:s'),
                 'url'=> $this->input->post('url'),
                 'controller'=> $this->input->post('controller'),
+                'widget' => $_POST['widget'],
                 'widget_content' => $widget_content
         );
         $id = $this->input->post('id');
@@ -205,6 +205,8 @@ class Page extends CI_Controller {
         }
     }
 
+    // widget ------------
+
     public function widget($act){
         $data = array(
             'url'=> $this->url,
@@ -222,11 +224,46 @@ class Page extends CI_Controller {
 
         if ($act == 'save') {
             if ( ($this->input->post('name') != NULL) ) {
-                $data = array(
-                    'name' => $this->input->post('name'),
-                    'content_EN' => $this->input->post('content_EN'),
-                    'content_ID' => $this->input->post('content_ID')
-                );
+                if ($this->input->post('tipe') == 'img') {
+                    $this->load->library('upload');
+                    $file_image = (isset($_FILES['content_ID']) == TRUE ? $_FILES['content_ID'] : null); // ambil dahulu
+                    $config ['upload_path'] = "./assets/front-end/images/"; // lokasi folder yang akan digunakan untuk menyimpan file
+                    $config ['allowed_types'] = 'JPG|jpg|JPEG|jpeg|PNG|png'; // extension yang diperbolehkan untuk diupload
+                    $config ['file_name'] = url_title(slug($this->input->post('title_ID')))."-blog";
+                    $config ['max_size'] = '5500';
+                    $this->upload->initialize($config); // meng set config yang sudah di atur
+                    if (isset($file_image['name']) and $file_image['name'] != '') {
+                        if (!$this->upload->do_upload('content_ID')) {
+                            $alert = $this->upload->display_errors();
+                            redirect('page/widget/edit/?id='.$id.'&n='.$alert,'refresh');
+                        } else {
+                            $_POST['content_ID'] = $this->upload->file_name;
+                            $_POST['content_EN'] = $this->upload->file_name;
+
+                            $data = array(
+                                'name' => $this->input->post('name'),
+                                'content_EN' => $this->upload->file_name,
+                                'content_ID' => $this->upload->file_name,
+                                'tipe' => $this->input->post('tipe'),
+                                'urutan' => $this->input->post('urutan')
+                            );
+                        }
+                    } else {
+                        $data = array(
+                            'name' => $this->input->post('name'),
+                            'tipe' => $this->input->post('tipe'),
+                            'urutan' => $this->input->post('urutan')
+                        );
+                    }
+                } else {
+                    $data = array(
+                        'name' => $this->input->post('name'),
+                        'content_EN' => $this->input->post('content_EN'),
+                        'content_ID' => $this->input->post('content_ID'),
+                        'tipe' => $this->input->post('tipe'),
+                        'urutan' => $this->input->post('urutan')
+                    );
+                }
 
                 if($this->model_page->save_page_widget($data)){
                     $alert = url_title("Saved!");
@@ -254,22 +291,52 @@ class Page extends CI_Controller {
                 $this->smartyci->display('admin/page_widget_edit.tpl');
             }
         } else if($act == 'update'){
+            $this->load->library('upload');
             $id = $this->input->post('id');
-            $data = array(
-                'name' => $this->input->post('name'),
-                'content_EN' => $this->input->post('content_EN'),
-                'content_ID' => $this->input->post('content_ID'),
-                'urutan' => $this->input->post('urutan')
-            );
-
-            if($this->model_page->update_page_widget($data, $id)){
-                $alert = url_title("Update succses");
-                redirect('page/widget/edit/?id='.$id.'&n='.$alert,'refresh');
-            }else{
-                $alert = url_title("save failed !");
-                redirect('page/widget/add?n='.$alert,'refresh');
+            unset($_POST['id']);
+            $file_image = (isset($_FILES['content_ID']) == TRUE ? $_FILES['content_ID'] : null); // ambil dahulu
+            $config ['upload_path'] = "./assets/front-end/images/"; // lokasi folder yang akan digunakan untuk menyimpan file
+            $config ['allowed_types'] = 'JPG|jpg|JPEG|jpeg|PNG|png'; // extension yang diperbolehkan untuk diupload
+            $config ['file_name'] = url_title(slug($this->input->post('title_ID')))."-blog";
+            $config ['max_size'] = '5500';
+            $this->upload->initialize($config); // meng set config yang sudah di atur
+            if (isset($file_image['name']) and $file_image['name'] != '') {
+                if (!$this->upload->do_upload('content_ID')) {
+                    $alert = $this->upload->display_errors();
+                    redirect('page/widget/edit/?id='.$id.'&n='.$alert,'refresh');
+                } else {
+                    $_POST['content_ID'] = $this->upload->file_name;
+                    $_POST['content_EN'] = $this->upload->file_name;
+                    if($this->model_page->update_page_widget($_POST, $id)){
+                        $alert = url_title("Update succses");
+                        redirect('page/widget/edit/?id='.$id.'&n='.$alert,'refresh');
+                    }else{
+                        $alert = url_title("save failed !");
+                        redirect('page/widget/add?n='.$alert,'refresh');
+                    }
+                }
+            } else {
+                if($this->model_page->update_page_widget($_POST, $id)){
+                    $alert = url_title("Update succses");
+                    redirect('page/widget/edit/?id='.$id.'&n='.$alert,'refresh');
+                }else{
+                    $alert = url_title("save failed !");
+                    redirect('page/widget/add?n='.$alert,'refresh');
+                }
             }
-        }else {
+
+        } else if($act == 'delete'){
+            $data['id'] = $_GET['id'];
+            if (isset($_GET['n']) and $_GET['n'] != NULL){
+                $this->model_page->delete_page_widget($_GET['id']);
+                $alert = url_title("delete succses !");
+                redirect('page/widget/list/?n='.$alert,'refresh');   
+            }
+            
+            $this->smartyci->assign('data',$data);
+            $this->smartyci->display('admin/page_widget_delete.tpl');
+
+        } else {
             $this->smartyci->assign('data',$data);
             $this->smartyci->display('admin/page_widget_add.tpl');
         }

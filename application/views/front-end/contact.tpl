@@ -2,39 +2,36 @@
 
 {block name="content"}
 
-<section class="no-padding" data-height-lg="500" data-height-xs="200" data-height-sm="300">
+        <section class="no-padding" data-height-lg="500" data-height-xs="200" data-height-sm="300">
             <!-- Google map sensor -->
             <script>
             function initMap() {
-  var map;
-  var mapOptions = {
-    zoom: 14,
-    center: new google.maps.LatLng(-6.1928022, 106.8289236),
-    disableUi: true
-  };
-  map = new google.maps.Map(document.getElementById('map'),
-      mapOptions);
-  var markers = [
-        ['Delegación, Benito Juarez', -6.1928022, 106.8289236]
-    ];
-    var myLatlng = new google.maps.LatLng(-6.1928022, 106.8289236);
-    var marker_1 = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        name: 'Benito Juarez'
-    });
-  
-    google.maps.event.addListener(marker_1, 'click', function() {
-		$('#modalStripTop').modal('show')
-    });
+                var map;
+                var mapOptions = {
+                    zoom: 14,
+                    center: new google.maps.LatLng(-6.1928022, 106.8289236),
+                    disableUi: true
+                };    
+                map = new google.maps.Map(document.getElementById('map'),
+                  mapOptions);
+                var markers = [
+                    ['Delegación, Benito Juarez', -6.1928022, 106.8289236]
+                ];
+                var myLatlng = new google.maps.LatLng(-6.1928022, 106.8289236);
+                var marker_1 = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    name: 'Benito Juarez'
+                });
+              
+                google.maps.event.addListener(marker_1, 'click', function() {
+            		$('#modalStripTop').modal('show')
+                });
                 google.maps.event.addDomListener(window, 'load', initMap);
-}
-
-
+            }
             </script>
-             <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTCAsXiCfqrU0uj2NSlhf8Nv3OYpRYPDc&callback=initMap">
-    </script>
+             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTCAsXiCfqrU0uj2NSlhf8Nv3OYpRYPDc&callback=initMap">
+        </script>
             <div id="map"  data-height-lg="200" class="map" ></div>
         </section>
         <!-- end: Page title -->
@@ -46,22 +43,12 @@
                     <div class="col-md-6">
                         <h3 class="text-uppercase">Get In Touch</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum porttitor cursus. Duis nec nulla turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada fermentum bibendum.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor.</p>
-
-
                         <div class="row m-t-40">
-                            <div class="col-md-6">
-                                <address>
-			  <strong>BELANTARA FOUNDATION</strong><br>
-			  Boutique Office,3rd Floor, Jl. Timor No. 6, Menteng, RT.9/RW.4<br>
-                                    Gondangdia, Menteng, Jakarta<br> Daerah Khusus Ibukota Jakarta 10350<br>
-			  <abbr title="Phone">P:</abbr> (021) 13915434
-			</address>
+                            <div class="col-md-12">
+                                {$result = get_page(1,$data.slug)}
+                                {$result->content_EN}
                             </div>
                         </div>
-
-
 
 
                         <div class="social-icons m-t-30 social-icons-colored">

@@ -85,16 +85,16 @@
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="inputPassword3">
-                                    URL
+                                    URL/Slug
                                 </label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" id="keyword" name="url" placeholder="Alamat URL/Slug" required="" type="input" value="{$data.page->url}">
+                                    <input class="form-control" id="keyword" name="url" placeholder="Alamat URL/Slug" required="" type="input" value="{$data.page->url}" readonly="">
                                     </input>    
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="inputPassword3">
-                                    &nbsp;
+                                    Controller
                                 </label>
                                 <div class="col-sm-10">
                                     <input class="form-control" id="keyword" name="controller" placeholder="Controller" required="" type="input" value="{$data.page->controller}">
@@ -122,6 +122,22 @@
                                 </select>
                               </div>
                             </div>
+
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">&nbsp;</label>
+                              <div class="col-sm-10">
+                                <div class="list-group">
+                                    {foreach $data.widget_list -> result() as $row}
+                                    <a href="{base_url()}page/widget/edit/?id={$row->id_widget}" class="list-group-item">
+                                        <span class="label label-primary pull-right">Edit</span>
+                                        {$row->name} [{$row->urutan}]
+                                    </a>
+                                    {/foreach}
+                                </div>
+                              </div>
+                            </div>
+
+
                             {/if}
                             <!-- /.box-body -->
                         </div>

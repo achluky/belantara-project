@@ -56,7 +56,7 @@ class Navbar {
 	private function allowApplican(){
 		$this->setPengaturan();
 		$this->setGrant();
-		$this->setBerkas();
+		// $this->setBerkas();
 	}
 	
 	private function allowBm(){
@@ -495,7 +495,7 @@ class Navbar {
 		$this->menu['grant']=array("name"=> "Proposal",
 							"url"=>base_url()."grant/aplikasi",
 							"status"=>"", 
-							"class"=>"glyphicon glyphicon-file",
+							"class"=>"glyphicon glyphicon-th-list",
 							"submenu"=>null);
 
 	}

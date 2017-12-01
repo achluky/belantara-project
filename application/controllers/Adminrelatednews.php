@@ -127,6 +127,7 @@ class Adminrelatednews extends CI_Controller {
             'news' => $this->model_related_news->get_related_news($id, $id_bahasa),
             'title' => 'Blog <small>management</small>',
             'last_login' => $this->sess['last_login'],
+            'site_lang'=>$this->session->userdata('site_lang'),
             'session' => $this->sess['username']
         );
         $this->smartyci->assign('data', $data);

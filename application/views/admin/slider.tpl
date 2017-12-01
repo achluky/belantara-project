@@ -38,10 +38,10 @@
                     <table id="example1" class="table table-bordered table-hover">
                       <thead>
                         <tr>
-                          <th width="500px;">Title</th>
+                          <th width="300px;">Title</th>
                           <th>Deskripsi</th>
                           <th>Image</th>
-                          <th width="20px;">Tanggal</th>
+                          <th width="150px;">Tanggal</th>
                           <th width="150px;">Akasi</th>
                         </tr>
                       </thead>
@@ -50,7 +50,7 @@
                         <tr>
                           <td>{$row->title_en}</td>
                           <td>{$row->deskripsi_en}</td>
-                          <td><a href="{base_url()}document/images/slider/{$row->image}" class="btn btn-primary"><i class="fa fa-file-image-o"></i>  &nbsp; image slider</a></td>
+                          <td><a href="{base_url()}document/images/slider/{$row->image}" class="btn btn-primary btn-sm"><i class="fa fa-file-image-o"></i>  &nbsp; image slider</a></td>
                           <td>{$row->tanggal}</td>
                           <td>
                               <a href="{base_url()}slider/edit/{$row->id}"  class="btn btn-xs"><i class="fa fa-edit fa-fw"></i> Edit</a>

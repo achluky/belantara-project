@@ -204,7 +204,6 @@
 
                         <br/>
                         <div class="box-footer">
-
                             <div class="btn-group pull-right">
                                 <a href="{base_url()}grant/aplikasi"  class="btn btn-danger"><i class="glyphicon glyphicon-list"></i> List Proposal</a>
                                 <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-floppy-saved"></i> Simpan</button>
@@ -363,7 +362,6 @@
         });
 
     });    
-
 </script>
 {/block}
 

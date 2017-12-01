@@ -31,7 +31,7 @@
                     </div>
                     {/if}
 
-                    <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/create/3/save" name="" method="POST" >
+                    <form role="form" data-toggle="validator" name="" method="POST" >
                         <div class="box-body">
                             <div class="row">
                                  <div class="col-md-6">
@@ -45,27 +45,62 @@
                                               <tr>
                                                   <td>1</td>
                                                   <td>Informasi pengaju</td>
-                                                  <td>{7/((isset($data.session_all['grant']))?($data.session_all['grant']|count):0) * 100}%</td>
+                                                  <td>
+                                                  {if isset($data.session_all['grant']) }
+                                                    {( (((isset($data.session_all['grant']) )?($data.session_all['grant']|count):0 ) /6) * 100) }  
+                                                  {else}
+                                                    0
+                                                  {/if}
+                                                  %
+                                                  </td>
                                               </tr>
                                               <tr>
                                                   <td>2</td>
                                                   <td>Ringkasan Proyek</td>
-                                                  <td>{12/((isset($data.session_all['grant_proyek']))?$data.session_all['grant_proyek']:0)|count * 100}%</td>
+                                                  <td>
+                                                  {if isset($data.session_all['grant_proyek']) }
+                                                    {12/((isset($data.session_all['grant_proyek']))?$data.session_all['grant_proyek']:0)|count * 100}
+                                                  {else}
+                                                    0
+                                                  {/if}
+                                                  %
+                                                  </td>
                                               </tr>
                                               <tr>
                                                   <td>3</td>
                                                   <td>Risalah</td>
-                                                  <td>{4/((isset($data.session_all['grant_risalah']))?$data.session_all['grant_risalah']:0)|count * 100}%</td>
+                                                  <td>
+                                                  {if isset($data.session_all['grant_risalah']) }
+                                                    {4/((isset($data.session_all['grant_risalah']))?$data.session_all['grant_risalah']:0)|count * 100}
+                                                  {else}
+                                                    0
+                                                  {/if}
+                                                  %
+                                                </td>
                                               </tr>
                                               <tr>
                                                   <td>4</td>
                                                   <td>Indikator Ketercapaian Keberhasilan</td>
-                                                  <td>{(isset($data.session_all['grant_indikator']) )?'100':'0'}%</td>
+                                                  <td>
+                                                  {if isset($data.session_all['grant_indikator']) }
+                                                    {(isset($data.session_all['grant_indikator']) )?'100':'0'}%
+                                                  {else}
+                                                    0
+                                                  {/if}
+                                                  %
+                                                  </td>
                                               </tr>
                                               <tr>
                                                   <td>5</td>
                                                   <td>Kegiatan Dan Dana</td>
-                                                  <td>{3/((isset($data.session_all['grant_kegiatan_dana']))?$data.session_all['grant_kegiatan_dana']:0)|count * 100}%</td>
+                                                  <td>
+                                                  {if isset($data.session_all['grant_kegiatan_dana']) }
+                                                    {3/((isset($data.session_all['grant_kegiatan_dana']))?$data.session_all['grant_kegiatan_dana']:0)|count * 100}%
+                                                  {else}
+                                                    0
+                                                  {/if}
+                                                  %
+                                                </td>
                                               </tr>
                                               
                                           </table>
@@ -84,11 +119,9 @@
                         </div>
                     </form>
 
-
                     <div class="modal fade" id="konfirmasi">
                       <div class="modal-dialog">
                         <div class="modal-content">
-
                           <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/save" id="" method="POST" >
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -106,7 +139,6 @@
                             <button type="submit" class="btn btn-primary submit_data">Ya</button>
                           </div>
                           </form>
-
                         </div>
                         <!-- /.modal-content -->
                       </div>
@@ -114,9 +146,9 @@
                     </div>
                     <!-- /.modal -->
 
-                    <pre>
+                    <!-- <pre>
                       {print_r($data.session_all)}
-                    </pre>
+                    </pre> -->
 
                   </div>
                   <!-- /.box-body -->
@@ -131,13 +163,10 @@
 {block name="addon_scripts"}
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-
   $(document).ready(function(){
-
-        $(".submit_data").click(function(){
-          $( "#target" ).submit();
-        });
-
+    $(".submit_data").click(function(){
+      $( "#target" ).submit();
+    });
   });    
 </script>
 {/block}

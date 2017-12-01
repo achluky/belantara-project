@@ -63,7 +63,7 @@
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">URL</label>
+                              <label for="inputPassword3" class="col-sm-2 control-label">URL/Slug</label>
                               <div class="col-sm-10">
                                 <input type="input" class="form-control" id="keyword" placeholder="Alamat URL/slug" name="url" value="" required>
                               </div>
@@ -71,7 +71,7 @@
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="inputPassword3">
-                                    &nbsp;
+                                    Controller
                                 </label>
                                 <div class="col-sm-10">
                                     <input class="form-control" id="keyword" name="controller" placeholder="Controller" required="" type="input">
@@ -86,6 +86,7 @@
                                   <option value="1">Ya</option>
                                   <option value="0">Tidak</option>
                                 </select>
+                                <label class="helper"><i><i class="fa fa-info-circle"></i> Info: Penambahan Widget dilakukan ketika anda mengedit Page ini</i></label>
                               </div>
                             </div>
                         <!-- /.box-body -->
