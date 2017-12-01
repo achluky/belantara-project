@@ -28,7 +28,7 @@
                 </div>
                 {/if}
 
-                {if $data.profil == 0}
+                {if $data.profil == NULL}
                 <div class="box box-primary">
                   <div class="box-body box-primary">
                     <div class="box-body">
@@ -45,7 +45,7 @@
                 </div>
                 {/if}
 
-                {if $data.profil != 0}
+                {if $data.profil != NULL}
                 <div class="box box-primary">
                   <div class="box-body box-primary">
 
@@ -96,21 +96,21 @@
                                         </tr>
                                     </thead>
                                     <tbody id="add-listener">
-                                        {if $data.grant != 0}
-                                        {foreach $data.grant -> result() as $row}
-                                        <tr>
-                                            <td>{$data.no++}</td>
-                                            <td>{$row->proyek_judul}</td>
-                                            <td>{date("d-m-Y", strtotime($row->date_simpan))}</td>
-                                            <td>{date("d-m-Y", strtotime($row->date_kirim))}</td>
-                                            <td>{$row->status}</td>
-                                            <td>
-                                            <a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
-                                            <a  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-remove"></i></a>
-                                            </td>
-                                            <td>-</td>
-                                        </tr>
-                                        {/foreach}
+                                        {if $data.grant != NULL}
+                                          {foreach $data.grant -> result() as $row}
+                                          <tr>
+                                              <td>{$data.no++}</td>
+                                              <td>{$row->proyek_judul}</td>
+                                              <td>{date("d-m-Y", strtotime($row->date_simpan))}</td>
+                                              <td>{date("d-m-Y", strtotime($row->date_kirim))}</td>
+                                              <td>{$row->status}</td>
+                                              <td>
+                                              <a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                                              <a  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-remove"></i></a>
+                                              </td>
+                                              <td>-</td>
+                                          </tr>
+                                          {/foreach}
                                         {else}
                                           <tr>
                                             <td>Anda Tidak Memiliki Proposal</td>

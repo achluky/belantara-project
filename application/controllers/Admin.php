@@ -90,8 +90,13 @@ class Admin extends CI_Controller {
 
     public function logout()
     {
+        $sess = $this->session->userdata('logged_in');
+        $group_name = $sess['group_name'];
         if($this->session->userdata('logged_in')){
             $this->session->sess_destroy();
+            if ($group_name == 'applican') {
+                redirect($this->config->item('base_url').'grant/login', 'refresh');
+            }
             redirect($this->config->item('base_url').'login', 'refresh');
         }else{
             redirect($this->config->item('base_url').'login', 'refresh');

@@ -16,7 +16,7 @@ class Model_profil extends CI_Model{
 		if ($query->num_rows()>0) {
 			return $query->row();
         } else {
-            return 0;
+            return NULL;
         }
 	}
 

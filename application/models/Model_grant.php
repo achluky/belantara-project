@@ -23,7 +23,7 @@ class Model_grant extends CI_Model{
         if ($result->num_rows()>0) {
             return $result;
         } else {
-            return 0;
+            return NULL;
         }
 	}
 

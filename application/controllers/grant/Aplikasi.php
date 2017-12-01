@@ -22,7 +22,7 @@ class Aplikasi extends CI_Controller {
 
     public function index(){
         $profil = $this->model_profil->get($this->sess['id']);
-        if ($profil == 0) {
+        if ($profil == NULL) {
            $id_biodata = 0;
         } else {
             $id_biodata = $profil->id_biodata;
