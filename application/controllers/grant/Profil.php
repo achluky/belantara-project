@@ -57,6 +57,7 @@ class Profil extends CI_Controller {
             if ($_POST['id_biodata'] == NULL) {
                 array_pop($_POST);
                 $_POST['id_user'] = $this->sess['id'];
+                $_POST['status'] = '1';
                 unset($_POST['id_biodata']);
                 if($this->model_profil->insert($_POST)){
                     $data['profil'] = $this->model_profil->get($this->sess['id']);
@@ -69,6 +70,7 @@ class Profil extends CI_Controller {
                 array_pop($_POST);
                 $id_biodata = $_POST['id_biodata'];
                 unset($_POST['id_biodata']);
+                $_POST['status'] = '1';
                 if($this->model_profil->update($_POST, $id_biodata)){
                     $data['profil'] = $this->model_profil->get($this->sess['id']);
                     $data['error_msg']  = "Data Berhasil Diupdate"; 

@@ -18,7 +18,8 @@ class Admin extends CI_Controller {
 		$this->url = current_url();		
     }
     
-    public function index(){
+    public function index()
+    {
         if (!$this->session->userdata('logged_in')) {
             redirect($this->config->item('base_url'), 'refresh');            
         }
@@ -31,6 +32,10 @@ class Admin extends CI_Controller {
             'group_name' => $sess['group_name'],
             'last_login' => $sess['last_login']
         );
+        if ($sess['group_name']=='applican') {
+            $this->load->model('model_profil');
+            $data['status_biodata'] = $this->model_profil->get($sess['id']);
+        }
 		$this->smartyci->assign('data',$data);
         $this->smartyci->display('dashboard/dashboard-'.$data['group_name'].'.tpl');
     }

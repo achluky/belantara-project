@@ -13,7 +13,11 @@ class Model_profil extends CI_Model{
 
 	public function get($id){
 		$query = $this->db->query("SELECT * FROM applican_biodata WHERE id_user = ".$id."");
-		return $query->row();
+		if ($query->num_rows()>0) {
+			return $query->row();
+        } else {
+            return 0;
+        }
 	}
 
 	public function update($data, $id){

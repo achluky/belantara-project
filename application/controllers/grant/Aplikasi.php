@@ -22,6 +22,11 @@ class Aplikasi extends CI_Controller {
 
     public function index(){
         $profil = $this->model_profil->get($this->sess['id']);
+        if ($profil == 0) {
+           $id_biodata = 0;
+        } else {
+            $id_biodata = $profil->id_biodata;
+        }
         $data = array(
             'url' => $this->url,
             'alert' => isset($_GET['n']) ? $_GET['n'] : '',
@@ -31,7 +36,7 @@ class Aplikasi extends CI_Controller {
             ),
             'error_msg' => '',
             'profil' => $profil,
-            'grant' => $this->model_grant->grant($profil->id_biodata),
+            'grant' => $this->model_grant->grant($id_biodata),
             'title' => 'Proposal <small> Grant</small>',
             'session' => $this->sess['username'],
             'name' => $this->sess['name'],

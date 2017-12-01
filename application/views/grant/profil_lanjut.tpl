@@ -66,19 +66,19 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Password</label>
-                                            <input type="password" class="form-control" id="judul" name="lembaga_nama" placeholder="" value="{($data.email->password != '')?$data.email->password:''}" required>
+                                            <input type="password" class="form-control" id="judul" name="password_lama" placeholder="" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Password Baru</label>
-                                            <input type="input" class="form-control" id="judul" name="lembaga_nama" placeholder="" value="" required>
+                                            <input type="input" class="form-control" id="judul" name="password_baru" placeholder="" value="" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Ulangi Password Baru</label>
-                                            <input type="input" class="form-control" id="judul" name="lembaga_provinsi" placeholder="" value="" required>
+                                            <input type="input" class="form-control" id="judul" name="password_baru_lagi" placeholder="" value="" required>
                                         </div>
                                     </div>
 

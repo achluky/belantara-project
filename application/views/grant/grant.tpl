@@ -28,7 +28,24 @@
                 </div>
                 {/if}
 
+                {if $data.profil == 0}
+                <div class="box box-primary">
+                  <div class="box-body box-primary">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <p>Silahkan Melengkapi Profil pengguna dan lembaga sebelum mengajukan proposal</p>
+                              <a href="http://localhost/belantara-project/grant/profil">
+                                  <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> &nbsp; Lengkapi Profil</button>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                {/if}
 
+                {if $data.profil != 0}
                 <div class="box box-primary">
                   <div class="box-body box-primary">
 
@@ -39,18 +56,18 @@
                     </div>
                     {/if}
 
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <!-- <div class="col-md-12"> -->
-                                        <div class="form-group">
-                                            <p>Selamat datang {$data.profil->lembaga_nama}</p>
-                                            <a href="{base_url()}grant/aplikasi/create/1"><button type="submit" class="btn btn-danger"> <i class="glyphicon glyphicon-plus"></i>  Buat Proposal</button></a>
-                                        </div>
-                                    <!-- </div> -->
-                                </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- <div class="col-md-12"> -->
+                                    <div class="form-group">
+                                        <p>Selamat datang {$data.profil->lembaga_nama}</p>
+                                        <a href="{base_url()}grant/aplikasi/create/1"><button type="submit" class="btn btn-danger"> <i class="glyphicon glyphicon-plus"></i>  Buat Proposal</button></a>
+                                    </div>
+                                <!-- </div> -->
                             </div>
                         </div>
+                    </div>
                   </div>
                   <!-- /.box-body -->
                 </div>
@@ -58,7 +75,6 @@
                 <br/>
                 <div class="box box-primary">
                   <div class="box-body box-primary">
-
                         <div class="box-body">
                             <div class="row">
 
@@ -80,7 +96,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="add-listener">
-
+                                        {if $data.grant != 0}
                                         {foreach $data.grant -> result() as $row}
                                         <tr>
                                             <td>{$data.no++}</td>
@@ -95,6 +111,11 @@
                                             <td>-</td>
                                         </tr>
                                         {/foreach}
+                                        {else}
+                                          <tr>
+                                            <td>Anda Tidak Memiliki Proposal</td>
+                                        </tr>
+                                        {/if}
                                     </tbody>
                                 </table>
                                 </div>
@@ -102,6 +123,7 @@
                         </div>
                     </div>
                 </div>
+                {/if}
 
           </div>
           <!-- /.col -->

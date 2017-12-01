@@ -19,7 +19,12 @@ class Model_grant extends CI_Model{
 	
 	//
 	public function grant($id_biodata){
-		return $this->db->query("SELECT * FROM `grant` JOIN grant_proyek ON `grant`.`id_grant`= `grant_proyek`.`id_grant` JOIN grant_status ON `grant_status`.`id_status` = `grant`.`status` WHERE `grant`.`id_biodata` = ".$id_biodata."");
+		$result = $this->db->query("SELECT * FROM `grant` JOIN grant_proyek ON `grant`.`id_grant`= `grant_proyek`.`id_grant` JOIN grant_status ON `grant_status`.`id_status` = `grant`.`status` WHERE `grant`.`id_biodata` = ".$id_biodata."");
+        if ($result->num_rows()>0) {
+            return $result;
+        } else {
+            return 0;
+        }
 	}
 
 	public function get_grant($id_grant){
