@@ -171,4 +171,11 @@
 
 {block name="addon_scripts"}
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
+<script>
+    $(function () {
+        CKEDITOR.replace('proyek_manfaat'); 
+    });
+</script>
 {/block}

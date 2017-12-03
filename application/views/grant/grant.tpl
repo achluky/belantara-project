@@ -23,6 +23,7 @@
                 
                 {if isset($data.alert) and ($data.alert != '')}
                 <div class="callout callout-info">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h4>Info!</h4>
                   <p>{$data.alert}</p>
                 </div>
@@ -92,7 +93,7 @@
                                             <th>Tanggal Kirim</th>
                                             <th>Status</th>
                                             <th>Tindakan</th>
-                                            <th width="200px;">Tanggapan</th>
+                                            <th width="100px;">Tanggapan</th>
                                         </tr>
                                     </thead>
                                     <tbody id="add-listener">
@@ -101,14 +102,14 @@
                                           <tr>
                                               <td>{$data.no++}</td>
                                               <td>{$row->proyek_judul}</td>
-                                              <td>{date("d-m-Y", strtotime($row->date_simpan))}</td>
-                                              <td>{date("d-m-Y", strtotime($row->date_kirim))}</td>
-                                              <td>{$row->status}</td>
+                                              <td>{date("d/m/Y", strtotime($row->date_simpan))}</td>
+                                              <td>{date("d/m/Y", strtotime($row->date_kirim))}</td>
+                                              <td>{$row->status_grant}</td>
                                               <td>
-                                              <a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                                              <a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
                                               <a  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-remove"></i></a>
                                               </td>
-                                              <td>-</td>
+                                              <td><a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}"><span class="badge">baru</span></a></td>
                                           </tr>
                                           {/foreach}
                                         {else}

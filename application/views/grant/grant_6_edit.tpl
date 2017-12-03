@@ -53,49 +53,26 @@
                                                   <td>2</td>
                                                   <td>Ringkasan Proyek</td>
                                                   <td>
-                                                  {if isset($data.session_all['grant_proyek']) }
-                                                    {12/((isset($data.session_all['grant_proyek']))?$data.session_all['grant_proyek']:0)|count * 100}
-                                                  {else}
-                                                    0
-                                                  {/if}
-                                                  %
-                                                  </td>
+                                                    {$data.grant_proyek->resume}% </td>
                                               </tr>
                                               <tr>
                                                   <td>3</td>
                                                   <td>Risalah</td>
                                                   <td>
-                                                  {if isset($data.session_all['grant_risalah']) }
-                                                    {4/((isset($data.session_all['grant_risalah']))?$data.session_all['grant_risalah']:0)|count * 100}
-                                                  {else}
-                                                    0
-                                                  {/if}
-                                                  %
+                                                  {$data.grant_risalah->resume}%
                                                 </td>
                                               </tr>
                                               <tr>
                                                   <td>4</td>
                                                   <td>Indikator Ketercapaian Keberhasilan</td>
                                                   <td>
-                                                  {if isset($data.session_all['grant_indikator']) }
-                                                    {(isset($data.session_all['grant_indikator']) )?'100':'0'}%
-                                                  {else}
-                                                    0
-                                                  {/if}
-                                                  %
+                                                  {$data.grant_indikator->resume}%
                                                   </td>
                                               </tr>
                                               <tr>
                                                   <td>5</td>
                                                   <td>Kegiatan Dan Dana</td>
-                                                  <td>
-                                                  {if isset($data.session_all['grant_kegiatan_dana']) }
-                                                    {3/((isset($data.session_all['grant_kegiatan_dana']))?$data.session_all['grant_kegiatan_dana']:0)|count * 100}%
-                                                  {else}
-                                                    0
-                                                  {/if}
-                                                  %
-                                                </td>
+                                                  <td>{$data.grant_kegiatan_dana->resume}%</td>
                                               </tr>
                                               
                                           </table>

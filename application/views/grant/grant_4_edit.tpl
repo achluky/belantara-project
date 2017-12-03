@@ -31,7 +31,7 @@
                     </div>
                     {/if}
 
-                    <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/edit/4/{$data.id_grant}/save" name="" method="POST" >
+                    <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/edit/4/{$data.id_grant}/save" method="POST" >
                         <div class="box-header">
                             <h3 class="box-title">4. Indikator Ketercapaian Keberhasilan <small>Input Proposal Baru</small> </h3>
                             <hr/>
@@ -52,9 +52,9 @@
                                               {foreach $data.grant_indikator->result() as $row}
                                                 <tr>
                                                     <td>
-                                                        <input type="hidden" name="indikator_nama[]" value="{$row->indikator_nama}">
-                                                        {$row->indikator_nama}</td>
-                                                    
+                                                        <input type="hidden" name="indikator_nama[]"  class="form-control" id="indikator_nama"   value="{$row->indikator_nama}">
+                                                        {$row->indikator_nama}
+                                                    </td>
                                                     <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
                                                 </tr>
                                               {/foreach}
@@ -67,7 +67,6 @@
                             </div>
                         </div>
                         <!-- /.box-body -->
-
                         <div class="box-footer">
                             <br/>
                             <div class="btn-group pull-right">
@@ -78,6 +77,35 @@
                         </div><!-- /.box-footer -->
                         <br/><br/>
                     </form>
+
+
+
+                            <div class="modal fade" id="add_indikator">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title">Indikator Ketercapaain Keberhasilan</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail1">Indikator</label>
+                                      <textarea class="form-control" id="indikator" name="indikator" rows="7"></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary add_indikator">Simpan</button>
+                                  </div>
+                                </div>
+                                <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+
 
 
                     <!-- <pre>
@@ -97,42 +125,20 @@
 
 {block name="addon_scripts"}
 
-<div class="modal fade" id="add_indikator">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Indikator Ketercapaain Keberhasilan</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Indikator</label>
-          <textarea class="form-control" id="indikator_nama" name="indikator_nama" rows="7"></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary add_indikator">Simpan</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
 
+        var editor = CKEDITOR.replace('indikator'); 
+
         $(".add_indikator").click(function(){
-            var indikator_nama = $("#indikator_nama").val();
+            var value = editor.getData();
             var data = "<tr>"+
                             "<td>"+
-                            " <textarea style=\"display:none;\" name=\"indikator_nama[]\" >"+ indikator_nama +"</textarea>"+
-                            " "+ indikator_nama +""+
+                            " <input type=\"hidden\" name=\"indikator_nama[]\" value=\""+ value +"\">"+
+                            " "+ value +""+
                             "</td>"+
                             "<td>  "+
                             "<a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+

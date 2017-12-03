@@ -39,7 +39,6 @@
                     </div>
                     {/if}
 
-
                     <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/edit/1/{$data.grant->id_grant}/save" name="" method="POST" >
 
                         <div class="box-header">
@@ -78,28 +77,28 @@
                                             <table class="table table-striped">
                                                 <thead>
                                                     <tr>
+                                                        <th width="20px"></th>
                                                         <th>Nama Dokumen</th>
                                                         <th>Nama Berkas</th>
-                                                        <th>Tindakan</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="list_doc">
                                                     {foreach $data.document->result() as $row}
                                                     <tr>
+                                                        <td><input type='checkbox' name='record'></td>
                                                         <td>
                                                             <input type="hidden" name="grant_dokumen[dokumen_nama][]" value="{$row->dokumen_nama}">
                                                             {$row->dokumen_nama}</td>
                                                         <td>
                                                             <input type="hidden" name="grant_dokumen[dokumen_file][]" value="{$row->dokumen_file}">
                                                             {$row->dokumen_file}</td>
-                                                        <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
                                                     </tr>
                                                     {/foreach}
                                                 </tbody>
                                             </table>
                                             
-                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tambah</button>
-
+                                            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tambah</button>
+                                            <button type="button" class="btn btn-danger btn-sm" id="delete_doc"><i class="glyphicon glyphicon-remove"></i> &nbsp; Hapus</button>
                                         </div>
                                     </div>
                                 </div>
@@ -147,17 +146,18 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
+                                                    <th width=20px;></th>
                                                     <th>Project/Program/Kegiatan</th>
                                                     <th>Dana Yang Dikelola</th>
                                                     <th>Sumber</th>
                                                     <th>Periode</th>
                                                     <th>Durasi</th>
-                                                    <th width="80px;">Tindakan</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="add_portofolio">
                                                 {foreach $data.portofolio->result() as $row}
                                                 <tr>
+                                                    <td><input type='checkbox' name='record_portofolio'></td>
                                                     <td>
                                                         <input type="hidden" name="grant_portofolio[portofolio_project][]" value="{$row->portofolio_project}">{$row->portofolio_project}</td>
                                                     <td>
@@ -168,13 +168,13 @@
                                                         <input type="hidden" name="grant_portofolio[portofolio_periode][]" value="{$row->portofolio_periode}">{$row->portofolio_periode}</td>
                                                     <td>
                                                         <input type="hidden" name="grant_portofolio[portofolio_durasi][]" value="{$row->portofolio_durasi}">{$row->portofolio_durasi} Tahun</td>
-                                                    <td><a href=""><i class="glyphicon glyphicon-remove"></i> &nbsp; hapus</a></td>
                                                 </tr>
                                                 {/foreach}
                                             </tbody>
                                         </table>
 
-                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_portofolio"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tambah</button>
+                                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".dok_portofolio"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tambah</button>
+                                        <button type="button" class="btn btn-danger btn-sm" id="delete_portofolio"><i class="glyphicon glyphicon-remove"></i> &nbsp; Hapus</button>
 
                                     </div>
                                 </div>
@@ -190,11 +190,12 @@
                         </div><!-- /.box-footer -->
                         <br/><br/>
                     </form>
-                     <!-- Modal  -->
+
+                    <!-- Modal  -->
                     <div class="modal fade dok_lampiran" role="dialog">
                       <div class="modal-dialog modal-sm">
                         <div class="modal-content">
-                            <form role="form" id="attachform" enctype="multipart/form-data" method="POST" >
+                            <form role="form" id="form_add_document" action="#">
                                 <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                   <h4 class="modal-title" id="mySmallModalLabel">Tambahkan Dokumen Lampiran</h4>
@@ -208,6 +209,8 @@
                                             <label for="exampleInputPassword1">File Dokumen</label>
                                             <input type="file" class="form-control" id="file_doc" name="file_doc" placeholder="">
                                           </div>
+
+                                            <div id="notif_form_add_document"></div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -273,10 +276,16 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        $(".add_doc").click(function(){
+        $(document).on('click','.add_doc',function(e){
+            e.preventDefault();
             var name = $("#nama_doc").val();
+            if (name == ''){
+                $('#notif_form_add_document').html('<p><div class="alert alert-warning alert-dismissible fade in" role="alert" id="notif_form_add_document">Nama Dokumen Kosong</div></p>');
+                return;
+            }
             var file = $("#file_doc").val().replace(/C:\\fakepath\\/i, '');
             var data = "<tr>"+
+                            "<td><input type='checkbox' name='record' ></td>"+
                             "<td>"+
                             " <input type=\"hidden\" name=\"grant_dokumen[dokumen_nama][]\" value=\""+ name +"\">"+
                             " "+ name +""+
@@ -285,15 +294,30 @@
                             "    <input type=\"hidden\" name=\"grant_dokumen[dokumen_file][]\" value=\""+ file +"\">"+
                             "    "+ file +""+
                             "</td>"+
-                            "<td>  "+
-                            "<a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+
-                            "</td>"+
                         "</tr>";
-            $("#list_doc").append(data);
-            $(".dok_lampiran").modal('hide');
+            var file_data = $('#file_doc').prop('files')[0];
+            var form_data = new FormData();
+            form_data.append('file', file_data);
+            $.ajax({
+                url: '{base_url()}grant/aplikasi/upload_doc',
+                type: 'POST',
+                data: form_data,
+                dataType: 'JSON',
+                processData: false, 
+                contentType: false,
+                success: function(rst, status){
+                    if(rst.status != 'error')
+                    {   
+                        $("#list_doc").append(data);
+                        $(".dok_lampiran").modal('hide');
+                    } else {
+                        $('#notif_form_add_document').html('<p><div class="alert alert-warning alert-dismissible fade in" role="alert" id="notif_form_add_document">'+rst.msg+'</div></p>');
+                    }
+                }
+            });     
         });
-        $(".delete-row").click(function(){
-            $("table tbody").find('input[name="record"]').each(function(){
+        $("#delete_doc").click(function(){
+           $("table tbody").find('input[name="record"]').each(function(){
                 if($(this).is(":checked")){
                     $(this).parents("tr").remove();
                 }
@@ -307,6 +331,7 @@
             var portofolio_periode = $("#portofolio_periode").val();
             var portofolio_durasi = $("#portofolio_durasi").val();
             var data = "<tr>"+
+                            "<td><input type='checkbox' name='record_portofolio' ></td>"+
                             "<td>"+
                             "  <input type=\"hidden\" name=\"grant_portofolio[portofolio_project][]\" value=\""+portofolio_project+"\">"+
                             " "+portofolio_project+""+
@@ -327,14 +352,17 @@
                             "    <input type=\"hidden\" name=\"grant_portofolio[portofolio_durasi][]\" value=\""+portofolio_durasi+"\">"+
                             "  "+portofolio_durasi+""+
                             "</td>"+
-                            "<td>  "+
-                            "  <a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+
-                            "</td>"+
                         "</tr>";
             $("#add_portofolio").append(data);
             $(".dok_portofolio").modal('hide');
         });
-
+        $("#delete_portofolio").click(function(){
+           $("table tbody").find('input[name="record_portofolio"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
     });    
 </script>
 {/block}

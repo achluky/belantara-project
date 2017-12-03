@@ -37,7 +37,7 @@
                             <input type="hidden" class="form-control" id="id_grant" name="id_grant" placeholder="" value="{$data.grant_kegiatan_dana->id_grant}" >
                             <input type="hidden" class="form-control" id="id_kegiatan_dana" name="id_kegiatan_dana" placeholder="" value="{$data.grant_kegiatan_dana->id_kegiatan_dana}" >
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Jenis Kegiatan</label>
@@ -135,9 +135,11 @@
 </div>
 <!-- /.modal -->
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-
   $(document).ready(function(){
+        var editor = CKEDITOR.replace('kegiatan_dana_jenis'); 
         $(".add_keg").click(function(){
             var kegiatan_dana_nama = $("#kegiatan_dana_nama").val();
             var kegiatan_dana_jumlah = $("#kegiatan_dana_jumlah").val();

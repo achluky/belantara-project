@@ -380,6 +380,7 @@ class Aplikasi extends CI_Controller {
             );
 
             if ($action == 'save') {
+
                 if ($_POST['id_grant'] != NULL and $_POST['id_grant'] != '') {
                     $id_grant = $_POST['id_grant'];
                     unset($_POST['id_grant']);
@@ -450,7 +451,11 @@ class Aplikasi extends CI_Controller {
                 ),
                 'error_msg' => '',
                 'profil' => $profil,
-                'grant' => $this->model_grant->persent_grant($id_grant),
+                'grant' => $this->model_grant->persent_grant($id_grant, 'grant'),
+                'grant_proyek' => $this->model_grant->persent_grant($id_grant, 'grant_proyek'),
+                'grant_risalah' => $this->model_grant->persent_grant($id_grant, 'grant_risalah'),
+                'grant_indikator' => $this->model_grant->persent_grant($id_grant, 'grant_indikator'),
+                'grant_kegiatan_dana' => $this->model_grant->persent_grant($id_grant, 'grant_kegiatan_dana'),
                 'id_grant' => $id_grant,
                 'title' => 'Profil <small> Grant</small>',
                 'session' => $this->sess['username'],
@@ -463,7 +468,29 @@ class Aplikasi extends CI_Controller {
     }
 
     public function upload_doc(){
-        var_dump($_FILES);
+        $status = "";
+        $msg = "";
+        $file_element_name = 'file';
+        if ($status != "error")
+        {
+            $config['upload_path'] = './document/doc/';
+            $config['allowed_types'] = 'gif|jpg|png|doc|txt';
+            $config['max_size'] = 1024 * 8;
+            $config['encrypt_name'] = TRUE;
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload($file_element_name))
+            {
+                $status = 'error';
+                $msg = $this->upload->display_errors('', '');
+            }
+            else
+            {
+                $status = "success";
+                $msg = "File successfully uploaded";
+            }
+            @unlink($_FILES[$file_element_name]);
+        }
+        echo json_encode(array('status' => $status, 'msg' => $msg));
     }
 
     public function save(){
@@ -474,8 +501,31 @@ class Aplikasi extends CI_Controller {
             $alert = url_title("Proses Penyimpanan atau Pengiriman failed !");
             redirect('/grant/aplikasi/create/6/n=' . $alert, 'refresh');
         }
+    }
 
+    public function view($id_grant){
+        $this->load->helper('page');
+        $this->navbar->setMenuActive('todo');
+        $data = array(
+            'url' => $this->url,
+            'alert' => isset($_GET['n']) ? $_GET['n'] : '',
+            'breadcrumb' => array(
+                'Dashboard' => base_url() . 'admin',
+                'Todo' => base_url() . 'grant/todo',
+                'view' => base_url() . ''
+            ),
+            'error_msg' => '',
+            'title' => 'View <small> Grant</small>',
+            'grant' => $this->model_grant->getGrantFull(),
+            'grant_status' => $this->model_grant->getStatus(),
+            'session' => $this->sess['username'],
+            'id_user' => $this->sess['id'],
+            'name' => $this->sess['name'],
+            'last_login' => $this->sess['last_login'],
+        );
 
+        $this->smartyci->assign('data', $data);
+        $this->smartyci->display('grant/view.tpl');
     }
 }
 

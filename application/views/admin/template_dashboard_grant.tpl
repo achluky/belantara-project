@@ -39,7 +39,7 @@
     
 
         <!-- jQuery 2.1.3 -->
-        <script src="{base_url()}assets/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+        <script src="{base_url()}assets/js/jquery.js" type="text/javascript"></script>
         <!-- jQuery UI 1.11.2 -->
         <script src="{base_url()}assets/plugins/jQuery/jquery-ui.min.js" type="text/javascript"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -55,8 +55,5 @@
         <!-- Addons Scripts -->
         {block name="addon_scripts"}{/block}
 
-
-
-    
    </body>
 </html>

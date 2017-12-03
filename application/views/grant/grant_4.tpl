@@ -87,6 +87,34 @@
                     </form>
 
 
+                    <div class="modal fade" id="add_indikator">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title">Indikator Ketercapaain Keberhasilan</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Indikator</label>
+                              <textarea class="form-control" id="indikator_nama" name="indikator_nama" rows="7"></textarea>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary add_indikator">Simpan</button>
+                          </div>
+                        </div>
+                        <!-- /.modal-content -->
+                      </div>
+                      <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+
+
+
                     <!-- <pre>
                       {print_r($data.session_all)}
                     </pre> -->
@@ -104,51 +132,26 @@
 
 {block name="addon_scripts"}
 
-<div class="modal fade" id="add_indikator">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Indikator Ketercapaain Keberhasilan</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Indikator</label>
-          <textarea class="form-control" id="indikator_nama" name="indikator_nama" rows="7"></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary add_indikator">Simpan</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-  $(document).ready(function(){
-
-        $(".add_indikator").click(function(){
-            var indikator_nama = $("#indikator_nama").val();
-            var data = "<tr>"+
-                            "<td>"+
-                            " <textarea style=\"display:none;\" name=\"indikator_nama[]\" >"+ indikator_nama +"</textarea>"+
-                            " "+ indikator_nama +""+
-                            "</td>"+
-                            "<td>  "+
-                            "<a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+
-                            "</td>"+
-                        "</tr>";
-            $("#list_indikator").append(data);
-            $("#add_indikator").modal('hide');
-        });
-
-  });    
+$(document).ready(function(){
+  var editor = CKEDITOR.replace('indikator_nama'); 
+  $(".add_indikator").click(function(){
+      var indikator_nama = editor.getData();
+      var data = "<tr>"+
+                      "<td>"+
+                      " <textarea style=\"display:none;\" name=\"indikator_nama[]\" >"+ indikator_nama +"</textarea>"+
+                      " "+ indikator_nama +""+
+                      "</td>"+
+                      "<td>  "+
+                      "<a href=\"\"><i class=\"glyphicon glyphicon-remove\"></i> &nbsp; hapus</a>"+
+                      "</td>"+
+                  "</tr>";
+      $("#list_indikator").append(data);
+      $("#add_indikator").modal('hide');
+  });
+});    
 </script>
 {/block}

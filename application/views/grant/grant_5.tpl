@@ -93,6 +93,36 @@
                         <br/><br/>
                     </form>
 
+                    <div class="modal fade" id="add_kegiatan_dana">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title">Kegiatan dan Dana</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Kegiatan</label>
+                              <input type="input" name="kegiatan_dana_nama" class="form-control" id="kegiatan_dana_nama" >
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Dana</label>
+                              <input type="input" name="kegiatan_dana_jumlah" class="form-control" id="kegiatan_dana_jumlah">
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary add_keg">Save changes</button>
+                          </div>
+                        </div>
+                        <!-- /.modal-content -->
+                      </div>
+                      <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+
                     <!-- <pre> -->
                       <!-- {print_r($data.session_all)} -->
                     <!-- </pre> -->
@@ -109,40 +139,12 @@
 
 {block name="addon_scripts"}
 
-<div class="modal fade" id="add_kegiatan_dana">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Kegiatan dan Dana</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Kegiatan</label>
-          <input type="input" name="kegiatan_dana_nama" class="form-control" id="kegiatan_dana_nama" >
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Dana</label>
-          <input type="input" name="kegiatan_dana_jumlah" class="form-control" id="kegiatan_dana_jumlah">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary add_keg">Save changes</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-
   $(document).ready(function(){
-
+        var editor = CKEDITOR.replace('kegiatan_dana_jenis'); 
         $(".add_keg").click(function(){
             var kegiatan_dana_nama = $("#kegiatan_dana_nama").val();
             var kegiatan_dana_jumlah = $("#kegiatan_dana_jumlah").val();

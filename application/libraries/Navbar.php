@@ -56,7 +56,6 @@ class Navbar {
 	private function allowApplican(){
 		$this->setPengaturan();
 		$this->setGrant();
-		// $this->setBerkas();
 	}
 	
 	private function allowBm(){
@@ -66,7 +65,7 @@ class Navbar {
 
 	private function setMenuDashboard(){
 		$this->menu['dashboard']=array("name"=>$this->controller->lang->line('navigation.navbar.dashboard'),
-							"url"=>base_url()."login",
+							"url"=>base_url()."admin",
 							"status"=>"", 
 							"class"=>"glyphicon glyphicon-home",
 							"submenu"=>null);
@@ -77,16 +76,16 @@ class Navbar {
 		$this->menu['todo']=array("name"=>$this->controller->lang->line('navigation.navbar.todo'),
 							"url"=>base_url()."grant/todo",
 							"status"=>"", 
-							"class"=>"ion ion-images",
+							"class"=>"fa fa-bell",
 							"submenu"=>null);
 
 	}
 
 	private function setMenuAllApplication(){
 		$this->menu['application']=array("name"=>$this->controller->lang->line('navigation.navbar.app'),
-							"url"=>base_url()."grant/todo",
+							"url"=>base_url()."grant/all",
 							"status"=>"", 
-							"class"=>"ion ion-nitif",
+							"class"=>"fa fa-desktop",
 							"submenu"=>null);
 	}
 

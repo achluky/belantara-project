@@ -57,12 +57,16 @@
                                             <textarea class="form-control" id="judul" name="risalah_tujuan" placeholder="Tujuan Proyek" value="" required rows="3">{(isset($data.grant_risalah['risalah_tujuan']) )?$data.grant_risalah['risalah_tujuan']:''}</textarea>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Perubahan Yang Diharapkan</label>
                                             <textarea class="form-control" id="judul" name="risalah_perubahan" placeholder="Perubahan yang diharapkan atas dampak dari Proyek" value="" required rows="3">{(isset($data.grant_risalah['risalah_perubahan']) )?$data.grant_risalah['risalah_perubahan']:''}</textarea>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Metode</label>
@@ -98,4 +102,16 @@
 
 {block name="addon_scripts"}
 <script src="{base_url()}assets/js/validator.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{base_url()}assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+<script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
+<script>
+    $(function () {
+        CKEDITOR.replace('risalah_latar_belakang', {
+             height: 200
+        }); 
+        CKEDITOR.replace('risalah_tujuan'); 
+        CKEDITOR.replace('risalah_perubahan'); 
+        CKEDITOR.replace('risalah_metode'); 
+    });
+</script>
 {/block}

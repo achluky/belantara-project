@@ -94,7 +94,7 @@ class Admin extends CI_Controller {
         $group_name = $sess['group_name'];
         if($this->session->userdata('logged_in')){
             $this->session->sess_destroy();
-            if ($group_name == 'applican') {
+            if ($group_name == 'applican' or $group_name == 'bm' or $group_name == 'committee' or $group_name == 'gm') {
                 redirect($this->config->item('base_url').'grant/login', 'refresh');
             }
             redirect($this->config->item('base_url').'login', 'refresh');
