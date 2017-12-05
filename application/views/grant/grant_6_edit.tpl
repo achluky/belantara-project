@@ -82,7 +82,6 @@
                             <div class="box-footer">
                                 <div class="btn-group pull-right">
                                     <a href="{base_url()}grant/aplikasi/edit/5/{$data.id_grant}" class="btn btn-primary" type="button"><i class="glyphicon glyphicon-chevron-left"></i> Sebelumnya</a>
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#konfirmasi"><i class="glyphicon glyphicon-floppy-saved"></i> Simpan</button>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#konfirmasi"><i class="glyphicon glyphicon-send"></i> &nbsp; Kirim</button>
 
                                 </div>
@@ -94,7 +93,7 @@
                     <div class="modal fade" id="konfirmasi">
                       <div class="modal-dialog">
                         <div class="modal-content">
-                          <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/save" id="" method="POST" >
+                          <form role="form" data-toggle="validator" action="{base_url()}grant/aplikasi/update/{$data.id_grant}/{$data.profil->id_biodata}" id="" method="POST" >
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>

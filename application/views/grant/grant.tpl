@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-md-12">
                               <p>Silahkan Melengkapi Profil pengguna dan lembaga sebelum mengajukan proposal</p>
-                              <a href="http://localhost/belantara-project/grant/profil">
+                              <a href="{base_url()}grant/profil">
                                   <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> &nbsp; Lengkapi Profil</button>
                               </a>
                             </div>
@@ -88,12 +88,12 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th width="350px;">Judul Proposal</th>
+                                            <th width="600px;">Judul Proposal</th>
                                             <th>Tanggal Simpan</th>
                                             <th>Tanggal Kirim</th>
                                             <th>Status</th>
                                             <th>Tindakan</th>
-                                            <th width="100px;">Tanggapan</th>
+                                            <th width="30px;">Tanggapan</th>
                                         </tr>
                                     </thead>
                                     <tbody id="add-listener">
@@ -104,12 +104,15 @@
                                               <td>{$row->proyek_judul}</td>
                                               <td>{date("d/m/Y", strtotime($row->date_simpan))}</td>
                                               <td>{date("d/m/Y", strtotime($row->date_kirim))}</td>
-                                              <td>{$row->status_grant}</td>
+                                              {$status_grant = get_grant_status_by_id($row->t_type)}
+                                              <td>{$status_grant->status}</td>
                                               <td>
-                                              <a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
-                                              <a  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-remove"></i></a>
+                                              <a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}"><i class="glyphicon glyphicon-edit"></i> edit </a> &nbsp;
+                                              <a  href="" data-toggle="modal" data-target=".dok_lampiran"><i class="glyphicon glyphicon-remove"></i> delete</a>
                                               </td>
-                                              <td><a href="{base_url()}grant/aplikasi/edit/1/{$row->id_grant}"><span class="badge">baru</span></a></td>
+                                              <td><a href="{base_url()}grant/aplikasi/tanggapan/{$row->id_grant}/{$row->id_biodata}">
+                                                <span class="label label-default">baru</span>
+                                              </td>
                                           </tr>
                                           {/foreach}
                                         {else}

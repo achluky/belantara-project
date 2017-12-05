@@ -23,18 +23,19 @@
                 
                 {if isset($data.alert) and ($data.alert != '')}
                 <div class="callout callout-info">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h4>Info!</h4>
                   <p>{$data.alert}</p>
                 </div>
                 {/if}
-                
+
                 <div class="box box-primary">
                   <div class="box-body box-primary">
                         <div class="box-body">
                             <div class="row">
 
                                 <div class="box-header">
-                                  <h3 class="box-title">Todo List Proposal</h3>
+                                  <h3 class="box-title">List Proposal</h3>
                                 </div>
 
                                 <div class="col-md-12">
@@ -42,11 +43,10 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th width="700px;">Judul Proposal</th>
-                                            <th>Tanggal Diterima</th>
-                                            <th>On Status</th>
-                                            <th width="100px;">Tindakan</th>
-                                            {* <th width="200px;">Tanggapan</th> *}
+                                            <th>Judul Proposal</th>
+                                            <th>Tanggal Simpan</th>
+                                            <th>Tanggal Kirim</th>
+                                            {* <th>Status</th> *}
                                         </tr>
                                     </thead>
                                     <tbody id="add-listener">
@@ -55,15 +55,10 @@
                                           <tr>
                                               <td>{$data.no++}</td>
                                               <td>{$row->proyek_judul}</td>
-                                              <td>{date("d-m-Y", strtotime($row->t_date))}</td>
-                                              <td>{$row->status}</td>
-                                              <td>
-                                                  <div class="btn-group pull-left">
-
-                                                    <a href="{base_url()}grant/todo/view/{$row->id_grant}"><span class="badge bg-red">view detail</span></a>
-                                                  </div>
-                                              </td>
-                                              {* <td>{(isset($row->t_tanggapan))?$row->t_tanggapan:"-"}</td> *}
+                                              <td>{date("d/m/Y", strtotime($row->date_simpan))}</td>
+                                              <td>{date("d/m/Y", strtotime($row->date_kirim))}</td>
+                                              {* {$status_grant = get_grant_status_by_id($row->t_type)} *}
+                                              {* <td>{$status_grant->status}</td> *}
                                           </tr>
                                           {/foreach}
                                         {else}

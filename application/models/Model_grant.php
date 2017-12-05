@@ -18,10 +18,18 @@ class Model_grant extends CI_Model{
 	}
 	
 	//
-	public function grant($id_biodata){
-		$result = $this->db->query("SELECT * FROM `grant` 
+	public function grant($id_biodata=NULL){
+        if ($id_biodata ==  NULL){
+        $result = $this->db->query("SELECT * FROM `grant`  
                                     JOIN grant_proyek ON `grant`.`id_grant`= `grant_proyek`.`id_grant` 
+                                    JOIN grant_tasks ON `grant`.`id_grant` =  `grant_tasks`.`t_grant`");
+
+        } else {
+		$result = $this->db->query("SELECT * FROM `grant`  
+                                    JOIN grant_proyek ON `grant`.`id_grant`= `grant_proyek`.`id_grant` 
+                                    JOIN grant_tasks ON `grant`.`id_grant` =  `grant_tasks`.`t_grant`
                                     WHERE `grant`.`id_biodata` = ".$id_biodata."");
+        }
         if ($result->num_rows()>0) {
             return $result;
         } else {
@@ -354,6 +362,8 @@ class Model_grant extends CI_Model{
         }  
     }
 
+    // save aplication
+
 	public function save_app_aplication(){
 		$grant = $_SESSION['grant'];
         $grant_portofolio = $grant['grant_portofolio'];
@@ -463,6 +473,34 @@ class Model_grant extends CI_Model{
         }  
 	}
 
+    // udape application
+    public function update_app_aplication($id_grant, $id_biodata){
+
+        // set task for grant manager
+        $this->db->trans_begin();
+        $rst = $this->db->query("select * from sf_guard_user where is_super_admin=4");
+        foreach($rst->result() as $row){
+            $grant = array(
+                "t_type" => 5,
+                "t_grant"=> $id_grant,
+                "t_user"=> $row->id,
+                "t_date"=> date("Y-m-d h:s:i"),
+                "t_read"=> 0,
+                "t_tanggapan"=> ""
+            );
+            $this->db->insert('grant_tasks', $grant);
+            $error = $this->db->error();    
+        }
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return $error;
+        } else {
+            $this->db->trans_commit();
+            return $error;
+        }  
+
+    }
+
     // cek persen
 
     public function persent_grant($id_grant, $table){
@@ -485,7 +523,7 @@ class Model_grant extends CI_Model{
     }
 
     // grant full
-    public function getGrantFull(){
+    public function getGrantFull($id_grant, $id_user){
         return $this->db->query("SELECT
                 * 
             FROM
@@ -494,12 +532,21 @@ class Model_grant extends CI_Model{
                 JOIN grant_proyek ON `grant`.id_grant = grant_proyek.id_grant
                 JOIN grant_kegiatan_dana ON `grant`.id_grant = grant_kegiatan_dana.id_grant
                 JOIN grant_risalah ON `grant`.id_grant = grant_risalah.id_grant
+                JOIN grant_tasks ON `grant`.id_grant = grant_tasks.t_grant
             WHERE
-                `grant`.id_grant = 1")->row();
+                `grant`.id_grant = ".$id_grant." and grant_tasks.t_user =".$id_user." ")->row();
     }
 
     // grant save_tanggapan
     public function save_tanggapan($data, $id_user, $id_grant){
+        $this->db->where('t_grant', $id_grant);
+        $this->db->where('t_user', $id_user);
+        $this->db->update('grant_tasks', $data);
+        return $this->db->error();
+    }
+
+    // grant update status
+    public function save_status($data, $id_user, $id_grant){
         $this->db->where('t_grant', $id_grant);
         $this->db->where('t_user', $id_user);
         $this->db->update('grant_tasks', $data);

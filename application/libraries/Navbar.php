@@ -50,7 +50,13 @@ class Navbar {
 	}
 
 	private function allowComittee(){
+		$this->setMenuTodo();
+		$this->setMenuAllApplication();
+	}
 
+	private function allowBm(){
+		$this->setMenuTodo();
+		$this->setMenuAllApplication();
 	}
 
 	private function allowApplican(){
@@ -58,9 +64,6 @@ class Navbar {
 		$this->setGrant();
 	}
 	
-	private function allowBm(){
-		
-	}
 	
 
 	private function setMenuDashboard(){
@@ -85,7 +88,7 @@ class Navbar {
 		$this->menu['application']=array("name"=>$this->controller->lang->line('navigation.navbar.app'),
 							"url"=>base_url()."grant/all",
 							"status"=>"", 
-							"class"=>"fa fa-desktop",
+							"class"=>"fa fa-book",
 							"submenu"=>null);
 	}
 

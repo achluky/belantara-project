@@ -53,4 +53,43 @@ class Todo extends CI_Controller {
         }
     }
 
+    public function save_status(){
+        $id_user = $_POST['id_user'];
+        $id_grant = $_POST['id_grant'];
+        unset($_POST['id_user']);
+        unset($_POST['id_grant']);
+        if($this->model_grant->save_status($_POST, $id_user, $id_grant)){
+            echo 1;
+        } else {
+            echo 0;
+        }
+    }
+
+    
+
+    public function view($id_grant){
+        $this->load->helper('page');
+        $this->navbar->setMenuActive('todo');
+        $data = array(
+            'url' => $this->url,
+            'alert' => isset($_GET['n']) ? $_GET['n'] : '',
+            'breadcrumb' => array(
+                'Dashboard' => base_url() . 'admin',
+                'Todo' => base_url() . 'grant/todo',
+                'view' => base_url() . ''
+            ),
+            'error_msg' => '',
+            'title' => 'View <small> Grant</small>',
+            'grant' => $this->model_grant->getGrantFull($id_grant, $this->sess['id']),
+            'grant_status' => $this->model_grant->getStatus(),
+            'session' => $this->sess['username'],
+            'id_user' => $this->sess['id'],
+            'name' => $this->sess['name'],
+            'last_login' => $this->sess['last_login'],
+        );
+
+        $this->smartyci->assign('data', $data);
+        $this->smartyci->display('grant/view.tpl');
+    }
+
 }

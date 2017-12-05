@@ -21,6 +21,7 @@ class Aplikasi extends CI_Controller {
     }
 
     public function index(){
+        $this->load->helper('page');
         $profil = $this->model_profil->get($this->sess['id']);
         if ($profil == NULL) {
            $id_biodata = 0;
@@ -242,6 +243,7 @@ class Aplikasi extends CI_Controller {
         }
     }
 
+    // edit
     public function edit($level, $id_grant, $action = NULL){
         if ($level == 1) {
             $profil = $this->model_profil->get($this->sess['id']);
@@ -503,30 +505,10 @@ class Aplikasi extends CI_Controller {
         }
     }
 
-    public function view($id_grant){
-        $this->load->helper('page');
-        $this->navbar->setMenuActive('todo');
-        $data = array(
-            'url' => $this->url,
-            'alert' => isset($_GET['n']) ? $_GET['n'] : '',
-            'breadcrumb' => array(
-                'Dashboard' => base_url() . 'admin',
-                'Todo' => base_url() . 'grant/todo',
-                'view' => base_url() . ''
-            ),
-            'error_msg' => '',
-            'title' => 'View <small> Grant</small>',
-            'grant' => $this->model_grant->getGrantFull(),
-            'grant_status' => $this->model_grant->getStatus(),
-            'session' => $this->sess['username'],
-            'id_user' => $this->sess['id'],
-            'name' => $this->sess['name'],
-            'last_login' => $this->sess['last_login'],
-        );
-
-        $this->smartyci->assign('data', $data);
-        $this->smartyci->display('grant/view.tpl');
+    public function update($id_grant, $id_biodata){
+        $this->model_grant->update_app_aplication($id_grant, $id_biodata);
     }
+
 }
 
 

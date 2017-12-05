@@ -142,4 +142,4 @@ $lang['navigation.navbar.infografis'] = 'Infographics';
 
 
 $lang['navigation.navbar.todo'] = 'Todo List';
-$lang['navigation.navbar.app'] = 'All Application';
+$lang['navigation.navbar.app'] = 'All';

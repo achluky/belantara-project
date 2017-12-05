@@ -28,12 +28,63 @@
                 </div>
                 {/if}
 
+                <div class="notifikasi">
+                </div>
+                
                 <div class="box box-primary">
                   <div class="box-body box-primary">
                     <div class="box-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12"> 
+                              <input type="hidden" name="id_user" value="{$data.id_user}" class="id_user">
+                              <input type="hidden" name="id_grant" value="{$data.grant->id_grant}" class="id_grant">
+                              <table class="table table-bordered affix-top">
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row" width="300px;">Berikan Tanggapan dan Keputusan</th>
+                                      <td colspan="3" class="tanggapan">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#add_tanggapan"><i class="glyphicon glyphicon-plus"></i> &nbsp; Berikan Tanggapan</button>
+                                        <div class="btn-group" role="group">
+                                          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-gavel"></i> &nbsp; Pilih Keputusan
+                                            <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu">
+                                            {foreach $data.grant_status -> result() as $row}
+                                            {if $row->id_status != 5}
+                                            <li value="{$row->id_status}"><a href="#">{$row->status}</a></li>
+                                            {/if}
+                                            {/foreach}
+                                          </ul>
+                                        </div>
+                                        <button type="button" class="btn btn-info" id="pdf" ><i class="fa fa-file-pdf-o"></i> &nbsp;<i class="fa fa-spinner fa-1x fa-spin loading"></i>&nbsp; PDF</button>
+                                        
+                                        <br/>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" width="300px;">Ringkasan</th>
+                                      <td colspan="3" id="ringkasan">
+                                        <div id="tanggapan">
+                                        <label>Tanggapan : </label>
+                                        {$data.grant->t_tanggapan}
+                                        </div>
+                                        <div id="keputusan">
+                                        <label>Keputusan Terhadap Grant : </label>
+                                        {$rst_status = get_grant_status_by_id($data.grant->t_type)}
+                                        <p>{$rst_status->status}</p>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                              </table>
                                 
+
+                              <div class="box-header">
+                                <h3 class="box-title">Detail Proposal</h3>
+                              </div>
+                              <hr/>
+
                               <table class="table table-bordered">
                                   <tbody>
                                     <tr>
@@ -116,37 +167,6 @@
                                   </tbody>
                               </table>
 
-
-                              <table class="table table-bordered affix-top">
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row" width="300px;">Keputusan</th>
-                                      <td colspan="3">
-                                          <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              Pilih Keputusan
-                                              <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                              {foreach $data.grant_status -> result() as $row}
-                                              {if $row->id_status != 5}
-                                              <li><a href="{$row->id_status}">{$row->status}</a></li>
-                                              {/if}
-                                              {/foreach}
-                                            </ul>
-                                          </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row" width="300px;">Tanggapan</th>
-                                      <td colspan="3" class="tanggapan">
-                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#add_tanggapan"><i class="glyphicon glyphicon-plus"></i> &nbsp; Berikan Tanggapan</button>
-                                        <br/>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                              </table>
-                                
                               <div class="modal fade" id="add_tanggapan">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
@@ -158,8 +178,6 @@
                                     </div>
                                     <div class="modal-body">
                                       <div class="form-group">
-                                        <input type="hidden" name="id_user" value="{$data.id_user}" class="id_user">
-                                        <input type="hidden" name="id_grant" value="{$data.grant->id_grant}" class="id_grant">
                                         <textarea class="form-control" id="t_tanggapan" name="t_tanggapan" rows="7"></textarea>
                                       </div>
                                     </div>
@@ -173,8 +191,6 @@
                                 <!-- /.modal-dialog -->
                               </div>
                               <!-- /.modal -->
-
-
                             </div>
                         </div>
                     </div>
@@ -193,6 +209,7 @@
 <script src="{base_url()}assets/plugins/ckeditor/ckeditor.js"></script>
 <script>
     $(function () {
+        $(".loading").hide();
         var editor=CKEDITOR.replace('t_tanggapan'); 
         $(".add_tanggapan").click(function(){
             var value = editor.getData();
@@ -200,23 +217,54 @@
             var id_grant = $(".id_grant").val();
             var data =  " <textarea style=\"display:none;\" name=\"t_tanggapan[]\">"+value+" </textarea>"+
                         " <br/>"+ value +"";
-
             $.post("{base_url()}grant/todo/save_tanggapan",
             { 
               id_user:id_user,
               id_grant:id_grant,
               t_tanggapan:value
             },
-            function(response,status){ 
-              if (response == 1)
-                $(".tanggapan").append("<i class='glyphicon glyphicon-ok'></i> data berhasi disimpan");
-              else
-                $(".tanggapan").append("data gagal disimpan");
+            function(response,status){
+              if (response == 1){
+                $(".notifikasi").append("<div class=\"callout callout-info\"><h4><span class=\"label label-info\">"+
+                "<i class=\"fa fa-check-circle\"></i> &nbsp; Data berhasi disimpan</span></h4></div>");
+                $("#ringkasan #tanggapan").html("<label>Tanggapan : </label>"+value);
+              } else {
+                $(".tanggapan").append("<span class=\"label label-info\">"+
+                "<i class=\"fa fa-info-circle\"></i> &nbsp; Data gagal disimpan</span>");
+              }
             });
-
             $("#add_tanggapan").modal('hide');
         });
 
+        $('.dropdown-menu li').click(function(){
+          var id_user = $(".id_user").val();
+          var id_grant = $(".id_grant").val();
+          var type_text = $(this).text();
+          var type = $(this).val();
+          $.post("{base_url()}grant/todo/save_status",
+          { 
+            id_user:id_user,
+            id_grant:id_grant,
+            t_type:type
+          },
+          function(response,status){
+            if (response == 1){
+              $(".notifikasi").append("<div class=\"callout callout-info\"><h4><span class=\"label label-info\">"+
+              "<i class=\"fa fa-check-circle\"></i> &nbsp; Data berhasi disimpan</span></h4></div>");
+              $("#ringkasan #keputusan").html("<label>Keputusan Terhadap Grant :</label> <p>"+type_text+"</p>");
+            } else {
+              $(".tanggapan").append("<span class=\"label label-info\">"+
+              "<i class=\"fa fa-info-circle\"></i> &nbsp; Data gagal disimpan</span>");
+            }
+          });
+
+          return;
+        });
+
+
+        $('#pdf').click(function(){
+          $(".loading").show();
+        });
     });
   </script>
 {/block}

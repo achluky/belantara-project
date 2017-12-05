@@ -12,24 +12,28 @@
         </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        {lang('navigation.language')} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{base_url()}lang/s/EN?url={$data.url}" style="padding:5px 0px 5px 10px;">
-									<img src="{base_url('assets/img/en.png')}" alt="ID">
-										{lang('navigation.language.en')}
-								</a>
-							</li>
-                            <li><a href="{base_url()}lang/s/ID?url={$data.url}" style="padding:5px 0px 5px 10px;">
-									<img src="{base_url('assets/img/id.png')}"  alt="EN">
-									{lang('navigation.language.id')}
-								</a>
-							</li>
+
+                {* <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="label label-warning">10</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li class="header">You have 10 notifications</li>
+                    <li>
+                        <!-- inner menu: contains the actual data -->
+                        <ul class="menu">
+                        <li>
+                            <a href="#">
+                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                            </a>
+                        </li>
                         </ul>
-                </li>
-				
+                    </li>
+                    <li class="footer"><a href="#">View all</a></li>
+                    </ul>
+                </li> *}
+
                
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

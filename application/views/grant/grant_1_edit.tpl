@@ -214,7 +214,7 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary add_doc">Save</button>
+                                  <button type="button" class="btn btn-primary add_doc">Update</button>
                                 </div>
                             </form>
                         </div>
@@ -254,7 +254,7 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary add_portofolio">Save</button>
+                                  <button type="button" class="btn btn-primary add_portofolio">Update</button>
                                 </div>
                         </div>
                       </div>

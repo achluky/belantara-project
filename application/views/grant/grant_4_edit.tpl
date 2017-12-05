@@ -71,7 +71,7 @@
                             <br/>
                             <div class="btn-group pull-right">
                                 <a href="{base_url()}grant/aplikasi/edit/3/{$data.id_grant}" class="btn btn-primary" type="button"><i class="glyphicon glyphicon-chevron-left"></i> Sebelumnya</a>
-                                <button type="submit" class="btn btn-info pull-right"><i class="glyphicon glyphicon-floppy-saved"></i> Simpan</button>
+                                <button type="submit" class="btn btn-info pull-right"><i class="glyphicon glyphicon-floppy-saved"></i> Update</button>
                             </div>
 
                         </div><!-- /.box-footer -->

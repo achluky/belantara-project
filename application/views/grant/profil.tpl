@@ -73,7 +73,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Jabatan</label>
-                                            <input type="input" class="form-control" id="judul" name="jabatan" placeholder="" value="{(isset($data.profil->email))?$data.profil->email:''}" required>
+                                            <input type="input" class="form-control" id="judul" name="jabatan" placeholder="" value="{(isset($data.profil->jabatan))?$data.profil->jabatan:''}" required>
                                             <p class="text-danger">Misal: Manajer Lapangan Proyek Laskep Sumatera II</p>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Alamat Lembaga</label>
-                                            <textarea class="form-control" name="lembaga_alamat" required>{(isset($data.profil->lembaga_alamat))?$data.profil->lembaga_alamat:''}</textarea>
+                                            <textarea class="form-control" name="lembaga_alamat" rows="6" required>{(isset($data.profil->lembaga_alamat))?$data.profil->lembaga_alamat:''}</textarea>
                                             <p class="text-danger">Diisi dengan alamat kantor pusat nasional</p>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputEmail3" class="control-label">Profil Singkat</label>
-                                            <textarea class="form-control" name="lembaga_profil" required>{(isset($data.profil->lembaga_profil))?$data.profil->lembaga_profil:''}</textarea>
+                                            <textarea class="form-control" name="lembaga_profil" rows="6" required>{(isset($data.profil->lembaga_profil))?$data.profil->lembaga_profil:''}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
