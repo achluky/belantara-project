@@ -38,6 +38,7 @@
                             <div class="col-md-12"> 
                               <input type="hidden" name="id_user" value="{$data.id_user}" class="id_user">
                               <input type="hidden" name="id_grant" value="{$data.grant->id_grant}" class="id_grant">
+                              
                               <table class="table table-bordered affix-top">
                                   <tbody>
                                     <tr>
@@ -78,11 +79,11 @@
                                     </tr>
                                   </tbody>
                               </table>
-                                
-
+                              
                               <div class="box-header">
                                 <h3 class="box-title">Detail Proposal</h3>
                               </div>
+                              
                               <hr/>
 
                               <table class="table table-bordered">
@@ -93,7 +94,7 @@
                                     </tr>
                                     <tr>
                                       <th>Lembaga Pengusul</th>
-                                      <td width="300px;">{$data.grant->proyek_judul}</td>
+                                      <td width="300px;">{$data.grant->lembaga_nama}</td>
                                       <td>Tanggal proposal diterima</td>
                                       <td></td>
                                     </tr>
