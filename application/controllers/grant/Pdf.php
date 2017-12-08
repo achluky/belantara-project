@@ -19,25 +19,28 @@ class Pdf extends CI_Controller {
         $this->sess = $this->session->userdata('logged_in');
     }
 
-    public function index($id_grant)
+    public function index()
     {
+        $id_grant = $_POST['id_grant'];
         $this->load->library('pdfgenerator');
         $this->load->helper('page');
         $data = array(
-            'url' => $this->url,
-            'alert' => isset($_GET['n']) ? $_GET['n'] : '',
-            'breadcrumb' => array(
-                'Dashboard' => base_url() . 'admin',
-                'Todo' => base_url() . 'grant/todo',
-                'view' => base_url() . ''
-            ),
-            'error_msg' => '',
-            'title' => 'View <small> Grant</small>',
-            'grant' => $this->model_grant->getGrantFull($id_grant, $this->sess['id']),
-            'name' => $this->sess['name'],
-            'last_login' => $this->sess['last_login'],
+            'grant' => $this->model_grant->getGrantFull($id_grant, $this->sess['id'])
         );
         $html = $this->load->view('grant/pdf', $data, true);
-        $this->pdfgenerator->generate($html,'contoh');
+        if ($this->pdfgenerator->generate($html,'proposal_'. $id_grant)){
+            echo json_encode(
+                array('status'=> 1, 'name_file' => 'proposal_'. $id_grant.'')
+            );
+        }else{
+            echo json_encode(
+                array('status'=> 0)
+            );
+        }
+    }
+
+    public function download($filename){
+        $this->load->helper('download');
+        force_download('./document/pdf/'.$filename.'.pdf', NULL);
     }
 }

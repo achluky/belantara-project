@@ -94,7 +94,7 @@
                                     </tr>
                                     <tr>
                                       <th>Lembaga Pengusul</th>
-                                      <td width="300px;">{$data.grant->lembaga_nama}</td>
+                                      <td width="300px;">{$data.grant->proyek_judul}</td>
                                       <td>Tanggal proposal diterima</td>
                                       <td></td>
                                     </tr>
@@ -264,7 +264,21 @@
 
 
         $('#pdf').click(function(){
+          var id_grant = $(".id_grant").val();
           $(".loading").show();
+          $.post("{base_url()}grant/pdf/index/",
+          {
+            id_grant:id_grant,
+          },
+          function(response,status){
+            if (response.status == 1){
+              window.location.href = '{base_url()}grant/pdf/download/'+response.name_file;
+              $(".loading").hide();
+            } else {
+              console.log(response);
+              console.log(response.status);
+            }
+          }, "json");
         });
     });
   </script>

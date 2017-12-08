@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </tr>
   <tr>
     <th>Landscape</th>
-    <td>{$data.grant->proyek_lansekap}</td>
+    <td><?php echo $grant->proyek_lansekap ?></td>
     <td>Tanggal direview Investment Committee</td>
     <td></td>
   </tr>

@@ -34,8 +34,11 @@
                     </ul>
                 </li> *}
 
-               
-                <li class="dropdown user user-menu">
+                <li class="">
+                    <a class="" href="{base_url('admin/logout')}"><i class="fa fa-sign-out"></i> {lang('navigation.label.logout')}</a>
+                </li>
+                
+                {* <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                       <img src="{base_url('assets/img/belantara_profile.png')}" class="user-image" alt="User Image">
                       <span class="hidden-xs">
@@ -46,19 +49,19 @@
 					<ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                                <img alt="User Image" src="{base_url('assets/img/belantara_profile.png')}" class="img-circle">
-								<p>
-                                        <span>{$data['name']}</span>
-                                        <small>{lang('navigation.label.ipb')}</small>
-                                    </p>
-                                </li>
+                        <img alt="User Image" src="{base_url('assets/img/belantara_profile.png')}" class="img-circle">
+                        <p>
+                                <span>{$data['name']}</span>
+                                <small>{lang('navigation.label.ipb')}</small>
+                            </p>
+                        </li>
 
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                        <a class="btn btn-default btn-flat" href="{base_url('admin/logout')}"><i class="fa fa-sign-out"></i>{lang('navigation.label.logout')}</a>
-                                </li>
-                            </ul>
-                </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                                <a class="btn btn-default btn-flat" href="{base_url('admin/logout')}"><i class="fa fa-sign-out"></i>{lang('navigation.label.logout')}</a>
+                        </li>
+                    </ul>
+                </li> *}
             </ul>
         </div>
     </nav>
